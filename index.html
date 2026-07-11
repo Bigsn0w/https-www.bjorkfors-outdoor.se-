@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Björkfors Outdoor — Sportfischen & Bootsvermietung in Schweden</title>
+  <meta name="description" content="Björkfors Outdoor: Sportfischer-Touren, Bootsvermietung und Wildlife-Erlebnisse für Erwachsenengruppen in Schweden. Transparente Preise, persönliche Betreuung. Jetzt Buchungsanfrage stellen.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            forest: {
+              950: '#0F2417',
+              900: '#14301F',
+              800: '#1F4A30',
+              700: '#2B5E3E',
+            },
+            sage: '#9DA971',
+            cream: '#F7F4ED',
+            accent: {
+              DEFAULT: '#EA580C',
+              hover: '#C2410C',
+            },
+          },
+          fontFamily: {
+            display: ['"Bebas Neue"', 'sans-serif'],
+            body: ['"Source Sans 3"', 'sans-serif'],
+          },
+          keyframes: {
+            fadeInUp: {
+              '0%': { opacity: '0', transform: 'translateY(28px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            fogDrift: {
+              '0%, 100%': { transform: 'translateX(-2%)' },
+              '50%': { transform: 'translateX(2%)' },
+            },
+          },
+          animation: {
+            'fade-in-up': 'fadeInUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards',
+            'fog-drift': 'fogDrift 14s ease-in-out infinite',
+            'fog-drift-slow': 'fogDrift 22s ease-in-out infinite reverse',
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+    [data-animate] { opacity: 0; }
+    [data-animate].is-visible { animation: fadeInUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+
+    .review-track {
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .review-track::-webkit-scrollbar { display: none; }
+    .review-card { scroll-snap-align: center; }
+
+    /* Header elevates once the page scrolls */
+    #site-header { transition: box-shadow 0.3s ease; }
+    #site-header.is-scrolled { box-shadow: 0 8px 30px rgba(15, 36, 23, 0.12); }
+  </style>
+</head>
+<body class="font-body bg-cream text-forest-950 antialiased">
+
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:bg-accent focus:text-white focus:px-4 focus:py-2 focus:rounded">
+    Zum Inhalt springen
+  </a>
+
+  <!-- ============ HEADER / STICKY NAV (hell, Logo frei stehend & groß) ============ -->
+  <header id="site-header" class="sticky top-0 z-40 bg-cream/95 backdrop-blur border-b border-forest-950/10">
+    <nav class="mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-10" aria-label="Hauptnavigation">
+      <div class="flex h-24 items-center justify-between gap-6">
+
+        <!-- Logo: direkt auf hellem Grund, deutlich größer -->
+        <a href="index.html" class="flex shrink-0 items-center transition-opacity duration-200 hover:opacity-80" aria-label="Björkfors Outdoor — Startseite">
+          <img src="assets/images/logo-bjorkfors.png" alt="Björkfors Outdoor-Adventures — Bed &amp; Breakfast" class="h-16 w-auto sm:h-[4.5rem]">
+        </a>
+
+        <!-- Desktop nav -->
+        <ul class="hidden xl:flex items-center gap-9 font-body text-[0.95rem] font-semibold text-forest-900">
+          <li><a href="index.html" class="relative py-2 text-forest-950 after:absolute after:inset-x-0 after:-bottom-0.5 after:h-0.5 after:rounded-full after:bg-accent" aria-current="page">Startseite</a></li>
+          <li><a href="sportfischen.html" class="relative py-2 transition-colors duration-200 hover:text-forest-700 after:absolute after:inset-x-0 after:-bottom-0.5 after:h-0.5 after:origin-left after:scale-x-0 after:rounded-full after:bg-accent after:transition-transform after:duration-200 hover:after:scale-x-100">Sportfischen</a></li>
+          <li><a href="aktivitaeten.html" class="relative py-2 transition-colors duration-200 hover:text-forest-700 after:absolute after:inset-x-0 after:-bottom-0.5 after:h-0.5 after:origin-left after:scale-x-0 after:rounded-full after:bg-accent after:transition-transform after:duration-200 hover:after:scale-x-100">Aktivitäten</a></li>
+          <li><a href="umgebung.html" class="relative py-2 transition-colors duration-200 hover:text-forest-700 after:absolute after:inset-x-0 after:-bottom-0.5 after:h-0.5 after:origin-left after:scale-x-0 after:rounded-full after:bg-accent after:transition-transform after:duration-200 hover:after:scale-x-100">Umgebung</a></li>
+          <li><a href="hausregeln.html" class="relative py-2 transition-colors duration-200 hover:text-forest-700 after:absolute after:inset-x-0 after:-bottom-0.5 after:h-0.5 after:origin-left after:scale-x-0 after:rounded-full after:bg-accent after:transition-transform after:duration-200 hover:after:scale-x-100">Hausregeln &amp; AGB</a></li>
+        </ul>
+
+        <div class="flex items-center gap-2 sm:gap-3">
+
+          <!-- Language switcher -->
+          <div class="relative">
+            <button type="button" id="lang-button"
+                    class="inline-flex min-h-[44px] items-center gap-1.5 rounded-full border border-forest-950/15 px-4 py-2 font-body text-sm font-bold text-forest-900 transition-colors duration-200 hover:border-forest-950/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                    aria-controls="lang-menu" aria-expanded="false" aria-haspopup="true">
+              <svg class="h-4.5 w-4.5 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9 9 0 100-18 9 9 0 000 18zM3.6 9h16.8M3.6 15h16.8M12 3a13.5 13.5 0 000 18M12 3a13.5 13.5 0 010 18" />
+              </svg>
+              <span>DE</span>
+              <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+              </svg>
+            </button>
+            <ul id="lang-menu"
+                class="hidden absolute right-0 mt-2 w-44 overflow-hidden rounded-xl bg-white py-1 shadow-xl ring-1 ring-forest-950/10"
+                role="menu" aria-label="Sprache wählen">
+              <li role="none"><a role="menuitem" href="index.html" aria-current="true" class="flex min-h-[44px] items-center px-4 text-sm font-bold text-accent">Deutsch</a></li>
+              <li role="none"><a role="menuitem" href="nl/index.html" class="flex min-h-[44px] items-center px-4 text-sm font-semibold text-forest-900 transition-colors hover:bg-cream">Nederlands</a></li>
+              <li role="none"><a role="menuitem" href="en/index.html" class="flex min-h-[44px] items-center px-4 text-sm font-semibold text-forest-900 transition-colors hover:bg-cream">English</a></li>
+              <li role="none"><a role="menuitem" href="sv/index.html" class="flex min-h-[44px] items-center px-4 text-sm font-semibold text-forest-900 transition-colors hover:bg-cream">Svenska</a></li>
+            </ul>
+          </div>
+
+          <!-- Persistent CTA -->
+          <a href="kontakt.html"
+             class="hidden md:inline-flex items-center justify-center rounded-full bg-accent px-6 py-3 min-h-[44px] font-body font-bold text-sm text-white shadow-lg shadow-accent/25 transition-all duration-200 hover:bg-accent-hover hover:shadow-xl hover:shadow-accent/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent">
+            Buchungsanfrage
+          </a>
+
+          <!-- Mobile burger -->
+          <button type="button" id="mobile-menu-button"
+                  class="inline-flex xl:hidden items-center justify-center min-h-[44px] min-w-[44px] rounded-full text-forest-950 transition-colors hover:bg-forest-950/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                  aria-controls="mobile-menu" aria-expanded="false" aria-label="Hauptmenü öffnen">
+            <svg id="icon-menu-open" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5" />
+            </svg>
+            <svg id="icon-menu-close" class="hidden h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile menu panel -->
+    <div id="mobile-menu" class="hidden xl:hidden border-t border-forest-950/10 bg-cream">
+      <ul class="space-y-1 px-4 py-5 font-body text-base font-semibold text-forest-900">
+        <li><a href="index.html" class="flex min-h-[44px] items-center rounded-lg px-3 text-accent" aria-current="page">Startseite</a></li>
+        <li><a href="sportfischen.html" class="flex min-h-[44px] items-center rounded-lg px-3 transition-colors duration-200 hover:bg-forest-950/5">Sportfischen</a></li>
+        <li><a href="aktivitaeten.html" class="flex min-h-[44px] items-center rounded-lg px-3 transition-colors duration-200 hover:bg-forest-950/5">Aktivitäten</a></li>
+        <li><a href="umgebung.html" class="flex min-h-[44px] items-center rounded-lg px-3 transition-colors duration-200 hover:bg-forest-950/5">Umgebung</a></li>
+        <li><a href="hausregeln.html" class="flex min-h-[44px] items-center rounded-lg px-3 transition-colors duration-200 hover:bg-forest-950/5">Hausregeln &amp; AGB</a></li>
+        <li class="pt-2 md:hidden">
+          <a href="kontakt.html" class="flex min-h-[48px] items-center justify-center rounded-full bg-accent px-6 font-bold text-white shadow-lg shadow-accent/25">Buchungsanfrage</a>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ============ HERO (gestaltete Szenerie statt leerer Fläche) ============ -->
+    <section class="relative isolate flex min-h-[92vh] items-center overflow-hidden" aria-label="Willkommen bei Björkfors Outdoor">
+
+      <!-- Foto (sobald vorhanden) liegt ÜBER der SVG-Szene -->
+      <img src="assets/images/hero-lake-fog.jpg"
+           alt="Nebel über einem stillen See in schwedischer Wildnis bei Björkfors im ersten Morgenlicht"
+           class="absolute inset-0 -z-10 h-full w-full object-cover"
+           fetchpriority="high"
+           onerror="this.remove()">
+
+      <!-- SVG-Szenerie als gestalteter Fallback / Grundstimmung -->
+      <div class="absolute inset-0 -z-20 bg-gradient-to-b from-forest-800 via-forest-900 to-forest-950" aria-hidden="true">
+        <!-- Sonne / Lichtquelle -->
+        <div class="absolute left-[12%] top-[18%] h-64 w-64 rounded-full bg-sage/30 blur-3xl"></div>
+        <div class="absolute right-[8%] top-[30%] h-96 w-96 rounded-full bg-forest-700/40 blur-3xl"></div>
+
+        <!-- Hintere Baumreihe -->
+        <svg class="absolute bottom-0 left-0 h-[55%] w-full opacity-40" preserveAspectRatio="none" viewBox="0 0 1200 400" aria-hidden="true">
+          <path fill="#1F4A30" d="M0 400V240l30-18 22 30 26-52 24 40 20-26 30 44 26-64 28 48 22-30 32 52 24-40 26 58 30-72 26 54 22-32 30 46 28-58 24 42 26-28 32 54 22-44 28 60 26-70 30 52 24-34 28 48 22-26 30 42 28-56 26 46 24-30 30 50 26-62 28 44 22-28 32 52 24-38 28 54V400Z"/>
+        </svg>
+        <!-- Nebelbank hinten -->
+        <div class="animate-fog-drift-slow absolute bottom-[28%] left-[-10%] h-24 w-[120%] rounded-full bg-cream/10 blur-2xl"></div>
+
+        <!-- Vordere Baumreihe -->
+        <svg class="absolute bottom-0 left-0 h-[42%] w-full" preserveAspectRatio="none" viewBox="0 0 1200 320" aria-hidden="true">
+          <path fill="#0F2417" d="M0 320V200l24-16 20 26 24-44 22 34 18-22 28 38 24-56 26 42 20-26 28 46 22-36 24 50 28-62 24 46 20-28 28 40 26-50 22 36 24-24 28 48 20-40 26 52 24-60 28 46 22-30 26 42 20-22 28 36 26-48 24 40 22-26 28 44 24-54 26 38 20-24 28 46 22-34 26 48V320Z"/>
+        </svg>
+        <!-- Nebelbank vorn -->
+        <div class="animate-fog-drift absolute bottom-[10%] left-[-10%] h-32 w-[120%] rounded-full bg-cream/15 blur-3xl"></div>
+
+        <!-- Wasserlinie -->
+        <div class="absolute inset-x-0 bottom-0 h-[9%] bg-gradient-to-b from-forest-950 to-[#0A1A10]"></div>
+      </div>
+
+      <!-- Abdunklung für Textlesbarkeit (wirkt auf Foto UND Szene) -->
+      <div class="absolute inset-0 -z-[5] bg-gradient-to-r from-forest-950/80 via-forest-950/40 to-transparent"></div>
+
+      <div class="relative mx-auto w-full max-w-[90rem] px-4 py-28 sm:px-6 lg:px-10">
+        <div class="max-w-3xl">
+          <p class="animate-fade-in-up inline-flex items-center gap-2 rounded-full border border-cream/20 bg-forest-950/40 px-4 py-2 font-body text-xs font-bold uppercase tracking-[0.22em] text-cream/90 backdrop-blur opacity-0 [animation-delay:0.05s] [animation-fill-mode:forwards]">
+            <span class="h-1.5 w-1.5 rounded-full bg-accent"></span>
+            Sportfischen · Bootsvermietung · Wildlife
+          </p>
+          <h1 class="mt-6 animate-fade-in-up font-display text-6xl leading-[0.95] tracking-wide text-cream sm:text-7xl lg:text-[7rem] opacity-0 [animation-delay:0.15s] [animation-fill-mode:forwards]">
+            Echtes Angeln.<br>
+            <span class="text-accent">Echte Wildnis.</span>
+          </h1>
+          <p class="mt-8 max-w-xl animate-fade-in-up font-body text-lg leading-relaxed text-cream/85 sm:text-xl opacity-0 [animation-delay:0.3s] [animation-fill-mode:forwards]">
+            Eigene Boote, stille Seen und ehrliche Beratung — für Erwachsenengruppen, die raus wollen: zum Angeln, auf Wildlife-Safari oder zum Pilzesammeln in Östergötland.
+          </p>
+          <div class="mt-12 flex flex-col gap-4 animate-fade-in-up sm:flex-row opacity-0 [animation-delay:0.45s] [animation-fill-mode:forwards]">
+            <a href="kontakt.html"
+               class="group inline-flex min-h-[52px] items-center justify-center gap-2 rounded-full bg-accent px-9 py-4 font-body text-base font-bold text-white shadow-xl shadow-accent/30 transition-all duration-200 hover:bg-accent-hover hover:shadow-2xl hover:shadow-accent/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-forest-950 focus-visible:ring-accent">
+              Buchungsanfrage stellen
+              <svg class="h-5 w-5 transition-transform duration-200 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
+            </a>
+            <a href="sportfischen.html"
+               class="inline-flex min-h-[52px] items-center justify-center rounded-full border border-cream/30 bg-cream/5 px-9 py-4 font-body text-base font-bold text-cream backdrop-blur transition-all duration-200 hover:border-cream/60 hover:bg-cream/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-forest-950 focus-visible:ring-cream">
+              Boote &amp; Preise
+            </a>
+          </div>
+
+          <!-- Fakten-Zeile -->
+          <dl class="mt-16 grid max-w-xl animate-fade-in-up grid-cols-3 gap-6 border-t border-cream/15 pt-8 opacity-0 [animation-delay:0.6s] [animation-fill-mode:forwards]">
+            <div>
+              <dt class="font-body text-xs font-semibold uppercase tracking-wider text-cream/60">Zum See</dt>
+              <dd class="mt-1 font-display text-3xl tracking-wide text-cream">500 m</dd>
+            </div>
+            <div>
+              <dt class="font-body text-xs font-semibold uppercase tracking-wider text-cream/60">Angelboote</dt>
+              <dd class="mt-1 font-display text-3xl tracking-wide text-cream">3</dd>
+            </div>
+            <div>
+              <dt class="font-body text-xs font-semibold uppercase tracking-wider text-cream/60">Boot / Tag ab</dt>
+              <dd class="mt-1 font-display text-3xl tracking-wide text-cream">1.500 kr</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ KATEGORIE-TEASER ============ -->
+    <section class="bg-cream py-24 sm:py-32" aria-label="Unsere Angebote">
+      <div class="mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-10">
+        <div class="flex flex-wrap items-end justify-between gap-8" data-animate>
+          <div class="max-w-2xl">
+            <p class="font-body text-sm font-bold uppercase tracking-[0.22em] text-accent">Unsere Reviere</p>
+            <h2 class="mt-4 font-display text-5xl tracking-wide text-forest-950 sm:text-6xl">Drei Wege in die Wildnis</h2>
+          </div>
+          <p class="max-w-md text-lg leading-relaxed text-forest-950/60">Vom Raubfisch-Drill bis zur stillen Elch-Beobachtung — such dir dein Abenteuer aus.</p>
+        </div>
+
+        <div class="mt-14 grid grid-cols-1 gap-7 md:grid-cols-3">
+
+          <!-- Card: Sportfischen -->
+          <a href="sportfischen.html" class="group relative overflow-hidden rounded-3xl shadow-lg shadow-forest-950/10 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-forest-950/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2" data-animate>
+            <div class="relative aspect-[4/5] overflow-hidden bg-gradient-to-b from-forest-700 to-forest-950">
+              <!-- SVG-Fallback-Szene -->
+              <svg class="absolute inset-x-0 bottom-0 h-1/2 w-full opacity-50" preserveAspectRatio="none" viewBox="0 0 400 200" aria-hidden="true">
+                <path fill="#0F2417" d="M0 200V120l20-14 16 22 20-36 18 28 14-18 22 32 20-46 20 34 16-22 22 38 18-30 20 42 22-52 20 38 16-24 22 34 20-42 18 30 16-20 22 40 18-34 20 44V200Z"/>
+              </svg>
+              <img src="assets/images/teaser-fishing.jpg"
+                   alt="Angler im Boot bei Sonnenaufgang auf einem schwedischen See"
+                   class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                   loading="lazy"
+                   onerror="this.remove()">
+              <div class="absolute inset-0 bg-gradient-to-t from-forest-950 via-forest-950/30 to-transparent"></div>
+            </div>
+            <div class="absolute inset-x-0 bottom-0 p-8">
+              <h3 class="font-display text-4xl tracking-wide text-cream">Sportfischen</h3>
+              <p class="mt-3 text-[0.95rem] leading-relaxed text-cream/80">Voll ausgestattete Aluminium-Angelboote mit 20-PS-Motor und Echolot — Fixpreis ab 1.500 kr/Tag, auf Wunsch mit Angelführer.</p>
+              <span class="mt-5 inline-flex items-center gap-2 font-body text-sm font-bold uppercase tracking-wide text-accent">
+                Boote &amp; Preise
+                <svg class="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                </svg>
+              </span>
+            </div>
+          </a>
+
+          <!-- Card: Safari & Wildlife -->
+          <a href="aktivitaeten.html" class="group relative overflow-hidden rounded-3xl shadow-lg shadow-forest-950/10 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-forest-950/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 md:mt-10" data-animate>
+            <div class="relative aspect-[4/5] overflow-hidden bg-gradient-to-b from-sage/70 to-forest-900">
+              <svg class="absolute inset-x-0 bottom-0 h-1/2 w-full opacity-50" preserveAspectRatio="none" viewBox="0 0 400 200" aria-hidden="true">
+                <path fill="#14301F" d="M0 200V110l24-18 18 26 22-40 20 32 16-20 24 36 22-50 20 36 18-24 24 42 20-34 22 46 24-56 20 40 18-26 24 38 22-46 20 32 18-22 24 44 20-38 22 48V200Z"/>
+              </svg>
+              <img src="assets/images/teaser-wildlife.jpg"
+                   alt="Elch am Waldrand in der Abenddämmerung in Östergötland"
+                   class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                   loading="lazy"
+                   onerror="this.remove()">
+              <div class="absolute inset-0 bg-gradient-to-t from-forest-950 via-forest-950/30 to-transparent"></div>
+            </div>
+            <div class="absolute inset-x-0 bottom-0 p-8">
+              <h3 class="font-display text-4xl tracking-wide text-cream">Safari &amp; Wildlife</h3>
+              <p class="mt-3 text-[0.95rem] leading-relaxed text-cream/80">Elche, Biber und Seeadler — geführte Touren in der Dämmerung, wenn der Wald erwacht.</p>
+              <span class="mt-5 inline-flex items-center gap-2 font-body text-sm font-bold uppercase tracking-wide text-accent">
+                Touren entdecken
+                <svg class="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                </svg>
+              </span>
+            </div>
+          </a>
+
+          <!-- Card: Kajak & Kanu -->
+          <a href="aktivitaeten.html#kajak" class="group relative overflow-hidden rounded-3xl shadow-lg shadow-forest-950/10 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-forest-950/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2" data-animate>
+            <div class="relative aspect-[4/5] overflow-hidden bg-gradient-to-b from-forest-800 via-forest-900 to-[#0A1A10]">
+              <svg class="absolute inset-x-0 bottom-0 h-1/2 w-full opacity-50" preserveAspectRatio="none" viewBox="0 0 400 200" aria-hidden="true">
+                <path fill="#0F2417" d="M0 200V130l18-12 16 20 18-32 16 26 14-16 20 28 18-42 18 30 14-18 20 34 16-26 18 38 20-48 18 34 14-20 20 30 18-38 16 26 14-18 20 36 16-30 18 40V200Z"/>
+              </svg>
+              <img src="assets/images/teaser-kayak.jpg"
+                   alt="Kajakfahrer auf spiegelglattem See zwischen bewaldeten Inseln"
+                   class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                   loading="lazy"
+                   onerror="this.remove()">
+              <div class="absolute inset-0 bg-gradient-to-t from-forest-950 via-forest-950/30 to-transparent"></div>
+            </div>
+            <div class="absolute inset-x-0 bottom-0 p-8">
+              <h3 class="font-display text-4xl tracking-wide text-cream">Kajak &amp; Kanu</h3>
+              <p class="mt-3 text-[0.95rem] leading-relaxed text-cream/80">Kajaks, Kanus und SUP-Boards mit kompletter Ausrüstung, ab 280 kr/Tag — Lieferung an andere Seen möglich.</p>
+              <span class="mt-5 inline-flex items-center gap-2 font-body text-sm font-bold uppercase tracking-wide text-accent">
+                Kajaks ansehen
+                <svg class="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                </svg>
+              </span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WARUM BJÖRKFORS ============ -->
+    <section class="border-y border-forest-950/10 bg-white/60 py-20" aria-label="Warum Björkfors Outdoor">
+      <div class="mx-auto grid max-w-[90rem] grid-cols-1 gap-12 px-4 sm:grid-cols-3 sm:px-6 lg:px-10">
+        <div class="flex flex-col items-start gap-5" data-animate>
+          <span class="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-forest-800/10">
+            <svg class="h-7 w-7 text-forest-800" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </span>
+          <div>
+            <h2 class="font-display text-2xl tracking-wide text-forest-950">Fixpreise, keine Überraschungen</h2>
+            <p class="mt-2 leading-relaxed text-forest-950/65">Jedes Boot, jede Tour mit klarem Preis — direkt am Angebot, ohne Kleingedrucktes.</p>
+          </div>
+        </div>
+        <div class="flex flex-col items-start gap-5" data-animate>
+          <span class="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-forest-800/10">
+            <svg class="h-7 w-7 text-forest-800" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+          </span>
+          <div>
+            <h2 class="font-display text-2xl tracking-wide text-forest-950">Für Erwachsenengruppen</h2>
+            <p class="mt-2 leading-relaxed text-forest-950/65">Angeln, Wildlife, Pilze — Erlebnisse für Gruppen, die Ruhe und echtes Draußensein suchen.</p>
+          </div>
+        </div>
+        <div class="flex flex-col items-start gap-5" data-animate>
+          <span class="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-forest-800/10">
+            <svg class="h-7 w-7 text-forest-800" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+            </svg>
+          </span>
+          <div>
+            <h2 class="font-display text-2xl tracking-wide text-forest-950">Direkt am Wasser</h2>
+            <p class="mt-2 leading-relaxed text-forest-950/65">500 m zu den Seen Björkern und Åsunden — Boot rein, Leine raus, Ruhe an.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ GOOGLE REVIEWS ============ -->
+    <section class="bg-forest-950 py-24 sm:py-32" aria-label="Bewertungen unserer Gäste">
+      <div class="mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-10">
+        <div class="flex flex-wrap items-end justify-between gap-8" data-animate>
+          <div class="max-w-2xl">
+            <p class="font-body text-sm font-bold uppercase tracking-[0.22em] text-accent">Google-Rezensionen</p>
+            <h2 class="mt-4 font-display text-5xl tracking-wide text-cream sm:text-6xl">Das sagen unsere Gäste</h2>
+          </div>
+          <div class="flex gap-3">
+            <button type="button" id="review-prev"
+                    class="inline-flex h-12 w-12 items-center justify-center rounded-full border border-cream/25 text-cream transition-all duration-200 hover:border-accent hover:text-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                    aria-label="Vorherige Bewertung">
+              <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+              </svg>
+            </button>
+            <button type="button" id="review-next"
+                    class="inline-flex h-12 w-12 items-center justify-center rounded-full border border-cream/25 text-cream transition-all duration-200 hover:border-accent hover:text-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                    aria-label="Nächste Bewertung">
+              <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!--
+          PLATZHALTER-REZENSIONEN: Vor Launch durch echte Google-Rezensionen ersetzen
+          (Text, Name, Datum wortgleich übernehmen — keine erfundenen Bewertungen veröffentlichen!)
+        -->
+        <div id="review-track" class="review-track mt-12 flex snap-x gap-7 overflow-x-auto pb-4" data-animate>
+
+          <figure class="review-card w-[85%] shrink-0 rounded-3xl bg-forest-900 p-9 ring-1 ring-cream/10 sm:w-[46%] lg:w-[31%]">
+            <div class="flex gap-1 text-accent" aria-label="5 von 5 Sternen">
+              <svg class="h-5 w-5 fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.42 4.4a1 1 0 00.95.68h4.62c.97 0 1.37 1.24.59 1.81l-3.74 2.72a1 1 0 00-.36 1.12l1.43 4.4c.3.92-.76 1.68-1.54 1.11l-3.73-2.72a1 1 0 00-1.18 0l-3.74 2.72c-.78.57-1.83-.19-1.53-1.1l1.42-4.4a1 1 0 00-.36-1.13L1.46 9.82c-.78-.57-.38-1.81.6-1.81h4.61a1 1 0 00.95-.69l1.43-4.4z"/></svg>
+              <svg class="h-5 w-5 fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.42 4.4a1 1 0 00.95.68h4.62c.97 0 1.37 1.24.59 1.81l-3.74 2.72a1 1 0 00-.36 1.12l1.43 4.4c.3.92-.76 1.68-1.54 1.11l-3.73-2.72a1 1 0 00-1.18 0l-3.74 2.72c-.78.57-1.83-.19-1.53-1.1l1.42-4.4a1 1 0 00-.36-1.13L1.46 9.82c-.78-.57-.38-1.81.6-1.81h4.61a1 1 0 00.95-.69l1.43-4.4z"/></svg>
+              <svg class="h-5 w-5 fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.42 4.4a1 1 0 00.95.68h4.62c.97 0 1.37 1.24.59 1.81l-3.74 2.72a1 1 0 00-.36 1.12l1.43 4.4c.3.92-.76 1.68-1.54 1.11l-3.73-2.72a1 1 0 00-1.18 0l-3.74 2.72c-.78.57-1.83-.19-1.53-1.1l1.42-4.4a1 1 0 00-.36-1.13L1.46 9.82c-.78-.57-.38-1.81.6-1.81h4.61a1 1 0 00.95-.69l1.43-4.4z"/></svg>
+              <svg class="h-5 w-5 fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.42 4.4a1 1 0 00.95.68h4.62c.97 0 1.37 1.24.59 1.81l-3.74 2.72a1 1 0 00-.36 1.12l1.43 4.4c.3.92-.76 1.68-1.54 1.11l-3.73-2.72a1 1 0 00-1.18 0l-3.74 2.72c-.78.57-1.83-.19-1.53-1.1l1.42-4.4a1 1 0 00-.36-1.13L1.46 9.82c-.78-.57-.38-1.81.6-1.81h4.61a1 1 0 00.95-.69l1.43-4.4z"/></svg>
+              <svg class="h-5 w-5 fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.42 4.4a1 1 0 00.95.68h4.62c.97 0 1.37 1.24.59 1.81l-3.74 2.72a1 1 0 00-.36 1.12l1.43 4.4c.3.92-.76 1.68-1.54 1.11l-3.73-2.72a1 1 0 00-1.18 0l-3.74 2.72c-.78.57-1.83-.19-1.53-1.1l1.42-4.4a1 1 0 00-.36-1.13L1.46 9.82c-.78-.57-.38-1.81.6-1.81h4.61a1 1 0 00.95-.69l1.43-4.4z"/></svg>
+            </div>
+            <blockquote class="mt-5 text-base leading-relaxed text-cream/85">
+              <p>„[Platzhalter — echte Google-Rezension einfügen]"</p>
+            </blockquote>
+            <figcaption class="mt-5 text-sm font-semibold text-cream/50">— Name, Monat Jahr</figcaption>
+          </figure>
+
+          <figure class="review-card w-[85%] shrink-0 rounded-3xl bg-forest-900 p-9 ring-1 ring-cream/10 sm:w-[46%] lg:w-[31%]">
+            <div class="flex gap-1 text-accent" aria-label="5 von 5 Sternen">
+              <svg class="h-5 w-5 fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.42 4.4a1 1 0 00.95.68h4.62c.97 0 1.37 1.24.59 1.81l-3.74 2.72a1 1 0 00-.36 1.12l1.43 4.4c.3.92-.76 1.68-1.54 1.11l-3.73-2.72a1 1 0 00-1.18 0l-3.74 2.72c-.78.57-1.83-.19-1.53-1.1l1.42-4.4a1 1 0 00-.36-1.13L1.46 9.82c-.78-.57-.38-1.81.6-1.81h4.61a1 1 0 00.95-.69l1.43-4.4z"/></svg>
+              <svg class="h-5 w-5 fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.42 4.4a1 1 0 00.95.68h4.62c.97 0 1.37 1.24.59 1.81l-3.74 2.72a1 1 0 00-.36 1.12l1.43 4.4c.3.92-.76 1.68-1.54 1.11l-3.73-2.72a1 1 0 00-1.18 0l-3.74 2.72c-.78.57-1.83-.19-1.53-1.1l1.42-4.4a1 1 0 00-.36-1.13L1.46 9.82c-.78-.57-.38-1.81.6-1.81h4.61a1 1 0 00.95-.69l1.43-4.4z"/></svg>
+              <svg class="h-5 w-5 fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.42 4.4a1 1 0 00.95.68h4.62c.97 0 1.37 1.24.59 1.81l-3.74 2.72a1 1 0 00-.36 1.12l1.43 4.4c.3.92-.76 1.68-1.54 1.11l-3.73-2.72a1 1 0 00-1.18 0l-3.74 2.72c-.78.57-1.83-.19-1.53-1.1l1.42-4.4a1 1 0 00-.36-1.13L1.46 9.82c-.78-.57-.38-1.81.6-1.81h4.61a1 1 0 00.95-.69l1.43-4.4z"/></svg>
+              <svg class="h-5 w-5 fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.42 4.4a1 1 0 00.95.68h4.62c.97 0 1.37 1.24.59 1.81l-3.74 2.72a1 1 0 00-.36 1.12l1.43 4.4c.3.92-.76 1.68-1.54 1.11l-3.73-2.72a1 1 0 00-1.18 0l-3.74 2.72c-.78.57-1.83-.19-1.53-1.1l1.42-4.4a1 1 0 00-.36-1.13L1.46 9.82c-.78-.57-.38-1.81.6-1.81h4.61a1 1 0 00.95-.69l1.43-4.4z"/></svg>
+              <svg class="h-5 w-5 fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.42 4.4a1 1 0 00.95.68h4.62c.97 0 1.37 1.24.59 1.81l-3.74 2.72a1 1 0 00-.36 1.12l1.43 4.4c.3.92-.76 1.68-1.54 1.11l-3.73-2.72a1 1 0 00-1.18 0l-3.74 2.72c-.78.57-1.83-.19-1.53-1.1l1.42-4.4a1 1 0 00-.36-1.13L1.46 9.82c-.78-.57-.38-1.81.6-1.81h4.61a1 1 0 00.95-.69l1.43-4.4z"/></svg>
+            </div>
+            <blockquote class="mt-5 text-base leading-relaxed text-cream/85">
+              <p>„[Platzhalter — echte Google-Rezension einfügen]"</p>
+            </blockquote>
+            <figcaption class="mt-5 text-sm font-semibold text-cream/50">— Name, Monat Jahr</figcaption>
+          </figure>
+
+          <figure class="review-card w-[85%] shrink-0 rounded-3xl bg-forest-900 p-9 ring-1 ring-cream/10 sm:w-[46%] lg:w-[31%]">
+            <div class="flex gap-1 text-accent" aria-label="5 von 5 Sternen">
+              <svg class="h-5 w-5 fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.42 4.4a1 1 0 00.95.68h4.62c.97 0 1.37 1.24.59 1.81l-3.74 2.72a1 1 0 00-.36 1.12l1.43 4.4c.3.92-.76 1.68-1.54 1.11l-3.73-2.72a1 1 0 00-1.18 0l-3.74 2.72c-.78.57-1.83-.19-1.53-1.1l1.42-4.4a1 1 0 00-.36-1.13L1.46 9.82c-.78-.57-.38-1.81.6-1.81h4.61a1 1 0 00.95-.69l1.43-4.4z"/></svg>
+              <svg class="h-5 w-5 fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.42 4.4a1 1 0 00.95.68h4.62c.97 0 1.37 1.24.59 1.81l-3.74 2.72a1 1 0 00-.36 1.12l1.43 4.4c.3.92-.76 1.68-1.54 1.11l-3.73-2.72a1 1 0 00-1.18 0l-3.74 2.72c-.78.57-1.83-.19-1.53-1.1l1.42-4.4a1 1 0 00-.36-1.13L1.46 9.82c-.78-.57-.38-1.81.6-1.81h4.61a1 1 0 00.95-.69l1.43-4.4z"/></svg>
+              <svg class="h-5 w-5 fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.42 4.4a1 1 0 00.95.68h4.62c.97 0 1.37 1.24.59 1.81l-3.74 2.72a1 1 0 00-.36 1.12l1.43 4.4c.3.92-.76 1.68-1.54 1.11l-3.73-2.72a1 1 0 00-1.18 0l-3.74 2.72c-.78.57-1.83-.19-1.53-1.1l1.42-4.4a1 1 0 00-.36-1.13L1.46 9.82c-.78-.57-.38-1.81.6-1.81h4.61a1 1 0 00.95-.69l1.43-4.4z"/></svg>
+              <svg class="h-5 w-5 fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.42 4.4a1 1 0 00.95.68h4.62c.97 0 1.37 1.24.59 1.81l-3.74 2.72a1 1 0 00-.36 1.12l1.43 4.4c.3.92-.76 1.68-1.54 1.11l-3.73-2.72a1 1 0 00-1.18 0l-3.74 2.72c-.78.57-1.83-.19-1.53-1.1l1.42-4.4a1 1 0 00-.36-1.13L1.46 9.82c-.78-.57-.38-1.81.6-1.81h4.61a1 1 0 00.95-.69l1.43-4.4z"/></svg>
+              <svg class="h-5 w-5 fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.42 4.4a1 1 0 00.95.68h4.62c.97 0 1.37 1.24.59 1.81l-3.74 2.72a1 1 0 00-.36 1.12l1.43 4.4c.3.92-.76 1.68-1.54 1.11l-3.73-2.72a1 1 0 00-1.18 0l-3.74 2.72c-.78.57-1.83-.19-1.53-1.1l1.42-4.4a1 1 0 00-.36-1.13L1.46 9.82c-.78-.57-.38-1.81.6-1.81h4.61a1 1 0 00.95-.69l1.43-4.4z"/></svg>
+            </div>
+            <blockquote class="mt-5 text-base leading-relaxed text-cream/85">
+              <p>„[Platzhalter — echte Google-Rezension einfügen]"</p>
+            </blockquote>
+            <figcaption class="mt-5 text-sm font-semibold text-cream/50">— Name, Monat Jahr</figcaption>
+          </figure>
+
+          <figure class="review-card w-[85%] shrink-0 rounded-3xl bg-forest-900 p-9 ring-1 ring-cream/10 sm:w-[46%] lg:w-[31%]">
+            <div class="flex gap-1 text-accent" aria-label="5 von 5 Sternen">
+              <svg class="h-5 w-5 fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.42 4.4a1 1 0 00.95.68h4.62c.97 0 1.37 1.24.59 1.81l-3.74 2.72a1 1 0 00-.36 1.12l1.43 4.4c.3.92-.76 1.68-1.54 1.11l-3.73-2.72a1 1 0 00-1.18 0l-3.74 2.72c-.78.57-1.83-.19-1.53-1.1l1.42-4.4a1 1 0 00-.36-1.13L1.46 9.82c-.78-.57-.38-1.81.6-1.81h4.61a1 1 0 00.95-.69l1.43-4.4z"/></svg>
+              <svg class="h-5 w-5 fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.42 4.4a1 1 0 00.95.68h4.62c.97 0 1.37 1.24.59 1.81l-3.74 2.72a1 1 0 00-.36 1.12l1.43 4.4c.3.92-.76 1.68-1.54 1.11l-3.73-2.72a1 1 0 00-1.18 0l-3.74 2.72c-.78.57-1.83-.19-1.53-1.1l1.42-4.4a1 1 0 00-.36-1.13L1.46 9.82c-.78-.57-.38-1.81.6-1.81h4.61a1 1 0 00.95-.69l1.43-4.4z"/></svg>
+              <svg class="h-5 w-5 fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.42 4.4a1 1 0 00.95.68h4.62c.97 0 1.37 1.24.59 1.81l-3.74 2.72a1 1 0 00-.36 1.12l1.43 4.4c.3.92-.76 1.68-1.54 1.11l-3.73-2.72a1 1 0 00-1.18 0l-3.74 2.72c-.78.57-1.83-.19-1.53-1.1l1.42-4.4a1 1 0 00-.36-1.13L1.46 9.82c-.78-.57-.38-1.81.6-1.81h4.61a1 1 0 00.95-.69l1.43-4.4z"/></svg>
+              <svg class="h-5 w-5 fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.42 4.4a1 1 0 00.95.68h4.62c.97 0 1.37 1.24.59 1.81l-3.74 2.72a1 1 0 00-.36 1.12l1.43 4.4c.3.92-.76 1.68-1.54 1.11l-3.73-2.72a1 1 0 00-1.18 0l-3.74 2.72c-.78.57-1.83-.19-1.53-1.1l1.42-4.4a1 1 0 00-.36-1.13L1.46 9.82c-.78-.57-.38-1.81.6-1.81h4.61a1 1 0 00.95-.69l1.43-4.4z"/></svg>
+              <svg class="h-5 w-5 fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.42 4.4a1 1 0 00.95.68h4.62c.97 0 1.37 1.24.59 1.81l-3.74 2.72a1 1 0 00-.36 1.12l1.43 4.4c.3.92-.76 1.68-1.54 1.11l-3.73-2.72a1 1 0 00-1.18 0l-3.74 2.72c-.78.57-1.83-.19-1.53-1.1l1.42-4.4a1 1 0 00-.36-1.13L1.46 9.82c-.78-.57-.38-1.81.6-1.81h4.61a1 1 0 00.95-.69l1.43-4.4z"/></svg>
+            </div>
+            <blockquote class="mt-5 text-base leading-relaxed text-cream/85">
+              <p>„[Platzhalter — echte Google-Rezension einfügen]"</p>
+            </blockquote>
+            <figcaption class="mt-5 text-sm font-semibold text-cream/50">— Name, Monat Jahr</figcaption>
+          </figure>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA-BAND ============ -->
+    <section class="relative isolate overflow-hidden bg-forest-900 py-28" aria-label="Buchungsanfrage stellen">
+      <div class="absolute inset-0 -z-10" aria-hidden="true">
+        <div class="absolute left-1/2 top-0 h-[500px] w-[900px] -translate-x-1/2 rounded-full bg-forest-700/30 blur-3xl"></div>
+        <svg class="absolute bottom-0 left-0 h-[35%] w-full opacity-30" preserveAspectRatio="none" viewBox="0 0 1200 200" aria-hidden="true">
+          <path fill="#0F2417" d="M0 200V110l24-16 20 26 24-44 22 34 18-22 28 38 24-56 26 42 20-26 28 46 22-36 24 50 28-62 24 46 20-28 28 40 26-50 22 36 24-24 28 48 20-40 26 52 24-60 28 46 22-30 26 42 20-22 28 36 26-48 24 40 22-26 28 44 24-54 26 38 20-24 28 46 22-34 26 48V200Z"/>
+        </svg>
+      </div>
+      <div class="mx-auto max-w-3xl px-4 text-center sm:px-6" data-animate>
+        <h2 class="font-display text-5xl tracking-wide text-cream sm:text-6xl">Bereit für dein Revier?</h2>
+        <p class="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-cream/75">
+          Schreib uns, wann ihr kommen wollt und was ihr vorhabt — wir melden uns persönlich mit einem konkreten Vorschlag.
+        </p>
+        <a href="kontakt.html"
+           class="group mt-10 inline-flex min-h-[52px] items-center justify-center gap-2 rounded-full bg-accent px-10 py-4 font-body text-base font-bold text-white shadow-xl shadow-accent/30 transition-all duration-200 hover:bg-accent-hover hover:shadow-2xl hover:shadow-accent/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-forest-900 focus-visible:ring-accent">
+          Buchungsanfrage stellen
+          <svg class="h-5 w-5 transition-transform duration-200 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+          </svg>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="bg-forest-950 text-cream/75">
+    <div class="mx-auto grid max-w-[90rem] grid-cols-1 gap-12 px-4 py-20 sm:grid-cols-2 sm:px-6 lg:grid-cols-4 lg:px-10">
+      <div>
+        <span class="inline-flex items-center rounded-2xl bg-cream px-4 py-3">
+          <img src="assets/images/logo-bjorkfors.png" alt="Björkfors Outdoor-Adventures — Bed &amp; Breakfast" class="h-14 w-auto">
+        </span>
+        <p class="mt-5 text-sm leading-relaxed">
+          Sportfischen, Bootsvermietung und Wildlife-Erlebnisse für Erwachsenengruppen — mitten in der schwedischen Natur.
+        </p>
+      </div>
+      <nav aria-label="Footer-Navigation">
+        <h2 class="font-display text-xl tracking-wide text-cream">Seiten</h2>
+        <ul class="mt-5 space-y-2.5 text-sm">
+          <li><a href="index.html" class="transition-colors hover:text-accent">Startseite</a></li>
+          <li><a href="sportfischen.html" class="transition-colors hover:text-accent">Sportfischen</a></li>
+          <li><a href="aktivitaeten.html" class="transition-colors hover:text-accent">Sonstige Aktivitäten</a></li>
+          <li><a href="umgebung.html" class="transition-colors hover:text-accent">Umgebung</a></li>
+          <li><a href="hausregeln.html" class="transition-colors hover:text-accent">Hausregeln &amp; AGB</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h2 class="font-display text-xl tracking-wide text-cream">Kontakt</h2>
+        <ul class="mt-5 space-y-2.5 text-sm">
+          <li>Gamla landsvägen 13<br>59046 Rimforsa (Björkfors), Schweden</li>
+          <li><a href="tel:+46732390993" class="transition-colors hover:text-accent">+46 (0) 73-239 09 93</a></li>
+          <li><a href="tel:+46732391006" class="transition-colors hover:text-accent">+46 (0) 73-239 10 06</a></li>
+          <li><a href="mailto:info@bjorkfors-outdoor.se" class="transition-colors hover:text-accent">info@bjorkfors-outdoor.se</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="font-display text-xl tracking-wide text-cream">Sprachen</h2>
+        <ul class="mt-5 space-y-2.5 text-sm">
+          <li><a href="index.html" class="text-accent" aria-current="true">Deutsch</a></li>
+          <li><a href="nl/index.html" class="transition-colors hover:text-accent">Nederlands</a></li>
+          <li><a href="en/index.html" class="transition-colors hover:text-accent">English</a></li>
+          <li><a href="sv/index.html" class="transition-colors hover:text-accent">Svenska</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-cream/10">
+      <div class="mx-auto flex max-w-[90rem] flex-wrap items-center justify-between gap-4 px-4 py-6 text-xs text-cream/45 sm:px-6 lg:px-10">
+        <p>© 2026 Björkfors Outdoor Adventures. Alle Rechte vorbehalten.</p>
+        <a href="hausregeln.html#impressum" class="transition-colors hover:text-accent">Impressum</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
