@@ -4,7 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Björkfors Outdoor — Sportvissen &amp; bootverhuur in Zweden</title>
-  <meta name="description" content="Privé vis- en natuurbelevenissen voor kleine groepen: bootverhuur met vaste prijzen, wildlifesafari's en stille meren in Östergötland, Zweden.">
+  <meta name="description" content="Privé vis- en natuurbelevenissen voor kleine groepen: bootverhuur met vaste prijzen, wildlifesafari's en stille meren in Östergötland, Zweden."
+  <!-- SEO: Canonical, Sprachversionen, Social Cards -->
+  <link rel="canonical" href="https://www.bjorkfors-outdoor.se/">
+  <link rel="alternate" hreflang="nl" href="https://www.bjorkfors-outdoor.se/">
+  <link rel="alternate" hreflang="de" href="https://www.bjorkfors-outdoor.se/de/">
+  <link rel="alternate" hreflang="en" href="https://www.bjorkfors-outdoor.se/en/">
+  <link rel="alternate" hreflang="sv" href="https://www.bjorkfors-outdoor.se/sv/">
+  <link rel="alternate" hreflang="x-default" href="https://www.bjorkfors-outdoor.se/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Björkfors Outdoor Adventures">
+  <meta property="og:title" content="Björkfors Outdoor — Sportvissen &amp; bootverhuur in Zweden">
+  <meta property="og:description" content="Privé vis- en natuurbelevenissen voor kleine groepen: bootverhuur met vaste prijzen, wildlifesafari's en stille meren in Östergötland, Zweden.">
+  <meta property="og:url" content="https://www.bjorkfors-outdoor.se/">
+  <meta property="og:image" content="https://www.bjorkfors-outdoor.se/assets/images/logo-bjorkfors.png">
+  <meta property="og:locale" content="nl_NL">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -99,57 +117,42 @@
     }
     #lang-menu:not(.hidden) { animation: langFadeIn 0.15s ease-out; }
 
-    /* ---- Over-ons-sectie (geport uit React-component about-us-section.tsx) ---- */
-    .grow-bar {
-      width: 0;
-      transition: width 1s cubic-bezier(0.22, 1, 0.36, 1) 0.4s;
+    /* ---- Slideshow: zachte overvloeiing elke 5 s (JS onderaan) ---- */
+    .fade-slide {
+      position: absolute;
+      inset: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 1.2s ease;
     }
-    [data-animate].is-visible .grow-bar { width: 6rem; }
+    .fade-slide.is-active { opacity: 1; }
 
-    @keyframes floatDot {
-      0%, 100% { transform: translateY(0); opacity: 0.5; }
-      50% { transform: translateY(-14px); opacity: 1; }
-    }
-    @keyframes floatDotDown {
-      0%, 100% { transform: translateY(0); opacity: 0.5; }
-      50% { transform: translateY(16px); opacity: 1; }
-    }
-    @keyframes driftBlob {
-      0%, 100% { transform: translateY(0) rotate(0deg); }
-      50% { transform: translateY(-40px) rotate(12deg); }
-    }
-    @keyframes driftBlobDown {
-      0%, 100% { transform: translateY(0) rotate(0deg); }
-      50% { transform: translateY(40px) rotate(-12deg); }
-    }
-    .float-dot { animation: floatDot 3s ease-in-out infinite; }
-    .float-dot-down { animation: floatDotDown 4s ease-in-out infinite 1s; }
-    .drift-blob { animation: driftBlob 14s ease-in-out infinite; }
-    .drift-blob-down { animation: driftBlobDown 16s ease-in-out infinite; }
-
-    .service-item { transition: transform 0.2s ease; }
-    .service-item:hover { transform: translateY(-5px); }
-    .service-item .service-icon { transition: background-color 0.3s ease; }
-    .service-item:hover .service-icon {
-      background-color: rgba(234, 88, 12, 0.2);
-      animation: wiggle 0.5s ease;
-    }
-    @keyframes wiggle {
-      0% { transform: rotate(0); }
-      25% { transform: rotate(-10deg); }
-      50% { transform: rotate(10deg); }
-      75% { transform: rotate(-5deg); }
-      100% { transform: rotate(0); }
-    }
-    .service-item .service-title { transition: color 0.3s ease; }
-    .service-item:hover .service-title { color: #801818; }
-    .service-item .service-more { opacity: 0; transition: opacity 0.3s ease; }
-    .service-item:hover .service-more,
-    .service-item:focus-within .service-more { opacity: 1; }
 
     .about-photo { transition: transform 0.3s ease; }
     .about-photo:hover { transform: scale(1.03); }
   </style>
+  <!-- Strukturierte Daten: BedAndBreakfast (TODO: "geo" mit Koordinaten des Hauses ergänzen, sobald sie vorliegen) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BedAndBreakfast",
+    "name": "Björkfors Outdoor Adventures",
+    "url": "https://www.bjorkfors-outdoor.se/",
+    "image": "https://www.bjorkfors-outdoor.se/assets/images/logo-bjorkfors.png",
+    "telephone": "+46732390993",
+    "email": "info@bjorkfors-outdoor.se",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Gamla landsvägen 13",
+      "postalCode": "59046",
+      "addressLocality": "Rimforsa",
+      "addressRegion": "Östergötland",
+      "addressCountry": "SE"
+    }
+  }
+  </script>
 </head>
 <body class="font-body bg-cream text-forest-950 antialiased">
 
@@ -243,11 +246,18 @@
     <!-- ============ HERO ============ -->
     <section class="relative isolate flex min-h-[94vh] items-end overflow-hidden" aria-label="Welkom bij Björkfors Outdoor">
 
-      <img src="assets/images/hero-lake-fog.jpg"
-           alt="Mist boven een stil meer in de Zweedse wildernis bij Björkfors in het eerste ochtendlicht"
-           class="absolute inset-0 -z-10 h-full w-full object-cover"
-           fetchpriority="high"
-           onerror="this.remove()">
+      <!-- Hero-slideshow: wisselt elke 5 s. TODO: Unsplash-plaatshouders (beelden 2–5) vervangen door klantfoto's -->
+      <div class="absolute inset-0 -z-10" data-slideshow aria-hidden="true">
+        <img src="assets/images/hero-lake-fog.jpg"
+             alt=""
+             class="fade-slide is-active"
+             fetchpriority="high"
+             onerror="this.remove()">
+        <img src="https://images.unsplash.com/photo-1439066615861-d1af74d74000?q=80&w=1920&auto=format&fit=crop" alt="" class="fade-slide" loading="lazy" onerror="this.remove()">
+        <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=1920&auto=format&fit=crop" alt="" class="fade-slide" loading="lazy" onerror="this.remove()">
+        <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=1920&auto=format&fit=crop" alt="" class="fade-slide" loading="lazy" onerror="this.remove()">
+        <img src="https://images.unsplash.com/photo-1418065460487-3e41a6c84dc5?q=80&w=1920&auto=format&fit=crop" alt="" class="fade-slide" loading="lazy" onerror="this.remove()">
+      </div>
 
       <!-- SVG-decor als vormgegeven fallback -->
       <div class="absolute inset-0 -z-20 bg-gradient-to-b from-forest-800 via-forest-900 to-forest-950" aria-hidden="true">
@@ -268,7 +278,7 @@
           Östergötland, Zweden
         </p>
         <h1 class="mt-6 max-w-4xl animate-fade-in-up font-display text-5xl font-light leading-[1.05] text-cream sm:text-7xl lg:text-8xl opacity-0 [animation-delay:0.15s] [animation-fill-mode:forwards]">
-          De laatste <em class="font-normal italic text-cream">echte</em> stilte.
+          Jouw <em class="font-normal italic text-cream">toevluchtsoord</em> in de Zweedse natuur.
         </h1>
         <p class="mt-8 max-w-xl animate-fade-in-up font-body text-lg font-normal leading-relaxed text-cream/80 opacity-0 [animation-delay:0.3s] [animation-fill-mode:forwards]">
           Privé vis- en natuurbelevenissen voor kleine groepen — met eigen boten op stille meren, ver weg van alles wat naar toerisme ruikt.
@@ -295,8 +305,20 @@
           <span>Kajak &amp; kano</span><span class="text-accent">✦</span>
           <span>Paddenstoelen zoeken</span><span class="text-accent">✦</span>
           <span>IJsvissen</span><span class="text-accent">✦</span>
+          <span>Sportvissen</span><span class="text-accent">✦</span>
+          <span>Bootverhuur</span><span class="text-accent">✦</span>
+          <span>Wildlifesafari</span><span class="text-accent">✦</span>
+          <span>Kajak &amp; kano</span><span class="text-accent">✦</span>
+          <span>Paddenstoelen zoeken</span><span class="text-accent">✦</span>
+          <span>IJsvissen</span><span class="text-accent">✦</span>
         </div>
         <div class="flex shrink-0 items-center gap-10 pr-10 font-body text-xs font-medium uppercase tracking-[0.3em] text-forest-950/50">
+          <span>Sportvissen</span><span class="text-accent">✦</span>
+          <span>Bootverhuur</span><span class="text-accent">✦</span>
+          <span>Wildlifesafari</span><span class="text-accent">✦</span>
+          <span>Kajak &amp; kano</span><span class="text-accent">✦</span>
+          <span>Paddenstoelen zoeken</span><span class="text-accent">✦</span>
+          <span>IJsvissen</span><span class="text-accent">✦</span>
           <span>Sportvissen</span><span class="text-accent">✦</span>
           <span>Bootverhuur</span><span class="text-accent">✦</span>
           <span>Wildlifesafari</span><span class="text-accent">✦</span>
@@ -308,7 +330,7 @@
     </section>
 
     <!-- ============ WIJ DOEN HET ANDERS ============ -->
-    <section class="bg-cream py-28 sm:py-36" aria-label="Waarom Björkfors Outdoor">
+    <section id="ueber-uns" class="bg-cream py-28 sm:py-36" aria-label="Waarom Björkfors Outdoor — Over ons">
       <div class="mx-auto max-w-7xl px-5 sm:px-8">
         <div class="grid grid-cols-1 gap-16 lg:grid-cols-12">
 
@@ -318,7 +340,26 @@
               Wij doen het <em class="font-normal italic">anders</em>.
             </h2>
             <p class="mt-8 max-w-md font-body text-lg leading-relaxed text-forest-950/65">
-              Geen massatoerisme, geen verborgen kosten, geen vreemden in de boot. Alleen jullie, het water en gastheren die zelf vissen.
+              Geen massatoerisme, geen verborgen kosten — en volledige privacy op het water. Alleen jullie, het meer en gastheren die zelf vissen.
+            </p>
+
+            <!-- Over ons: foto van de gastheren + tekst (foto & definitieve tekst volgen van de klant) -->
+            <figure class="mt-12 max-w-md" data-animate>
+              <div class="overflow-hidden rounded-2xl bg-forest-800">
+                <!-- TODO: plaatshouder vervangen door echte foto van de gastheren (bijv. assets/images/betreiber.jpg) -->
+                <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=800&auto=format&fit=crop"
+                     alt="De gastheren van Björkfors Outdoor Adventures"
+                     class="aspect-[4/3] w-full object-cover" loading="lazy" onerror="this.remove()">
+              </div>
+              <figcaption class="mt-4 font-body text-xs font-medium uppercase tracking-[0.2em] text-forest-950/50">
+                Jullie gastheren in Björkfors
+              </figcaption>
+            </figure>
+            <p class="mt-6 max-w-md font-body text-sm leading-relaxed text-forest-950/65">
+              <!-- TODO: definitieve over-ons-tekst volgt van de klant -->
+              Wij zijn gastheren uit passie — en vissers uit overtuiging. In Björkfors, tussen de meren
+              Björkern en Åsunden, runnen we een bed &amp; breakfast voor groepen volwassenen die echte natuur
+              zoeken in plaats van een programma van de plank. Persoonlijk, ongecompliceerd, met heldere vaste prijzen.
             </p>
           </div>
 
@@ -327,9 +368,9 @@
               <li class="grid grid-cols-12 gap-6 py-10" data-animate>
                 <span class="col-span-2 font-display text-xl font-light text-forest-950/35 sm:text-2xl">01</span>
                 <div class="col-span-10">
-                  <h3 class="font-display text-2xl font-normal text-forest-950 sm:text-3xl">Geen vreemden aan boord</h3>
+                  <h3 class="font-display text-2xl font-normal text-forest-950 sm:text-3xl">Volledige privacy aan boord</h3>
                   <p class="mt-3 max-w-lg font-body leading-relaxed text-forest-950/65">
-                    Elke boot is die dag helemaal van jullie. Jullie bepalen tempo, stek en stilte — wij leveren kennis van het water, als jullie dat willen.
+                    Elke boot is op jullie dag helemaal voor jullie gereserveerd — jullie genieten van het water in eigen kring en bepalen zelf wanneer het losgaat, waar er gevist wordt en hoe lang. En willen jullie tips over het viswater, dan delen we onze kennis graag — uit de eerste hand.
                   </p>
                 </div>
               </li>
@@ -380,196 +421,75 @@
       </div>
     </section>
 
-    <!-- ============ OVER ONS ============ -->
-    <section id="ueber-uns" class="relative w-full overflow-hidden bg-gradient-to-b from-cream to-white px-4 py-24 text-forest-950 sm:py-32" aria-label="Over Björkfors Outdoor">
-
-      <!-- Decoratieve achtergrondelementen -->
-      <div class="drift-blob absolute left-10 top-20 h-64 w-64 rounded-full bg-accent/5 blur-3xl" aria-hidden="true"></div>
-      <div class="drift-blob-down absolute bottom-20 right-10 h-80 w-80 rounded-full bg-sage/10 blur-3xl" aria-hidden="true"></div>
-      <div class="float-dot absolute left-1/4 top-1/2 h-4 w-4 rounded-full bg-accent/30" aria-hidden="true"></div>
-      <div class="float-dot-down absolute bottom-1/3 right-1/4 h-6 w-6 rounded-full bg-sage/40" aria-hidden="true"></div>
-
-      <div class="relative z-10 mx-auto max-w-6xl">
-
-        <div class="mb-6 flex flex-col items-center" data-animate>
-          <span class="mb-2 flex items-center gap-2 font-body text-xs font-medium uppercase tracking-[0.3em] text-accent">
-            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>
-            Ons verhaal
-          </span>
-          <h2 class="mb-4 text-center font-display text-4xl font-light text-forest-950 md:text-5xl">Over <em class="font-normal italic">ons</em></h2>
-          <div class="grow-bar h-1 bg-accent"></div>
-        </div>
-
-        <p class="mx-auto mb-16 max-w-2xl text-center font-body leading-relaxed text-forest-950/80" data-animate>
-          Wij zijn gastheren uit passie — en vissers uit overtuiging. In Björkfors, tussen de meren
-          Björkern en Åsunden, runnen we een bed &amp; breakfast voor groepen volwassenen die echte natuur
-          zoeken in plaats van een programma van de plank. Persoonlijk, ongecompliceerd, met heldere vaste prijzen.
-        </p>
-
-        <div class="relative grid grid-cols-1 gap-8 md:grid-cols-3">
-
-          <!-- Linkerkolom -->
-          <div class="space-y-16">
-            <div class="service-item group flex flex-col" data-animate>
-              <div class="mb-3 flex items-center gap-3">
-                <div class="service-icon relative rounded-lg bg-accent/10 p-3 text-accent">
-                  <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
-                  <svg class="absolute -right-1 -top-1 h-4 w-4 text-sage" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg>
-                </div>
-                <h3 class="service-title font-display text-xl font-medium text-forest-950">Bed &amp; Breakfast</h3>
-              </div>
-              <p class="pl-12 font-body text-sm leading-relaxed text-forest-950/80">
-                Ons B&amp;B aan de Gamla landsvägen is basiskamp in plaats van hotel: knusse kamers,
-                gastenkantine, vuurplaats — en 's ochtends een ontbijt waar je een lange dag buiten op teert.
-              </p>
-              <div class="service-more mt-3 flex items-center pl-12 text-xs font-medium text-accent">
-                <a href="preisliste.html" class="flex items-center gap-1">
-                  Meer weten
-                  <svg class="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                </a>
-              </div>
-            </div>
-
-            <div class="service-item group flex flex-col" data-animate>
-              <div class="mb-3 flex items-center gap-3">
-                <div class="service-icon relative rounded-lg bg-accent/10 p-3 text-accent">
-                  <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 12c.94-3.46 4.94-6 8.5-6 3.56 0 6.06 2.54 7 6-.94 3.47-3.44 6-7 6s-7.56-2.53-8.5-6Z"/><path d="M18 12v.5"/><path d="M16 17.93a9.77 9.77 0 0 1 0-11.86"/><path d="M7 10.67C7 8 5.58 5.97 2.73 5.5c-1 1.5-1 5 .23 6.5-1.24 1.5-1.24 5-.23 6.5C5.58 18.03 7 16 7 13.33"/></svg>
-                  <svg class="absolute -right-1 -top-1 h-4 w-4 text-sage" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg>
-                </div>
-                <h3 class="service-title font-display text-xl font-medium text-forest-950">Sportvissen</h3>
-              </div>
-              <p class="pl-12 font-body text-sm leading-relaxed text-forest-950/80">
-                Snoek, baars en snoekbaars op twee meren direct voor de deur. Visvergunningen krijgen jullie bij ons,
-                desgewenst met een ervaren visgids die de randen kent die op geen enkele kaart staan.
-              </p>
-              <div class="service-more mt-3 flex items-center pl-12 text-xs font-medium text-accent">
-                <a href="sportfischen.html" class="flex items-center gap-1">
-                  Meer weten
-                  <svg class="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                </a>
-              </div>
-            </div>
-
-            <div class="service-item group flex flex-col" data-animate>
-              <div class="mb-3 flex items-center gap-3">
-                <div class="service-icon relative rounded-lg bg-accent/10 p-3 text-accent">
-                  <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22V8"/><path d="M5 12H2a10 10 0 0 0 20 0h-3"/><circle cx="12" cy="5" r="3"/></svg>
-                  <svg class="absolute -right-1 -top-1 h-4 w-4 text-sage" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
-                </div>
-                <h3 class="service-title font-display text-xl font-medium text-forest-950">Botenvloot</h3>
-              </div>
-              <p class="pl-12 font-body text-sm leading-relaxed text-forest-950/80">
-                Twee volledig uitgeruste QWEST RF 500's met 20 pk-motor en Garmin-fishfinder plus een wendbare
-                Rana 14 — startklaar aan de eigen steiger, 500 meter van het huis.
-              </p>
-              <div class="service-more mt-3 flex items-center pl-12 text-xs font-medium text-accent">
-                <a href="sportfischen.html" class="flex items-center gap-1">
-                  Meer weten
-                  <svg class="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Beeld in het midden -->
-          <div class="order-first mb-8 flex items-center justify-center md:order-none md:mb-0">
-            <div class="relative w-full max-w-xs" data-animate>
-              <div class="about-photo relative overflow-hidden rounded-md shadow-xl">
-                <img src="https://images.unsplash.com/photo-1439066615861-d1af74d74000?q=80&w=1200&auto=format&fit=crop"
-                     alt="Rustig meer met houten steiger in de avondschemering"
-                     class="h-full w-full object-cover"
-                     loading="lazy">
-                <div class="absolute inset-0 flex items-end justify-center bg-gradient-to-t from-forest-950/60 to-transparent p-4">
-                  <a href="aktivitaeten.html"
-                     class="flex items-center gap-2 rounded-full bg-white px-4 py-2 font-body text-sm font-medium text-forest-950 transition-transform duration-200 hover:scale-105">
-                    Onze activiteiten
-                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                  </a>
-                </div>
-              </div>
-              <div class="absolute inset-0 z-[-1] -m-3 rounded-md border-4 border-sage" aria-hidden="true"></div>
-
-              <div class="drift-blob absolute -right-8 -top-4 h-16 w-16 rounded-full bg-accent/10" aria-hidden="true"></div>
-              <div class="drift-blob-down absolute -bottom-6 -left-10 h-20 w-20 rounded-full bg-sage/20" aria-hidden="true"></div>
-              <div class="float-dot absolute -top-10 left-1/2 h-3 w-3 -translate-x-1/2 rounded-full bg-accent" aria-hidden="true"></div>
-              <div class="float-dot-down absolute -bottom-12 left-1/2 h-2 w-2 -translate-x-1/2 rounded-full bg-sage" aria-hidden="true"></div>
-            </div>
-          </div>
-
-          <!-- Rechterkolom -->
-          <div class="space-y-16">
-            <div class="service-item group flex flex-col" data-animate>
-              <div class="mb-3 flex items-center gap-3">
-                <div class="service-icon relative rounded-lg bg-accent/10 p-3 text-accent">
-                  <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>
-                  <svg class="absolute -right-1 -top-1 h-4 w-4 text-sage" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg>
-                </div>
-                <h3 class="service-title font-display text-xl font-medium text-forest-950">Maaltijden</h3>
-              </div>
-              <p class="pl-12 font-body text-sm leading-relaxed text-forest-950/80">
-                Ontbijtbuffet voor het afvaren, lunchpakket mee het water op en na terugkomst een
-                warme maaltijd in de gastenkantine — bij het all-inpakket zit alles erbij.
-              </p>
-              <div class="service-more mt-3 flex items-center pl-12 text-xs font-medium text-accent">
-                <a href="preisliste.html" class="flex items-center gap-1">
-                  Meer weten
-                  <svg class="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                </a>
-              </div>
-            </div>
-
-            <div class="service-item group flex flex-col" data-animate>
-              <div class="mb-3 flex items-center gap-3">
-                <div class="service-icon relative rounded-lg bg-accent/10 p-3 text-accent">
-                  <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 10v.2A3 3 0 0 1 8.9 16H5a3 3 0 0 1-1-5.8V10a3 3 0 0 1 6 0Z"/><path d="M7 16v6"/><path d="M13 19v3"/><path d="M12 19h8.3a1 1 0 0 0 .7-1.7L18 14h.3a1 1 0 0 0 .7-1.7L16 9h.2a1 1 0 0 0 .8-1.7L13 3l-1.4 1.5"/></svg>
-                  <svg class="absolute -right-1 -top-1 h-4 w-4 text-sage" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg>
-                </div>
-                <h3 class="service-title font-display text-xl font-medium text-forest-950">Natuurbelevenissen</h3>
-              </div>
-              <p class="pl-12 font-body text-sm leading-relaxed text-forest-950/80">
-                Kano, kajak en sup in de zomer — schaatsen, loipes en ijsvissen in de winter. Daarbij
-                wildlifesafari's en uitstapjes in een omgeving die je anders alleen uit films kent.
-              </p>
-              <div class="service-more mt-3 flex items-center pl-12 text-xs font-medium text-accent">
-                <a href="aktivitaeten.html" class="flex items-center gap-1">
-                  Meer weten
-                  <svg class="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                </a>
-              </div>
-            </div>
-
-            <div class="service-item group flex flex-col" data-animate>
-              <div class="mb-3 flex items-center gap-3">
-                <div class="service-icon relative rounded-lg bg-accent/10 p-3 text-accent">
-                  <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                  <svg class="absolute -right-1 -top-1 h-4 w-4 text-sage" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
-                </div>
-                <h3 class="service-title font-display text-xl font-medium text-forest-950">Persoonlijk contact</h3>
-              </div>
-              <p class="pl-12 font-body text-sm leading-relaxed text-forest-950/80">
-                Bij ons boeken jullie niet via een callcenter. Wij wonen hier, wij vissen hier — en we
-                antwoorden persoonlijk met een concreet voorstel inclusief vaste prijs.
-              </p>
-              <div class="service-more mt-3 flex items-center pl-12 text-xs font-medium text-accent">
-                <a href="kontakt.html" class="flex items-center gap-1">
-                  Meer weten
-                  <svg class="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ============ AANBOD — editorial, alternerend ============ -->
+    <!-- ============ HOOFDPAGINA-TEASERS — editorial, alternerend, klikbaar ============ -->
     <section class="bg-cream py-28 sm:py-36" aria-label="Ons aanbod">
       <div class="mx-auto max-w-7xl space-y-28 px-5 sm:px-8 sm:space-y-36">
 
-        <!-- Sportvissen -->
-        <article class="grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
-          <div class="group relative overflow-hidden rounded-2xl lg:col-span-7" data-animate>
+        <!-- 01 — Bed &amp; breakfast -->
+        <a href="bed-and-breakfast.html" class="group grid grid-cols-1 items-center gap-12 rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-8 focus-visible:ring-offset-cream lg:grid-cols-12" aria-label="Bed &amp; breakfast — Naar het bed &amp; breakfast">
+          <div class="relative overflow-hidden rounded-2xl lg:col-span-7 lg:order-1 order-1" data-animate>
+            <div class="relative aspect-[16/11] overflow-hidden bg-gradient-to-b from-forest-700 to-forest-950">
+              <svg class="absolute inset-x-0 bottom-0 h-1/2 w-full opacity-50" preserveAspectRatio="none" viewBox="0 0 400 200" aria-hidden="true">
+                <path fill="#0F2417" d="M0 200V120l20-14 16 22 20-36 18 28 14-18 22 32 20-46 20 34 16-22 22 38 18-30 20 42 22-52 20 38 16-24 22 34 20-42 18 30 16-20 22 40 18-34 20 44V200Z"/>
+              </svg>
+              <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop"
+                   alt="Lichte, gezellige slaapkamer in het bed &amp; breakfast"
+                   class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                   loading="lazy"
+                   onerror="this.remove()">
+            </div>
+          </div>
+          <div class="lg:col-span-5 lg:order-2 order-2" data-animate>
+            <p class="font-body text-xs font-medium uppercase tracking-[0.3em] text-forest-950/50">01 — Bed &amp; breakfast</p>
+            <h3 class="mt-5 font-display text-3xl font-light leading-[1.1] text-forest-950 transition-colors duration-200 group-hover:text-accent sm:text-5xl">
+              Aankomen als <em class="font-normal italic">thuis</em>.
+            </h3>
+            <p class="mt-6 max-w-md font-body leading-relaxed text-forest-950/65">
+              Tien gezellige slaapkamers in het historische hoofdhuis, gastenkeuken, kantine en vuurplaats — jullie basiskamp, vijfhonderd meter van het water.
+            </p>
+            <span class="editorial-link mt-8 inline-block font-body text-sm font-semibold tracking-[0.06em] uppercase text-accent">
+              Naar het bed &amp; breakfast
+            </span>
+          </div>
+        </a>
+
+        <!-- 02 — Kano's, kajaks &amp; SUP's -->
+        <a href="kanu-kajak-sup.html" class="group grid grid-cols-1 items-center gap-12 rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-8 focus-visible:ring-offset-cream lg:grid-cols-12" aria-label="Kano's, kajaks &amp; SUP's — Ontdek de verhuur">
+          <div class="relative overflow-hidden rounded-2xl lg:col-span-7 lg:order-2 order-1" data-animate>
+            <div class="relative aspect-[16/11] overflow-hidden bg-gradient-to-b from-forest-700 to-forest-950">
+              <svg class="absolute inset-x-0 bottom-0 h-1/2 w-full opacity-50" preserveAspectRatio="none" viewBox="0 0 400 200" aria-hidden="true">
+                <path fill="#0F2417" d="M0 200V120l20-14 16 22 20-36 18 28 14-18 22 32 20-46 20 34 16-22 22 38 18-30 20 42 22-52 20 38 16-24 22 34 20-42 18 30 16-20 22 40 18-34 20 44V200Z"/>
+              </svg>
+              <img src="assets/images/teaser-kayak.jpg"
+                   alt="Kajakker op spiegelglad water tussen beboste eilanden"
+                   class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                   loading="lazy"
+                   onerror="this.remove()">
+            </div>
+          </div>
+          <div class="lg:col-span-5 lg:order-1 order-2" data-animate>
+            <p class="font-body text-xs font-medium uppercase tracking-[0.3em] text-forest-950/50">02 — Kano's, kajaks &amp; SUP's</p>
+            <h3 class="mt-5 font-display text-3xl font-light leading-[1.1] text-forest-950 transition-colors duration-200 group-hover:text-accent sm:text-5xl">
+              Geruisloos over <em class="font-normal italic">stil</em> water.
+            </h3>
+            <p class="mt-6 max-w-md font-body leading-relaxed text-forest-950/65">
+              Kajaks, kano's en supboards met complete uitrusting — direct vanaf de steiger het meer Björkern op, voor avondrondjes en hele dagtochten.
+            </p>
+            <p class="mt-6 flex max-w-md items-start gap-3 rounded-xl border border-accent/30 bg-accent/5 p-4 font-body text-sm leading-relaxed text-forest-950/80">
+              <svg class="mt-0.5 h-5 w-5 shrink-0 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />
+              </svg>
+              <span><strong class="font-semibold">Bezorging bij andere meren mogelijk</strong> — wij brengen de kajaks daarheen waar jullie willen peddelen.</span>
+            </p>
+            <span class="editorial-link mt-8 inline-block font-body text-sm font-semibold tracking-[0.06em] uppercase text-accent">
+              Ontdek de verhuur
+            </span>
+          </div>
+        </a>
+
+        <!-- 03 — Sportvissen -->
+        <a href="sportfischen.html" class="group grid grid-cols-1 items-center gap-12 rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-8 focus-visible:ring-offset-cream lg:grid-cols-12" aria-label="Sportvissen — Boten &amp; prijzen bekijken">
+          <div class="relative overflow-hidden rounded-2xl lg:col-span-7 lg:order-1 order-1" data-animate>
             <div class="relative aspect-[16/11] overflow-hidden bg-gradient-to-b from-forest-700 to-forest-950">
               <svg class="absolute inset-x-0 bottom-0 h-1/2 w-full opacity-50" preserveAspectRatio="none" viewBox="0 0 400 200" aria-hidden="true">
                 <path fill="#0F2417" d="M0 200V120l20-14 16 22 20-36 18 28 14-18 22 32 20-46 20 34 16-22 22 38 18-30 20 42 22-52 20 38 16-24 22 34 20-42 18 30 16-20 22 40 18-34 20 44V200Z"/>
@@ -581,38 +501,26 @@
                    onerror="this.remove()">
             </div>
           </div>
-          <div class="lg:col-span-5" data-animate>
-            <p class="font-body text-xs font-medium uppercase tracking-[0.3em] text-forest-950/50">01 — Sportvissen</p>
-            <h3 class="mt-5 font-display text-3xl font-light leading-[1.1] text-forest-950 sm:text-5xl">
+          <div class="lg:col-span-5 lg:order-2 order-2" data-animate>
+            <p class="font-body text-xs font-medium uppercase tracking-[0.3em] text-forest-950/50">03 — Sportvissen</p>
+            <h3 class="mt-5 font-display text-3xl font-light leading-[1.1] text-forest-950 transition-colors duration-200 group-hover:text-accent sm:text-5xl">
               Jullie boot. Jullie <em class="font-normal italic">water</em>.
             </h3>
             <p class="mt-6 max-w-md font-body leading-relaxed text-forest-950/65">
-              Volledig uitgeruste aluminium visboten met 20 pk-motor en Garmin-fishfinder, vanaf 1.500 kr per dag — desgewenst met een ervaren visgids die de randen en gaten van de Björkern en de Åsunden kent.
+              Volledig uitgeruste aluminium visboten met 20 pk-motor en Garmin-fishfinder — desgewenst met een ervaren visgids die de randen en gaten van de Björkern en de Åsunden kent.
             </p>
-            <a href="sportfischen.html" class="editorial-link mt-8 inline-block font-body text-sm font-semibold tracking-[0.06em] uppercase text-accent">
+            <span class="editorial-link mt-8 inline-block font-body text-sm font-semibold tracking-[0.06em] uppercase text-accent">
               Boten &amp; prijzen bekijken
-            </a>
+            </span>
           </div>
-        </article>
+        </a>
 
-        <!-- Safari & wildlife -->
-        <article class="grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
-          <div class="order-2 lg:order-1 lg:col-span-5" data-animate>
-            <p class="font-body text-xs font-medium uppercase tracking-[0.3em] text-forest-950/50">02 — Safari &amp; wildlife</p>
-            <h3 class="mt-5 font-display text-3xl font-light leading-[1.1] text-forest-950 sm:text-5xl">
-              Als het bos <em class="font-normal italic">ontwaakt</em>.
-            </h3>
-            <p class="mt-6 max-w-md font-body leading-relaxed text-forest-950/65">
-              Elanden, bevers en zeearenden in de schemering — begeleide tochten door de bossen van Östergötland, in de herfst met paddenstoelen zoeken voor iedereen die het bos ook wil proeven.
-            </p>
-            <a href="aktivitaeten.html" class="editorial-link mt-8 inline-block font-body text-sm font-semibold tracking-[0.06em] uppercase text-accent">
-              Tochten ontdekken
-            </a>
-          </div>
-          <div class="group relative order-1 overflow-hidden rounded-2xl lg:order-2 lg:col-span-7" data-animate>
-            <div class="relative aspect-[16/11] overflow-hidden bg-gradient-to-b from-sage/60 to-forest-900">
+        <!-- 04 — Activiteiten &amp; omgeving -->
+        <a href="aktivitaeten.html" class="group grid grid-cols-1 items-center gap-12 rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-8 focus-visible:ring-offset-cream lg:grid-cols-12" aria-label="Activiteiten &amp; omgeving — Ontdek de activiteiten">
+          <div class="relative overflow-hidden rounded-2xl lg:col-span-7 lg:order-2 order-1" data-animate>
+            <div class="relative aspect-[16/11] overflow-hidden bg-gradient-to-b from-forest-700 to-forest-950">
               <svg class="absolute inset-x-0 bottom-0 h-1/2 w-full opacity-50" preserveAspectRatio="none" viewBox="0 0 400 200" aria-hidden="true">
-                <path fill="#14301F" d="M0 200V110l24-18 18 26 22-40 20 32 16-20 24 36 22-50 20 36 18-24 24 42 20-34 22 46 24-56 20 40 18-26 24 38 22-46 20 32 18-22 24 44 20-38 22 48V200Z"/>
+                <path fill="#0F2417" d="M0 200V120l20-14 16 22 20-36 18 28 14-18 22 32 20-46 20 34 16-22 22 38 18-30 20 42 22-52 20 38 16-24 22 34 20-42 18 30 16-20 22 40 18-34 20 44V200Z"/>
               </svg>
               <img src="assets/images/teaser-wildlife.jpg"
                    alt="Eland aan de bosrand in de avondschemering in Östergötland"
@@ -621,42 +529,19 @@
                    onerror="this.remove()">
             </div>
           </div>
-        </article>
-
-        <!-- Kajak & kano -->
-        <article class="grid grid-cols-1 items-center gap-12 lg:grid-cols-12" id="kajak">
-          <div class="group relative overflow-hidden rounded-2xl lg:col-span-7" data-animate>
-            <div class="relative aspect-[16/11] overflow-hidden bg-gradient-to-b from-forest-800 via-forest-900 to-[#0A1A10]">
-              <svg class="absolute inset-x-0 bottom-0 h-1/2 w-full opacity-50" preserveAspectRatio="none" viewBox="0 0 400 200" aria-hidden="true">
-                <path fill="#0F2417" d="M0 200V130l18-12 16 20 18-32 16 26 14-16 20 28 18-42 18 30 14-18 20 34 16-26 18 38 20-48 18 34 14-20 20 30 18-38 16 26 14-18 20 36 16-30 18 40V200Z"/>
-              </svg>
-              <img src="assets/images/teaser-kayak.jpg"
-                   alt="Kajakker op spiegelglad water tussen beboste eilanden"
-                   class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
-                   loading="lazy"
-                   onerror="this.remove()">
-            </div>
-          </div>
-          <div class="lg:col-span-5" data-animate>
-            <p class="font-body text-xs font-medium uppercase tracking-[0.3em] text-forest-950/50">03 — Kajak &amp; kano</p>
-            <h3 class="mt-5 font-display text-3xl font-light leading-[1.1] text-forest-950 sm:text-5xl">
-              Geruisloos over <em class="font-normal italic">stil</em> water.
+          <div class="lg:col-span-5 lg:order-1 order-2" data-animate>
+            <p class="font-body text-xs font-medium uppercase tracking-[0.3em] text-forest-950/50">04 — Activiteiten &amp; omgeving</p>
+            <h3 class="mt-5 font-display text-3xl font-light leading-[1.1] text-forest-950 transition-colors duration-200 group-hover:text-accent sm:text-5xl">
+              Als het bos <em class="font-normal italic">ontwaakt</em>.
             </h3>
             <p class="mt-6 max-w-md font-body leading-relaxed text-forest-950/65">
-              Kajaks, kano's en supboards met complete uitrusting vanaf 280 kr per dag — inclusief routekaarten voor dagtochten en meerdaagse trips.
+              Wildsafari in de schemering, winter op het natuurijs en de mooiste uitstapjes van Östergötland — van het eilandcafé tot de scherenkust.
             </p>
-            <p class="mt-6 inline-flex max-w-md items-start gap-3 rounded-xl border border-accent/30 bg-accent/5 p-4 font-body text-sm leading-relaxed text-forest-950/80">
-              <svg class="mt-0.5 h-5 w-5 shrink-0 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />
-              </svg>
-              <span><strong class="font-semibold">Bezorging bij andere meren mogelijk</strong> — wij brengen de kajaks daarheen waar jullie willen peddelen.</span>
-            </p>
-            <br>
-            <a href="aktivitaeten.html#kajak" class="editorial-link mt-8 inline-block font-body text-sm font-semibold tracking-[0.06em] uppercase text-accent">
-              Kajaks bekijken
-            </a>
+            <span class="editorial-link mt-8 inline-block font-body text-sm font-semibold tracking-[0.06em] uppercase text-accent">
+              Ontdek de activiteiten
+            </span>
           </div>
-        </article>
+        </a>
 
       </div>
     </section>
@@ -764,7 +649,7 @@
         </svg>
       </div>
       <div class="mx-auto max-w-4xl px-5 text-center sm:px-8" data-animate>
-        <p class="font-body text-xs font-medium uppercase tracking-[0.3em] text-cream/50">Geen vreemden. Geen compromissen.</p>
+        <p class="font-body text-xs font-medium uppercase tracking-[0.3em] text-cream/50">Jullie groep. Jullie boot. Jullie rust.</p>
         <h2 class="mt-8 font-display text-4xl font-light leading-[1.1] text-cream sm:text-6xl lg:text-7xl">
           Klaar voor jullie <em class="font-normal italic">water</em>?
         </h2>
@@ -830,5 +715,21 @@
   </footer>
 
   <script src="assets/js/main.js"></script>
+  <script>
+    // ===== Slideshow: elke 5 seconden naar het volgende beeld overvloeien =====
+    (function () {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      document.querySelectorAll('[data-slideshow]').forEach(function (box) {
+        var slides = box.querySelectorAll('.fade-slide');
+        if (slides.length < 2) return;
+        var i = 0;
+        setInterval(function () {
+          slides[i].classList.remove('is-active');
+          i = (i + 1) % slides.length;
+          slides[i].classList.add('is-active');
+        }, 5000);
+      });
+    })();
+  </script>
 </body>
 </html>

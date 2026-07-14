@@ -4,7 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sportvissen &amp; bootverhuur — Björkfors Outdoor, Zweden</title>
-  <meta name="description" content="Volledig uitgeruste visboten met vaste prijzen: QWEST RF 500 met 20 pk-motor en Garmin-fishfinder vanaf 1.500 kr/dag, ervaren visgids bij te boeken. Sportvissen op de Björkern en de Åsunden.">
+  <meta name="description" content="Volledig uitgeruste visboten met vaste prijzen: QWEST RF 500 met 20 pk-motor en Garmin-fishfinder vanaf 1.500 kr/dag, ervaren visgids bij te boeken. Sportvissen op de Björkern en de Åsunden."
+  <!-- SEO: Canonical, Sprachversionen, Social Cards -->
+  <link rel="canonical" href="https://www.bjorkfors-outdoor.se/sportfischen.html">
+  <link rel="alternate" hreflang="nl" href="https://www.bjorkfors-outdoor.se/sportfischen.html">
+  <link rel="alternate" hreflang="de" href="https://www.bjorkfors-outdoor.se/de/sportfischen.html">
+  <link rel="alternate" hreflang="en" href="https://www.bjorkfors-outdoor.se/en/sportfischen.html">
+  <link rel="alternate" hreflang="sv" href="https://www.bjorkfors-outdoor.se/sv/sportfischen.html">
+  <link rel="alternate" hreflang="x-default" href="https://www.bjorkfors-outdoor.se/sportfischen.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Björkfors Outdoor Adventures">
+  <meta property="og:title" content="Sportvissen &amp; bootverhuur — Björkfors Outdoor, Zweden">
+  <meta property="og:description" content="Volledig uitgeruste visboten met vaste prijzen: QWEST RF 500 met 20 pk-motor en Garmin-fishfinder vanaf 1.500 kr/dag, ervaren visgids bij te boeken. Sportvissen op de Björkern en de Åsunden.">
+  <meta property="og:url" content="https://www.bjorkfors-outdoor.se/sportfischen.html">
+  <meta property="og:image" content="https://www.bjorkfors-outdoor.se/assets/images/logo-bjorkfors.png">
+  <meta property="og:locale" content="nl_NL">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -84,6 +102,18 @@
       to { opacity: 1; transform: translateY(0); }
     }
     #lang-menu:not(.hidden) { animation: langFadeIn 0.15s ease-out; }
+
+    /* ---- Slideshow: zachte overvloeiing elke 5 s (JS onderaan) ---- */
+    .fade-slide {
+      position: absolute;
+      inset: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 1.2s ease;
+    }
+    .fade-slide.is-active { opacity: 1; }
 
     /* ---- Videospeler (geport uit React-component video-player.tsx) ---- */
     .vp-controls {
@@ -209,11 +239,18 @@
 
     <!-- ============ HERO ============ -->
     <section class="relative isolate flex min-h-[62vh] items-end overflow-hidden" aria-label="Sportvissen bij Björkfors">
-      <img src="assets/images/hero-fishing.jpg"
-           alt="Sportvisser in een aluminium boot bij zonsopgang op het meer Åsunden"
-           class="absolute inset-0 -z-10 h-full w-full object-cover"
-           fetchpriority="high"
-           onerror="this.remove()">
+      <!-- Hero-slideshow: wisselt elke 5 s. TODO: Unsplash-plaatshouders (beelden 2–5) vervangen door klantfoto's -->
+      <div class="absolute inset-0 -z-10" data-slideshow aria-hidden="true">
+        <img src="assets/images/hero-fishing.jpg"
+             alt=""
+             class="fade-slide is-active"
+             fetchpriority="high"
+             onerror="this.remove()">
+        <img src="https://images.unsplash.com/photo-1596796571148-77b6e70dd6b6?q=80&w=1920&auto=format&fit=crop" alt="" class="fade-slide" loading="lazy" onerror="this.remove()">
+        <img src="https://images.unsplash.com/photo-1587821684250-a7ececf4bf78?q=80&w=1920&auto=format&fit=crop" alt="" class="fade-slide" loading="lazy" onerror="this.remove()">
+        <img src="https://images.unsplash.com/photo-1711483668304-90fac5c665cb?q=80&w=1920&auto=format&fit=crop" alt="" class="fade-slide" loading="lazy" onerror="this.remove()">
+        <img src="https://images.unsplash.com/photo-1783393035189-b2a0cbfd5379?q=80&w=1920&auto=format&fit=crop" alt="" class="fade-slide" loading="lazy" onerror="this.remove()">
+      </div>
       <div class="absolute inset-0 -z-20 bg-gradient-to-b from-forest-800 via-forest-900 to-forest-950" aria-hidden="true">
         <div class="absolute left-[16%] top-[14%] h-64 w-64 rounded-full bg-sage/25 blur-3xl"></div>
         <svg class="absolute bottom-0 left-0 h-[45%] w-full opacity-40" preserveAspectRatio="none" viewBox="0 0 1200 400" aria-hidden="true">
@@ -627,6 +664,22 @@
 
       updatePlayState();
       updateVolumeUI();
+    })();
+  </script>
+  <script>
+    // ===== Slideshow: elke 5 seconden naar het volgende beeld overvloeien =====
+    (function () {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      document.querySelectorAll('[data-slideshow]').forEach(function (box) {
+        var slides = box.querySelectorAll('.fade-slide');
+        if (slides.length < 2) return;
+        var i = 0;
+        setInterval(function () {
+          slides[i].classList.remove('is-active');
+          i = (i + 1) % slides.length;
+          slides[i].classList.add('is-active');
+        }, 5000);
+      });
     })();
   </script>
 </body>

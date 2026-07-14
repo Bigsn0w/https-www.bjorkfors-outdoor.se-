@@ -4,7 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Activiteiten &amp; omgeving — Björkfors Outdoor, Zweden</title>
-  <meta name="description" content="Kano, kajak en SUP in de zomer — schaatsen, loipes en ijsvissen in de winter. Plus wildsafari, elandparken, golf en oldtimers: activiteiten en omgeving rond Björkfors in Östergötland.">
+  <meta name="description" content="Kano, kajak en SUP in de zomer — schaatsen, loipes en ijsvissen in de winter. Plus wildsafari, elandparken, golf en oldtimers: activiteiten en omgeving rond Björkfors in Östergötland."
+  <!-- SEO: Canonical, Sprachversionen, Social Cards -->
+  <link rel="canonical" href="https://www.bjorkfors-outdoor.se/aktivitaeten.html">
+  <link rel="alternate" hreflang="nl" href="https://www.bjorkfors-outdoor.se/aktivitaeten.html">
+  <link rel="alternate" hreflang="de" href="https://www.bjorkfors-outdoor.se/de/aktivitaeten.html">
+  <link rel="alternate" hreflang="en" href="https://www.bjorkfors-outdoor.se/en/aktivitaeten.html">
+  <link rel="alternate" hreflang="sv" href="https://www.bjorkfors-outdoor.se/sv/aktivitaeten.html">
+  <link rel="alternate" hreflang="x-default" href="https://www.bjorkfors-outdoor.se/aktivitaeten.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Björkfors Outdoor Adventures">
+  <meta property="og:title" content="Activiteiten &amp; omgeving — Björkfors Outdoor, Zweden">
+  <meta property="og:description" content="Kano, kajak en SUP in de zomer — schaatsen, loipes en ijsvissen in de winter. Plus wildsafari, elandparken, golf en oldtimers: activiteiten en omgeving rond Björkfors in Östergötland.">
+  <meta property="og:url" content="https://www.bjorkfors-outdoor.se/aktivitaeten.html">
+  <meta property="og:image" content="https://www.bjorkfors-outdoor.se/assets/images/logo-bjorkfors.png">
+  <meta property="og:locale" content="nl_NL">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -88,7 +106,11 @@
     .bounce-card:hover .bounce-panel { transform: translateY(1rem) rotate(2deg); }
 
     /* ---- Detaildialogen van de activiteitentegels ---- */
-    .poi-dialog { border: none; overflow: hidden; }
+    .poi-dialog {
+      border: none;
+      overflow: hidden auto;          /* horizontaal gesloten, verticaal scrollbaar */
+      max-height: min(88dvh, 52rem);  /* past ook op kleine schermen */
+    }
     .poi-dialog::backdrop { backdrop-filter: blur(3px); }
     .poi-dialog[open] { animation: langFadeIn 0.18s ease-out; }
   </style>
@@ -181,19 +203,78 @@
 
     <!-- ============ KOP ============ -->
     <section class="mx-auto max-w-7xl px-4 pt-12 pb-2 text-slate-800 sm:px-8" aria-label="Activiteiten — introductie">
-      <div class="mb-4 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
-        <h1 class="max-w-lg text-4xl font-bold md:text-5xl">
-          Buiten is het<span class="text-slate-400"> programma</span>.
-        </h1>
-        <a href="kontakt.html"
-           class="whitespace-nowrap rounded-lg bg-slate-900 px-4 py-2 font-medium text-white shadow-xl transition-all duration-200 hover:scale-105 hover:bg-slate-700 active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent">
-          Boekingsaanvraag doen
-        </a>
-      </div>
+      <h1 class="mb-4 max-w-lg text-4xl font-bold md:text-5xl">
+        Buiten is het<span class="text-slate-400"> programma</span>.
+      </h1>
       <p class="max-w-2xl font-body text-base leading-relaxed text-forest-950/70">
         Van de zwemsteiger voor de deur tot de scherenkust: onze favoriete plekken rond Björkfors —
         klik op een tegel voor alle details.
       </p>
+    </section>
+
+    <!-- ============ ACTIVITEITEN IN HET B&B ============ -->
+    <section class="mx-auto max-w-7xl px-5 py-10 sm:px-8" aria-label="Activiteiten in het B&amp;B">
+      <div class="max-w-2xl">
+        <h2 class="font-display text-3xl font-light sm:text-4xl">Activiteiten in het B&amp;B</h2>
+        <p class="mt-3 font-body text-sm leading-relaxed text-forest-950/65">Ons eigen aanbod — direct vanaf de steiger en vanuit het huis.</p>
+      </div>
+      <div class="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <article class="bounce-card group relative cursor-pointer overflow-hidden rounded-2xl bg-white shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                 data-modal="dlg-bnb-fischen" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Sportvissen — details bekijken">
+          <div class="relative h-44 overflow-hidden bg-forest-800">
+            <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=800&auto=format&fit=crop" alt="Sportvissen" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" onerror="this.remove()">
+          </div>
+          <div class="p-6">
+            <h3 class="font-display text-2xl font-light leading-snug">Sportvissen</h3>
+            <p class="mt-2 font-body text-sm leading-relaxed text-forest-950/70">Volledig uitgeruste visboten, twee meren voor de deur en gidsen die zelf vissen.</p>
+            <p class="mt-4 font-body text-xs font-semibold uppercase tracking-[0.15em] text-accent">Meer informatie &rarr;</p>
+          </div>
+        </article>
+        <article class="bounce-card group relative cursor-pointer overflow-hidden rounded-2xl bg-white shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                 data-modal="dlg-bnb-kanu" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Kano's, kajaks & SUP's — details bekijken">
+          <div class="relative h-44 overflow-hidden bg-forest-800">
+            <img src="https://images.unsplash.com/photo-1439066615861-d1af74d74000?q=80&w=800&auto=format&fit=crop" alt="Kano's, kajaks & SUP's" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" onerror="this.remove()">
+          </div>
+          <div class="p-6">
+            <h3 class="font-display text-2xl font-light leading-snug">Kano's, kajaks & SUP's</h3>
+            <p class="mt-2 font-body text-sm leading-relaxed text-forest-950/70">Verhuur direct aan de steiger — op verzoek bezorgen we ook bij omliggende meren.</p>
+            <p class="mt-4 font-body text-xs font-semibold uppercase tracking-[0.15em] text-accent">Meer informatie &rarr;</p>
+          </div>
+        </article>
+        <article class="bounce-card group relative cursor-pointer overflow-hidden rounded-2xl bg-white shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                 data-modal="dlg-bnb-winter" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Winterseizoen — details bekijken">
+          <div class="relative h-44 overflow-hidden bg-forest-800">
+            <img src="https://images.unsplash.com/photo-1418985991508-e47386d96a71?q=80&w=800&auto=format&fit=crop" alt="Winterseizoen" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" onerror="this.remove()">
+          </div>
+          <div class="p-6">
+            <h3 class="font-display text-2xl font-light leading-snug">Winterseizoen</h3>
+            <p class="mt-2 font-body text-sm leading-relaxed text-forest-950/70">IJsvissen, schaatsen, langlaufen en sneeuwschoenen — uitrusting vanuit het huis.</p>
+            <p class="mt-4 font-body text-xs font-semibold uppercase tracking-[0.15em] text-accent">Meer informatie &rarr;</p>
+          </div>
+        </article>
+        <article class="bounce-card group relative cursor-pointer overflow-hidden rounded-2xl bg-white shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                 data-modal="dlg-bnb-safari" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Wildsafari & tochten met gids — details bekijken">
+          <div class="relative h-44 overflow-hidden bg-forest-800">
+            <img src="https://images.unsplash.com/photo-1484406566174-9da000fda645?q=80&w=800&auto=format&fit=crop" alt="Wildsafari & tochten met gids" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" onerror="this.remove()">
+          </div>
+          <div class="p-6">
+            <h3 class="font-display text-2xl font-light leading-snug">Wildsafari & tochten met gids</h3>
+            <p class="mt-2 font-body text-sm leading-relaxed text-forest-950/70">In de schemering met een gids het leefgebied van eland, bever en zeearend in.</p>
+            <p class="mt-4 font-body text-xs font-semibold uppercase tracking-[0.15em] text-accent">Meer informatie &rarr;</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ MEER ACTIVITEITEN IN DE OMGEVING ============ -->
+    <section class="mx-auto max-w-7xl px-5 pt-16 pb-0 sm:px-8" aria-label="Meer activiteiten in de omgeving — introductie">
+      <div class="border-t border-forest-950/10 pt-12">
+        <p class="font-body text-xs font-semibold uppercase tracking-[0.25em] text-accent">Extern</p>
+        <h2 class="mt-4 font-display text-4xl font-light sm:text-5xl">Meer activiteiten in de omgeving</h2>
+        <p class="mt-4 max-w-2xl font-body text-sm leading-relaxed text-forest-950/65">
+          Onze favoriete plekken en uitstapjes rond Björkfors — niet door het B&amp;B georganiseerd, maar door ons persoonlijk aanbevolen.
+        </p>
+      </div>
     </section>
 
     <section class="mx-auto max-w-7xl px-5 py-10 sm:px-8" aria-label="Rond Björkfors">
@@ -206,7 +287,6 @@
                  data-modal="dlg-wandern" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Wandelen, zwemmen & BBQ in Björkfors — details bekijken">
           <div class="relative h-44 overflow-hidden bg-forest-800">
             <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=800&auto=format&fit=crop" alt="Wandelen, zwemmen & BBQ in Björkfors" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" onerror="this.remove()">
-            <span class="absolute left-3 top-3 rounded-full bg-forest-800 text-cream px-3 py-1 font-body text-[0.65rem] font-semibold uppercase tracking-[0.15em]">Rond Björkfors</span>
           </div>
           <div class="p-6">
             <h3 class="font-display text-2xl font-light leading-snug">Wandelen, zwemmen & BBQ in Björkfors</h3>
@@ -218,7 +298,6 @@
                  data-modal="dlg-arthouse" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Björkfors Arthouse — details bekijken">
           <div class="relative h-44 overflow-hidden bg-forest-800">
             <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?q=80&w=800&auto=format&fit=crop" alt="Björkfors Arthouse" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" onerror="this.remove()">
-            <span class="absolute left-3 top-3 rounded-full bg-forest-800 text-cream px-3 py-1 font-body text-[0.65rem] font-semibold uppercase tracking-[0.15em]">Rond Björkfors</span>
           </div>
           <div class="p-6">
             <h3 class="font-display text-2xl font-light leading-snug">Björkfors Arthouse</h3>
@@ -230,7 +309,6 @@
                  data-modal="dlg-valo" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Valö Café & Festplats — details bekijken">
           <div class="relative h-44 overflow-hidden bg-forest-800">
             <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=800&auto=format&fit=crop" alt="Valö Café & Festplats" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" onerror="this.remove()">
-            <span class="absolute left-3 top-3 rounded-full bg-forest-800 text-cream px-3 py-1 font-body text-[0.65rem] font-semibold uppercase tracking-[0.15em]">Rond Björkfors</span>
           </div>
           <div class="p-6">
             <h3 class="font-display text-2xl font-light leading-snug">Valö Café & Festplats</h3>
@@ -242,7 +320,6 @@
                  data-modal="dlg-idhult" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Natuurreservaat Idhult — details bekijken">
           <div class="relative h-44 overflow-hidden bg-forest-800">
             <img src="https://images.unsplash.com/photo-1418065460487-3e41a6c84dc5?q=80&w=800&auto=format&fit=crop" alt="Natuurreservaat Idhult" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" onerror="this.remove()">
-            <span class="absolute left-3 top-3 rounded-full bg-forest-800 text-cream px-3 py-1 font-body text-[0.65rem] font-semibold uppercase tracking-[0.15em]">Rond Björkfors</span>
           </div>
           <div class="p-6">
             <h3 class="font-display text-2xl font-light leading-snug">Natuurreservaat Idhult</h3>
@@ -254,7 +331,6 @@
                  data-modal="dlg-basunda" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Basunda Gårdsbutik — details bekijken">
           <div class="relative h-44 overflow-hidden bg-forest-800">
             <img src="https://images.unsplash.com/photo-1488459716781-31db52582fe9?q=80&w=800&auto=format&fit=crop" alt="Basunda Gårdsbutik" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" onerror="this.remove()">
-            <span class="absolute left-3 top-3 rounded-full bg-forest-800 text-cream px-3 py-1 font-body text-[0.65rem] font-semibold uppercase tracking-[0.15em]">Rond Björkfors</span>
           </div>
           <div class="p-6">
             <h3 class="font-display text-2xl font-light leading-snug">Basunda Gårdsbutik</h3>
@@ -266,7 +342,6 @@
                  data-modal="dlg-bp" tabindex="0" role="button" aria-haspopup="dialog" aria-label="BP Nostalgimack & Café Pärlan — details bekijken">
           <div class="relative h-44 overflow-hidden bg-forest-800">
             <img src="https://images.unsplash.com/photo-1489824904134-891ab64532f1?q=80&w=800&auto=format&fit=crop" alt="BP Nostalgimack & Café Pärlan" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" onerror="this.remove()">
-            <span class="absolute left-3 top-3 rounded-full bg-forest-800 text-cream px-3 py-1 font-body text-[0.65rem] font-semibold uppercase tracking-[0.15em]">Rond Björkfors</span>
           </div>
           <div class="p-6">
             <h3 class="font-display text-2xl font-light leading-snug">BP Nostalgimack & Café Pärlan</h3>
@@ -278,7 +353,6 @@
                  data-modal="dlg-hycklinge" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Lilla Hycklinge Café & Gårdsbutik — details bekijken">
           <div class="relative h-44 overflow-hidden bg-forest-800">
             <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=800&auto=format&fit=crop" alt="Lilla Hycklinge Café & Gårdsbutik" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" onerror="this.remove()">
-            <span class="absolute left-3 top-3 rounded-full bg-forest-800 text-cream px-3 py-1 font-body text-[0.65rem] font-semibold uppercase tracking-[0.15em]">Rond Björkfors</span>
           </div>
           <div class="p-6">
             <h3 class="font-display text-2xl font-light leading-snug">Lilla Hycklinge Café & Gårdsbutik</h3>
@@ -299,7 +373,6 @@
                  data-modal="dlg-alv" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Astrid Lindgrens Värld & Näs — details bekijken">
           <div class="relative h-44 overflow-hidden bg-forest-800">
             <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?q=80&w=800&auto=format&fit=crop" alt="Astrid Lindgrens Värld & Näs" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" onerror="this.remove()">
-            <span class="absolute left-3 top-3 rounded-full bg-sage text-forest-950 px-3 py-1 font-body text-[0.65rem] font-semibold uppercase tracking-[0.15em]">Vimmerby & omgeving</span>
           </div>
           <div class="p-6">
             <h3 class="font-display text-2xl font-light leading-snug">Astrid Lindgrens Värld & Näs</h3>
@@ -311,7 +384,6 @@
                  data-modal="dlg-katthult" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Katthult & Filmbyn Småland — details bekijken">
           <div class="relative h-44 overflow-hidden bg-forest-800">
             <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=800&auto=format&fit=crop" alt="Katthult & Filmbyn Småland" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" onerror="this.remove()">
-            <span class="absolute left-3 top-3 rounded-full bg-sage text-forest-950 px-3 py-1 font-body text-[0.65rem] font-semibold uppercase tracking-[0.15em]">Vimmerby & omgeving</span>
           </div>
           <div class="p-6">
             <h3 class="font-display text-2xl font-light leading-snug">Katthult & Filmbyn Småland</h3>
@@ -323,7 +395,6 @@
                  data-modal="dlg-norrakvill" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Nationaal park Norra Kvill — details bekijken">
           <div class="relative h-44 overflow-hidden bg-forest-800">
             <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=800&auto=format&fit=crop" alt="Nationaal park Norra Kvill" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" onerror="this.remove()">
-            <span class="absolute left-3 top-3 rounded-full bg-sage text-forest-950 px-3 py-1 font-body text-[0.65rem] font-semibold uppercase tracking-[0.15em]">Vimmerby & omgeving</span>
           </div>
           <div class="p-6">
             <h3 class="font-display text-2xl font-light leading-snug">Nationaal park Norra Kvill</h3>
@@ -344,7 +415,6 @@
                  data-modal="dlg-granso" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Gränsö Slott & Spa — details bekijken">
           <div class="relative h-44 overflow-hidden bg-forest-800">
             <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=800&auto=format&fit=crop" alt="Gränsö Slott & Spa" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" onerror="this.remove()">
-            <span class="absolute left-3 top-3 rounded-full bg-accent text-white px-3 py-1 font-body text-[0.65rem] font-semibold uppercase tracking-[0.15em]">Västervik — de kust</span>
           </div>
           <div class="p-6">
             <h3 class="font-display text-2xl font-light leading-snug">Gränsö Slott & Spa</h3>
@@ -365,7 +435,6 @@
                  data-modal="dlg-archipelago" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Scherenkust van Östergötland — details bekijken">
           <div class="relative h-44 overflow-hidden bg-forest-800">
             <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=800&auto=format&fit=crop" alt="Scherenkust van Östergötland" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" onerror="this.remove()">
-            <span class="absolute left-3 top-3 rounded-full bg-forest-950 text-cream px-3 py-1 font-body text-[0.65rem] font-semibold uppercase tracking-[0.15em]">Uitstapjes in de wijde omgeving</span>
           </div>
           <div class="p-6">
             <h3 class="font-display text-2xl font-light leading-snug">Scherenkust van Östergötland</h3>
@@ -377,7 +446,6 @@
                  data-modal="dlg-kisamtb" tabindex="0" role="button" aria-haspopup="dialog" aria-label="KISA MTB Park (Tolvmannabacken) — details bekijken">
           <div class="relative h-44 overflow-hidden bg-forest-800">
             <img src="https://images.unsplash.com/photo-1541625602330-2277a4c46182?q=80&w=800&auto=format&fit=crop" alt="KISA MTB Park (Tolvmannabacken)" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" onerror="this.remove()">
-            <span class="absolute left-3 top-3 rounded-full bg-forest-950 text-cream px-3 py-1 font-body text-[0.65rem] font-semibold uppercase tracking-[0.15em]">Uitstapjes in de wijde omgeving</span>
           </div>
           <div class="p-6">
             <h3 class="font-display text-2xl font-light leading-snug">KISA MTB Park (Tolvmannabacken)</h3>
@@ -389,7 +457,6 @@
                  data-modal="dlg-gamlalinkoping" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Gamla Linköping — details bekijken">
           <div class="relative h-44 overflow-hidden bg-forest-800">
             <img src="https://images.unsplash.com/photo-1509356843151-3e7d96241e11?q=80&w=800&auto=format&fit=crop" alt="Gamla Linköping" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" onerror="this.remove()">
-            <span class="absolute left-3 top-3 rounded-full bg-forest-950 text-cream px-3 py-1 font-body text-[0.65rem] font-semibold uppercase tracking-[0.15em]">Uitstapjes in de wijde omgeving</span>
           </div>
           <div class="p-6">
             <h3 class="font-display text-2xl font-light leading-snug">Gamla Linköping</h3>
@@ -401,7 +468,6 @@
                  data-modal="dlg-trollegater" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Natuurreservaat Trollegater — details bekijken">
           <div class="relative h-44 overflow-hidden bg-forest-800">
             <img src="https://images.unsplash.com/photo-1518495973542-4542c06a5843?q=80&w=800&auto=format&fit=crop" alt="Natuurreservaat Trollegater" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" onerror="this.remove()">
-            <span class="absolute left-3 top-3 rounded-full bg-forest-950 text-cream px-3 py-1 font-body text-[0.65rem] font-semibold uppercase tracking-[0.15em]">Uitstapjes in de wijde omgeving</span>
           </div>
           <div class="p-6">
             <h3 class="font-display text-2xl font-light leading-snug">Natuurreservaat Trollegater</h3>
@@ -413,7 +479,6 @@
                  data-modal="dlg-trollpark" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Gamleby Trollpark — details bekijken">
           <div class="relative h-44 overflow-hidden bg-forest-800">
             <img src="https://images.unsplash.com/photo-1425913397330-cf8af2ff40a1?q=80&w=800&auto=format&fit=crop" alt="Gamleby Trollpark" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" onerror="this.remove()">
-            <span class="absolute left-3 top-3 rounded-full bg-forest-950 text-cream px-3 py-1 font-body text-[0.65rem] font-semibold uppercase tracking-[0.15em]">Uitstapjes in de wijde omgeving</span>
           </div>
           <div class="p-6">
             <h3 class="font-display text-2xl font-light leading-snug">Gamleby Trollpark</h3>
@@ -425,7 +490,6 @@
                  data-modal="dlg-granna" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Polkagris-stad Gränna — details bekijken">
           <div class="relative h-44 overflow-hidden bg-forest-800">
             <img src="https://images.unsplash.com/photo-1481391319762-47dff72954d9?q=80&w=800&auto=format&fit=crop" alt="Polkagris-stad Gränna" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" onerror="this.remove()">
-            <span class="absolute left-3 top-3 rounded-full bg-forest-950 text-cream px-3 py-1 font-body text-[0.65rem] font-semibold uppercase tracking-[0.15em]">Uitstapjes in de wijde omgeving</span>
           </div>
           <div class="p-6">
             <h3 class="font-display text-2xl font-light leading-snug">Polkagris-stad Gränna</h3>
@@ -437,7 +501,6 @@
                  data-modal="dlg-minigolf" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Minigolf bij Hornåbergs Camping — details bekijken">
           <div class="relative h-44 overflow-hidden bg-forest-800">
             <img src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?q=80&w=800&auto=format&fit=crop" alt="Minigolf bij Hornåbergs Camping" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" onerror="this.remove()">
-            <span class="absolute left-3 top-3 rounded-full bg-forest-950 text-cream px-3 py-1 font-body text-[0.65rem] font-semibold uppercase tracking-[0.15em]">Uitstapjes in de wijde omgeving</span>
           </div>
           <div class="p-6">
             <h3 class="font-display text-2xl font-light leading-snug">Minigolf bij Hornåbergs Camping</h3>
@@ -449,6 +512,70 @@
     </section>
 
     <!-- ============ DETAILDIALOGEN ============ -->
+      <dialog id="dlg-bnb-fischen" class="poi-dialog w-[min(92vw,40rem)] rounded-2xl p-0 shadow-2xl backdrop:bg-forest-950/60" aria-label="Sportvissen">
+        <div class="relative h-52 overflow-hidden bg-forest-800">
+          <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=800&auto=format&fit=crop" alt="Sportvissen" class="h-full w-full object-cover" loading="lazy" onerror="this.remove()">
+          <button type="button" data-close class="absolute right-3 top-3 flex h-10 w-10 items-center justify-center rounded-full bg-forest-950/70 text-cream transition-colors hover:bg-forest-950 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent" aria-label="Sluiten">
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+        <div class="p-8">
+          <h3 class="font-display text-3xl font-light">Sportvissen</h3>
+          <p class="mt-4 font-body text-sm leading-relaxed text-forest-950/75">Snoek, baars en snoekbaars direct voor de deur: volledig uitgeruste aluminium boten met motor en fishfinder, visvergunningen direct bij ons — en desgewenst een ervaren gids die jullie de randen laat zien die op geen enkele kaart staan.</p>
+          <ul class="mt-5 space-y-2 font-body text-sm">
+            <li><a href="sportfischen.html" class="editorial-link text-accent">Alle details: sportvissen &rarr;</a></li>
+          </ul>
+        </div>
+      </dialog>
+
+      <dialog id="dlg-bnb-kanu" class="poi-dialog w-[min(92vw,40rem)] rounded-2xl p-0 shadow-2xl backdrop:bg-forest-950/60" aria-label="Kano's, kajaks & SUP's">
+        <div class="relative h-52 overflow-hidden bg-forest-800">
+          <img src="https://images.unsplash.com/photo-1439066615861-d1af74d74000?q=80&w=800&auto=format&fit=crop" alt="Kano's, kajaks & SUP's" class="h-full w-full object-cover" loading="lazy" onerror="this.remove()">
+          <button type="button" data-close class="absolute right-3 top-3 flex h-10 w-10 items-center justify-center rounded-full bg-forest-950/70 text-cream transition-colors hover:bg-forest-950 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent" aria-label="Sluiten">
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+        <div class="p-8">
+          <h3 class="font-display text-3xl font-light">Kano's, kajaks & SUP's</h3>
+          <p class="mt-4 font-body text-sm leading-relaxed text-forest-950/75">Driepersoonskano's, een- en tweepersoonskajaks en supboards met complete uitrusting — voor avondrondjes en dagtochten op de Björkern en de Åsunden. Nog nooit in een kano gezeten? Wij laten jullie de basics zien voordat het water op gaat.</p>
+          <ul class="mt-5 space-y-2 font-body text-sm">
+            <li><a href="kanu-kajak-sup.html" class="editorial-link text-accent">Alle details: kano's, kajaks &amp; SUP's &rarr;</a></li>
+          </ul>
+        </div>
+      </dialog>
+
+      <dialog id="dlg-bnb-winter" class="poi-dialog w-[min(92vw,40rem)] rounded-2xl p-0 shadow-2xl backdrop:bg-forest-950/60" aria-label="Winterseizoen">
+        <div class="relative h-52 overflow-hidden bg-forest-800">
+          <img src="https://images.unsplash.com/photo-1418985991508-e47386d96a71?q=80&w=800&auto=format&fit=crop" alt="Winterseizoen" class="h-full w-full object-cover" loading="lazy" onerror="this.remove()">
+          <button type="button" data-close class="absolute right-3 top-3 flex h-10 w-10 items-center justify-center rounded-full bg-forest-950/70 text-cream transition-colors hover:bg-forest-950 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent" aria-label="Sluiten">
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+        <div class="p-8">
+          <h3 class="font-display text-3xl font-light">Winterseizoen</h3>
+          <p class="mt-4 font-body text-sm leading-relaxed text-forest-950/75">Als de meren dichtvriezen, wisselt Björkfors alleen van gereedschap: kilometerslange natuurijsbanen, gespoorde loipes vanaf de voordeur, ijsvissen op baars en snoek met onze uitrusting en sneeuwschoentochten door het winterbos. Alle vaste prijzen staan in de prijslijst.</p>
+          <ul class="mt-5 space-y-2 font-body text-sm">
+            <li><a href="preisliste.html" class="editorial-link text-accent">Uitrusting &amp; prijzen: prijslijst &rarr;</a></li>
+          </ul>
+        </div>
+      </dialog>
+
+      <dialog id="dlg-bnb-safari" class="poi-dialog w-[min(92vw,40rem)] rounded-2xl p-0 shadow-2xl backdrop:bg-forest-950/60" aria-label="Wildsafari & tochten met gids">
+        <div class="relative h-52 overflow-hidden bg-forest-800">
+          <img src="https://images.unsplash.com/photo-1484406566174-9da000fda645?q=80&w=800&auto=format&fit=crop" alt="Wildsafari & tochten met gids" class="h-full w-full object-cover" loading="lazy" onerror="this.remove()">
+          <button type="button" data-close class="absolute right-3 top-3 flex h-10 w-10 items-center justify-center rounded-full bg-forest-950/70 text-cream transition-colors hover:bg-forest-950 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent" aria-label="Sluiten">
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+        <div class="p-8">
+          <h3 class="font-display text-3xl font-light">Wildsafari & tochten met gids</h3>
+          <p class="mt-4 font-body text-sm leading-relaxed text-forest-950/75">In de schemering gaan we met onze gids de bossen van Östergötland in — naar elanden, bevers en met een beetje geluk een zeearend boven het water. In de herfst combineren we de tochten met paddenstoelen zoeken voor iedereen die het bos ook wil proeven. Data stemmen we persoonlijk met jullie af.</p>
+          <ul class="mt-5 space-y-2 font-body text-sm">
+            <li><a href="kontakt.html" class="editorial-link text-accent">Tocht aanvragen: contact &rarr;</a></li>
+          </ul>
+        </div>
+      </dialog>
+
       <dialog id="dlg-wandern" class="poi-dialog w-[min(92vw,40rem)] rounded-2xl p-0 shadow-2xl backdrop:bg-forest-950/60" aria-label="Wandelen, zwemmen & BBQ in Björkfors">
         <div class="relative h-52 overflow-hidden bg-forest-800">
           <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=800&auto=format&fit=crop" alt="Wandelen, zwemmen & BBQ in Björkfors" class="h-full w-full object-cover" loading="lazy" onerror="this.remove()">
