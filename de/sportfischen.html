@@ -85,6 +85,18 @@
     }
     #lang-menu:not(.hidden) { animation: langFadeIn 0.15s ease-out; }
 
+    /* ---- Slideshow: sanfte Überblendung alle 5 s (JS unten) ---- */
+    .fade-slide {
+      position: absolute;
+      inset: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 1.2s ease;
+    }
+    .fade-slide.is-active { opacity: 1; }
+
     /* ---- Video-Player (portiert aus React-Komponente video-player.tsx) ---- */
     .vp-controls {
       opacity: 0;
@@ -209,11 +221,18 @@
 
     <!-- ============ HERO ============ -->
     <section class="relative isolate flex min-h-[62vh] items-end overflow-hidden" aria-label="Sportfischen bei Björkfors">
-      <img src="../assets/images/hero-fishing.jpg"
-           alt="Angler im Aluminiumboot in der Morgendämmerung auf dem See Åsunden"
-           class="absolute inset-0 -z-10 h-full w-full object-cover"
-           fetchpriority="high"
-           onerror="this.remove()">
+      <!-- Hero-Slideshow: wechselt alle 5 s. TODO: Unsplash-Platzhalter (Bilder 2–5) durch Kundenfotos ersetzen -->
+      <div class="absolute inset-0 -z-10" data-slideshow aria-hidden="true">
+        <img src="../assets/images/hero-fishing.jpg"
+             alt=""
+             class="fade-slide is-active"
+             fetchpriority="high"
+             onerror="this.remove()">
+        <img src="https://images.unsplash.com/photo-1596796571148-77b6e70dd6b6?q=80&w=1920&auto=format&fit=crop" alt="" class="fade-slide" loading="lazy" onerror="this.remove()">
+        <img src="https://images.unsplash.com/photo-1587821684250-a7ececf4bf78?q=80&w=1920&auto=format&fit=crop" alt="" class="fade-slide" loading="lazy" onerror="this.remove()">
+        <img src="https://images.unsplash.com/photo-1711483668304-90fac5c665cb?q=80&w=1920&auto=format&fit=crop" alt="" class="fade-slide" loading="lazy" onerror="this.remove()">
+        <img src="https://images.unsplash.com/photo-1783393035189-b2a0cbfd5379?q=80&w=1920&auto=format&fit=crop" alt="" class="fade-slide" loading="lazy" onerror="this.remove()">
+      </div>
       <div class="absolute inset-0 -z-20 bg-gradient-to-b from-forest-800 via-forest-900 to-forest-950" aria-hidden="true">
         <div class="absolute left-[16%] top-[14%] h-64 w-64 rounded-full bg-sage/25 blur-3xl"></div>
         <svg class="absolute bottom-0 left-0 h-[45%] w-full opacity-40" preserveAspectRatio="none" viewBox="0 0 1200 400" aria-hidden="true">
@@ -627,6 +646,22 @@
 
       updatePlayState();
       updateVolumeUI();
+    })();
+  </script>
+  <script>
+    // ===== Slideshow: alle 5 Sekunden zum nächsten Bild überblenden =====
+    (function () {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      document.querySelectorAll('[data-slideshow]').forEach(function (box) {
+        var slides = box.querySelectorAll('.fade-slide');
+        if (slides.length < 2) return;
+        var i = 0;
+        setInterval(function () {
+          slides[i].classList.remove('is-active');
+          i = (i + 1) % slides.length;
+          slides[i].classList.add('is-active');
+        }, 5000);
+      });
     })();
   </script>
 </body>
