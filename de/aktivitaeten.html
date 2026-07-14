@@ -88,7 +88,11 @@
     .bounce-card:hover .bounce-panel { transform: translateY(1rem) rotate(2deg); }
 
     /* ---- Detail-Dialoge der Aktivitäten-Kacheln ---- */
-    .poi-dialog { border: none; overflow: hidden; }
+    .poi-dialog {
+      border: none;
+      overflow: hidden auto;          /* horizontal geschlossen, vertikal scrollbar */
+      max-height: min(88dvh, 52rem);  /* passt auch auf kleine Displays */
+    }
     .poi-dialog::backdrop { backdrop-filter: blur(3px); }
     .poi-dialog[open] { animation: langFadeIn 0.18s ease-out; }
   </style>
