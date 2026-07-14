@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Activiteiten &amp; omgeving — Björkfors Outdoor, Zweden</title>
+  <meta name="description" content="Kano, kajak en SUP in de zomer — schaatsen, loipes en ijsvissen in de winter. Plus wildsafari, elandparken, golf en oldtimers: activiteiten en omgeving rond Björkfors in Östergötland.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/shiny.css?v=2">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            forest: {
+              950: '#0F2417',
+              900: '#14301F',
+              800: '#1F4A30',
+              700: '#2B5E3E',
+            },
+            sage: '#9DA971',
+            cream: '#F7F4ED',
+            accent: {
+              DEFAULT: '#801818',
+              hover: '#5E1111',
+            },
+          },
+          fontFamily: {
+            display: ['"Fraunces"', 'serif'],
+            body: ['"Inter"', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    #site-header { transition: box-shadow 0.3s ease; }
+    #site-header.is-scrolled { box-shadow: 0 6px 24px rgba(15, 36, 23, 0.08); }
+
+    .editorial-link {
+      position: relative;
+      padding-bottom: 2px;
+    }
+    .editorial-link::after {
+      content: '';
+      position: absolute;
+      left: 0; bottom: 0;
+      height: 1px; width: 100%;
+      background: currentColor;
+      transform-origin: left;
+      transition: transform 0.25s ease;
+    }
+    .editorial-link:hover::after { transform: scaleX(0.4); }
+
+    /* ---- Taalkeuzemenu (geport uit React-component language-selector-dropdown.tsx) ---- */
+    @keyframes langFadeIn {
+      from { opacity: 0; transform: translateY(-2px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    #lang-menu:not(.hidden) { animation: langFadeIn 0.15s ease-out; }
+
+    /* ---- Bouncy cards (geport uit React-component bounce-card-features.tsx, zonder framer-motion) ---- */
+    .bounce-card {
+      transition: transform 0.25s ease;
+      will-change: transform;
+    }
+    .bounce-card:hover { transform: scale(0.95) rotate(-1deg); }
+    .bounce-panel {
+      transform: translateY(2rem);
+      transition: transform 0.25s ease;
+      will-change: transform;
+    }
+    .bounce-card:hover .bounce-panel { transform: translateY(1rem) rotate(2deg); }
+
+    /* ---- Detaildialogen van de activiteitentegels ---- */
+    .poi-dialog { border: none; overflow: hidden; }
+    .poi-dialog::backdrop { backdrop-filter: blur(3px); }
+    .poi-dialog[open] { animation: langFadeIn 0.18s ease-out; }
+  </style>
+</head>
+<body class="font-body bg-cream text-forest-950 antialiased overflow-x-hidden">
+
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:bg-accent focus:text-white focus:px-4 focus:py-2 focus:rounded">
+    Naar de inhoud springen
+  </a>
+
+  <!-- ============ HEADER ============ -->
+  <header id="site-header" class="sticky top-0 z-40 bg-cream/95 backdrop-blur border-b border-forest-950/10">
+    <nav class="mx-auto max-w-7xl px-5 sm:px-8" aria-label="Hoofdnavigatie">
+      <div class="flex h-[5.5rem] items-center justify-between gap-6">
+
+        <a href="index.html" class="flex shrink-0 items-center transition-opacity duration-200 hover:opacity-75" aria-label="Björkfors Outdoor — startpagina">
+          <img src="assets/images/logo-bjorkfors.png" alt="Björkfors Outdoor-Adventures — Bed &amp; Breakfast" class="h-14 w-auto sm:h-16">
+        </a>
+
+        <ul class="hidden xl:flex items-center gap-7 font-body text-[0.82rem] font-medium tracking-[0.08em] uppercase text-forest-950/80">
+          <li><a href="bed-and-breakfast.html" class="editorial-link transition-colors duration-200 hover:text-forest-950">Bed &amp; breakfast</a></li>
+          <li><a href="kanu-kajak-sup.html" class="editorial-link transition-colors duration-200 hover:text-forest-950">Kano&rsquo;s, kajaks &amp; SUP&rsquo;s</a></li>
+          <li><a href="sportfischen.html" class="editorial-link transition-colors duration-200 hover:text-forest-950">Sportvissen</a></li>
+          <li><a href="aktivitaeten.html" class="editorial-link text-forest-950" aria-current="page">Activiteiten &amp; omgeving</a></li>
+          <li><a href="preisliste.html" class="editorial-link transition-colors duration-200 hover:text-forest-950">Prijzen</a></li>
+          <li><a href="hausregeln.html" class="editorial-link transition-colors duration-200 hover:text-forest-950">Huisregels &amp; voorwaarden</a></li>
+        </ul>
+
+        <div class="flex items-center gap-3 sm:gap-5">
+          <div class="relative">
+            <button type="button" id="lang-button"
+                    class="flex min-h-[38px] items-center gap-2 rounded-full border border-forest-950/15 bg-white/60 px-3 py-1.5 font-body text-sm text-forest-950/85 shadow-sm backdrop-blur-md transition-all duration-200 hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                    aria-controls="lang-menu" aria-expanded="false" aria-haspopup="true">
+              <span aria-hidden="true">🇳🇱</span>
+              <span class="hidden sm:inline">Nederlands</span>
+              <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+              </svg>
+            </button>
+            <ul id="lang-menu"
+                class="hidden absolute right-0 mt-2 w-48 overflow-hidden rounded-xl border border-forest-950/10 bg-white/90 py-1 shadow-lg backdrop-blur-xl"
+                role="menu" aria-label="Taal kiezen">
+              <li role="none">
+                <a role="menuitem" href="aktivitaeten.html" aria-current="true" class="flex min-h-[44px] w-full items-center gap-2 px-3 text-sm font-semibold text-accent">
+                  <span aria-hidden="true">🇳🇱</span><span class="flex-1">Nederlands</span>
+                  <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                </a>
+              </li>
+              <li role="none"><a role="menuitem" href="de/aktivitaeten.html" class="flex min-h-[44px] w-full items-center gap-2 px-3 text-sm text-forest-950/80 transition-colors hover:bg-cream"><span aria-hidden="true">🇩🇪</span><span class="flex-1">Deutsch</span></a></li>
+              <li role="none"><a role="menuitem" href="en/aktivitaeten.html" class="flex min-h-[44px] w-full items-center gap-2 px-3 text-sm text-forest-950/80 transition-colors hover:bg-cream"><span aria-hidden="true">🇬🇧</span><span class="flex-1">English</span></a></li>
+              <li role="none"><a role="menuitem" href="sv/aktivitaeten.html" class="flex min-h-[44px] w-full items-center gap-2 px-3 text-sm text-forest-950/80 transition-colors hover:bg-cream"><span aria-hidden="true">🇸🇪</span><span class="flex-1">Svenska</span></a></li>
+            </ul>
+          </div>
+
+          <a href="kontakt.html"
+             class="btn-shiny hidden md:inline-flex items-center justify-center rounded-full px-6 py-2.5 min-h-[44px] font-body text-[0.82rem] font-semibold tracking-[0.06em] uppercase focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent">
+            <span class="btn-shiny-label">Boekingsaanvraag</span>
+          </a>
+
+          <button type="button" id="mobile-menu-button"
+                  class="inline-flex xl:hidden items-center justify-center min-h-[44px] min-w-[44px] rounded-full text-forest-950 transition-colors hover:bg-forest-950/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                  aria-controls="mobile-menu" aria-expanded="false" aria-label="Hoofdmenu openen">
+            <svg id="icon-menu-open" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5" />
+            </svg>
+            <svg id="icon-menu-close" class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <div id="mobile-menu" class="hidden xl:hidden border-t border-forest-950/10 bg-cream">
+      <ul class="space-y-1 px-5 py-6 font-body text-sm font-medium tracking-[0.08em] uppercase text-forest-950/80">
+        <li><a href="bed-and-breakfast.html" class="flex min-h-[44px] items-center px-2 transition-colors duration-200 hover:text-forest-950">Bed &amp; breakfast</a></li>
+        <li><a href="kanu-kajak-sup.html" class="flex min-h-[44px] items-center px-2 transition-colors duration-200 hover:text-forest-950">Kano&rsquo;s, kajaks &amp; SUP&rsquo;s</a></li>
+        <li><a href="sportfischen.html" class="flex min-h-[44px] items-center px-2 transition-colors duration-200 hover:text-forest-950">Sportvissen</a></li>
+        <li><a href="aktivitaeten.html" class="flex min-h-[44px] items-center px-2 text-accent" aria-current="page">Activiteiten &amp; omgeving</a></li>
+        <li><a href="preisliste.html" class="flex min-h-[44px] items-center px-2 transition-colors duration-200 hover:text-forest-950">Prijzen</a></li>
+        <li><a href="hausregeln.html" class="flex min-h-[44px] items-center px-2 transition-colors duration-200 hover:text-forest-950">Huisregels &amp; voorwaarden</a></li>
+        <li class="pt-3 md:hidden">
+          <a href="kontakt.html" class="btn-shiny flex min-h-[48px] items-center justify-center rounded-full px-6 font-body text-[0.82rem] font-semibold tracking-[0.06em] uppercase"><span class="btn-shiny-label">Boekingsaanvraag</span></a>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="main-content" aria-label="Activiteiten rond Björkfors">
+
+    <!-- ============ KOP ============ -->
+    <section class="mx-auto max-w-7xl px-4 pt-12 pb-2 text-slate-800 sm:px-8" aria-label="Activiteiten — introductie">
+      <div class="mb-4 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
+        <h1 class="max-w-lg text-4xl font-bold md:text-5xl">
+          Buiten is het<span class="text-slate-400"> programma</span>.
+        </h1>
+        <a href="kontakt.html"
+           class="whitespace-nowrap rounded-lg bg-slate-900 px-4 py-2 font-medium text-white shadow-xl transition-all duration-200 hover:scale-105 hover:bg-slate-700 active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent">
+          Boekingsaanvraag doen
+        </a>
+      </div>
+      <p class="max-w-2xl font-body text-base leading-relaxed text-forest-950/70">
+        Van de zwemsteiger voor de deur tot de scherenkust: onze favoriete plekken rond Björkfors —
+        klik op een tegel voor alle details.
+      </p>
+    </section>
+
+    <section class="mx-auto max-w-7xl px-5 py-10 sm:px-8" aria-label="Rond Björkfors">
+      <div class="max-w-2xl">
+        <h2 class="font-display text-3xl font-light sm:text-4xl">Rond Björkfors</h2>
+        <p class="mt-3 font-body text-sm leading-relaxed text-forest-950/65">Direct voor de deur — bossen, zwemplekken en dorpsleven rond de B&B.</p>
+      </div>
+      <div class="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <article class="bounce-card group relative cursor-pointer overflow-hidden rounded-2xl bg-white shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                 data-modal="dlg-wandern" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Wandelen, zwemmen & BBQ in Björkfors — details bekijken">
+          <div class="relative h-44 overflow-hidden bg-forest-800">
+            <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=800&auto=format&fit=crop" alt="Wandelen, zwemmen & BBQ in Björkfors" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" onerror="this.remove()">
+            <span class="absolute left-3 top-3 rounded-full bg-forest-800 text-cream px-3 py-1 font-body text-[0.65rem] font-semibold uppercase tracking-[0.15em]">Rond Björkfors</span>
+          </div>
+          <div class="p-6">
+            <h3 class="font-display text-2xl font-light leading-snug">Wandelen, zwemmen & BBQ in Björkfors</h3>
+            <p class="mt-2 font-body text-sm leading-relaxed text-forest-950/70">Diepe bossen, rustige zwemplekken en idyllische barbecueplekken direct aan het water.</p>
+            <p class="mt-4 font-body text-xs font-semibold uppercase tracking-[0.15em] text-accent">Meer informatie &rarr;</p>
+          </div>
+        </article>
+        <article class="bounce-card group relative cursor-pointer overflow-hidden rounded-2xl bg-white shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                 data-modal="dlg-arthouse" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Björkfors Arthouse — details bekijken">
+          <div class="relative h-44 overflow-hidden bg-forest-800">
+            <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?q=80&w=800&auto=format&fit=crop" alt="Björkfors Arthouse" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" onerror="this.remove()">
+            <span class="absolute left-3 top-3 rounded-full bg-forest-800 text-cream px-3 py-1 font-body text-[0.65rem] font-semibold uppercase tracking-[0.15em]">Rond Björkfors</span>
+          </div>
+          <div class="p-6">
+            <h3 class="font-display text-2xl font-light leading-snug">Björkfors Arthouse</h3>
+            <p class="mt-2 font-body text-sm leading-relaxed text-forest-950/70">Kunstgalerie en keramiekcursussen in het hart van het dorp.</p>
+            <p class="mt-4 font-body text-xs font-semibold uppercase tracking-[0.15em] text-accent">Meer informatie &rarr;</p>
+          </div>
+        </article>
+        <article class="bounce-card group relative cursor-pointer overflow-hidden rounded-2xl bg-white shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                 data-modal="dlg-valo" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Valö Café & Festplats — details bekijken">
+          <div class="relative h-44 overflow-hidden bg-forest-800">
+            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=800&auto=format&fit=crop" alt="Valö Café & Festplats" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" onerror="this.remove()">
+            <span class="absolute left-3 top-3 rounded-full bg-forest-800 text-cream px-3 py-1 font-body text-[0.65rem] font-semibold uppercase tracking-[0.15em]">Rond Björkfors</span>
+          </div>
+          <div class="p-6">
+            <h3 class="font-display text-2xl font-light leading-snug">Valö Café & Festplats</h3>
+            <p class="mt-2 font-body text-sm leading-relaxed text-forest-950/70">Zomercafé op een klein eiland in de Björkern — bereikbaar via een houten brug.</p>
+            <p class="mt-4 font-body text-xs font-semibold uppercase tracking-[0.15em] text-accent">Meer informatie &rarr;</p>
+          </div>
+        </article>
+        <article class="bounce-card group relative cursor-pointer overflow-hidden rounded-2xl bg-white shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                 data-modal="dlg-idhult" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Natuurreservaat Idhult — details bekijken">
+          <div class="relative h-44 overflow-hidden bg-forest-800">
+            <img src="https://images.unsplash.com/photo-1418065460487-3e41a6c84dc5?q=80&w=800&auto=format&fit=crop" alt="Natuurreservaat Idhult" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" onerror="this.remove()">
+            <span class="absolute left-3 top-3 rounded-full bg-forest-800 text-cream px-3 py-1 font-body text-[0.65rem] font-semibold uppercase tracking-[0.15em]">Rond Björkfors</span>
+          </div>
+          <div class="p-6">
+            <h3 class="font-display text-2xl font-light leading-snug">Natuurreservaat Idhult</h3>
+            <p class="mt-2 font-body text-sm leading-relaxed text-forest-950/70">Fantastisch uitzicht over het heuvelachtige hoogland — geheimtip voor rustige wandelingen.</p>
+            <p class="mt-4 font-body text-xs font-semibold uppercase tracking-[0.15em] text-accent">Meer informatie &rarr;</p>
+          </div>
+        </article>
+        <article class="bounce-card group relative cursor-pointer overflow-hidden rounded-2xl bg-white shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                 data-modal="dlg-basunda" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Basunda Gårdsbutik — details bekijken">
+          <div class="relative h-44 overflow-hidden bg-forest-800">
+            <img src="https://images.unsplash.com/photo-1488459716781-31db52582fe9?q=80&w=800&auto=format&fit=crop" alt="Basunda Gårdsbutik" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" onerror="this.remove()">
+            <span class="absolute left-3 top-3 rounded-full bg-forest-800 text-cream px-3 py-1 font-body text-[0.65rem] font-semibold uppercase tracking-[0.15em]">Rond Björkfors</span>
+          </div>
+          <div class="p-6">
+            <h3 class="font-display text-2xl font-light leading-snug">Basunda Gårdsbutik</h3>
+            <p class="mt-2 font-body text-sm leading-relaxed text-forest-950/70">Boerderijwinkel met lokaal geproduceerd rundvlees en uitstekend wild — direct aan het meer.</p>
+            <p class="mt-4 font-body text-xs font-semibold uppercase tracking-[0.15em] text-accent">Meer informatie &rarr;</p>
+          </div>
+        </article>
+        <article class="bounce-card group relative cursor-pointer overflow-hidden rounded-2xl bg-white shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                 data-modal="dlg-bp" tabindex="0" role="button" aria-haspopup="dialog" aria-label="BP Nostalgimack & Café Pärlan — details bekijken">
+          <div class="relative h-44 overflow-hidden bg-forest-800">
+            <img src="https://images.unsplash.com/photo-1489824904134-891ab64532f1?q=80&w=800&auto=format&fit=crop" alt="BP Nostalgimack & Café Pärlan" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" onerror="this.remove()">
+            <span class="absolute left-3 top-3 rounded-full bg-forest-800 text-cream px-3 py-1 font-body text-[0.65rem] font-semibold uppercase tracking-[0.15em]">Rond Björkfors</span>
+          </div>
+          <div class="p-6">
+            <h3 class="font-display text-2xl font-light leading-snug">BP Nostalgimack & Café Pärlan</h3>
+            <p class="mt-2 font-body text-sm leading-relaxed text-forest-950/70">Een echte tijdreis naar 1955 — nostalgiemuseum met café ernaast.</p>
+            <p class="mt-4 font-body text-xs font-semibold uppercase tracking-[0.15em] text-accent">Meer informatie &rarr;</p>
+          </div>
+        </article>
+        <article class="bounce-card group relative cursor-pointer overflow-hidden rounded-2xl bg-white shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                 data-modal="dlg-hycklinge" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Lilla Hycklinge Café & Gårdsbutik — details bekijken">
+          <div class="relative h-44 overflow-hidden bg-forest-800">
+            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=800&auto=format&fit=crop" alt="Lilla Hycklinge Café & Gårdsbutik" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" onerror="this.remove()">
+            <span class="absolute left-3 top-3 rounded-full bg-forest-800 text-cream px-3 py-1 font-body text-[0.65rem] font-semibold uppercase tracking-[0.15em]">Rond Björkfors</span>
+          </div>
+          <div class="p-6">
+            <h3 class="font-display text-2xl font-light leading-snug">Lilla Hycklinge Café & Gårdsbutik</h3>
+            <p class="mt-2 font-body text-sm leading-relaxed text-forest-950/70">Charmant café met boerderijwinkel en premium delicatessen in het buurdorp.</p>
+            <p class="mt-4 font-body text-xs font-semibold uppercase tracking-[0.15em] text-accent">Meer informatie &rarr;</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-7xl px-5 py-10 sm:px-8" aria-label="Vimmerby & omgeving">
+      <div class="max-w-2xl">
+        <h2 class="font-display text-3xl font-light sm:text-4xl">Vimmerby & omgeving</h2>
+        <p class="mt-3 font-body text-sm leading-relaxed text-forest-950/65">Filmgeschiedenis, jeugdherinneringen en een van de laatste oerbossen van Zuid-Zweden.</p>
+      </div>
+      <div class="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <article class="bounce-card group relative cursor-pointer overflow-hidden rounded-2xl bg-white shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                 data-modal="dlg-alv" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Astrid Lindgrens Värld & Näs — details bekijken">
+          <div class="relative h-44 overflow-hidden bg-forest-800">
+            <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?q=80&w=800&auto=format&fit=crop" alt="Astrid Lindgrens Värld & Näs" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" onerror="this.remove()">
+            <span class="absolute left-3 top-3 rounded-full bg-sage text-forest-950 px-3 py-1 font-body text-[0.65rem] font-semibold uppercase tracking-[0.15em]">Vimmerby & omgeving</span>
+          </div>
+          <div class="p-6">
+            <h3 class="font-display text-2xl font-light leading-snug">Astrid Lindgrens Värld & Näs</h3>
+            <p class="mt-2 font-body text-sm leading-relaxed text-forest-950/70">Het enorme openluchtpark — een fascinerende reis naar de eigen kindertijd.</p>
+            <p class="mt-4 font-body text-xs font-semibold uppercase tracking-[0.15em] text-accent">Meer informatie &rarr;</p>
+          </div>
+        </article>
+        <article class="bounce-card group relative cursor-pointer overflow-hidden rounded-2xl bg-white shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                 data-modal="dlg-katthult" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Katthult & Filmbyn Småland — details bekijken">
+          <div class="relative h-44 overflow-hidden bg-forest-800">
+            <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=800&auto=format&fit=crop" alt="Katthult & Filmbyn Småland" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" onerror="this.remove()">
+            <span class="absolute left-3 top-3 rounded-full bg-sage text-forest-950 px-3 py-1 font-body text-[0.65rem] font-semibold uppercase tracking-[0.15em]">Vimmerby & omgeving</span>
+          </div>
+          <div class="p-6">
+            <h3 class="font-display text-2xl font-light leading-snug">Katthult & Filmbyn Småland</h3>
+            <p class="mt-2 font-body text-sm leading-relaxed text-forest-950/70">De echte Michiel-boerderij in Gibberyd en de originele filmdecors in Mariannelund.</p>
+            <p class="mt-4 font-body text-xs font-semibold uppercase tracking-[0.15em] text-accent">Meer informatie &rarr;</p>
+          </div>
+        </article>
+        <article class="bounce-card group relative cursor-pointer overflow-hidden rounded-2xl bg-white shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                 data-modal="dlg-norrakvill" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Nationaal park Norra Kvill — details bekijken">
+          <div class="relative h-44 overflow-hidden bg-forest-800">
+            <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=800&auto=format&fit=crop" alt="Nationaal park Norra Kvill" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" onerror="this.remove()">
+            <span class="absolute left-3 top-3 rounded-full bg-sage text-forest-950 px-3 py-1 font-body text-[0.65rem] font-semibold uppercase tracking-[0.15em]">Vimmerby & omgeving</span>
+          </div>
+          <div class="p-6">
+            <h3 class="font-display text-2xl font-light leading-snug">Nationaal park Norra Kvill</h3>
+            <p class="mt-2 font-body text-sm leading-relaxed text-forest-950/70">Echt oerbos: al 150 jaar is hier geen boom meer gekapt.</p>
+            <p class="mt-4 font-body text-xs font-semibold uppercase tracking-[0.15em] text-accent">Meer informatie &rarr;</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-7xl px-5 py-10 sm:px-8" aria-label="Västervik — de kust">
+      <div class="max-w-2xl">
+        <h2 class="font-display text-3xl font-light sm:text-4xl">Västervik — de kust</h2>
+        <p class="mt-3 font-body text-sm leading-relaxed text-forest-950/65">Oostzeelucht en ontspanning, op een uur rijden.</p>
+      </div>
+      <div class="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <article class="bounce-card group relative cursor-pointer overflow-hidden rounded-2xl bg-white shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                 data-modal="dlg-granso" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Gränsö Slott & Spa — details bekijken">
+          <div class="relative h-44 overflow-hidden bg-forest-800">
+            <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=800&auto=format&fit=crop" alt="Gränsö Slott & Spa" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" onerror="this.remove()">
+            <span class="absolute left-3 top-3 rounded-full bg-accent text-white px-3 py-1 font-body text-[0.65rem] font-semibold uppercase tracking-[0.15em]">Västervik — de kust</span>
+          </div>
+          <div class="p-6">
+            <h3 class="font-display text-2xl font-light leading-snug">Gränsö Slott & Spa</h3>
+            <p class="mt-2 font-body text-sm leading-relaxed text-forest-950/70">Hoogwaardige kasteelspa met acht pools direct aan de Oostzeekust.</p>
+            <p class="mt-4 font-body text-xs font-semibold uppercase tracking-[0.15em] text-accent">Meer informatie &rarr;</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-7xl px-5 py-10 sm:px-8" aria-label="Uitstapjes in de wijde omgeving">
+      <div class="max-w-2xl">
+        <h2 class="font-display text-3xl font-light sm:text-4xl">Uitstapjes in de wijde omgeving</h2>
+        <p class="mt-3 font-body text-sm leading-relaxed text-forest-950/65">Scherenkust, trollenbos, grotten in oergesteente — lonende dagtochten in alle richtingen.</p>
+      </div>
+      <div class="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <article class="bounce-card group relative cursor-pointer overflow-hidden rounded-2xl bg-white shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                 data-modal="dlg-archipelago" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Scherenkust van Östergötland — details bekijken">
+          <div class="relative h-44 overflow-hidden bg-forest-800">
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=800&auto=format&fit=crop" alt="Scherenkust van Östergötland" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" onerror="this.remove()">
+            <span class="absolute left-3 top-3 rounded-full bg-forest-950 text-cream px-3 py-1 font-body text-[0.65rem] font-semibold uppercase tracking-[0.15em]">Uitstapjes in de wijde omgeving</span>
+          </div>
+          <div class="p-6">
+            <h3 class="font-display text-2xl font-light leading-snug">Scherenkust van Östergötland</h3>
+            <p class="mt-2 font-body text-sm leading-relaxed text-forest-950/70">Meer dan 8.000 kale rotseilanden — de dramatische kant van Zweden.</p>
+            <p class="mt-4 font-body text-xs font-semibold uppercase tracking-[0.15em] text-accent">Meer informatie &rarr;</p>
+          </div>
+        </article>
+        <article class="bounce-card group relative cursor-pointer overflow-hidden rounded-2xl bg-white shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                 data-modal="dlg-kisamtb" tabindex="0" role="button" aria-haspopup="dialog" aria-label="KISA MTB Park (Tolvmannabacken) — details bekijken">
+          <div class="relative h-44 overflow-hidden bg-forest-800">
+            <img src="https://images.unsplash.com/photo-1541625602330-2277a4c46182?q=80&w=800&auto=format&fit=crop" alt="KISA MTB Park (Tolvmannabacken)" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" onerror="this.remove()">
+            <span class="absolute left-3 top-3 rounded-full bg-forest-950 text-cream px-3 py-1 font-body text-[0.65rem] font-semibold uppercase tracking-[0.15em]">Uitstapjes in de wijde omgeving</span>
+          </div>
+          <div class="p-6">
+            <h3 class="font-display text-2xl font-light leading-snug">KISA MTB Park (Tolvmannabacken)</h3>
+            <p class="mt-2 font-body text-sm leading-relaxed text-forest-950/70">Downhill- en flowtrails met lift — van blauw tot double black.</p>
+            <p class="mt-4 font-body text-xs font-semibold uppercase tracking-[0.15em] text-accent">Meer informatie &rarr;</p>
+          </div>
+        </article>
+        <article class="bounce-card group relative cursor-pointer overflow-hidden rounded-2xl bg-white shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                 data-modal="dlg-gamlalinkoping" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Gamla Linköping — details bekijken">
+          <div class="relative h-44 overflow-hidden bg-forest-800">
+            <img src="https://images.unsplash.com/photo-1509356843151-3e7d96241e11?q=80&w=800&auto=format&fit=crop" alt="Gamla Linköping" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" onerror="this.remove()">
+            <span class="absolute left-3 top-3 rounded-full bg-forest-950 text-cream px-3 py-1 font-body text-[0.65rem] font-semibold uppercase tracking-[0.15em]">Uitstapjes in de wijde omgeving</span>
+          </div>
+          <div class="p-6">
+            <h3 class="font-display text-2xl font-light leading-snug">Gamla Linköping</h3>
+            <p class="mt-2 font-body text-sm leading-relaxed text-forest-950/70">Levend openluchtmuseum: een Zweeds stadje van 100 jaar geleden.</p>
+            <p class="mt-4 font-body text-xs font-semibold uppercase tracking-[0.15em] text-accent">Meer informatie &rarr;</p>
+          </div>
+        </article>
+        <article class="bounce-card group relative cursor-pointer overflow-hidden rounded-2xl bg-white shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                 data-modal="dlg-trollegater" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Natuurreservaat Trollegater — details bekijken">
+          <div class="relative h-44 overflow-hidden bg-forest-800">
+            <img src="https://images.unsplash.com/photo-1518495973542-4542c06a5843?q=80&w=800&auto=format&fit=crop" alt="Natuurreservaat Trollegater" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" onerror="this.remove()">
+            <span class="absolute left-3 top-3 rounded-full bg-forest-950 text-cream px-3 py-1 font-body text-[0.65rem] font-semibold uppercase tracking-[0.15em]">Uitstapjes in de wijde omgeving</span>
+          </div>
+          <div class="p-6">
+            <h3 class="font-display text-2xl font-light leading-snug">Natuurreservaat Trollegater</h3>
+            <p class="mt-2 font-body text-sm leading-relaxed text-forest-950/70">Een van de grootste grottenstelsels in oergesteente van Zweden — zaklamp niet vergeten.</p>
+            <p class="mt-4 font-body text-xs font-semibold uppercase tracking-[0.15em] text-accent">Meer informatie &rarr;</p>
+          </div>
+        </article>
+        <article class="bounce-card group relative cursor-pointer overflow-hidden rounded-2xl bg-white shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                 data-modal="dlg-trollpark" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Gamleby Trollpark — details bekijken">
+          <div class="relative h-44 overflow-hidden bg-forest-800">
+            <img src="https://images.unsplash.com/photo-1425913397330-cf8af2ff40a1?q=80&w=800&auto=format&fit=crop" alt="Gamleby Trollpark" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" onerror="this.remove()">
+            <span class="absolute left-3 top-3 rounded-full bg-forest-950 text-cream px-3 py-1 font-body text-[0.65rem] font-semibold uppercase tracking-[0.15em]">Uitstapjes in de wijde omgeving</span>
+          </div>
+          <div class="p-6">
+            <h3 class="font-display text-2xl font-light leading-snug">Gamleby Trollpark</h3>
+            <p class="mt-2 font-body text-sm leading-relaxed text-forest-950/70">Mystieke korte wandeling door een bos vol levensgrote trollensculpturen.</p>
+            <p class="mt-4 font-body text-xs font-semibold uppercase tracking-[0.15em] text-accent">Meer informatie &rarr;</p>
+          </div>
+        </article>
+        <article class="bounce-card group relative cursor-pointer overflow-hidden rounded-2xl bg-white shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                 data-modal="dlg-granna" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Polkagris-stad Gränna — details bekijken">
+          <div class="relative h-44 overflow-hidden bg-forest-800">
+            <img src="https://images.unsplash.com/photo-1481391319762-47dff72954d9?q=80&w=800&auto=format&fit=crop" alt="Polkagris-stad Gränna" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" onerror="this.remove()">
+            <span class="absolute left-3 top-3 rounded-full bg-forest-950 text-cream px-3 py-1 font-body text-[0.65rem] font-semibold uppercase tracking-[0.15em]">Uitstapjes in de wijde omgeving</span>
+          </div>
+          <div class="p-6">
+            <h3 class="font-display text-2xl font-light leading-snug">Polkagris-stad Gränna</h3>
+            <p class="mt-2 font-body text-sm leading-relaxed text-forest-950/70">Wereldberoemd om handgemaakte zuurstokken — direct aan het Vätternmeer.</p>
+            <p class="mt-4 font-body text-xs font-semibold uppercase tracking-[0.15em] text-accent">Meer informatie &rarr;</p>
+          </div>
+        </article>
+        <article class="bounce-card group relative cursor-pointer overflow-hidden rounded-2xl bg-white shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                 data-modal="dlg-minigolf" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Minigolf bij Hornåbergs Camping — details bekijken">
+          <div class="relative h-44 overflow-hidden bg-forest-800">
+            <img src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?q=80&w=800&auto=format&fit=crop" alt="Minigolf bij Hornåbergs Camping" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" onerror="this.remove()">
+            <span class="absolute left-3 top-3 rounded-full bg-forest-950 text-cream px-3 py-1 font-body text-[0.65rem] font-semibold uppercase tracking-[0.15em]">Uitstapjes in de wijde omgeving</span>
+          </div>
+          <div class="p-6">
+            <h3 class="font-display text-2xl font-light leading-snug">Minigolf bij Hornåbergs Camping</h3>
+            <p class="mt-2 font-body text-sm leading-relaxed text-forest-950/70">Verzorgde minigolfbaan direct aan de rivier in het buurdorp Horn — drop-in mogelijk.</p>
+            <p class="mt-4 font-body text-xs font-semibold uppercase tracking-[0.15em] text-accent">Meer informatie &rarr;</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ DETAILDIALOGEN ============ -->
+      <dialog id="dlg-wandern" class="poi-dialog w-[min(92vw,40rem)] rounded-2xl p-0 shadow-2xl backdrop:bg-forest-950/60" aria-label="Wandelen, zwemmen & BBQ in Björkfors">
+        <div class="relative h-52 overflow-hidden bg-forest-800">
+          <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=800&auto=format&fit=crop" alt="Wandelen, zwemmen & BBQ in Björkfors" class="h-full w-full object-cover" loading="lazy" onerror="this.remove()">
+          <button type="button" data-close class="absolute right-3 top-3 flex h-10 w-10 items-center justify-center rounded-full bg-forest-950/70 text-cream transition-colors hover:bg-forest-950 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent" aria-label="Sluiten">
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+        <div class="p-8">
+          <h3 class="font-display text-3xl font-light">Wandelen, zwemmen & BBQ in Björkfors</h3>
+          <p class="mt-4 font-body text-sm leading-relaxed text-forest-950/75">De directe omgeving van Björkfors biedt Zweedse natuur in haar puurste vorm. Verken diepe bossen via verlaten wandelpaden, gebruik de rustige zwemplekken voor een verfrissende duik na het vissen of laat de avond uitklinken bij een van de idyllische barbecueplekken direct aan het water. Combineer het geheel met onze kajaks — die we trouwens ook naar omliggende meren bezorgen!</p>
+        </div>
+      </dialog>
+
+      <dialog id="dlg-arthouse" class="poi-dialog w-[min(92vw,40rem)] rounded-2xl p-0 shadow-2xl backdrop:bg-forest-950/60" aria-label="Björkfors Arthouse">
+        <div class="relative h-52 overflow-hidden bg-forest-800">
+          <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?q=80&w=800&auto=format&fit=crop" alt="Björkfors Arthouse" class="h-full w-full object-cover" loading="lazy" onerror="this.remove()">
+          <button type="button" data-close class="absolute right-3 top-3 flex h-10 w-10 items-center justify-center rounded-full bg-forest-950/70 text-cream transition-colors hover:bg-forest-950 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent" aria-label="Sluiten">
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+        <div class="p-8">
+          <h3 class="font-display text-3xl font-light">Björkfors Arthouse</h3>
+          <p class="mt-4 font-body text-sm leading-relaxed text-forest-950/75">Een creatieve ontmoetingsplek voor kunstliefhebbers in het hart van het dorp. Het Arthouse biedt een mooie kunstgalerie (Artbutik) en organiseert regelmatig keramiekcursussen in een ontspannen sfeer.</p>
+          <ul class="mt-5 space-y-2 font-body text-sm">
+            <li><a href="https://bjorkforsarthouse.se" target="_blank" rel="noopener" class="editorial-link text-accent">Info & contact: bjorkforsarthouse.se</a></li>
+          </ul>
+        </div>
+      </dialog>
+
+      <dialog id="dlg-valo" class="poi-dialog w-[min(92vw,40rem)] rounded-2xl p-0 shadow-2xl backdrop:bg-forest-950/60" aria-label="Valö Café & Festplats">
+        <div class="relative h-52 overflow-hidden bg-forest-800">
+          <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=800&auto=format&fit=crop" alt="Valö Café & Festplats" class="h-full w-full object-cover" loading="lazy" onerror="this.remove()">
+          <button type="button" data-close class="absolute right-3 top-3 flex h-10 w-10 items-center justify-center rounded-full bg-forest-950/70 text-cream transition-colors hover:bg-forest-950 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent" aria-label="Sluiten">
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+        <div class="p-8">
+          <h3 class="font-display text-3xl font-light">Valö Café & Festplats</h3>
+          <p class="mt-4 font-body text-sm leading-relaxed text-forest-950/75">Een prachtig zomercafé op een klein eiland in het meer Björkern, bereikbaar via een kleine houten brug. Naast eerlijke, lichte gerechten (zoals de Valö-burger of de klassieke Räkmacka) zijn er verse baksels en een heerlijk uitzicht over het meer. Een fantastische plek voor de late middagzon.</p>
+          <ul class="mt-5 space-y-2 font-body text-sm">
+            <li><a href="https://kindaturism.se" target="_blank" rel="noopener" class="editorial-link text-accent">Info: Valö op Kindaturism.se</a></li>
+          </ul>
+        </div>
+      </dialog>
+
+      <dialog id="dlg-idhult" class="poi-dialog w-[min(92vw,40rem)] rounded-2xl p-0 shadow-2xl backdrop:bg-forest-950/60" aria-label="Natuurreservaat Idhult">
+        <div class="relative h-52 overflow-hidden bg-forest-800">
+          <img src="https://images.unsplash.com/photo-1418065460487-3e41a6c84dc5?q=80&w=800&auto=format&fit=crop" alt="Natuurreservaat Idhult" class="h-full w-full object-cover" loading="lazy" onerror="this.remove()">
+          <button type="button" data-close class="absolute right-3 top-3 flex h-10 w-10 items-center justify-center rounded-full bg-forest-950/70 text-cream transition-colors hover:bg-forest-950 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent" aria-label="Sluiten">
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+        <div class="p-8">
+          <h3 class="font-display text-3xl font-light">Natuurreservaat Idhult</h3>
+          <p class="mt-4 font-body text-sm leading-relaxed text-forest-950/75">Een adembenemend natuurreservaat heel dichtbij. Vanuit het idyllische dorp op de bergrug hebben jullie een fantastisch uitzicht over het sterk glooiende Zweedse hoogland met oude cultuurlandschappen en zeldzame planten. Een geheimtip voor lange, rustige wandelingen.</p>
+          <ul class="mt-5 space-y-2 font-body text-sm">
+            <li><a href="https://www.lansstyrelsen.se/ostergotland" target="_blank" rel="noopener" class="editorial-link text-accent">Info: Länsstyrelsen Östergötland — Idhult</a></li>
+          </ul>
+        </div>
+      </dialog>
+
+      <dialog id="dlg-basunda" class="poi-dialog w-[min(92vw,40rem)] rounded-2xl p-0 shadow-2xl backdrop:bg-forest-950/60" aria-label="Basunda Gårdsbutik">
+        <div class="relative h-52 overflow-hidden bg-forest-800">
+          <img src="https://images.unsplash.com/photo-1488459716781-31db52582fe9?q=80&w=800&auto=format&fit=crop" alt="Basunda Gårdsbutik" class="h-full w-full object-cover" loading="lazy" onerror="this.remove()">
+          <button type="button" data-close class="absolute right-3 top-3 flex h-10 w-10 items-center justify-center rounded-full bg-forest-950/70 text-cream transition-colors hover:bg-forest-950 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent" aria-label="Sluiten">
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+        <div class="p-8">
+          <h3 class="font-display text-3xl font-light">Basunda Gårdsbutik</h3>
+          <p class="mt-4 font-body text-sm leading-relaxed text-forest-950/75">Een familieboerderij direct aan het meer Björkern. In de moderne boerderijwinkel is hoogwaardig, lokaal geproduceerd vlees verkrijgbaar (rund en uitstekend wild uit het eigen wildpark). Perfect om jullie voor de barbecueavond bij het vakantiehuis van topkwaliteit te voorzien.</p>
+          <ul class="mt-5 space-y-2 font-body text-sm">
+            <li><a href="https://basunda.se" target="_blank" rel="noopener" class="editorial-link text-accent">Info & webshop: basunda.se</a></li>
+          </ul>
+        </div>
+      </dialog>
+
+      <dialog id="dlg-bp" class="poi-dialog w-[min(92vw,40rem)] rounded-2xl p-0 shadow-2xl backdrop:bg-forest-950/60" aria-label="BP Nostalgimack & Café Pärlan">
+        <div class="relative h-52 overflow-hidden bg-forest-800">
+          <img src="https://images.unsplash.com/photo-1489824904134-891ab64532f1?q=80&w=800&auto=format&fit=crop" alt="BP Nostalgimack & Café Pärlan" class="h-full w-full object-cover" loading="lazy" onerror="this.remove()">
+          <button type="button" data-close class="absolute right-3 top-3 flex h-10 w-10 items-center justify-center rounded-full bg-forest-950/70 text-cream transition-colors hover:bg-forest-950 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent" aria-label="Sluiten">
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+        <div class="p-8">
+          <h3 class="font-display text-3xl font-light">BP Nostalgimack & Café Pärlan</h3>
+          <p class="mt-4 font-body text-sm leading-relaxed text-forest-950/75">Een echte tijdreis naar het jaar 1955. Dit liefdevol gerestaureerde BP-tankstation is tegenwoordig een puur nostalgiemuseum. Direct ernaast serveert Café Pärlan kleine snacks, ijs en koffie voor de tussenstop.</p>
+          <ul class="mt-5 space-y-2 font-body text-sm">
+            <li><a href="https://nostalgimacken.se" target="_blank" rel="noopener" class="editorial-link text-accent">Info: nostalgimacken.se</a></li>
+          </ul>
+        </div>
+      </dialog>
+
+      <dialog id="dlg-hycklinge" class="poi-dialog w-[min(92vw,40rem)] rounded-2xl p-0 shadow-2xl backdrop:bg-forest-950/60" aria-label="Lilla Hycklinge Café & Gårdsbutik">
+        <div class="relative h-52 overflow-hidden bg-forest-800">
+          <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=800&auto=format&fit=crop" alt="Lilla Hycklinge Café & Gårdsbutik" class="h-full w-full object-cover" loading="lazy" onerror="this.remove()">
+          <button type="button" data-close class="absolute right-3 top-3 flex h-10 w-10 items-center justify-center rounded-full bg-forest-950/70 text-cream transition-colors hover:bg-forest-950 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent" aria-label="Sluiten">
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+        <div class="p-8">
+          <h3 class="font-display text-3xl font-light">Lilla Hycklinge Café & Gårdsbutik</h3>
+          <p class="mt-4 font-body text-sm leading-relaxed text-forest-950/75">Dit onlangs geopende, bijzonder charmante café met boerderijwinkel ligt in het buurdorp Hycklinge. Hier wachten jullie Zweedse premium delicatessen, uitstekende garnalenbroodjes en koffie in een volkomen ontspannen, landelijke sfeer. Het café beschikt bovendien over een volledige drankvergunning.</p>
+          <ul class="mt-5 space-y-2 font-body text-sm">
+            <li><a href="https://lillahycklinge.com" target="_blank" rel="noopener" class="editorial-link text-accent">Info: lillahycklinge.com</a></li>
+          </ul>
+        </div>
+      </dialog>
+
+      <dialog id="dlg-alv" class="poi-dialog w-[min(92vw,40rem)] rounded-2xl p-0 shadow-2xl backdrop:bg-forest-950/60" aria-label="Astrid Lindgrens Värld & Näs">
+        <div class="relative h-52 overflow-hidden bg-forest-800">
+          <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?q=80&w=800&auto=format&fit=crop" alt="Astrid Lindgrens Värld & Näs" class="h-full w-full object-cover" loading="lazy" onerror="this.remove()">
+          <button type="button" data-close class="absolute right-3 top-3 flex h-10 w-10 items-center justify-center rounded-full bg-forest-950/70 text-cream transition-colors hover:bg-forest-950 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent" aria-label="Sluiten">
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+        <div class="p-8">
+          <h3 class="font-display text-3xl font-light">Astrid Lindgrens Värld & Näs</h3>
+          <p class="mt-4 font-body text-sm leading-relaxed text-forest-950/75">De plek waar Zweedse cultuurgeschiedenis werd geschreven. Ook voor volwassenen is het enorme openluchtpark met zijn fantastische decors een fascinerende reis naar de eigen kindertijd. Op het naburige landgoed Astrid Lindgrens Näs, het ouderlijk huis van de schrijfster, vinden jullie bovendien diepgaande tentoonstellingen over haar leven en prachtig aangelegde tuinen.</p>
+          <ul class="mt-5 space-y-2 font-body text-sm">
+            <li><a href="https://astridlindgrensvarld.se" target="_blank" rel="noopener" class="editorial-link text-accent">Tickets & info: astridlindgrensvarld.se</a></li>
+          </ul>
+        </div>
+      </dialog>
+
+      <dialog id="dlg-katthult" class="poi-dialog w-[min(92vw,40rem)] rounded-2xl p-0 shadow-2xl backdrop:bg-forest-950/60" aria-label="Katthult & Filmbyn Småland">
+        <div class="relative h-52 overflow-hidden bg-forest-800">
+          <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=800&auto=format&fit=crop" alt="Katthult & Filmbyn Småland" class="h-full w-full object-cover" loading="lazy" onerror="this.remove()">
+          <button type="button" data-close class="absolute right-3 top-3 flex h-10 w-10 items-center justify-center rounded-full bg-forest-950/70 text-cream transition-colors hover:bg-forest-950 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent" aria-label="Sluiten">
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+        <div class="p-8">
+          <h3 class="font-display text-3xl font-light">Katthult & Filmbyn Småland</h3>
+          <p class="mt-4 font-body text-sm leading-relaxed text-forest-950/75">Beleef een stuk Zweedse filmgeschiedenis. Bezoek in Gibberyd de echte Katthult-boerderij, waar de films over Michiel van de Hazelhoeve werden opgenomen, of rijd naar Filmbyn Småland in Mariannelund om in de originele filmdecors te duiken.</p>
+          <ul class="mt-5 space-y-2 font-body text-sm">
+            <li><a href="https://katthult.se" target="_blank" rel="noopener" class="editorial-link text-accent">Katthult: katthult.se</a></li>
+            <li><a href="https://filmbyn.se" target="_blank" rel="noopener" class="editorial-link text-accent">Filmbyn: filmbyn.se</a></li>
+          </ul>
+        </div>
+      </dialog>
+
+      <dialog id="dlg-norrakvill" class="poi-dialog w-[min(92vw,40rem)] rounded-2xl p-0 shadow-2xl backdrop:bg-forest-950/60" aria-label="Nationaal park Norra Kvill">
+        <div class="relative h-52 overflow-hidden bg-forest-800">
+          <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=800&auto=format&fit=crop" alt="Nationaal park Norra Kvill" class="h-full w-full object-cover" loading="lazy" onerror="this.remove()">
+          <button type="button" data-close class="absolute right-3 top-3 flex h-10 w-10 items-center justify-center rounded-full bg-forest-950/70 text-cream transition-colors hover:bg-forest-950 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent" aria-label="Sluiten">
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+        <div class="p-8">
+          <h3 class="font-display text-3xl font-light">Nationaal park Norra Kvill</h3>
+          <p class="mt-4 font-body text-sm leading-relaxed text-forest-950/75">Een echt hoogtepunt voor natuurfotografen en wildlife-fans! Een van de weinige echte oerbossen van Zuid-Zweden. Al 150 jaar is hier geen boom meer gekapt. Jullie wacht een bijna mystiek, ruig natuurlandschap met enorme, bemoste rotsblokken en tot 350 jaar oude grove dennen.</p>
+          <ul class="mt-5 space-y-2 font-body text-sm">
+            <li><a href="https://www.sverigesnationalparker.se" target="_blank" rel="noopener" class="editorial-link text-accent">Info: Sveriges Nationalparker — Norra Kvill</a></li>
+          </ul>
+        </div>
+      </dialog>
+
+      <dialog id="dlg-granso" class="poi-dialog w-[min(92vw,40rem)] rounded-2xl p-0 shadow-2xl backdrop:bg-forest-950/60" aria-label="Gränsö Slott & Spa">
+        <div class="relative h-52 overflow-hidden bg-forest-800">
+          <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=800&auto=format&fit=crop" alt="Gränsö Slott & Spa" class="h-full w-full object-cover" loading="lazy" onerror="this.remove()">
+          <button type="button" data-close class="absolute right-3 top-3 flex h-10 w-10 items-center justify-center rounded-full bg-forest-950/70 text-cream transition-colors hover:bg-forest-950 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent" aria-label="Sluiten">
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+        <div class="p-8">
+          <h3 class="font-display text-3xl font-light">Gränsö Slott & Spa</h3>
+          <p class="mt-4 font-body text-sm leading-relaxed text-forest-950/75">Als het weer een keer niet meewerkt of de spieren moe zijn van het vissen: kasteel Gränsö biedt een hoogwaardige spa met acht verschillende verwarmde pools, IJslandse bron en saunalandschap direct aan de Oostzeekust. Day-spa-arrangementen moeten beslist vooraf worden geboekt!</p>
+          <ul class="mt-5 space-y-2 font-body text-sm">
+            <li><a href="https://granso.se/spa" target="_blank" rel="noopener" class="editorial-link text-accent">Day-spa boeken: granso.se/spa</a></li>
+          </ul>
+        </div>
+      </dialog>
+
+      <dialog id="dlg-archipelago" class="poi-dialog w-[min(92vw,40rem)] rounded-2xl p-0 shadow-2xl backdrop:bg-forest-950/60" aria-label="Scherenkust van Östergötland">
+        <div class="relative h-52 overflow-hidden bg-forest-800">
+          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=800&auto=format&fit=crop" alt="Scherenkust van Östergötland" class="h-full w-full object-cover" loading="lazy" onerror="this.remove()">
+          <button type="button" data-close class="absolute right-3 top-3 flex h-10 w-10 items-center justify-center rounded-full bg-forest-950/70 text-cream transition-colors hover:bg-forest-950 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent" aria-label="Sluiten">
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+        <div class="p-8">
+          <h3 class="font-display text-3xl font-light">Scherenkust van Östergötland</h3>
+          <p class="mt-4 font-body text-sm leading-relaxed text-forest-950/75">Op slechts een autorit afstand begint aan de oostkust de eilandenzee. De scheren van St. Anna en Gryt omvatten meer dan 8.000 vaak volledig onbewoonde, kale rotseilanden. Een ruig, prachtig natuurparadijs dat de dramatische kant van Zweden laat zien.</p>
+        </div>
+      </dialog>
+
+      <dialog id="dlg-kisamtb" class="poi-dialog w-[min(92vw,40rem)] rounded-2xl p-0 shadow-2xl backdrop:bg-forest-950/60" aria-label="KISA MTB Park (Tolvmannabacken)">
+        <div class="relative h-52 overflow-hidden bg-forest-800">
+          <img src="https://images.unsplash.com/photo-1541625602330-2277a4c46182?q=80&w=800&auto=format&fit=crop" alt="KISA MTB Park (Tolvmannabacken)" class="h-full w-full object-cover" loading="lazy" onerror="this.remove()">
+          <button type="button" data-close class="absolute right-3 top-3 flex h-10 w-10 items-center justify-center rounded-full bg-forest-950/70 text-cream transition-colors hover:bg-forest-950 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent" aria-label="Sluiten">
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+        <div class="p-8">
+          <h3 class="font-display text-3xl font-light">KISA MTB Park (Tolvmannabacken)</h3>
+          <p class="mt-4 font-body text-sm leading-relaxed text-forest-950/75">Voor de adrenalinejunkies in de groep: dit mountainbikepark biedt downhill- en flowtrails met liftvervoer (van blauw tot double black). De machinaal aangelegde trails voeren over massieve granietplaten en door dichte naaldbossen.</p>
+          <ul class="mt-5 space-y-2 font-body text-sm">
+            <li><a href="https://kisamtbpark.com/" target="_blank" rel="noopener" class="editorial-link text-accent">Trailmap &amp; info: kisamtbpark.com</a></li>
+          </ul>
+        </div>
+      </dialog>
+
+      <dialog id="dlg-gamlalinkoping" class="poi-dialog w-[min(92vw,40rem)] rounded-2xl p-0 shadow-2xl backdrop:bg-forest-950/60" aria-label="Gamla Linköping">
+        <div class="relative h-52 overflow-hidden bg-forest-800">
+          <img src="https://images.unsplash.com/photo-1509356843151-3e7d96241e11?q=80&w=800&auto=format&fit=crop" alt="Gamla Linköping" class="h-full w-full object-cover" loading="lazy" onerror="this.remove()">
+          <button type="button" data-close class="absolute right-3 top-3 flex h-10 w-10 items-center justify-center rounded-full bg-forest-950/70 text-cream transition-colors hover:bg-forest-950 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent" aria-label="Sluiten">
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+        <div class="p-8">
+          <h3 class="font-display text-3xl font-light">Gamla Linköping</h3>
+          <p class="mt-4 font-body text-sm leading-relaxed text-forest-950/75">Een indrukwekkend, levend openluchtmuseum midden in Linköping. Hier zijn meer dan 100 historische houten gebouwen uit de regio samengebracht om een Zweeds stadje van 100 jaar geleden natuurgetrouw na te bouwen. De toegang tot het historische terrein is gratis!</p>
+          <ul class="mt-5 space-y-2 font-body text-sm">
+            <li><a href="https://gamlalinkoping.se" target="_blank" rel="noopener" class="editorial-link text-accent">Info: gamlalinkoping.se</a></li>
+          </ul>
+        </div>
+      </dialog>
+
+      <dialog id="dlg-trollegater" class="poi-dialog w-[min(92vw,40rem)] rounded-2xl p-0 shadow-2xl backdrop:bg-forest-950/60" aria-label="Natuurreservaat Trollegater">
+        <div class="relative h-52 overflow-hidden bg-forest-800">
+          <img src="https://images.unsplash.com/photo-1518495973542-4542c06a5843?q=80&w=800&auto=format&fit=crop" alt="Natuurreservaat Trollegater" class="h-full w-full object-cover" loading="lazy" onerror="this.remove()">
+          <button type="button" data-close class="absolute right-3 top-3 flex h-10 w-10 items-center justify-center rounded-full bg-forest-950/70 text-cream transition-colors hover:bg-forest-950 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent" aria-label="Sluiten">
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+        <div class="p-8">
+          <h3 class="font-display text-3xl font-light">Natuurreservaat Trollegater</h3>
+          <p class="mt-4 font-body text-sm leading-relaxed text-forest-950/75">Een van de grootste grottenstelsels in oergesteente van Zweden. Uitgerust met stevige kleding en eigen zaklampen kunnen jullie je hier diep in het bos op eigen houtje in lange rotsspleten en mystieke grotten wagen. Een micro-avontuur buiten de gebaande paden.</p>
+          <ul class="mt-5 space-y-2 font-body text-sm">
+            <li><a href="https://www.lansstyrelsen.se/ostergotland" target="_blank" rel="noopener" class="editorial-link text-accent">Info: Länsstyrelsen — Trollegater</a></li>
+          </ul>
+        </div>
+      </dialog>
+
+      <dialog id="dlg-trollpark" class="poi-dialog w-[min(92vw,40rem)] rounded-2xl p-0 shadow-2xl backdrop:bg-forest-950/60" aria-label="Gamleby Trollpark">
+        <div class="relative h-52 overflow-hidden bg-forest-800">
+          <img src="https://images.unsplash.com/photo-1425913397330-cf8af2ff40a1?q=80&w=800&auto=format&fit=crop" alt="Gamleby Trollpark" class="h-full w-full object-cover" loading="lazy" onerror="this.remove()">
+          <button type="button" data-close class="absolute right-3 top-3 flex h-10 w-10 items-center justify-center rounded-full bg-forest-950/70 text-cream transition-colors hover:bg-forest-950 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent" aria-label="Sluiten">
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+        <div class="p-8">
+          <h3 class="font-display text-3xl font-light">Gamleby Trollpark</h3>
+          <p class="mt-4 font-body text-sm leading-relaxed text-forest-950/75">Een mystieke korte wandeling op de Garpedansberget bij Gamleby. Het steile pad voert door een bos vol handgemaakte, levensgrote trollensculpturen en beloont jullie boven met een grandioos uitzicht over de Oostzeebaai.</p>
+          <ul class="mt-5 space-y-2 font-body text-sm">
+            <li><a href="https://gamleby.se/trollskogen" target="_blank" rel="noopener" class="editorial-link text-accent">Info: gamleby.se/trollskogen</a></li>
+          </ul>
+        </div>
+      </dialog>
+
+      <dialog id="dlg-granna" class="poi-dialog w-[min(92vw,40rem)] rounded-2xl p-0 shadow-2xl backdrop:bg-forest-950/60" aria-label="Polkagris-stad Gränna">
+        <div class="relative h-52 overflow-hidden bg-forest-800">
+          <img src="https://images.unsplash.com/photo-1481391319762-47dff72954d9?q=80&w=800&auto=format&fit=crop" alt="Polkagris-stad Gränna" class="h-full w-full object-cover" loading="lazy" onerror="this.remove()">
+          <button type="button" data-close class="absolute right-3 top-3 flex h-10 w-10 items-center justify-center rounded-full bg-forest-950/70 text-cream transition-colors hover:bg-forest-950 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent" aria-label="Sluiten">
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+        <div class="p-8">
+          <h3 class="font-display text-3xl font-light">Polkagris-stad Gränna</h3>
+          <p class="mt-4 font-body text-sm leading-relaxed text-forest-950/75">Het schilderachtige stadje Gränna aan de oever van het enorme Vätternmeer is wereldberoemd om zijn handgemaakte zuurstokken (Polkagrisar). Je kunt toekijken hoe die in de kleine winkeltjes worden gekookt en getrokken. Vanaf hier loont ook een korte overtocht met de veerboot naar het historische eiland Visingsö.</p>
+        </div>
+      </dialog>
+
+      <dialog id="dlg-minigolf" class="poi-dialog w-[min(92vw,40rem)] rounded-2xl p-0 shadow-2xl backdrop:bg-forest-950/60" aria-label="Minigolf bij Hornåbergs Camping">
+        <div class="relative h-52 overflow-hidden bg-forest-800">
+          <img src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?q=80&w=800&auto=format&fit=crop" alt="Minigolf bij Hornåbergs Camping" class="h-full w-full object-cover" loading="lazy" onerror="this.remove()">
+          <button type="button" data-close class="absolute right-3 top-3 flex h-10 w-10 items-center justify-center rounded-full bg-forest-950/70 text-cream transition-colors hover:bg-forest-950 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent" aria-label="Sluiten">
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+        <div class="p-8">
+          <h3 class="font-display text-3xl font-light">Minigolf bij Hornåbergs Camping</h3>
+          <p class="mt-4 font-body text-sm leading-relaxed text-forest-950/75">Wie na het avondeten een ontspannen groepsactiviteit zoekt: in het buurdorp Horn ligt de idyllische camping Hornåberg direct aan de rivier, met een zeer verzorgde minigolfbaan. Drop-in is altijd mogelijk!</p>
+          <ul class="mt-5 space-y-2 font-body text-sm">
+            <li><a href="https://campingen.no/en" target="_blank" rel="noopener" class="editorial-link text-accent">Info: campingen.no/en (Hornåbergs)</a></li>
+          </ul>
+        </div>
+      </dialog>
+
+    <!-- ============ CTA ============ -->
+    <section class="mx-auto max-w-7xl px-5 pb-24 pt-8 sm:px-8" aria-label="Boekingsaanvraag doen">
+      <div class="rounded-2xl bg-forest-950 px-8 py-16 text-center text-cream sm:px-16">
+        <h2 class="font-display text-4xl font-light leading-[1.1] sm:text-5xl">
+          Wanneer komen <em class="font-normal italic">jullie</em>?
+        </h2>
+        <p class="mx-auto mt-6 max-w-xl font-body text-lg leading-relaxed text-cream/70">
+          Geef ons de periode, de groepsgrootte en jullie plannen door — we antwoorden persoonlijk met
+          een concreet voorstel inclusief vaste prijs.
+        </p>
+        <a href="kontakt.html"
+           class="btn-shiny mt-10 inline-flex min-h-[52px] items-center justify-center rounded-full px-11 py-4 font-body text-sm font-semibold tracking-[0.06em] uppercase focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-forest-950 focus-visible:ring-accent">
+          <span class="btn-shiny-label">Boekingsaanvraag doen</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="relative z-10 bg-forest-950 text-cream/70">
+    <div class="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-5 py-20 sm:grid-cols-2 sm:px-8 lg:grid-cols-4">
+      <div>
+        <span class="inline-flex items-center rounded-xl bg-cream px-4 py-3">
+          <img src="assets/images/logo-bjorkfors.png" alt="Björkfors Outdoor-Adventures — Bed &amp; Breakfast" class="h-12 w-auto">
+        </span>
+        <p class="mt-6 max-w-xs font-body text-sm leading-relaxed">
+          Privé vis- en natuurbelevenissen voor kleine groepen — midden in de Zweedse natuur.
+        </p>
+      </div>
+      <nav aria-label="Footernavigatie">
+        <h2 class="font-body text-xs font-medium uppercase tracking-[0.25em] text-cream/45">Pagina’s</h2>
+        <ul class="mt-6 space-y-3 font-body text-sm">
+          <li><a href="index.html" class="transition-colors hover:text-cream">Startpagina</a></li>
+          <li><a href="sportfischen.html" class="transition-colors hover:text-cream">Sportvissen</a></li>
+          <li><a href="aktivitaeten.html" class="text-cream" aria-current="page">Activiteiten &amp; omgeving</a></li>
+          <li><a href="index.html#ueber-uns" class="transition-colors hover:text-cream">Over ons</a></li>
+          <li><a href="preisliste.html" class="transition-colors hover:text-cream">Prijzen</a></li>
+          <li><a href="hausregeln.html" class="transition-colors hover:text-cream">Huisregels &amp; voorwaarden</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h2 class="font-body text-xs font-medium uppercase tracking-[0.25em] text-cream/45">Contact</h2>
+        <ul class="mt-6 space-y-3 font-body text-sm">
+          <li>Gamla landsvägen 13<br>59046 Rimforsa (Björkfors), Zweden</li>
+          <li><a href="tel:+46732390993" class="transition-colors hover:text-cream">+46 (0) 73-239 09 93</a></li>
+          <li><a href="tel:+46732391006" class="transition-colors hover:text-cream">+46 (0) 73-239 10 06</a></li>
+          <li><a href="mailto:info@bjorkfors-outdoor.se" class="transition-colors hover:text-cream">info@bjorkfors-outdoor.se</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="font-body text-xs font-medium uppercase tracking-[0.25em] text-cream/45">Talen</h2>
+        <ul class="mt-6 space-y-3 font-body text-sm">
+          <li><a href="aktivitaeten.html" class="text-accent" aria-current="true">Nederlands</a></li>
+          <li><a href="de/aktivitaeten.html" class="transition-colors hover:text-cream">Deutsch</a></li>
+          <li><a href="en/aktivitaeten.html" class="transition-colors hover:text-cream">English</a></li>
+          <li><a href="sv/aktivitaeten.html" class="transition-colors hover:text-cream">Svenska</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-cream/10">
+      <div class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-5 py-6 font-body text-xs text-cream/40 sm:px-8">
+        <p>© 2026 Björkfors Outdoor Adventures. Alle rechten voorbehouden.</p>
+        <a href="hausregeln.html#impressum" class="transition-colors hover:text-cream">Colofon</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    // ===== Activiteitentegels: klik opent detaildialoog =====
+    (function () {
+      document.querySelectorAll('[data-modal]').forEach(function (card) {
+        var dlg = document.getElementById(card.dataset.modal);
+        if (!dlg) return;
+        function open() { dlg.showModal(); }
+        card.addEventListener('click', open);
+        card.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
+        });
+      });
+      document.querySelectorAll('dialog.poi-dialog').forEach(function (dlg) {
+        dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
+        var btn = dlg.querySelector('[data-close]');
+        if (btn) btn.addEventListener('click', function () { dlg.close(); });
+      });
+    })();
+  </script>
+</body>
+</html>

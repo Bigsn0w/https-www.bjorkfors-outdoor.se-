@@ -1,0 +1,51 @@
+/* ---- Shiny-CTA-Button (portiert aus React-Komponente button-shiny.tsx, Farben: Schwedenrot/Faluröd) ---- */
+
+.btn-shiny {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  /* Äußerer 2px-Verlaufsrahmen: helles nach dunkles Falurot */
+  background: linear-gradient(to bottom, #B24A42, #801818 45%, #4A0D0D);
+  box-shadow: 0 0 0 rgba(128, 24, 24, 0);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-shiny::before {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  border-radius: 9999px;
+  background:
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0) 55%),
+    linear-gradient(to right, #801818, #9C2F28 50%, #801818);
+  box-shadow: inset 0 0 14px rgba(255, 205, 195, 0.25);
+  z-index: 0;
+}
+.btn-shiny::after {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  border-radius: 9999px;
+  opacity: 0;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.05), rgba(255, 205, 195, 0.35), rgba(255, 255, 255, 0.05));
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+.btn-shiny:hover {
+  transform: scale(1.03);
+  /* Rotes Aufleuchten */
+  box-shadow: 0 0 22px rgba(166, 42, 36, 0.55), 0 0 44px rgba(166, 42, 36, 0.28);
+}
+.btn-shiny:hover::after { opacity: 1; }
+.btn-shiny:active { transform: scale(0.98); }
+
+.btn-shiny-label {
+  position: relative;
+  z-index: 2;
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(255, 205, 195, 0.45);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-shiny, .btn-shiny::after { transition: none; }
+  .btn-shiny:hover { transform: none; }
+}

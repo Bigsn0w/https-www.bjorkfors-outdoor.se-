@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sportvissen &amp; bootverhuur — Björkfors Outdoor, Zweden</title>
-  <meta name="description" content="Volledig uitgeruste visboten met vaste prijzen: QWEST RF 500 met 20 pk-motor en Garmin-fishfinder vanaf 1.500 kr/dag, ervaren visgids bij te boeken. Sportvissen op de Björkern en de Åsunden.">
+  <title>Sport Fishing &amp; Boat Rental — Björkfors Outdoor, Sweden</title>
+  <meta name="description" content="Fully equipped fishing boats at fixed prices: QWEST RF 500 with 20 hp outboard and Garmin fish finder from 1,500 kr/day, experienced fishing guide bookable. Sport fishing on Björkern and Åsunden.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/shiny.css?v=2">
+  <link rel="stylesheet" href="../assets/css/shiny.css?v=2">
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -78,14 +78,14 @@
     }
     .editorial-link:hover::after { transform: scaleX(0.4); }
 
-    /* ---- Taalkeuzemenu (geport uit React-component language-selector-dropdown.tsx) ---- */
+    /* ---- Sprachwähler (portiert aus React-Komponente language-selector-dropdown.tsx) ---- */
     @keyframes langFadeIn {
       from { opacity: 0; transform: translateY(-2px); }
       to { opacity: 1; transform: translateY(0); }
     }
     #lang-menu:not(.hidden) { animation: langFadeIn 0.15s ease-out; }
 
-    /* ---- Videospeler (geport uit React-component video-player.tsx) ---- */
+    /* ---- Video-Player (portiert aus React-Komponente video-player.tsx) ---- */
     .vp-controls {
       opacity: 0;
       transform: translateY(20px);
@@ -124,25 +124,25 @@
 <body class="font-body bg-cream text-forest-950 antialiased">
 
   <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:bg-accent focus:text-white focus:px-4 focus:py-2 focus:rounded">
-    Naar de inhoud springen
+    Skip to content
   </a>
 
   <!-- ============ HEADER ============ -->
   <header id="site-header" class="sticky top-0 z-40 bg-cream/95 backdrop-blur border-b border-forest-950/10">
-    <nav class="mx-auto max-w-7xl px-5 sm:px-8" aria-label="Hoofdnavigatie">
+    <nav class="mx-auto max-w-7xl px-5 sm:px-8" aria-label="Main navigation">
       <div class="flex h-[5.5rem] items-center justify-between gap-6">
 
-        <a href="index.html" class="flex shrink-0 items-center transition-opacity duration-200 hover:opacity-75" aria-label="Björkfors Outdoor — startpagina">
-          <img src="assets/images/logo-bjorkfors.png" alt="Björkfors Outdoor-Adventures — Bed &amp; Breakfast" class="h-14 w-auto sm:h-16">
+        <a href="index.html" class="flex shrink-0 items-center transition-opacity duration-200 hover:opacity-75" aria-label="Björkfors Outdoor — Home">
+          <img src="../assets/images/logo-bjorkfors.png" alt="Björkfors Outdoor-Adventures — Bed &amp; Breakfast" class="h-14 w-auto sm:h-16">
         </a>
 
         <ul class="hidden xl:flex items-center gap-7 font-body text-[0.82rem] font-medium tracking-[0.08em] uppercase text-forest-950/80">
           <li><a href="bed-and-breakfast.html" class="editorial-link transition-colors duration-200 hover:text-forest-950">Bed &amp; breakfast</a></li>
-          <li><a href="kanu-kajak-sup.html" class="editorial-link transition-colors duration-200 hover:text-forest-950">Kano&rsquo;s, kajaks &amp; SUP&rsquo;s</a></li>
-          <li><a href="sportfischen.html" class="editorial-link text-forest-950" aria-current="page">Sportvissen</a></li>
-          <li><a href="aktivitaeten.html" class="editorial-link transition-colors duration-200 hover:text-forest-950">Activiteiten &amp; omgeving</a></li>
-          <li><a href="preisliste.html" class="editorial-link transition-colors duration-200 hover:text-forest-950">Prijzen</a></li>
-          <li><a href="hausregeln.html" class="editorial-link transition-colors duration-200 hover:text-forest-950">Huisregels &amp; voorwaarden</a></li>
+          <li><a href="kanu-kajak-sup.html" class="editorial-link transition-colors duration-200 hover:text-forest-950">Canoes, kayaks &amp; SUPs</a></li>
+          <li><a href="sportfischen.html" class="editorial-link text-forest-950" aria-current="page">Sport fishing</a></li>
+          <li><a href="aktivitaeten.html" class="editorial-link transition-colors duration-200 hover:text-forest-950">Activities &amp; surroundings</a></li>
+          <li><a href="preisliste.html" class="editorial-link transition-colors duration-200 hover:text-forest-950">Prices</a></li>
+          <li><a href="hausregeln.html" class="editorial-link transition-colors duration-200 hover:text-forest-950">House rules &amp; terms</a></li>
         </ul>
 
         <div class="flex items-center gap-3 sm:gap-5">
@@ -150,35 +150,35 @@
             <button type="button" id="lang-button"
                     class="flex min-h-[38px] items-center gap-2 rounded-full border border-forest-950/15 bg-white/60 px-3 py-1.5 font-body text-sm text-forest-950/85 shadow-sm backdrop-blur-md transition-all duration-200 hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
                     aria-controls="lang-menu" aria-expanded="false" aria-haspopup="true">
-              <span aria-hidden="true">🇳🇱</span>
-              <span class="hidden sm:inline">Nederlands</span>
+              <span aria-hidden="true">🇬🇧</span>
+              <span class="hidden sm:inline">English</span>
               <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
               </svg>
             </button>
             <ul id="lang-menu"
                 class="hidden absolute right-0 mt-2 w-48 overflow-hidden rounded-xl border border-forest-950/10 bg-white/90 py-1 shadow-lg backdrop-blur-xl"
-                role="menu" aria-label="Taal kiezen">
+                role="menu" aria-label="Choose language">
               <li role="none">
                 <a role="menuitem" href="sportfischen.html" aria-current="true" class="flex min-h-[44px] w-full items-center gap-2 px-3 text-sm font-semibold text-accent">
-                  <span aria-hidden="true">🇳🇱</span><span class="flex-1">Nederlands</span>
+                  <span aria-hidden="true">🇬🇧</span><span class="flex-1">English</span>
                   <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
                 </a>
               </li>
-              <li role="none"><a role="menuitem" href="de/sportfischen.html" class="flex min-h-[44px] w-full items-center gap-2 px-3 text-sm text-forest-950/80 transition-colors hover:bg-cream"><span aria-hidden="true">🇩🇪</span><span class="flex-1">Deutsch</span></a></li>
-              <li role="none"><a role="menuitem" href="en/sportfischen.html" class="flex min-h-[44px] w-full items-center gap-2 px-3 text-sm text-forest-950/80 transition-colors hover:bg-cream"><span aria-hidden="true">🇬🇧</span><span class="flex-1">English</span></a></li>
-              <li role="none"><a role="menuitem" href="sv/sportfischen.html" class="flex min-h-[44px] w-full items-center gap-2 px-3 text-sm text-forest-950/80 transition-colors hover:bg-cream"><span aria-hidden="true">🇸🇪</span><span class="flex-1">Svenska</span></a></li>
+              <li role="none"><a role="menuitem" href="../sportfischen.html" class="flex min-h-[44px] w-full items-center gap-2 px-3 text-sm text-forest-950/80 transition-colors hover:bg-cream"><span aria-hidden="true">🇳🇱</span><span class="flex-1">Nederlands</span></a></li>
+              <li role="none"><a role="menuitem" href="../de/sportfischen.html" class="flex min-h-[44px] w-full items-center gap-2 px-3 text-sm text-forest-950/80 transition-colors hover:bg-cream"><span aria-hidden="true">🇩🇪</span><span class="flex-1">Deutsch</span></a></li>
+              <li role="none"><a role="menuitem" href="../sv/sportfischen.html" class="flex min-h-[44px] w-full items-center gap-2 px-3 text-sm text-forest-950/80 transition-colors hover:bg-cream"><span aria-hidden="true">🇸🇪</span><span class="flex-1">Svenska</span></a></li>
             </ul>
           </div>
 
           <a href="kontakt.html"
              class="btn-shiny hidden md:inline-flex items-center justify-center rounded-full px-6 py-2.5 min-h-[44px] font-body text-[0.82rem] font-semibold tracking-[0.06em] uppercase focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent">
-            <span class="btn-shiny-label">Boekingsaanvraag</span>
+            <span class="btn-shiny-label">Booking request</span>
           </a>
 
           <button type="button" id="mobile-menu-button"
                   class="inline-flex xl:hidden items-center justify-center min-h-[44px] min-w-[44px] rounded-full text-forest-950 transition-colors hover:bg-forest-950/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
-                  aria-controls="mobile-menu" aria-expanded="false" aria-label="Hoofdmenu openen">
+                  aria-controls="mobile-menu" aria-expanded="false" aria-label="Open main menu">
             <svg id="icon-menu-open" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5" />
             </svg>
@@ -193,13 +193,13 @@
     <div id="mobile-menu" class="hidden xl:hidden border-t border-forest-950/10 bg-cream">
       <ul class="space-y-1 px-5 py-6 font-body text-sm font-medium tracking-[0.08em] uppercase text-forest-950/80">
         <li><a href="bed-and-breakfast.html" class="flex min-h-[44px] items-center px-2 transition-colors duration-200 hover:text-forest-950">Bed &amp; breakfast</a></li>
-        <li><a href="kanu-kajak-sup.html" class="flex min-h-[44px] items-center px-2 transition-colors duration-200 hover:text-forest-950">Kano&rsquo;s, kajaks &amp; SUP&rsquo;s</a></li>
-        <li><a href="sportfischen.html" class="flex min-h-[44px] items-center px-2 text-accent" aria-current="page">Sportvissen</a></li>
-        <li><a href="aktivitaeten.html" class="flex min-h-[44px] items-center px-2 transition-colors duration-200 hover:text-forest-950">Activiteiten &amp; omgeving</a></li>
-        <li><a href="preisliste.html" class="flex min-h-[44px] items-center px-2 transition-colors duration-200 hover:text-forest-950">Prijzen</a></li>
-        <li><a href="hausregeln.html" class="flex min-h-[44px] items-center px-2 transition-colors duration-200 hover:text-forest-950">Huisregels &amp; voorwaarden</a></li>
+        <li><a href="kanu-kajak-sup.html" class="flex min-h-[44px] items-center px-2 transition-colors duration-200 hover:text-forest-950">Canoes, kayaks &amp; SUPs</a></li>
+        <li><a href="sportfischen.html" class="flex min-h-[44px] items-center px-2 text-accent" aria-current="page">Sport fishing</a></li>
+        <li><a href="aktivitaeten.html" class="flex min-h-[44px] items-center px-2 transition-colors duration-200 hover:text-forest-950">Activities &amp; surroundings</a></li>
+        <li><a href="preisliste.html" class="flex min-h-[44px] items-center px-2 transition-colors duration-200 hover:text-forest-950">Prices</a></li>
+        <li><a href="hausregeln.html" class="flex min-h-[44px] items-center px-2 transition-colors duration-200 hover:text-forest-950">House rules &amp; terms</a></li>
         <li class="pt-3 md:hidden">
-          <a href="kontakt.html" class="btn-shiny flex min-h-[48px] items-center justify-center rounded-full px-6 font-body text-[0.82rem] font-semibold tracking-[0.06em] uppercase"><span class="btn-shiny-label">Boekingsaanvraag</span></a>
+          <a href="kontakt.html" class="btn-shiny flex min-h-[48px] items-center justify-center rounded-full px-6 font-body text-[0.82rem] font-semibold tracking-[0.06em] uppercase"><span class="btn-shiny-label">Booking request</span></a>
         </li>
       </ul>
     </div>
@@ -208,9 +208,9 @@
   <main id="main-content">
 
     <!-- ============ HERO ============ -->
-    <section class="relative isolate flex min-h-[62vh] items-end overflow-hidden" aria-label="Sportvissen bij Björkfors">
-      <img src="assets/images/hero-fishing.jpg"
-           alt="Sportvisser in een aluminium boot bij zonsopgang op het meer Åsunden"
+    <section class="relative isolate flex min-h-[62vh] items-end overflow-hidden" aria-label="Sport fishing at Björkfors">
+      <img src="../assets/images/hero-fishing.jpg"
+           alt="Angler in an aluminium boat at dawn on lake Åsunden"
            class="absolute inset-0 -z-10 h-full w-full object-cover"
            fetchpriority="high"
            onerror="this.remove()">
@@ -230,46 +230,46 @@
           Björkern &amp; Åsunden — Östergötland
         </p>
         <h1 class="mt-6 max-w-3xl animate-fade-in-up font-display text-5xl font-light leading-[1.05] text-cream sm:text-6xl lg:text-7xl opacity-0 [animation-delay:0.15s] [animation-fill-mode:forwards]">
-          Jouw boot. Jouw <em class="font-normal italic">stek</em>.
+          Your boat. Your <em class="font-normal italic">waters</em>.
         </h1>
         <p class="mt-7 max-w-xl animate-fade-in-up font-body text-lg leading-relaxed text-cream/80 opacity-0 [animation-delay:0.3s] [animation-fill-mode:forwards]">
-          Volledig uitgeruste visboten, heldere vaste prijzen en gastheren die zelf vissen — vijfhonderd meter van de steiger begint jullie visdag.
+          Fully equipped fishing boats, clear fixed prices and hosts who fish themselves — your fishing day starts five hundred metres from the jetty.
         </p>
       </div>
     </section>
 
     <!-- ============ INTRO ============ -->
-    <section class="bg-cream py-24 sm:py-32" aria-label="Vissen bij Björkfors">
+    <section class="bg-cream py-24 sm:py-32" aria-label="Fishing at Björkfors">
       <div class="mx-auto grid max-w-7xl grid-cols-1 gap-14 px-5 sm:px-8 lg:grid-cols-12">
         <div class="lg:col-span-5" data-animate>
-          <p class="font-body text-xs font-medium uppercase tracking-[0.3em] text-forest-950/50">Het water</p>
+          <p class="font-body text-xs font-medium uppercase tracking-[0.3em] text-forest-950/50">The water</p>
           <h2 class="mt-6 font-display text-4xl font-light leading-[1.1] text-forest-950 sm:text-5xl">
-            Twee meren. Talloze <em class="font-normal italic">kanten</em>.
+            Two lakes. Countless <em class="font-normal italic">drop-offs</em>.
           </h2>
         </div>
         <div class="space-y-6 font-body text-lg leading-relaxed text-forest-950/70 lg:col-span-7" data-animate>
           <p>
-            De Björkern en de Åsunden liggen direct voor de deur — helder, diep water met rietkragen, stenen banken en gaten waar snoek, baars en snoekbaars staan. Wie zijn boot om vijf uur ’s ochtends het water in wil duwen, hoeft daarvoor maar 500 meter te lopen.
+            Björkern and Åsunden are right outside the door — clear, deep water with reed edges, rock banks and holes where pike, perch and zander hold. If you want to push your boat into the water at five in the morning, all it takes is a 500-metre walk.
           </p>
           <p>
-            Visvergunningen regelen jullie direct via ons. En wie het water sneller wil leren lezen, boekt er een ervaren visgids bij — hij kent de kanten die op geen enkele kaart staan. Sinds dit jaar werken we bovendien samen met Rydaholm Hunting &amp; Fishing en ondersteunen we elkaar bij visserij en jacht.
+            Fishing permits are available directly from us. And if you want to read the water faster, book an experienced fishing guide — he knows the drop-offs no map will show you. Since this year we also work together with Rydaholm Hunting &amp; Fishing, supporting each other in fishing and hunting.
           </p>
         </div>
       </div>
     </section>
 
     <!-- ============ VIDEO ============ -->
-    <section class="border-t border-forest-950/10 bg-forest-950 py-24 sm:py-32" aria-label="Video: vissen op de Björkern en de Åsunden">
+    <section class="border-t border-forest-950/10 bg-forest-950 py-24 sm:py-32" aria-label="Video: fishing on Björkern and Åsunden">
       <div class="mx-auto max-w-7xl px-5 sm:px-8">
         <div class="mx-auto max-w-2xl text-center" data-animate>
-          <p class="font-body text-xs font-medium uppercase tracking-[0.3em] text-cream/50">In beeld</p>
+          <p class="font-body text-xs font-medium uppercase tracking-[0.3em] text-cream/50">On film</p>
           <h2 class="mt-6 font-display text-4xl font-light leading-[1.1] text-cream sm:text-5xl">
-            Een dag op het <em class="font-normal italic">water</em>.
+            A day on the <em class="font-normal italic">water</em>.
           </h2>
         </div>
 
         <div class="video-player is-paused relative mx-auto mt-14 w-full max-w-4xl overflow-hidden rounded-xl bg-[#11111198] shadow-[0_0_20px_rgba(0,0,0,0.2)] backdrop-blur-sm" data-animate>
-          <!-- Eigen video: bestand onder assets/videos/ plaatsen en src aanpassen -->
+          <!-- Own video: place the file under assets/videos/ and update src -->
           <video id="vp-video"
                  class="w-full cursor-pointer"
                  src="https://videos.pexels.com/video-files/30333849/13003128_2560_1440_25fps.mp4"
@@ -279,7 +279,7 @@
           <div class="vp-controls absolute bottom-0 left-0 right-0 m-2 mx-auto max-w-xl rounded-2xl bg-[#11111198] p-4 backdrop-blur-md">
             <div class="mb-2 flex items-center gap-2">
               <span id="vp-current" class="text-sm text-white">0:00</span>
-              <div id="vp-seek" class="vp-slider relative h-1 flex-1 cursor-pointer rounded-full bg-white/20" role="slider" aria-label="Videopositie" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" tabindex="0">
+              <div id="vp-seek" class="vp-slider relative h-1 flex-1 cursor-pointer rounded-full bg-white/20" role="slider" aria-label="Video position" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" tabindex="0">
                 <div class="vp-slider-fill absolute left-0 top-0 h-full rounded-full bg-white" style="width: 0%"></div>
               </div>
               <span id="vp-duration" class="text-sm text-white">0:00</span>
@@ -287,12 +287,12 @@
 
             <div class="flex items-center justify-between">
               <div class="flex items-center gap-4">
-                <button type="button" id="vp-play" class="vp-btn" aria-label="Afspelen">
+                <button type="button" id="vp-play" class="vp-btn" aria-label="Play">
                   <svg id="vp-icon-play" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="6 3 20 12 6 21 6 3"/></svg>
                   <svg id="vp-icon-pause" class="hidden h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="14" y="4" width="4" height="16" rx="1"/><rect x="6" y="4" width="4" height="16" rx="1"/></svg>
                 </button>
                 <div class="flex items-center gap-x-1">
-                  <button type="button" id="vp-mute" class="vp-btn" aria-label="Geluid dempen">
+                  <button type="button" id="vp-mute" class="vp-btn" aria-label="Mute">
                     <svg id="vp-icon-vol2" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z"/><path d="M16 9a5 5 0 0 1 0 6"/><path d="M19.364 18.364a9 9 0 0 0 0-12.728"/></svg>
                     <svg id="vp-icon-vol1" class="hidden h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z"/><path d="M16 9a5 5 0 0 1 0 6"/></svg>
                     <svg id="vp-icon-volx" class="hidden h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z"/><line x1="22" x2="16" y1="9" y2="15"/><line x1="16" x2="22" y1="9" y2="15"/></svg>
@@ -306,51 +306,51 @@
               </div>
 
               <div class="flex items-center gap-2">
-                <button type="button" class="vp-btn text-sm" data-speed="0.5" aria-label="Snelheid 0,5x">0.5x</button>
-                <button type="button" class="vp-btn is-active text-sm" data-speed="1" aria-label="Snelheid 1x" aria-pressed="true">1x</button>
-                <button type="button" class="vp-btn text-sm" data-speed="1.5" aria-label="Snelheid 1,5x">1.5x</button>
-                <button type="button" class="vp-btn text-sm" data-speed="2" aria-label="Snelheid 2x">2x</button>
+                <button type="button" class="vp-btn text-sm" data-speed="0.5" aria-label="Playback speed 0.5x">0.5x</button>
+                <button type="button" class="vp-btn is-active text-sm" data-speed="1" aria-label="Playback speed 1x" aria-pressed="true">1x</button>
+                <button type="button" class="vp-btn text-sm" data-speed="1.5" aria-label="Playback speed 1.5x">1.5x</button>
+                <button type="button" class="vp-btn text-sm" data-speed="2" aria-label="Playback speed 2x">2x</button>
               </div>
             </div>
           </div>
         </div>
 
         <p class="mx-auto mt-8 max-w-xl text-center font-body text-sm leading-relaxed text-cream/50" data-animate>
-          Snoek, baars en snoekbaars — zo ziet een visdag op de Björkern en de Åsunden eruit.
+          Pike, perch and zander — this is what a fishing day on Björkern and Åsunden looks like.
         </p>
       </div>
     </section>
 
-    <!-- ============ BOTEN & PRIJSVERWIJZING ============ -->
-    <section class="border-t border-forest-950/10 bg-cream py-24 sm:py-32" aria-label="Onze boten">
+    <!-- ============ BOOTE & PREISVERWEIS ============ -->
+    <section class="border-t border-forest-950/10 bg-cream py-24 sm:py-32" aria-label="Our boats">
       <div class="mx-auto max-w-7xl px-5 sm:px-8">
         <div class="max-w-2xl" data-animate>
-          <p class="font-body text-xs font-medium uppercase tracking-[0.3em] text-forest-950/50">De vloot</p>
+          <p class="font-body text-xs font-medium uppercase tracking-[0.3em] text-forest-950/50">The fleet</p>
           <h2 class="mt-6 font-display text-4xl font-light leading-[1.1] text-forest-950 sm:text-6xl">
-            Drie boten. Eén <em class="font-normal italic">steiger</em>.
+            Three boats. One <em class="font-normal italic">jetty</em>.
           </h2>
         </div>
 
         <div class="mt-14 grid grid-cols-1 gap-7 md:grid-cols-3">
           <article class="rounded-2xl bg-white p-8 ring-1 ring-forest-950/10" data-animate>
-            <p class="font-body text-xs font-medium uppercase tracking-[0.2em] text-forest-950/50">2× beschikbaar</p>
+            <p class="font-body text-xs font-medium uppercase tracking-[0.2em] text-forest-950/50">2× available</p>
             <h3 class="mt-4 font-display text-2xl font-normal text-forest-950 sm:text-3xl">QWEST RF 500</h3>
             <p class="mt-3 font-body text-sm leading-relaxed text-forest-950/60">
-              Compleet uitgeruste aluminium visboot met 20 pk-buitenboordmotor en Garmin Striker-fishfinder (9 inch) — het werkpaard voor de Björkern en de Åsunden.
+              Fully equipped aluminium fishing boat with a 20 hp outboard and Garmin Striker sonar (9-inch fish finder) — the workhorse for Björkern and Åsunden.
             </p>
           </article>
           <article class="rounded-2xl bg-white p-8 ring-1 ring-forest-950/10" data-animate>
-            <p class="font-body text-xs font-medium uppercase tracking-[0.2em] text-forest-950/50">1× beschikbaar</p>
+            <p class="font-body text-xs font-medium uppercase tracking-[0.2em] text-forest-950/50">1× available</p>
             <h3 class="mt-4 font-display text-2xl font-normal text-forest-950 sm:text-3xl">Rana 14</h3>
             <p class="mt-3 font-body text-sm leading-relaxed text-forest-950/60">
-              De wendbare boot met 9,9 pk-buitenboordmotor voor rustige baaien en kleiner water — makkelijk te varen, ook voor beginners.
+              The agile boat with a 9.9 hp outboard for calm bays and smaller waters — easy to handle, even for beginners.
             </p>
           </article>
           <article class="rounded-2xl bg-forest-950 p-8" data-animate>
-            <p class="font-body text-xs font-medium uppercase tracking-[0.2em] text-cream/50">Bij te boeken</p>
-            <h3 class="mt-4 font-display text-2xl font-normal text-cream sm:text-3xl">Ervaren visgids</h3>
+            <p class="font-body text-xs font-medium uppercase tracking-[0.2em] text-cream/50">Bookable extra</p>
+            <h3 class="mt-4 font-display text-2xl font-normal text-cream sm:text-3xl">Experienced fishing guide</h3>
             <p class="mt-3 font-body text-sm leading-relaxed text-cream/60">
-              Kennis van het water uit eerste hand: stekken, technieken en kanten die op geen enkele kaart staan — voor elk niveau.
+              First-hand local knowledge: spots, techniques and drop-offs no map will show you — for every level of experience.
             </p>
           </article>
         </div>
@@ -358,48 +358,48 @@
         <div class="mt-12 flex flex-wrap items-center gap-x-10 gap-y-4" data-animate>
           <a href="preisliste.html"
              class="btn-shiny inline-flex min-h-[50px] items-center justify-center rounded-full px-9 py-3.5 font-body text-sm font-semibold tracking-[0.06em] uppercase focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent">
-            <span class="btn-shiny-label">Alle prijzen bekijken</span>
+            <span class="btn-shiny-label">See all prices</span>
           </a>
           <p class="font-body text-sm leading-relaxed text-forest-950/55">
-            Vaste prijzen, visvergunningen direct via ons — details over de aanbetaling in de <a href="hausregeln.html" class="editorial-link text-forest-950/80">huisregels &amp; voorwaarden</a>.
+            Fixed prices, fishing permits directly from us — deposit details in the <a href="hausregeln.html" class="editorial-link text-forest-950/80">house rules &amp; terms</a>.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- ============ VISTRIP-PAKKET ============ -->
-    <section class="border-t border-forest-950/10 bg-white/50 py-24 sm:py-32" aria-label="Vistrip-pakket">
+    <!-- ============ ANGELAUSFLUG-PAKET ============ -->
+    <section class="border-t border-forest-950/10 bg-white/50 py-24 sm:py-32" aria-label="Fishing trip package">
       <div class="mx-auto grid max-w-7xl grid-cols-1 items-center gap-14 px-5 sm:px-8 lg:grid-cols-12">
         <div class="lg:col-span-6" data-animate>
-          <p class="font-body text-xs font-medium uppercase tracking-[0.3em] text-forest-950/50">Het complete pakket</p>
+          <p class="font-body text-xs font-medium uppercase tracking-[0.3em] text-forest-950/50">The all-in package</p>
           <h2 class="mt-6 font-display text-4xl font-light leading-[1.1] text-forest-950 sm:text-5xl">
-            Vistrip met <em class="font-normal italic">volpension</em>.
+            Fishing trip with <em class="font-normal italic">full board</em>.
           </h2>
           <p class="mt-8 max-w-lg font-body text-lg leading-relaxed text-forest-950/65">
-            Voor groepen die alleen aan het vissen willen denken: overnachting in de B&amp;B, ontbijt en lunch om mee te nemen het water op, een warme maaltijd in de gastenkantine na terugkomst — en de boten liggen startklaar aan de steiger.
+            For groups who only want to think about fishing: a night at the B&amp;B, breakfast and a packed lunch to take on the water, a hot meal in the guest canteen on your return — and the boats waiting ready at the jetty.
           </p>
           <ul class="mt-8 space-y-3 font-body text-forest-950/75">
             <li class="flex items-start gap-3">
               <span class="mt-0.5 grid h-6 w-6 shrink-0 place-content-center rounded-full border border-accent/50 bg-white">
                 <svg class="h-3.5 w-3.5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
               </span>
-              Volpension inbegrepen — programma in overleg
+              Full board included — programme by arrangement
             </li>
             <li class="flex items-start gap-3">
               <span class="mt-0.5 grid h-6 w-6 shrink-0 place-content-center rounded-full border border-accent/50 bg-white">
                 <svg class="h-3.5 w-3.5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
               </span>
-              Visuitrusting te huur, visgids optioneel
+              Fishing gear for rent, fishing guide optional
             </li>
             <li class="flex items-start gap-3">
               <span class="mt-0.5 grid h-6 w-6 shrink-0 place-content-center rounded-full border border-accent/50 bg-white">
                 <svg class="h-3.5 w-3.5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
               </span>
-              Transfer Björkfors–vliegveld Linköping: 1.000 kr per rit
+              Transfer Björkfors–Linköping airport: 1,000 kr per trip
             </li>
           </ul>
           <a href="kontakt.html" class="editorial-link mt-10 inline-block font-body text-sm font-semibold tracking-[0.06em] uppercase text-accent">
-            Pakket vrijblijvend aanvragen
+            Ask about the package — no strings attached
           </a>
         </div>
         <div class="group relative overflow-hidden rounded-2xl lg:col-span-6" data-animate>
@@ -407,8 +407,8 @@
             <svg class="absolute inset-x-0 bottom-0 h-1/2 w-full opacity-50" preserveAspectRatio="none" viewBox="0 0 400 200" aria-hidden="true">
               <path fill="#0F2417" d="M0 200V120l20-14 16 22 20-36 18 28 14-18 22 32 20-46 20 34 16-22 22 38 18-30 20 42 22-52 20 38 16-24 22 34 20-42 18 30 16-20 22 40 18-34 20 44V200Z"/>
             </svg>
-            <img src="assets/images/paket-angeln.jpg"
-                 alt="Visgroep ’s avonds bij de vuurplaats van de B&B na een dag op het water"
+            <img src="../assets/images/paket-angeln.jpg"
+                 alt="Fishing group in the evening at the B&B fire pit after a day on the water"
                  class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
                  loading="lazy"
                  onerror="this.remove()">
@@ -418,7 +418,7 @@
     </section>
 
     <!-- ============ CTA ============ -->
-    <section class="relative isolate overflow-hidden bg-forest-950 py-28 sm:py-36" aria-label="Boekingsaanvraag doen">
+    <section class="relative isolate overflow-hidden bg-forest-950 py-28 sm:py-36" aria-label="Send booking enquiry">
       <div class="absolute inset-0 -z-10" aria-hidden="true">
         <div class="absolute left-1/2 top-0 h-[500px] w-[900px] -translate-x-1/2 rounded-full bg-forest-800/40 blur-3xl"></div>
         <svg class="absolute bottom-0 left-0 h-[30%] w-full opacity-25" preserveAspectRatio="none" viewBox="0 0 1200 200" aria-hidden="true">
@@ -426,16 +426,16 @@
         </svg>
       </div>
       <div class="mx-auto max-w-4xl px-5 text-center sm:px-8" data-animate>
-        <p class="font-body text-xs font-medium uppercase tracking-[0.3em] text-cream/50">De boten zijn snel bezet</p>
+        <p class="font-body text-xs font-medium uppercase tracking-[0.3em] text-cream/50">Boats book up fast</p>
         <h2 class="mt-8 font-display text-4xl font-light leading-[1.1] text-cream sm:text-6xl">
-          Leg jouw <em class="font-normal italic">boot</em> vast.
+          Secure your <em class="font-normal italic">boat</em>.
         </h2>
         <p class="mx-auto mt-8 max-w-xl font-body text-lg leading-relaxed text-cream/70">
-          Geef ons de periode en de groepsgrootte door — we antwoorden persoonlijk met een concreet voorstel inclusief vaste prijs.
+          Tell us your dates and group size — we reply personally with a concrete proposal and a fixed price.
         </p>
         <a href="kontakt.html"
            class="btn-shiny mt-12 inline-flex min-h-[52px] items-center justify-center rounded-full px-11 py-4 font-body text-sm font-semibold tracking-[0.06em] uppercase focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-forest-950 focus-visible:ring-accent">
-          <span class="btn-shiny-label">Boekingsaanvraag doen</span>
+          <span class="btn-shiny-label">Send booking enquiry</span>
         </a>
       </div>
     </section>
@@ -447,51 +447,51 @@
     <div class="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-5 py-20 sm:grid-cols-2 sm:px-8 lg:grid-cols-4">
       <div>
         <span class="inline-flex items-center rounded-xl bg-cream px-4 py-3">
-          <img src="assets/images/logo-bjorkfors.png" alt="Björkfors Outdoor-Adventures — Bed &amp; Breakfast" class="h-12 w-auto">
+          <img src="../assets/images/logo-bjorkfors.png" alt="Björkfors Outdoor-Adventures — Bed &amp; Breakfast" class="h-12 w-auto">
         </span>
         <p class="mt-6 max-w-xs font-body text-sm leading-relaxed">
-          Privé vis- en natuurbelevenissen voor kleine groepen — midden in de Zweedse natuur.
+          Private fishing and nature experiences for small groups — in the heart of the Swedish countryside.
         </p>
       </div>
-      <nav aria-label="Footernavigatie">
-        <h2 class="font-body text-xs font-medium uppercase tracking-[0.25em] text-cream/45">Pagina’s</h2>
+      <nav aria-label="Footer navigation">
+        <h2 class="font-body text-xs font-medium uppercase tracking-[0.25em] text-cream/45">Pages</h2>
         <ul class="mt-6 space-y-3 font-body text-sm">
-          <li><a href="index.html" class="transition-colors hover:text-cream">Startpagina</a></li>
-          <li><a href="sportfischen.html" class="text-cream" aria-current="page">Sportvissen</a></li>
-          <li><a href="aktivitaeten.html" class="transition-colors hover:text-cream">Activiteiten &amp; omgeving</a></li>
-          <li><a href="index.html#ueber-uns" class="transition-colors hover:text-cream">Over ons</a></li>
-          <li><a href="preisliste.html" class="transition-colors hover:text-cream">Prijzen</a></li>
-          <li><a href="hausregeln.html" class="transition-colors hover:text-cream">Huisregels &amp; voorwaarden</a></li>
+          <li><a href="index.html" class="transition-colors hover:text-cream">Home</a></li>
+          <li><a href="sportfischen.html" class="text-cream" aria-current="page">Sport fishing</a></li>
+          <li><a href="aktivitaeten.html" class="transition-colors hover:text-cream">Activities &amp; Surroundings</a></li>
+          <li><a href="index.html#ueber-uns" class="transition-colors hover:text-cream">About us</a></li>
+          <li><a href="preisliste.html" class="transition-colors hover:text-cream">Prices</a></li>
+          <li><a href="hausregeln.html" class="transition-colors hover:text-cream">House rules &amp; terms</a></li>
         </ul>
       </nav>
       <div>
-        <h2 class="font-body text-xs font-medium uppercase tracking-[0.25em] text-cream/45">Contact</h2>
+        <h2 class="font-body text-xs font-medium uppercase tracking-[0.25em] text-cream/45">Kontakt</h2>
         <ul class="mt-6 space-y-3 font-body text-sm">
-          <li>Gamla landsvägen 13<br>59046 Rimforsa (Björkfors), Zweden</li>
+          <li>Gamla landsvägen 13<br>59046 Rimforsa (Björkfors), Sweden</li>
           <li><a href="tel:+46732390993" class="transition-colors hover:text-cream">+46 (0) 73-239 09 93</a></li>
           <li><a href="tel:+46732391006" class="transition-colors hover:text-cream">+46 (0) 73-239 10 06</a></li>
           <li><a href="mailto:info@bjorkfors-outdoor.se" class="transition-colors hover:text-cream">info@bjorkfors-outdoor.se</a></li>
         </ul>
       </div>
       <div>
-        <h2 class="font-body text-xs font-medium uppercase tracking-[0.25em] text-cream/45">Talen</h2>
+        <h2 class="font-body text-xs font-medium uppercase tracking-[0.25em] text-cream/45">Languages</h2>
         <ul class="mt-6 space-y-3 font-body text-sm">
-          <li><a href="sportfischen.html" class="text-accent" aria-current="true">Nederlands</a></li>
-          <li><a href="de/sportfischen.html" class="transition-colors hover:text-cream">Deutsch</a></li>
-          <li><a href="en/sportfischen.html" class="transition-colors hover:text-cream">English</a></li>
-          <li><a href="sv/sportfischen.html" class="transition-colors hover:text-cream">Svenska</a></li>
+          <li><a href="sportfischen.html" class="text-accent" aria-current="true">English</a></li>
+          <li><a href="../sportfischen.html" class="transition-colors hover:text-cream">Nederlands</a></li>
+          <li><a href="../de/sportfischen.html" class="transition-colors hover:text-cream">Deutsch</a></li>
+          <li><a href="../sv/sportfischen.html" class="transition-colors hover:text-cream">Svenska</a></li>
         </ul>
       </div>
     </div>
     <div class="border-t border-cream/10">
       <div class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-5 py-6 font-body text-xs text-cream/40 sm:px-8">
-        <p>© 2026 Björkfors Outdoor Adventures. Alle rechten voorbehouden.</p>
-        <a href="hausregeln.html#impressum" class="transition-colors hover:text-cream">Colofon</a>
+        <p>© 2026 Björkfors Outdoor Adventures. All rights reserved.</p>
+        <a href="hausregeln.html#impressum" class="transition-colors hover:text-cream">Legal notice</a>
       </div>
     </div>
   </footer>
 
-  <script src="assets/js/main.js"></script>
+  <script src="../assets/js/main.js"></script>
   <script>
     (function () {
       var player = document.querySelector('.video-player');
@@ -530,7 +530,7 @@
         player.classList.toggle('is-paused', paused);
         iconPlay.classList.toggle('hidden', !paused);
         iconPause.classList.toggle('hidden', paused);
-        playBtn.setAttribute('aria-label', paused ? 'Afspelen' : 'Pauzeren');
+        playBtn.setAttribute('aria-label', paused ? 'Abspielen' : 'Pausieren');
       }
 
       function updateVolumeUI() {
@@ -540,7 +540,7 @@
         iconVol2.classList.toggle('hidden', !(v > 0.5));
         iconVol1.classList.toggle('hidden', !(v > 0 && v <= 0.5));
         iconVolX.classList.toggle('hidden', v > 0);
-        muteBtn.setAttribute('aria-label', v === 0 ? 'Geluid aanzetten' : 'Geluid dempen');
+        muteBtn.setAttribute('aria-label', v === 0 ? 'Ton einschalten' : 'Stummschalten');
       }
 
       function sliderValue(slider, clientX) {

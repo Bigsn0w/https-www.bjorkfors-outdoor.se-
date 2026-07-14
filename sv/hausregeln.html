@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Husregler &amp; villkor — Björkfors Outdoor, Sverige</title>
+  <meta name="description" content="Husregler, allmänna villkor och juridisk information för Björkfors Outdoor Adventures — bed &amp; breakfast och fiskeuthyrning i Björkfors, Östergötland, Sverige.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/shiny.css?v=2">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            forest: {
+              950: '#0F2417',
+              900: '#14301F',
+              800: '#1F4A30',
+              700: '#2B5E3E',
+            },
+            sage: '#9DA971',
+            cream: '#F7F4ED',
+            accent: {
+              DEFAULT: '#801818',
+              hover: '#5E1111',
+            },
+          },
+          fontFamily: {
+            display: ['"Fraunces"', 'serif'],
+            body: ['"Inter"', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    #site-header { transition: box-shadow 0.3s ease; }
+    #site-header.is-scrolled { box-shadow: 0 6px 24px rgba(15, 36, 23, 0.08); }
+
+    .editorial-link {
+      position: relative;
+      padding-bottom: 2px;
+    }
+    .editorial-link::after {
+      content: '';
+      position: absolute;
+      left: 0; bottom: 0;
+      height: 1px; width: 100%;
+      background: currentColor;
+      transform-origin: left;
+      transition: transform 0.25s ease;
+    }
+    .editorial-link:hover::after { transform: scaleX(0.4); }
+
+    /* ---- Språkmeny (porterad från React-komponenten language-selector-dropdown.tsx) ---- */
+    @keyframes langFadeIn {
+      from { opacity: 0; transform: translateY(-2px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    #lang-menu:not(.hidden) { animation: langFadeIn 0.15s ease-out; }
+
+    /* ---- Bouncy cards (porterade från React-komponenten bounce-card-features.tsx, utan framer-motion) ---- */
+    .bounce-card {
+      transition: transform 0.25s ease;
+      will-change: transform;
+    }
+    .bounce-card:hover { transform: scale(0.96) rotate(-1deg); }
+    .bounce-panel {
+      transform: translateY(2rem);
+      transition: transform 0.25s ease;
+      will-change: transform;
+    }
+    .bounce-card:hover .bounce-panel { transform: translateY(1rem) rotate(2deg); }
+  </style>
+</head>
+<body class="font-body bg-cream text-forest-950 antialiased overflow-x-hidden">
+
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:bg-accent focus:text-white focus:px-4 focus:py-2 focus:rounded">
+    Hoppa till innehållet
+  </a>
+
+  <!-- ============ HEADER ============ -->
+  <header id="site-header" class="sticky top-0 z-40 bg-cream/95 backdrop-blur border-b border-forest-950/10">
+    <nav class="mx-auto max-w-7xl px-5 sm:px-8" aria-label="Huvudnavigation">
+      <div class="flex h-[5.5rem] items-center justify-between gap-6">
+
+        <a href="index.html" class="flex shrink-0 items-center transition-opacity duration-200 hover:opacity-75" aria-label="Björkfors Outdoor — Startsida">
+          <img src="../assets/images/logo-bjorkfors.png" alt="Björkfors Outdoor-Adventures — Bed &amp; Breakfast" class="h-14 w-auto sm:h-16">
+        </a>
+
+        <ul class="hidden xl:flex items-center gap-7 font-body text-[0.82rem] font-medium tracking-[0.08em] uppercase text-forest-950/80">
+          <li><a href="bed-and-breakfast.html" class="editorial-link transition-colors duration-200 hover:text-forest-950">Bed &amp; breakfast</a></li>
+          <li><a href="kanu-kajak-sup.html" class="editorial-link transition-colors duration-200 hover:text-forest-950">Kanoter, kajaker &amp; SUP</a></li>
+          <li><a href="sportfischen.html" class="editorial-link transition-colors duration-200 hover:text-forest-950">Sportfiske</a></li>
+          <li><a href="aktivitaeten.html" class="editorial-link transition-colors duration-200 hover:text-forest-950">Aktiviteter &amp; omgivning</a></li>
+          <li><a href="preisliste.html" class="editorial-link transition-colors duration-200 hover:text-forest-950">Priser</a></li>
+          <li><a href="hausregeln.html" class="editorial-link text-forest-950" aria-current="page">Husregler &amp; villkor</a></li>
+        </ul>
+
+        <div class="flex items-center gap-3 sm:gap-5">
+          <div class="relative">
+            <button type="button" id="lang-button"
+                    class="flex min-h-[38px] items-center gap-2 rounded-full border border-forest-950/15 bg-white/60 px-3 py-1.5 font-body text-sm text-forest-950/85 shadow-sm backdrop-blur-md transition-all duration-200 hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                    aria-controls="lang-menu" aria-expanded="false" aria-haspopup="true">
+              <span aria-hidden="true">🇸🇪</span>
+              <span class="hidden sm:inline">Svenska</span>
+              <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+              </svg>
+            </button>
+            <ul id="lang-menu"
+                class="hidden absolute right-0 mt-2 w-48 overflow-hidden rounded-xl border border-forest-950/10 bg-white/90 py-1 shadow-lg backdrop-blur-xl"
+                role="menu" aria-label="Välj språk">
+              <li role="none">
+                <a role="menuitem" href="hausregeln.html" aria-current="true" class="flex min-h-[44px] w-full items-center gap-2 px-3 text-sm font-semibold text-accent">
+                  <span aria-hidden="true">🇸🇪</span><span class="flex-1">Svenska</span>
+                  <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                </a>
+              </li>
+              <li role="none"><a role="menuitem" href="../hausregeln.html" class="flex min-h-[44px] w-full items-center gap-2 px-3 text-sm text-forest-950/80 transition-colors hover:bg-cream"><span aria-hidden="true">🇳🇱</span><span class="flex-1">Nederlands</span></a></li>
+              <li role="none"><a role="menuitem" href="../de/hausregeln.html" class="flex min-h-[44px] w-full items-center gap-2 px-3 text-sm text-forest-950/80 transition-colors hover:bg-cream"><span aria-hidden="true">🇩🇪</span><span class="flex-1">Deutsch</span></a></li>
+              <li role="none"><a role="menuitem" href="../en/hausregeln.html" class="flex min-h-[44px] w-full items-center gap-2 px-3 text-sm text-forest-950/80 transition-colors hover:bg-cream"><span aria-hidden="true">🇬🇧</span><span class="flex-1">English</span></a></li>
+            </ul>
+          </div>
+
+          <a href="kontakt.html"
+             class="btn-shiny hidden md:inline-flex items-center justify-center rounded-full px-6 py-2.5 min-h-[44px] font-body text-[0.82rem] font-semibold tracking-[0.06em] uppercase focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent">
+            <span class="btn-shiny-label">Bokningsförfrågan</span>
+          </a>
+
+          <button type="button" id="mobile-menu-button"
+                  class="inline-flex xl:hidden items-center justify-center min-h-[44px] min-w-[44px] rounded-full text-forest-950 transition-colors hover:bg-forest-950/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                  aria-controls="mobile-menu" aria-expanded="false" aria-label="Öppna huvudmenyn">
+            <svg id="icon-menu-open" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5" />
+            </svg>
+            <svg id="icon-menu-close" class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <div id="mobile-menu" class="hidden xl:hidden border-t border-forest-950/10 bg-cream">
+      <ul class="space-y-1 px-5 py-6 font-body text-sm font-medium tracking-[0.08em] uppercase text-forest-950/80">
+        <li><a href="bed-and-breakfast.html" class="flex min-h-[44px] items-center px-2 transition-colors duration-200 hover:text-forest-950">Bed &amp; breakfast</a></li>
+        <li><a href="kanu-kajak-sup.html" class="flex min-h-[44px] items-center px-2 transition-colors duration-200 hover:text-forest-950">Kanoter, kajaker &amp; SUP</a></li>
+        <li><a href="sportfischen.html" class="flex min-h-[44px] items-center px-2 transition-colors duration-200 hover:text-forest-950">Sportfiske</a></li>
+        <li><a href="aktivitaeten.html" class="flex min-h-[44px] items-center px-2 transition-colors duration-200 hover:text-forest-950">Aktiviteter &amp; omgivning</a></li>
+        <li><a href="preisliste.html" class="flex min-h-[44px] items-center px-2 transition-colors duration-200 hover:text-forest-950">Priser</a></li>
+        <li><a href="hausregeln.html" class="flex min-h-[44px] items-center px-2 text-accent" aria-current="page">Husregler &amp; villkor</a></li>
+        <li class="pt-3 md:hidden">
+          <a href="kontakt.html" class="btn-shiny flex min-h-[48px] items-center justify-center rounded-full px-6 font-body text-[0.82rem] font-semibold tracking-[0.06em] uppercase"><span class="btn-shiny-label">Bokningsförfrågan</span></a>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="main-content" aria-label="Husregler och juridisk information">
+
+    <!-- ============ HERO ============ -->
+    <section class="mx-auto max-w-7xl px-5 pt-20 pb-4 sm:px-8 sm:pt-28" aria-label="Inledning">
+      <p class="font-body text-xs font-semibold uppercase tracking-[0.25em] text-accent">Husregler &amp; villkor</p>
+      <h1 class="mt-6 max-w-3xl font-display text-5xl font-light leading-[1.05] sm:text-6xl lg:text-7xl">
+        Det <em class="font-normal italic">finstilta</em>.
+      </h1>
+      <p class="mt-6 max-w-xl font-body text-lg leading-relaxed text-forest-950/70">
+        Allt juridiskt och praktiskt som hör till en vistelse — samlat på en lugn sida.
+      </p>
+    </section>
+
+    <!-- ============ HUSREGLER (platshållare) ============ -->
+    <section class="mx-auto max-w-7xl px-5 py-16 sm:px-8" aria-label="Husregler">
+      <div class="grid gap-12 lg:grid-cols-[1fr_1.6fr]">
+        <div>
+          <h2 class="font-display text-3xl font-light">Husregler</h2>
+          <p class="mt-4 max-w-sm font-body text-sm leading-relaxed text-forest-950/65">
+            Våra husregler håller på att skrivas och publiceras här inom kort.
+            Frågor om vistelsen? <a href="kontakt.html" class="editorial-link text-forest-950">Hör gärna av er</a>.
+          </p>
+        </div>
+        <ol class="space-y-0" aria-label="Husregler — kommer snart">
+          <li class="flex items-baseline gap-6 border-t border-forest-950/10 py-6">
+            <span class="font-display text-2xl font-light text-forest-950/30">01</span>
+            <span class="h-3 w-2/3 rounded-full bg-forest-950/[0.06]" aria-hidden="true"></span>
+          </li>
+          <li class="flex items-baseline gap-6 border-t border-forest-950/10 py-6">
+            <span class="font-display text-2xl font-light text-forest-950/30">02</span>
+            <span class="h-3 w-1/2 rounded-full bg-forest-950/[0.06]" aria-hidden="true"></span>
+          </li>
+          <li class="flex items-baseline gap-6 border-t border-forest-950/10 py-6">
+            <span class="font-display text-2xl font-light text-forest-950/30">03</span>
+            <span class="h-3 w-3/5 rounded-full bg-forest-950/[0.06]" aria-hidden="true"></span>
+          </li>
+          <li class="flex items-baseline gap-6 border-y border-forest-950/10 py-6">
+            <span class="font-display text-2xl font-light text-forest-950/30">04</span>
+            <span class="font-body text-sm italic text-forest-950/45">Kommer snart …</span>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ JURIDISK INFORMATION / IMPRESSUM ============ -->
+    <section id="impressum" class="bg-forest-950 py-20 text-cream sm:py-24" aria-label="Juridisk information">
+      <div class="mx-auto max-w-7xl px-5 sm:px-8">
+        <p class="font-body text-xs font-semibold uppercase tracking-[0.25em] text-cream/50">Juridisk information</p>
+        <h2 class="mt-6 font-display text-4xl font-light sm:text-5xl">Juridiska uppgifter</h2>
+
+        <div class="mt-14 grid gap-x-12 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
+          <div>
+            <h3 class="font-body text-xs font-medium uppercase tracking-[0.25em] text-cream/45">Leverantör</h3>
+            <p class="mt-5 font-body text-sm leading-relaxed text-cream/80">
+              Björkfors Outdoor Adventures<br>
+              Gamla landsvägen 13<br>
+              59046 Rimforsa (Björkfors)<br>
+              Sverige
+            </p>
+          </div>
+          <div>
+            <h3 class="font-body text-xs font-medium uppercase tracking-[0.25em] text-cream/45">Företräds av</h3>
+            <p class="mt-5 font-body text-sm leading-relaxed text-cream/80">
+              [Förnamn Efternamn]<br>
+              [Förnamn Efternamn]
+            </p>
+            <p class="mt-3 font-body text-xs leading-relaxed text-cream/45">
+              Organisationsnummer: [XXXXXX-XXXX]<br>
+              Momsregistreringsnummer: [SE XXXXXXXXXX 01]
+            </p>
+          </div>
+          <div>
+            <h3 class="font-body text-xs font-medium uppercase tracking-[0.25em] text-cream/45">Kontakt</h3>
+            <ul class="mt-5 space-y-2 font-body text-sm text-cream/80">
+              <li><a href="tel:+46732390993" class="transition-colors hover:text-cream">+46 (0) 73-239 09 93</a></li>
+              <li><a href="tel:+46732391006" class="transition-colors hover:text-cream">+46 (0) 73-239 10 06</a></li>
+              <li><a href="mailto:info@bjorkfors-outdoor.se" class="transition-colors hover:text-cream">info@bjorkfors-outdoor.se</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="mt-14 grid gap-x-12 gap-y-10 border-t border-cream/10 pt-12 md:grid-cols-2">
+          <div>
+            <h3 class="font-body text-xs font-medium uppercase tracking-[0.25em] text-cream/45">Ansvar för innehåll</h3>
+            <p class="mt-5 font-body text-sm leading-relaxed text-cream/70">
+              Innehållet på denna webbplats har sammanställts med största möjliga omsorg. Vi kan dock
+              inte lämna någon garanti för att innehållet är korrekt, fullständigt och aktuellt. Externa
+              länkar har kontrollerats vid tidpunkten för publiceringen; för innehållet på länkade sidor
+              ansvarar uteslutande respektive leverantör.
+            </p>
+          </div>
+          <div>
+            <h3 class="font-body text-xs font-medium uppercase tracking-[0.25em] text-cream/45">Tvistlösning &amp; bildkällor</h3>
+            <p class="mt-5 font-body text-sm leading-relaxed text-cream/70">
+              Europeiska kommissionens plattform för tvistlösning online:
+              <a href="https://ec.europa.eu/consumers/odr" class="editorial-link text-cream" rel="noopener" target="_blank">ec.europa.eu/consumers/odr</a>.
+              Vi är varken skyldiga eller villiga att delta i tvistlösningsförfaranden inför en
+              konsumentskiljenämnd. Foton: egna bilder samt <a href="https://unsplash.com" class="editorial-link text-cream" rel="noopener" target="_blank">Unsplash</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="relative z-10 bg-forest-950 text-cream/70">
+    <div class="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-5 py-20 sm:grid-cols-2 sm:px-8 lg:grid-cols-4">
+      <div>
+        <span class="inline-flex items-center rounded-xl bg-cream px-4 py-3">
+          <img src="../assets/images/logo-bjorkfors.png" alt="Björkfors Outdoor-Adventures — Bed &amp; Breakfast" class="h-12 w-auto">
+        </span>
+        <p class="mt-6 max-w-xs font-body text-sm leading-relaxed">
+          Privata fiske- och naturupplevelser för små grupper — mitt i den svenska naturen.
+        </p>
+      </div>
+      <nav aria-label="Sidfotsnavigation">
+        <h2 class="font-body text-xs font-medium uppercase tracking-[0.25em] text-cream/45">Sidor</h2>
+        <ul class="mt-6 space-y-3 font-body text-sm">
+          <li><a href="index.html" class="transition-colors hover:text-cream">Startsida</a></li>
+          <li><a href="sportfischen.html" class="transition-colors hover:text-cream">Sportfiske</a></li>
+          <li><a href="aktivitaeten.html" class="transition-colors hover:text-cream">Aktiviteter &amp; omgivning</a></li>
+          <li><a href="index.html#ueber-uns" class="transition-colors hover:text-cream">Om oss</a></li>
+          <li><a href="preisliste.html" class="transition-colors hover:text-cream">Priser</a></li>
+          <li><a href="hausregeln.html" class="text-cream" aria-current="page">Husregler &amp; villkor</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h2 class="font-body text-xs font-medium uppercase tracking-[0.25em] text-cream/45">Kontakt</h2>
+        <ul class="mt-6 space-y-3 font-body text-sm">
+          <li>Gamla landsvägen 13<br>59046 Rimforsa (Björkfors), Sverige</li>
+          <li><a href="tel:+46732390993" class="transition-colors hover:text-cream">+46 (0) 73-239 09 93</a></li>
+          <li><a href="tel:+46732391006" class="transition-colors hover:text-cream">+46 (0) 73-239 10 06</a></li>
+          <li><a href="mailto:info@bjorkfors-outdoor.se" class="transition-colors hover:text-cream">info@bjorkfors-outdoor.se</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="font-body text-xs font-medium uppercase tracking-[0.25em] text-cream/45">Språk</h2>
+        <ul class="mt-6 space-y-3 font-body text-sm">
+          <li><a href="hausregeln.html" class="text-accent" aria-current="true">Svenska</a></li>
+          <li><a href="../hausregeln.html" class="transition-colors hover:text-cream">Nederlands</a></li>
+          <li><a href="../de/hausregeln.html" class="transition-colors hover:text-cream">Deutsch</a></li>
+          <li><a href="../en/hausregeln.html" class="transition-colors hover:text-cream">English</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-cream/10">
+      <div class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-5 py-6 font-body text-xs text-cream/40 sm:px-8">
+        <p>© 2026 Björkfors Outdoor Adventures. Alla rättigheter förbehållna.</p>
+        <a href="hausregeln.html#impressum" class="transition-colors hover:text-cream">Juridisk information</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
