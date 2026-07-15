@@ -133,7 +133,7 @@
     .about-photo { transition: transform 0.3s ease; }
     .about-photo:hover { transform: scale(1.03); }
   </style>
-  <!-- Strukturierte Daten: BedAndBreakfast (TODO: "geo" mit Koordinaten des Hauses ergänzen, sobald sie vorliegen) -->
+  <!-- Strukturierte Daten: BedAndBreakfast -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -150,6 +150,11 @@
       "addressLocality": "Rimforsa",
       "addressRegion": "Östergötland",
       "addressCountry": "SE"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 58.020833,
+      "longitude": 15.898667
     }
   }
   </script>
@@ -246,17 +251,17 @@
     <!-- ============ HERO ============ -->
     <section class="relative isolate flex min-h-[94vh] items-end overflow-hidden" aria-label="Welcome to Björkfors Outdoor">
 
-      <!-- Hero-Slideshow: wechselt alle 5 s. TODO: Unsplash-Platzhalter (Bilder 2–5) durch Kundenfotos ersetzen -->
+      <!-- Hero-Slideshow: wechselt alle 5 s. Kundenfotos (Jahreszeiten-Mix) -->
       <div class="absolute inset-0 -z-10" data-slideshow aria-hidden="true">
-        <img src="../assets/images/hero-lake-fog.jpg"
+        <img src="../assets/images/hero-morgensonne.jpg"
              alt=""
              class="fade-slide is-active"
              fetchpriority="high"
              onerror="this.remove()">
-        <img src="https://images.unsplash.com/photo-1439066615861-d1af74d74000?q=80&w=1920&auto=format&fit=crop" alt="" class="fade-slide" loading="lazy" onerror="this.remove()">
-        <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=1920&auto=format&fit=crop" alt="" class="fade-slide" loading="lazy" onerror="this.remove()">
-        <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=1920&auto=format&fit=crop" alt="" class="fade-slide" loading="lazy" onerror="this.remove()">
-        <img src="https://images.unsplash.com/photo-1418065460487-3e41a6c84dc5?q=80&w=1920&auto=format&fit=crop" alt="" class="fade-slide" loading="lazy" onerror="this.remove()">
+        <img src="../assets/images/hero-herbst-allee.jpg" alt="" class="fade-slide" loading="lazy" onerror="this.remove()">
+        <img src="../assets/images/hero-see-daemmerung.jpg" alt="" class="fade-slide" loading="lazy" onerror="this.remove()">
+        <img src="../assets/images/hero-herbstweg.jpg" alt="" class="fade-slide" loading="lazy" onerror="this.remove()">
+        <img src="../assets/images/hero-winter.jpg" alt="" class="fade-slide" loading="lazy" onerror="this.remove()">
       </div>
 
       <!-- SVG-Szenerie als gestalteter Fallback -->
@@ -325,98 +330,6 @@
           <span>Kayak &amp; canoe</span><span class="text-accent">✦</span>
           <span>Mushroom foraging</span><span class="text-accent">✦</span>
           <span>Ice fishing</span><span class="text-accent">✦</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ WIR MACHEN ES ANDERS ============ -->
-    <section id="ueber-uns" class="bg-cream py-28 sm:py-36" aria-label="Why Björkfors Outdoor — About us">
-      <div class="mx-auto max-w-7xl px-5 sm:px-8">
-        <div class="grid grid-cols-1 gap-16 lg:grid-cols-12">
-
-          <div class="lg:col-span-5" data-animate>
-            <p class="font-body text-xs font-medium uppercase tracking-[0.3em] text-forest-950/50">Why Björkfors</p>
-            <h2 class="mt-6 font-display text-4xl font-light leading-[1.1] text-forest-950 sm:text-6xl">
-              We do things <em class="font-normal italic">differently</em>.
-            </h2>
-            <p class="mt-8 max-w-md font-body text-lg leading-relaxed text-forest-950/65">
-              No mass tourism, no hidden costs — and full privacy on the water. Just you, the lake and hosts who fish themselves.
-            </p>
-
-            <!-- Über uns: Betreiberfoto + Text (Foto & finaler Text folgen vom Kunden) -->
-            <figure class="mt-12 max-w-md" data-animate>
-              <div class="overflow-hidden rounded-2xl bg-forest-800">
-                <!-- TODO: Platzhalter durch echtes Betreiberfoto ersetzen (z. B. assets/images/betreiber.jpg) -->
-                <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=800&auto=format&fit=crop"
-                     alt="The hosts of Björkfors Outdoor Adventures"
-                     class="aspect-[4/3] w-full object-cover" loading="lazy" onerror="this.remove()">
-              </div>
-              <figcaption class="mt-4 font-body text-xs font-medium uppercase tracking-[0.2em] text-forest-950/50">
-                Your hosts in Björkfors
-              </figcaption>
-            </figure>
-            <p class="mt-6 max-w-md font-body text-sm leading-relaxed text-forest-950/65">
-              <!-- TODO: Finaler Über-uns-Text folgt vom Kunden -->
-              We are hosts by passion — and anglers by conviction. In Björkfors, between lakes
-              Björkern and Åsunden, we run a bed &amp; breakfast for adult groups looking for real nature
-              instead of an off-the-shelf programme. Personal, uncomplicated, with clear fixed prices.
-            </p>
-          </div>
-
-          <div class="lg:col-span-7">
-            <ol class="divide-y divide-forest-950/10">
-              <li class="grid grid-cols-12 gap-6 py-10" data-animate>
-                <span class="col-span-2 font-display text-xl font-light text-forest-950/35 sm:text-2xl">01</span>
-                <div class="col-span-10">
-                  <h3 class="font-display text-2xl font-normal text-forest-950 sm:text-3xl">Full privacy on board</h3>
-                  <p class="mt-3 max-w-lg font-body leading-relaxed text-forest-950/65">
-                    Each boat is reserved entirely for you on your day — you enjoy the water in your own company and decide for yourselves when to set off, where to fish and for how long. And if you would like tips on the waters, we are happy to share our knowledge — first-hand.
-                  </p>
-                </div>
-              </li>
-              <li class="grid grid-cols-12 gap-6 py-10" data-animate>
-                <span class="col-span-2 font-display text-xl font-light text-forest-950/35 sm:text-2xl">02</span>
-                <div class="col-span-10">
-                  <h3 class="font-display text-2xl font-normal text-forest-950 sm:text-3xl">Our own fleet, ready to go</h3>
-                  <p class="mt-3 max-w-lg font-body leading-relaxed text-forest-950/65">
-                    Two fully equipped aluminium fishing boats with 20 hp outboards and fish finders, plus a Rana 14 — serviced, moored, five minutes from the house.
-                  </p>
-                </div>
-              </li>
-              <li class="grid grid-cols-12 gap-6 py-10" data-animate>
-                <span class="col-span-2 font-display text-xl font-light text-forest-950/35 sm:text-2xl">03</span>
-                <div class="col-span-10">
-                  <h3 class="font-display text-2xl font-normal text-forest-950 sm:text-3xl">The price is the price</h3>
-                  <p class="mt-3 max-w-lg font-body leading-relaxed text-forest-950/65">
-                    Every offer carries its fixed price right on the boat, the tour, the room. No surcharges, no fine print.
-                  </p>
-                </div>
-              </li>
-            </ol>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ STATS ============ -->
-    <section class="border-y border-forest-950/10 bg-white/50" aria-label="Björkfors in numbers">
-      <div class="mx-auto grid max-w-7xl grid-cols-2 divide-x divide-forest-950/10 px-5 sm:px-8 lg:grid-cols-4">
-        <div class="px-6 py-14 text-center" data-animate>
-          <p class="font-display text-5xl font-light text-forest-950 sm:text-6xl">500<span class="text-2xl align-top">m</span></p>
-          <p class="mt-3 font-body text-xs font-medium uppercase tracking-[0.2em] text-forest-950/50">from house to water</p>
-        </div>
-        <div class="px-6 py-14 text-center" data-animate>
-          <p class="font-display text-5xl font-light text-forest-950 sm:text-6xl">3</p>
-          <p class="mt-3 font-body text-xs font-medium uppercase tracking-[0.2em] text-forest-950/50">fishing boats of our own</p>
-        </div>
-        <div class="px-6 py-14 text-center" data-animate>
-          <p class="font-display text-5xl font-light text-forest-950 sm:text-6xl">100<span class="text-2xl align-top">%</span></p>
-          <p class="mt-3 font-body text-xs font-medium uppercase tracking-[0.2em] text-forest-950/50">fixed prices</p>
-        </div>
-        <div class="px-6 py-14 text-center" data-animate>
-          <p class="font-display text-5xl font-light text-forest-950 sm:text-6xl">60</p>
-          <p class="mt-3 font-body text-xs font-medium uppercase tracking-[0.2em] text-forest-950/50">seats in the Allhus for groups</p>
         </div>
       </div>
     </section>
@@ -546,12 +459,104 @@
       </div>
     </section>
 
-    <!-- ============ GOOGLE REVIEWS — editorial ============ -->
+    <!-- ============ STATS ============ -->
+    <section class="border-y border-forest-950/10 bg-white/50" aria-label="Björkfors in numbers">
+      <div class="mx-auto grid max-w-7xl grid-cols-2 divide-x divide-forest-950/10 px-5 sm:px-8 lg:grid-cols-4">
+        <div class="px-6 py-14 text-center" data-animate>
+          <p class="font-display text-5xl font-light text-forest-950 sm:text-6xl">500<span class="text-2xl align-top">m</span></p>
+          <p class="mt-3 font-body text-xs font-medium uppercase tracking-[0.2em] text-forest-950/50">from house to water</p>
+        </div>
+        <div class="px-6 py-14 text-center" data-animate>
+          <p class="font-display text-5xl font-light text-forest-950 sm:text-6xl">3</p>
+          <p class="mt-3 font-body text-xs font-medium uppercase tracking-[0.2em] text-forest-950/50">fishing boats of our own</p>
+        </div>
+        <div class="px-6 py-14 text-center" data-animate>
+          <p class="font-display text-5xl font-light text-forest-950 sm:text-6xl">100<span class="text-2xl align-top">%</span></p>
+          <p class="mt-3 font-body text-xs font-medium uppercase tracking-[0.2em] text-forest-950/50">fixed prices</p>
+        </div>
+        <div class="px-6 py-14 text-center" data-animate>
+          <p class="font-display text-5xl font-light text-forest-950 sm:text-6xl">60</p>
+          <p class="mt-3 font-body text-xs font-medium uppercase tracking-[0.2em] text-forest-950/50">seats in the Allhus for groups</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WIR MACHEN ES ANDERS ============ -->
+    <section id="ueber-uns" class="bg-cream py-28 sm:py-36" aria-label="Why Björkfors Outdoor — About us">
+      <div class="mx-auto max-w-7xl px-5 sm:px-8">
+        <div class="grid grid-cols-1 gap-16 lg:grid-cols-12">
+
+          <div class="lg:col-span-5" data-animate>
+            <p class="font-body text-xs font-medium uppercase tracking-[0.3em] text-forest-950/50">Why Björkfors</p>
+            <h2 class="mt-6 font-display text-4xl font-light leading-[1.1] text-forest-950 sm:text-6xl">
+              We do things <em class="font-normal italic">differently</em>.
+            </h2>
+            <p class="mt-8 max-w-md font-body text-lg leading-relaxed text-forest-950/65">
+              No mass tourism, no hidden costs — and full privacy on the water. Just you, the lake and hosts who fish themselves.
+            </p>
+
+            <!-- Über uns: Betreiberfoto + Text (Foto & finaler Text folgen vom Kunden) -->
+            <figure class="mt-12 max-w-md" data-animate>
+              <div class="overflow-hidden rounded-2xl bg-forest-800">
+                <!-- TODO: Platzhalter durch echtes Betreiberfoto ersetzen (z. B. assets/images/betreiber.jpg) -->
+                <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=800&auto=format&fit=crop"
+                     alt="The hosts of Björkfors Outdoor Adventures"
+                     class="aspect-[4/3] w-full object-cover" loading="lazy" onerror="this.remove()">
+              </div>
+              <figcaption class="mt-4 font-body text-xs font-medium uppercase tracking-[0.2em] text-forest-950/50">
+                Your hosts in Björkfors
+              </figcaption>
+            </figure>
+            <p class="mt-6 max-w-md font-body text-sm leading-relaxed text-forest-950/65">
+              <!-- TODO: Finaler Über-uns-Text folgt vom Kunden -->
+              We are hosts by passion — and anglers by conviction. In Björkfors, between lakes
+              Björkern and Åsunden, we run a bed &amp; breakfast for adult groups looking for real nature
+              instead of an off-the-shelf programme. Personal, uncomplicated, with clear fixed prices.
+            </p>
+          </div>
+
+          <div class="lg:col-span-7">
+            <ol class="divide-y divide-forest-950/10">
+              <li class="grid grid-cols-12 gap-6 py-10" data-animate>
+                <span class="col-span-2 font-display text-xl font-light text-forest-950/35 sm:text-2xl">01</span>
+                <div class="col-span-10">
+                  <h3 class="font-display text-2xl font-normal text-forest-950 sm:text-3xl">Full privacy on board</h3>
+                  <p class="mt-3 max-w-lg font-body leading-relaxed text-forest-950/65">
+                    Each boat is reserved entirely for you on your day — you enjoy the water in your own company and decide for yourselves when to set off, where to fish and for how long. And if you would like tips on the waters, we are happy to share our knowledge — first-hand.
+                  </p>
+                </div>
+              </li>
+              <li class="grid grid-cols-12 gap-6 py-10" data-animate>
+                <span class="col-span-2 font-display text-xl font-light text-forest-950/35 sm:text-2xl">02</span>
+                <div class="col-span-10">
+                  <h3 class="font-display text-2xl font-normal text-forest-950 sm:text-3xl">Our own fleet, ready to go</h3>
+                  <p class="mt-3 max-w-lg font-body leading-relaxed text-forest-950/65">
+                    Two fully equipped aluminium fishing boats with 20 hp outboards and fish finders, plus a Rana 14 — serviced, moored, five minutes from the house.
+                  </p>
+                </div>
+              </li>
+              <li class="grid grid-cols-12 gap-6 py-10" data-animate>
+                <span class="col-span-2 font-display text-xl font-light text-forest-950/35 sm:text-2xl">03</span>
+                <div class="col-span-10">
+                  <h3 class="font-display text-2xl font-normal text-forest-950 sm:text-3xl">The price is the price</h3>
+                  <p class="mt-3 max-w-lg font-body leading-relaxed text-forest-950/65">
+                    Every offer carries its fixed price right on the boat, the tour, the room. No surcharges, no fine print.
+                  </p>
+                </div>
+              </li>
+            </ol>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TRIPADVISOR REVIEWS — editorial ============ -->
     <section class="border-t border-forest-950/10 bg-cream py-28 sm:py-36" aria-label="Reviews from our guests">
       <div class="mx-auto max-w-7xl px-5 sm:px-8">
         <div class="flex flex-wrap items-end justify-between gap-8" data-animate>
           <div>
-            <p class="font-body text-xs font-medium uppercase tracking-[0.3em] text-forest-950/50">Google reviews</p>
+            <p class="font-body text-xs font-medium uppercase tracking-[0.3em] text-forest-950/50">Reviews on Google &amp; Tripadvisor</p>
             <h2 class="mt-6 font-display text-4xl font-light leading-[1.1] text-forest-950 sm:text-6xl">
               What guests <em class="font-normal italic">say</em>.
             </h2>
@@ -574,10 +579,7 @@
           </div>
         </div>
 
-        <!--
-          PLACEHOLDER REVIEWS: Replace with real Google reviews before launch
-          (copy text, name and date verbatim — never publish made-up reviews!)
-        -->
+        <!-- Real Tripadvisor reviews (shortened) -->
         <div id="review-track" class="review-track mt-16 flex snap-x gap-10 overflow-x-auto pb-4" data-animate>
 
           <figure class="review-card w-[88%] shrink-0 border-l border-forest-950/15 pl-8 sm:w-[46%] lg:w-[30%]">
@@ -589,9 +591,23 @@
               <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.42 4.4a1 1 0 00.95.68h4.62c.97 0 1.37 1.24.59 1.81l-3.74 2.72a1 1 0 00-.36 1.12l1.43 4.4c.3.92-.76 1.68-1.54 1.11l-3.73-2.72a1 1 0 00-1.18 0l-3.74 2.72c-.78.57-1.83-.19-1.53-1.1l1.42-4.4a1 1 0 00-.36-1.13L1.46 9.82c-.78-.57-.38-1.81.6-1.81h4.61a1 1 0 00.95-.69l1.43-4.4z"/></svg>
             </div>
             <blockquote class="mt-6 font-display text-xl font-light leading-relaxed text-forest-950/85">
-              <p>“[Placeholder — insert a real Google review]”</p>
+              <p>“Quiet and peaceful environment. Fantastically clean, excellent facilities and wonderful beds in our family room. Good breakfast with everything you could wish for — and above all a super nice owner couple. I’d love to come back!”</p>
             </blockquote>
-            <figcaption class="mt-6 font-body text-xs font-medium uppercase tracking-[0.2em] text-forest-950/45">Name — Month Year</figcaption>
+            <figcaption class="mt-6 font-body text-xs font-medium uppercase tracking-[0.2em] text-forest-950/45">Pa B — July 2025 · Tripadvisor</figcaption>
+          </figure>
+
+          <figure class="review-card w-[88%] shrink-0 border-l border-forest-950/15 pl-8 sm:w-[46%] lg:w-[30%]">
+            <div class="flex gap-1 text-accent" aria-label="4 out of 5 stars">
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.42 4.4a1 1 0 00.95.68h4.62c.97 0 1.37 1.24.59 1.81l-3.74 2.72a1 1 0 00-.36 1.12l1.43 4.4c.3.92-.76 1.68-1.54 1.11l-3.73-2.72a1 1 0 00-1.18 0l-3.74 2.72c-.78.57-1.83-.19-1.53-1.1l1.42-4.4a1 1 0 00-.36-1.13L1.46 9.82c-.78-.57-.38-1.81.6-1.81h4.61a1 1 0 00.95-.69l1.43-4.4z"/></svg>
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.42 4.4a1 1 0 00.95.68h4.62c.97 0 1.37 1.24.59 1.81l-3.74 2.72a1 1 0 00-.36 1.12l1.43 4.4c.3.92-.76 1.68-1.54 1.11l-3.73-2.72a1 1 0 00-1.18 0l-3.74 2.72c-.78.57-1.83-.19-1.53-1.1l1.42-4.4a1 1 0 00-.36-1.13L1.46 9.82c-.78-.57-.38-1.81.6-1.81h4.61a1 1 0 00.95-.69l1.43-4.4z"/></svg>
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.42 4.4a1 1 0 00.95.68h4.62c.97 0 1.37 1.24.59 1.81l-3.74 2.72a1 1 0 00-.36 1.12l1.43 4.4c.3.92-.76 1.68-1.54 1.11l-3.73-2.72a1 1 0 00-1.18 0l-3.74 2.72c-.78.57-1.83-.19-1.53-1.1l1.42-4.4a1 1 0 00-.36-1.13L1.46 9.82c-.78-.57-.38-1.81.6-1.81h4.61a1 1 0 00.95-.69l1.43-4.4z"/></svg>
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.42 4.4a1 1 0 00.95.68h4.62c.97 0 1.37 1.24.59 1.81l-3.74 2.72a1 1 0 00-.36 1.12l1.43 4.4c.3.92-.76 1.68-1.54 1.11l-3.73-2.72a1 1 0 00-1.18 0l-3.74 2.72c-.78.57-1.83-.19-1.53-1.1l1.42-4.4a1 1 0 00-.36-1.13L1.46 9.82c-.78-.57-.38-1.81.6-1.81h4.61a1 1 0 00.95-.69l1.43-4.4z"/></svg>
+              <svg class="h-4 w-4 fill-current opacity-25" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.42 4.4a1 1 0 00.95.68h4.62c.97 0 1.37 1.24.59 1.81l-3.74 2.72a1 1 0 00-.36 1.12l1.43 4.4c.3.92-.76 1.68-1.54 1.11l-3.73-2.72a1 1 0 00-1.18 0l-3.74 2.72c-.78.57-1.83-.19-1.53-1.1l1.42-4.4a1 1 0 00-.36-1.13L1.46 9.82c-.78-.57-.38-1.81.6-1.81h4.61a1 1 0 00.95-.69l1.43-4.4z"/></svg>
+            </div>
+            <blockquote class="mt-6 font-display text-xl font-light leading-relaxed text-forest-950/85">
+              <p>“Kind, multilingual hosts in a beautiful area. We could freely use the large kitchen, and nearby there are many lakes — for swimming, canoeing and more.”</p>
+            </blockquote>
+            <figcaption class="mt-6 font-body text-xs font-medium uppercase tracking-[0.2em] text-forest-950/45">Tjerk V — January 2017 · Tripadvisor</figcaption>
           </figure>
 
           <figure class="review-card w-[88%] shrink-0 border-l border-forest-950/15 pl-8 sm:w-[46%] lg:w-[30%]">
@@ -603,9 +619,9 @@
               <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.42 4.4a1 1 0 00.95.68h4.62c.97 0 1.37 1.24.59 1.81l-3.74 2.72a1 1 0 00-.36 1.12l1.43 4.4c.3.92-.76 1.68-1.54 1.11l-3.73-2.72a1 1 0 00-1.18 0l-3.74 2.72c-.78.57-1.83-.19-1.53-1.1l1.42-4.4a1 1 0 00-.36-1.13L1.46 9.82c-.78-.57-.38-1.81.6-1.81h4.61a1 1 0 00.95-.69l1.43-4.4z"/></svg>
             </div>
             <blockquote class="mt-6 font-display text-xl font-light leading-relaxed text-forest-950/85">
-              <p>“[Placeholder — insert a real Google review]”</p>
+              <p>“We rented canoes for a multi-day trip on lake Åsunden. The lake is really beautiful — we had a great time paddling and camping on one of the many islands.”</p>
             </blockquote>
-            <figcaption class="mt-6 font-body text-xs font-medium uppercase tracking-[0.2em] text-forest-950/45">Name — Month Year</figcaption>
+            <figcaption class="mt-6 font-body text-xs font-medium uppercase tracking-[0.2em] text-forest-950/45">Frank — June 2016 · Tripadvisor</figcaption>
           </figure>
 
           <figure class="review-card w-[88%] shrink-0 border-l border-forest-950/15 pl-8 sm:w-[46%] lg:w-[30%]">
@@ -617,23 +633,9 @@
               <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.42 4.4a1 1 0 00.95.68h4.62c.97 0 1.37 1.24.59 1.81l-3.74 2.72a1 1 0 00-.36 1.12l1.43 4.4c.3.92-.76 1.68-1.54 1.11l-3.73-2.72a1 1 0 00-1.18 0l-3.74 2.72c-.78.57-1.83-.19-1.53-1.1l1.42-4.4a1 1 0 00-.36-1.13L1.46 9.82c-.78-.57-.38-1.81.6-1.81h4.61a1 1 0 00.95-.69l1.43-4.4z"/></svg>
             </div>
             <blockquote class="mt-6 font-display text-xl font-light leading-relaxed text-forest-950/85">
-              <p>“[Placeholder — insert a real Google review]”</p>
+              <p>“The place is wonderfully located and has every amenity you could need. The kayaks were brand new and our tour could not have been better. If you’re looking for a great starting point for a kayak trip: highly recommended.”</p>
             </blockquote>
-            <figcaption class="mt-6 font-body text-xs font-medium uppercase tracking-[0.2em] text-forest-950/45">Name — Month Year</figcaption>
-          </figure>
-
-          <figure class="review-card w-[88%] shrink-0 border-l border-forest-950/15 pl-8 sm:w-[46%] lg:w-[30%]">
-            <div class="flex gap-1 text-accent" aria-label="5 out of 5 stars">
-              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.42 4.4a1 1 0 00.95.68h4.62c.97 0 1.37 1.24.59 1.81l-3.74 2.72a1 1 0 00-.36 1.12l1.43 4.4c.3.92-.76 1.68-1.54 1.11l-3.73-2.72a1 1 0 00-1.18 0l-3.74 2.72c-.78.57-1.83-.19-1.53-1.1l1.42-4.4a1 1 0 00-.36-1.13L1.46 9.82c-.78-.57-.38-1.81.6-1.81h4.61a1 1 0 00.95-.69l1.43-4.4z"/></svg>
-              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.42 4.4a1 1 0 00.95.68h4.62c.97 0 1.37 1.24.59 1.81l-3.74 2.72a1 1 0 00-.36 1.12l1.43 4.4c.3.92-.76 1.68-1.54 1.11l-3.73-2.72a1 1 0 00-1.18 0l-3.74 2.72c-.78.57-1.83-.19-1.53-1.1l1.42-4.4a1 1 0 00-.36-1.13L1.46 9.82c-.78-.57-.38-1.81.6-1.81h4.61a1 1 0 00.95-.69l1.43-4.4z"/></svg>
-              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.42 4.4a1 1 0 00.95.68h4.62c.97 0 1.37 1.24.59 1.81l-3.74 2.72a1 1 0 00-.36 1.12l1.43 4.4c.3.92-.76 1.68-1.54 1.11l-3.73-2.72a1 1 0 00-1.18 0l-3.74 2.72c-.78.57-1.83-.19-1.53-1.1l1.42-4.4a1 1 0 00-.36-1.13L1.46 9.82c-.78-.57-.38-1.81.6-1.81h4.61a1 1 0 00.95-.69l1.43-4.4z"/></svg>
-              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.42 4.4a1 1 0 00.95.68h4.62c.97 0 1.37 1.24.59 1.81l-3.74 2.72a1 1 0 00-.36 1.12l1.43 4.4c.3.92-.76 1.68-1.54 1.11l-3.73-2.72a1 1 0 00-1.18 0l-3.74 2.72c-.78.57-1.83-.19-1.53-1.1l1.42-4.4a1 1 0 00-.36-1.13L1.46 9.82c-.78-.57-.38-1.81.6-1.81h4.61a1 1 0 00.95-.69l1.43-4.4z"/></svg>
-              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.42 4.4a1 1 0 00.95.68h4.62c.97 0 1.37 1.24.59 1.81l-3.74 2.72a1 1 0 00-.36 1.12l1.43 4.4c.3.92-.76 1.68-1.54 1.11l-3.73-2.72a1 1 0 00-1.18 0l-3.74 2.72c-.78.57-1.83-.19-1.53-1.1l1.42-4.4a1 1 0 00-.36-1.13L1.46 9.82c-.78-.57-.38-1.81.6-1.81h4.61a1 1 0 00.95-.69l1.43-4.4z"/></svg>
-            </div>
-            <blockquote class="mt-6 font-display text-xl font-light leading-relaxed text-forest-950/85">
-              <p>“[Placeholder — insert a real Google review]”</p>
-            </blockquote>
-            <figcaption class="mt-6 font-body text-xs font-medium uppercase tracking-[0.2em] text-forest-950/45">Name — Month Year</figcaption>
+            <figcaption class="mt-6 font-body text-xs font-medium uppercase tracking-[0.2em] text-forest-950/45">Saskia S — July 2015 · Tripadvisor</figcaption>
           </figure>
 
         </div>
