@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — Pagina niet gevonden · Björkfors Outdoor</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png">
+  <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      padding: 2rem 1.25rem;
+      background: #F7F4ED;
+      color: #0F2417;
+      font-family: "Inter", sans-serif;
+      text-align: center;
+    }
+    .logo img { height: 4.5rem; width: auto; }
+    .code {
+      font-family: "Fraunces", serif;
+      font-weight: 300;
+      font-size: clamp(5rem, 18vw, 9rem);
+      line-height: 1;
+      color: #801818;
+    }
+    h1 {
+      font-family: "Fraunces", serif;
+      font-weight: 500;
+      font-size: clamp(1.4rem, 4vw, 2rem);
+    }
+    p.sub {
+      max-width: 34rem;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: rgba(15, 36, 23, 0.7);
+    }
+    a.home {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0.65rem 1.75rem;
+      border-radius: 9999px;
+      background: #801818;
+      color: #F7F4ED;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.2s ease;
+    }
+    a.home:hover { background: #5E1111; }
+    nav.langs {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem 1.5rem;
+      font-size: 0.85rem;
+    }
+    nav.langs a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      min-height: 44px;
+      color: rgba(15, 36, 23, 0.75);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+    }
+    nav.langs a:hover { color: #0F2417; border-bottom-color: currentColor; }
+  </style>
+</head>
+<body>
+  <a class="logo" href="/" aria-label="Björkfors Outdoor — startpagina">
+    <img src="/assets/images/logo-bjorkfors.png" alt="Björkfors Outdoor-Adventures — Bed &amp; Breakfast">
+  </a>
+
+  <p class="code" aria-hidden="true">404</p>
+
+  <div>
+    <h1>Pagina niet gevonden</h1>
+    <p class="sub" style="margin-top: 0.75rem;">
+      Deze pagina bestaat niet (meer) — misschien is de link verouderd.
+      Via de startpagina vind je alles over overnachten, sportvissen en kano&rsquo;s huren.
+    </p>
+  </div>
+
+  <a class="home" href="/">Naar de startpagina</a>
+
+  <nav class="langs" aria-label="Taalkeuze">
+    <a href="/de/" lang="de" hreflang="de"><span aria-hidden="true">&#127465;&#127466;</span> Seite nicht gefunden — zur Startseite</a>
+    <a href="/en/" lang="en" hreflang="en"><span aria-hidden="true">&#127468;&#127463;</span> Page not found — go to homepage</a>
+    <a href="/sv/" lang="sv" hreflang="sv"><span aria-hidden="true">&#127480;&#127466;</span> Sidan hittades inte — till startsidan</a>
+  </nav>
+
+  <script>
+    // Auf der GitHub-Pages-Vorschau liegt die Seite unter /<repo>/ statt an der Domain-Wurzel.
+    (function () {
+      if (!location.hostname.endsWith('github.io')) return;
+      var base = '/' + location.pathname.split('/')[1];
+      document.querySelectorAll('a[href^="/"]').forEach(function (a) {
+        a.setAttribute('href', base + a.getAttribute('href'));
+      });
+      document.querySelectorAll('img[src^="/"]').forEach(function (img) {
+        img.setAttribute('src', base + img.getAttribute('src'));
+      });
+    })();
+  </script>
+</body>
+</html>
