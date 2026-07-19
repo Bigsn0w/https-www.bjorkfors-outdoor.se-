@@ -389,21 +389,5 @@
   </footer>
 
   <script src="assets/js/main.js"></script>
-  <script>
-    // ===== Slideshow: elke 5 seconden naar het volgende beeld overvloeien =====
-    (function () {
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-      document.querySelectorAll('[data-slideshow]').forEach(function (box) {
-        var slides = box.querySelectorAll('.fade-slide');
-        if (slides.length < 2) return;
-        var i = 0;
-        setInterval(function () {
-          slides[i].classList.remove('is-active');
-          i = (i + 1) % slides.length;
-          slides[i].classList.add('is-active');
-        }, 5000);
-      });
-    })();
-  </script>
 </body>
 </html>
