@@ -116,7 +116,7 @@
     }
     #lang-menu:not(.hidden) { animation: langFadeIn 0.15s ease-out; }
 
-    /* ---- Slideshow: sanfte Überblendung alle 5 s (JS unten) ---- */
+    /* ---- Slideshow: sanfte Überblendung, siehe assets/js/main.js ---- */
     .fade-slide {
       position: absolute;
       inset: 0;
@@ -248,19 +248,32 @@
   <main id="main-content">
 
     <!-- ============ HERO ============ -->
-    <section class="relative isolate flex min-h-[94vh] items-end overflow-hidden" aria-label="Willkommen bei Björkfors Outdoor">
+    <section class="group relative isolate flex min-h-[94vh] items-end overflow-hidden" aria-label="Willkommen bei Björkfors Outdoor" data-slideshow-root>
 
-      <!-- Hero-Slideshow: wechselt alle 5 s. Kundenfotos (Jahreszeiten-Mix) -->
+      <!-- Hero-Slideshow: wechselt alle 3 s, per Pfeil/Wisch manuell steuerbar. Kundenfotos (Jahreszeiten-Mix) -->
       <div class="absolute inset-0 -z-10" data-slideshow aria-hidden="true">
-        <picture><source srcset="../assets/images/hero-morgensonne.webp" type="image/webp"><img src="../assets/images/hero-morgensonne.jpg"
+        <picture><source srcset="../assets/images/hero-see-daemmerung.webp" type="image/webp"><img src="../assets/images/hero-see-daemmerung.jpg"
              alt=""
              class="fade-slide is-active"
              fetchpriority="high"
              onerror="this.remove()"></picture>
+        <picture><source srcset="../assets/images/hero-morgensonne.webp" type="image/webp"><img src="../assets/images/hero-morgensonne.jpg" alt="" class="fade-slide" loading="lazy" onerror="this.remove()"></picture>
         <picture><source srcset="../assets/images/hero-herbst-allee.webp" type="image/webp"><img src="../assets/images/hero-herbst-allee.jpg" alt="" class="fade-slide" loading="lazy" onerror="this.remove()"></picture>
-        <picture><source srcset="../assets/images/hero-see-daemmerung.webp" type="image/webp"><img src="../assets/images/hero-see-daemmerung.jpg" alt="" class="fade-slide" loading="lazy" onerror="this.remove()"></picture>
         <picture><source srcset="../assets/images/hero-herbstweg.webp" type="image/webp"><img src="../assets/images/hero-herbstweg.jpg" alt="" class="fade-slide" loading="lazy" onerror="this.remove()"></picture>
         <picture><source srcset="../assets/images/hero-aussicht-see.webp" type="image/webp"><img src="../assets/images/hero-aussicht-see.jpg" alt="" class="fade-slide" loading="lazy" onerror="this.remove()"></picture>
+      </div>
+
+      <!-- Slideshow-Steuerung: Pfeile (nur bei Hover/Fokus sichtbar) + Punkte -->
+      <div class="pointer-events-none absolute inset-0 z-10">
+        <button type="button" data-slide-prev aria-label="Vorheriges Bild"
+                class="pointer-events-auto absolute left-4 top-1/2 inline-flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-forest-950/30 text-cream opacity-0 backdrop-blur-sm transition-opacity duration-200 hover:bg-forest-950/50 focus:outline-none focus-visible:opacity-100 focus-visible:ring-2 focus-visible:ring-cream group-hover:opacity-100 sm:left-6">
+          <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" /></svg>
+        </button>
+        <button type="button" data-slide-next aria-label="Nächstes Bild"
+                class="pointer-events-auto absolute right-4 top-1/2 inline-flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-forest-950/30 text-cream opacity-0 backdrop-blur-sm transition-opacity duration-200 hover:bg-forest-950/50 focus:outline-none focus-visible:opacity-100 focus-visible:ring-2 focus-visible:ring-cream group-hover:opacity-100 sm:right-6">
+          <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg>
+        </button>
+        <div data-slide-dots class="pointer-events-auto absolute bottom-6 left-1/2 flex -translate-x-1/2 items-center gap-2"></div>
       </div>
 
       <!-- SVG-Szenerie als gestalteter Fallback -->
@@ -716,21 +729,5 @@
   </footer>
 
   <script src="../assets/js/main.js"></script>
-  <script>
-    // ===== Slideshow: alle 5 Sekunden zum nächsten Bild überblenden =====
-    (function () {
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-      document.querySelectorAll('[data-slideshow]').forEach(function (box) {
-        var slides = box.querySelectorAll('.fade-slide');
-        if (slides.length < 2) return;
-        var i = 0;
-        setInterval(function () {
-          slides[i].classList.remove('is-active');
-          i = (i + 1) % slides.length;
-          slides[i].classList.add('is-active');
-        }, 5000);
-      });
-    })();
-  </script>
 </body>
 </html>
