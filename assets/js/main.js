@@ -109,11 +109,13 @@ document.querySelectorAll('[data-slideshow-root]').forEach((root) => {
   const dotsWrap = root.querySelector('[data-slide-dots]');
   const dots = [];
 
+  const dotLabel = root.getAttribute('data-dot-label') || 'Bild {n} von {total} anzeigen';
+
   if (dotsWrap) {
     slides.forEach((_, idx) => {
       const dot = document.createElement('button');
       dot.type = 'button';
-      dot.setAttribute('aria-label', `Bild ${idx + 1} von ${slides.length} anzeigen`);
+      dot.setAttribute('aria-label', dotLabel.replace('{n}', idx + 1).replace('{total}', slides.length));
       dot.className = 'h-1.5 w-1.5 rounded-full bg-cream/50 transition-all duration-200 hover:bg-cream focus:outline-none focus-visible:ring-2 focus-visible:ring-cream';
       dot.addEventListener('click', () => goTo(idx));
       dotsWrap.appendChild(dot);
