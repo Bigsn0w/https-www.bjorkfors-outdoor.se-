@@ -399,20 +399,20 @@
             <textarea id="f-message" name="message" rows="4" class="field-input resize-y font-body" placeholder="Wat moeten we nog weten? Wensen, vragen, bijzonderheden …"></textarea>
           </div>
 
-          <!-- Factuurnummer -->
+          <!-- Factuuradres -->
           <div class="mt-12" data-animate>
-            <label for="f-invoice" class="field-label">Factuurnummer *</label>
-            <input type="text" id="f-invoice" name="invoice" class="field-input font-body" placeholder="bijv. van jullie boekingsbevestiging" required>
+            <label for="f-billing-address" class="field-label">Factuuradres *</label>
+            <textarea id="f-billing-address" name="billingAddress" rows="3" class="field-input resize-y font-body" placeholder="Naam, straat, postcode/plaats, land" required></textarea>
             <p class="mt-2 font-body text-xs leading-relaxed text-forest-950/50">
               Nodig voor de betalingsafhandeling — bijvoorbeeld als de reis te laat wordt geannuleerd en wij een factuur moeten sturen.
             </p>
           </div>
 
-          <!-- Hausregeln & AGB -->
+          <!-- Voorwaarden -->
           <div class="mt-8 flex items-start gap-3" data-animate>
             <input type="checkbox" id="f-agb" name="agb" class="mt-1 h-4 w-4 shrink-0 rounded border-forest-950/30 text-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-accent" required>
             <label for="f-agb" class="font-body text-sm leading-relaxed text-forest-950/75">
-              Ik heb de <a href="hausregeln.html" target="_blank" rel="noopener" class="editorial-link font-semibold text-forest-950">huisregels &amp; voorwaarden</a> gelezen en accepteer ze. *
+              Ik heb de <a href="agb.html" target="_blank" rel="noopener" class="editorial-link font-semibold text-forest-950">algemene voorwaarden</a> gelezen en accepteer ze. *
             </label>
           </div>
 
@@ -431,7 +431,7 @@
               <span class="btn-shiny-label">Aanvraag versturen</span>
             </button>
             <p id="form-error" class="mt-4 hidden font-body text-sm text-accent" role="alert">
-              Vul jullie naam, een geldig e-mailadres en jullie factuurnummer in, en accepteer de huisregels &amp; voorwaarden.
+              Vul jullie naam, een geldig e-mailadres en jullie factuuradres in, en accepteer de algemene voorwaarden.
             </p>
             <p class="mt-4 font-body text-xs leading-relaxed text-forest-950/50">
               Met één klik opent jullie e-mailprogramma met de kant-en-klare aanvraag aan
@@ -464,7 +464,6 @@
           <li><a href="aktivitaeten.html" class="transition-colors hover:text-cream">Activiteiten &amp; omgeving</a></li>
           <li><a href="index.html#ueber-uns" class="transition-colors hover:text-cream">Over ons</a></li>
           <li><a href="preisliste.html" class="transition-colors hover:text-cream">Prijzen</a></li>
-          <li><a href="hausregeln.html" class="transition-colors hover:text-cream">Huisregels &amp; voorwaarden</a></li>
         </ul>
       </nav>
       <div>
@@ -489,7 +488,11 @@
     <div class="border-t border-cream/10">
       <div class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-5 py-6 font-body text-xs text-cream/40 sm:px-8">
         <p>© 2026 Björkfors Outdoor Adventures. Alle rechten voorbehouden.</p>
-        <a href="hausregeln.html#impressum" class="transition-colors hover:text-cream">Colofon</a>
+        <div class="flex flex-wrap items-center gap-x-6 gap-y-2">
+          <a href="hausregeln.html" class="transition-colors hover:text-cream">Huisregels</a>
+          <a href="agb.html" class="transition-colors hover:text-cream">Voorwaarden</a>
+          <a href="impressum.html" class="transition-colors hover:text-cream">Colofon</a>
+        </div>
       </div>
     </div>
   </footer>
@@ -509,7 +512,7 @@
       var arrivalInput = document.getElementById('f-arrival');
       var departureInput = document.getElementById('f-departure');
       var messageInput = document.getElementById('f-message');
-      var invoiceInput = document.getElementById('f-invoice');
+      var billingAddressInput = document.getElementById('f-billing-address');
       var agbCheckbox = document.getElementById('f-agb');
       var summary = document.getElementById('summary');
       var errorBox = document.getElementById('form-error');
@@ -561,10 +564,10 @@
 
         var name = nameInput.value.trim();
         var email = emailInput.value.trim();
-        var invoice = invoiceInput.value.trim();
-        if (!name || !email || email.indexOf('@') < 1 || !invoice || !agbCheckbox.checked) {
+        var billingAddress = billingAddressInput.value.trim();
+        if (!name || !email || email.indexOf('@') < 1 || !billingAddress || !agbCheckbox.checked) {
           errorBox.classList.remove('hidden');
-          var invalid = !name ? nameInput : (!email || email.indexOf('@') < 1) ? emailInput : (!invoice ? invoiceInput : agbCheckbox);
+          var invalid = !name ? nameInput : (!email || email.indexOf('@') < 1) ? emailInput : (!billingAddress ? billingAddressInput : agbCheckbox);
           invalid.focus();
           return;
         }
@@ -577,7 +580,7 @@
           '',
           'Naam: ' + name,
           'E-mail: ' + email,
-          'Factuurnummer: ' + invoice,
+          'Factuuradres: ' + billingAddress,
         ];
         if (phoneInput.value.trim()) lines.push('Telefoon: ' + phoneInput.value.trim());
         lines.push('Groepsgrootte: ' + persons + (persons === 1 ? ' persoon' : ' personen'));

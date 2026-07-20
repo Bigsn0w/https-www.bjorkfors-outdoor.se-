@@ -399,20 +399,20 @@
             <textarea id="f-message" name="message" rows="4" class="field-input resize-y font-body" placeholder="Vad mer bör vi veta? Önskemål, frågor, särskilda behov …"></textarea>
           </div>
 
-          <!-- Rechnungsnummer -->
+          <!-- Fakturaadress -->
           <div class="mt-12" data-animate>
-            <label for="f-invoice" class="field-label">Fakturanummer *</label>
-            <input type="text" id="f-invoice" name="invoice" class="field-input font-body" placeholder="t.ex. från er bokningsbekräftelse" required>
+            <label for="f-billing-address" class="field-label">Fakturaadress *</label>
+            <textarea id="f-billing-address" name="billingAddress" rows="3" class="field-input resize-y font-body" placeholder="Namn, gata, postnummer/ort, land" required></textarea>
             <p class="mt-2 font-body text-xs leading-relaxed text-forest-950/50">
               Behövs för betalningshanteringen — t.ex. om resan avbokas för sent och vi behöver skicka en faktura.
             </p>
           </div>
 
-          <!-- Hausregeln & AGB -->
+          <!-- Villkor -->
           <div class="mt-8 flex items-start gap-3" data-animate>
             <input type="checkbox" id="f-agb" name="agb" class="mt-1 h-4 w-4 shrink-0 rounded border-forest-950/30 text-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-accent" required>
             <label for="f-agb" class="font-body text-sm leading-relaxed text-forest-950/75">
-              Jag har läst <a href="hausregeln.html" target="_blank" rel="noopener" class="editorial-link font-semibold text-forest-950">husreglerna &amp; villkoren</a> och accepterar dem. *
+              Jag har läst <a href="agb.html" target="_blank" rel="noopener" class="editorial-link font-semibold text-forest-950">villkoren</a> och accepterar dem. *
             </label>
           </div>
 
@@ -431,7 +431,7 @@
               <span class="btn-shiny-label">Skicka förfrågan</span>
             </button>
             <p id="form-error" class="mt-4 hidden font-body text-sm text-accent" role="alert">
-              Ange namn, en giltig e-postadress och ert fakturanummer, och acceptera husreglerna &amp; villkoren.
+              Ange namn, en giltig e-postadress och er fakturaadress, och acceptera villkoren.
             </p>
             <p class="mt-4 font-body text-xs leading-relaxed text-forest-950/50">
               Klicket öppnar ert e-postprogram med den färdiga förfrågan till
@@ -464,7 +464,6 @@
           <li><a href="aktivitaeten.html" class="transition-colors hover:text-cream">Aktiviteter &amp; omgivning</a></li>
           <li><a href="index.html#ueber-uns" class="transition-colors hover:text-cream">Om oss</a></li>
           <li><a href="preisliste.html" class="transition-colors hover:text-cream">Priser</a></li>
-          <li><a href="hausregeln.html" class="transition-colors hover:text-cream">Husregler &amp; villkor</a></li>
         </ul>
       </nav>
       <div>
@@ -489,7 +488,11 @@
     <div class="border-t border-cream/10">
       <div class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-5 py-6 font-body text-xs text-cream/40 sm:px-8">
         <p>© 2026 Björkfors Outdoor Adventures. Alla rättigheter förbehållna.</p>
-        <a href="hausregeln.html#impressum" class="transition-colors hover:text-cream">Juridisk information</a>
+        <div class="flex flex-wrap items-center gap-x-6 gap-y-2">
+          <a href="hausregeln.html" class="transition-colors hover:text-cream">Husregler</a>
+          <a href="agb.html" class="transition-colors hover:text-cream">Villkor</a>
+          <a href="impressum.html" class="transition-colors hover:text-cream">Juridisk information</a>
+        </div>
       </div>
     </div>
   </footer>
@@ -509,7 +512,7 @@
       var arrivalInput = document.getElementById('f-arrival');
       var departureInput = document.getElementById('f-departure');
       var messageInput = document.getElementById('f-message');
-      var invoiceInput = document.getElementById('f-invoice');
+      var billingAddressInput = document.getElementById('f-billing-address');
       var agbCheckbox = document.getElementById('f-agb');
       var summary = document.getElementById('summary');
       var errorBox = document.getElementById('form-error');
@@ -561,10 +564,10 @@
 
         var name = nameInput.value.trim();
         var email = emailInput.value.trim();
-        var invoice = invoiceInput.value.trim();
-        if (!name || !email || email.indexOf('@') < 1 || !invoice || !agbCheckbox.checked) {
+        var billingAddress = billingAddressInput.value.trim();
+        if (!name || !email || email.indexOf('@') < 1 || !billingAddress || !agbCheckbox.checked) {
           errorBox.classList.remove('hidden');
-          var invalid = !name ? nameInput : (!email || email.indexOf('@') < 1) ? emailInput : (!invoice ? invoiceInput : agbCheckbox);
+          var invalid = !name ? nameInput : (!email || email.indexOf('@') < 1) ? emailInput : (!billingAddress ? billingAddressInput : agbCheckbox);
           invalid.focus();
           return;
         }
@@ -577,7 +580,7 @@
           '',
           'Namn: ' + name,
           'E-post: ' + email,
-          'Fakturanummer: ' + invoice,
+          'Fakturaadress: ' + billingAddress,
         ];
         if (phoneInput.value.trim()) lines.push('Telefon: ' + phoneInput.value.trim());
         lines.push('Gruppstorlek: ' + persons + (persons === 1 ? ' person' : ' personer'));
