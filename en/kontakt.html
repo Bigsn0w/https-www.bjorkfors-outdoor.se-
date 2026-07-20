@@ -122,6 +122,15 @@
       border-bottom-color: #801818;
       box-shadow: 0 1px 0 0 #801818;
     }
+    textarea.field-input {
+      border: 1px solid rgba(15, 36, 23, 0.25);
+      border-radius: 0.5rem;
+      padding: 0.65rem 0.85rem;
+    }
+    textarea.field-input:focus {
+      border-color: #801818;
+      box-shadow: 0 0 0 1px #801818;
+    }
     .field-label {
       display: block;
       font-size: 0.72rem;
@@ -201,9 +210,9 @@
 
         <ul class="hidden xl:flex items-center gap-7 font-body text-[0.82rem] font-medium tracking-[0.08em] uppercase text-forest-950/80">
           <li><a href="bed-and-breakfast.html" class="inline-block whitespace-nowrap origin-left transition-all duration-200 hover:scale-105 hover:text-forest-950">Bed &amp; breakfast</a></li>
-          <li><a href="kanu-kajak-sup.html" class="inline-block whitespace-nowrap origin-left transition-all duration-200 hover:scale-105 hover:text-forest-950">Canoes, kayaks<br>&amp; SUPs</a></li>
+          <li><a href="kanu-kajak-sup.html" class="inline-block whitespace-nowrap origin-left transition-all duration-200 hover:scale-105 hover:text-forest-950">Canoes &amp; Kayaks</a></li>
           <li><a href="sportfischen.html" class="inline-block whitespace-nowrap origin-left transition-all duration-200 hover:scale-105 hover:text-forest-950">Sport fishing</a></li>
-          <li><a href="aktivitaeten.html" class="inline-block whitespace-nowrap origin-left transition-all duration-200 hover:scale-105 hover:text-forest-950">Activities<br>&amp; surroundings</a></li>
+          <li><a href="aktivitaeten.html" class="inline-block whitespace-nowrap origin-left transition-all duration-200 hover:scale-105 hover:text-forest-950">Activities</a></li>
           <li><a href="preisliste.html" class="inline-block whitespace-nowrap origin-left transition-all duration-200 hover:scale-105 hover:text-forest-950">Prices</a></li>
         </ul>
 
@@ -255,9 +264,9 @@
     <div id="mobile-menu" class="hidden xl:hidden border-t border-forest-950/10 bg-cream">
       <ul class="space-y-1 px-5 py-6 font-body text-sm font-medium tracking-[0.08em] uppercase text-forest-950/80">
         <li><a href="bed-and-breakfast.html" class="flex min-h-[44px] items-center px-2 transition-colors duration-200 hover:text-forest-950">Bed &amp; breakfast</a></li>
-        <li><a href="kanu-kajak-sup.html" class="flex min-h-[44px] items-center px-2 transition-colors duration-200 hover:text-forest-950">Canoes, kayaks &amp; SUPs</a></li>
+        <li><a href="kanu-kajak-sup.html" class="flex min-h-[44px] items-center px-2 transition-colors duration-200 hover:text-forest-950">Canoes &amp; Kayaks</a></li>
         <li><a href="sportfischen.html" class="flex min-h-[44px] items-center px-2 transition-colors duration-200 hover:text-forest-950">Sport fishing</a></li>
-        <li><a href="aktivitaeten.html" class="flex min-h-[44px] items-center px-2 transition-colors duration-200 hover:text-forest-950">Activities &amp; surroundings</a></li>
+        <li><a href="aktivitaeten.html" class="flex min-h-[44px] items-center px-2 transition-colors duration-200 hover:text-forest-950">Activities</a></li>
         <li><a href="preisliste.html" class="flex min-h-[44px] items-center px-2 transition-colors duration-200 hover:text-forest-950">Prices</a></li>
         <li class="pt-3 md:hidden">
           <a href="kontakt.html" class="btn-shiny flex min-h-[48px] items-center justify-center rounded-full px-6 font-body text-[0.82rem] font-semibold tracking-[0.06em] uppercase"><span class="btn-shiny-label">Booking request</span></a>
@@ -323,7 +332,10 @@
 
       <!-- ============ FORMULAR ============ -->
       <div class="bg-cream px-6 py-16 sm:px-10 lg:col-span-7 lg:px-16 lg:py-20">
-        <form id="booking-form" class="mx-auto max-w-xl" novalidate>
+        <form id="booking-form" class="mx-auto max-w-xl" action="https://formspree.io/f/FORMSPREE_ID" method="POST" novalidate>
+          <input type="hidden" name="_subject" value="New booking request — Björkfors Outdoor">
+          <input type="hidden" id="f-persons" name="Group size" value="4 people">
+          <input type="hidden" id="f-summary-field" name="Summary" value="">
 
           <p class="font-body text-xs font-medium uppercase tracking-[0.3em] text-forest-950/50" data-animate>Your request</p>
 
@@ -374,20 +386,20 @@
           <fieldset class="mt-12" data-animate>
             <legend class="field-label">What do you have in mind?</legend>
             <div class="mt-3 flex flex-wrap gap-3">
-              <div><input type="checkbox" id="i-angeln" class="sr-only" value="Sport fishing"><label for="i-angeln" class="chip-label font-body"><svg class="chip-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 12.75l6 6 9-13.5"/></svg>Sport fishing</label></div>
-              <div><input type="checkbox" id="i-boot" class="sr-only" value="Boat rental"><label for="i-boot" class="chip-label font-body"><svg class="chip-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 12.75l6 6 9-13.5"/></svg>Boat rental</label></div>
-              <div><input type="checkbox" id="i-guide" class="sr-only" value="Fishing guide"><label for="i-guide" class="chip-label font-body"><svg class="chip-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 12.75l6 6 9-13.5"/></svg>Fishing guide</label></div>
-              <div><input type="checkbox" id="i-paddel" class="sr-only" value="Canoe / kayak / SUP"><label for="i-paddel" class="chip-label font-body"><svg class="chip-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 12.75l6 6 9-13.5"/></svg>Canoe / kayak / SUP</label></div>
-              <div><input type="checkbox" id="i-kurs" class="sr-only" value="Canoe/kayak beginner course"><label for="i-kurs" class="chip-label font-body"><svg class="chip-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 12.75l6 6 9-13.5"/></svg>Paddling beginner course</label></div>
-              <div><input type="checkbox" id="i-safari" class="sr-only" value="Wildlife safari"><label for="i-safari" class="chip-label font-body"><svg class="chip-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 12.75l6 6 9-13.5"/></svg>Wildlife safari</label></div>
-              <div><input type="checkbox" id="i-workshop" class="sr-only" value="Art workshop at the Arthouse"><label for="i-workshop" class="chip-label font-body"><svg class="chip-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 12.75l6 6 9-13.5"/></svg>Art workshop</label></div>
-              <div><input type="checkbox" id="i-fruehstueck" class="sr-only" value="Breakfast buffet"><label for="i-fruehstueck" class="chip-label font-body"><svg class="chip-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 12.75l6 6 9-13.5"/></svg>Breakfast buffet</label></div>
-              <div><input type="checkbox" id="i-lugnet" class="sr-only" value="Holiday house “Lugnet”"><label for="i-lugnet" class="chip-label font-body"><svg class="chip-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 12.75l6 6 9-13.5"/></svg>Holiday house “Lugnet”</label></div>
-              <div><input type="checkbox" id="i-komplett" class="sr-only" value="Rent B&B / houses exclusively"><label for="i-komplett" class="chip-label font-body"><svg class="chip-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 12.75l6 6 9-13.5"/></svg>Exclusive rental</label></div>
-              <div><input type="checkbox" id="i-paket" class="sr-only" value="All-inclusive package with full board"><label for="i-paket" class="chip-label font-body"><svg class="chip-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 12.75l6 6 9-13.5"/></svg>All-inclusive package</label></div>
-              <div><input type="checkbox" id="i-winter" class="sr-only" value="Winter activities"><label for="i-winter" class="chip-label font-body"><svg class="chip-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 12.75l6 6 9-13.5"/></svg>Winter</label></div>
-              <div><input type="checkbox" id="i-transfer" class="sr-only" value="Airport transfer Linköping"><label for="i-transfer" class="chip-label font-body"><svg class="chip-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 12.75l6 6 9-13.5"/></svg>Airport transfer</label></div>
-              <div><input type="checkbox" id="i-hund" class="sr-only" value="Bringing a dog"><label for="i-hund" class="chip-label font-body"><svg class="chip-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 12.75l6 6 9-13.5"/></svg>Bringing a dog</label></div>
+              <div><input type="checkbox" id="i-angeln" name="Interest" class="sr-only" value="Sport fishing"><label for="i-angeln" class="chip-label font-body"><svg class="chip-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 12.75l6 6 9-13.5"/></svg>Sport fishing</label></div>
+              <div><input type="checkbox" id="i-boot" name="Interest" class="sr-only" value="Boat rental"><label for="i-boot" class="chip-label font-body"><svg class="chip-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 12.75l6 6 9-13.5"/></svg>Boat rental</label></div>
+              <div><input type="checkbox" id="i-guide" name="Interest" class="sr-only" value="Fishing guide"><label for="i-guide" class="chip-label font-body"><svg class="chip-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 12.75l6 6 9-13.5"/></svg>Fishing guide</label></div>
+              <div><input type="checkbox" id="i-paddel" name="Interest" class="sr-only" value="Canoe / kayak / SUP"><label for="i-paddel" class="chip-label font-body"><svg class="chip-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 12.75l6 6 9-13.5"/></svg>Canoe / kayak / SUP</label></div>
+              <div><input type="checkbox" id="i-kurs" name="Interest" class="sr-only" value="Canoe/kayak beginner course"><label for="i-kurs" class="chip-label font-body"><svg class="chip-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 12.75l6 6 9-13.5"/></svg>Paddling beginner course</label></div>
+              <div><input type="checkbox" id="i-safari" name="Interest" class="sr-only" value="Wildlife safari"><label for="i-safari" class="chip-label font-body"><svg class="chip-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 12.75l6 6 9-13.5"/></svg>Wildlife safari</label></div>
+              <div><input type="checkbox" id="i-workshop" name="Interest" class="sr-only" value="Art workshop at the Arthouse"><label for="i-workshop" class="chip-label font-body"><svg class="chip-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 12.75l6 6 9-13.5"/></svg>Art workshop</label></div>
+              <div><input type="checkbox" id="i-fruehstueck" name="Interest" class="sr-only" value="Breakfast buffet"><label for="i-fruehstueck" class="chip-label font-body"><svg class="chip-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 12.75l6 6 9-13.5"/></svg>Breakfast buffet</label></div>
+              <div><input type="checkbox" id="i-lugnet" name="Interest" class="sr-only" value="Holiday house “Lugnet”"><label for="i-lugnet" class="chip-label font-body"><svg class="chip-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 12.75l6 6 9-13.5"/></svg>Holiday house “Lugnet”</label></div>
+              <div><input type="checkbox" id="i-komplett" name="Interest" class="sr-only" value="Rent B&B / houses exclusively"><label for="i-komplett" class="chip-label font-body"><svg class="chip-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 12.75l6 6 9-13.5"/></svg>Exclusive rental</label></div>
+              <div><input type="checkbox" id="i-paket" name="Interest" class="sr-only" value="All-inclusive package with full board"><label for="i-paket" class="chip-label font-body"><svg class="chip-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 12.75l6 6 9-13.5"/></svg>All-inclusive package</label></div>
+              <div><input type="checkbox" id="i-winter" name="Interest" class="sr-only" value="Winter activities"><label for="i-winter" class="chip-label font-body"><svg class="chip-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 12.75l6 6 9-13.5"/></svg>Winter</label></div>
+              <div><input type="checkbox" id="i-transfer" name="Interest" class="sr-only" value="Airport transfer Linköping"><label for="i-transfer" class="chip-label font-body"><svg class="chip-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 12.75l6 6 9-13.5"/></svg>Airport transfer</label></div>
+              <div><input type="checkbox" id="i-hund" name="Interest" class="sr-only" value="Bringing a dog"><label for="i-hund" class="chip-label font-body"><svg class="chip-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 12.75l6 6 9-13.5"/></svg>Bringing a dog</label></div>
             </div>
           </fieldset>
 
@@ -410,7 +422,7 @@
           <div class="mt-8 flex items-start gap-3" data-animate>
             <input type="checkbox" id="f-agb" name="agb" class="mt-1 h-4 w-4 shrink-0 rounded border-forest-950/30 text-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-accent" required>
             <label for="f-agb" class="font-body text-sm leading-relaxed text-forest-950/75">
-              I have read the <a href="agb.html" target="_blank" rel="noopener" class="editorial-link font-semibold text-forest-950">Terms &amp; Conditions</a> and accept them. *
+              I have read the <a href="hausregeln.html" target="_blank" rel="noopener" class="editorial-link font-semibold text-forest-950">House Rules</a> and <a href="agb.html" target="_blank" rel="noopener" class="editorial-link font-semibold text-forest-950">Terms &amp; Conditions</a> and accept them. *
             </label>
           </div>
 
@@ -424,17 +436,18 @@
 
           <!-- Absenden -->
           <div class="mt-10" data-animate>
-            <button type="submit"
-                    class="btn-shiny inline-flex w-full min-h-[56px] items-center justify-center rounded-full px-11 py-4 font-body text-sm font-semibold tracking-[0.06em] uppercase focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent sm:w-auto">
-              <span class="btn-shiny-label">Send request</span>
+            <button type="submit" id="submit-btn" disabled
+                    class="btn-shiny inline-flex w-full min-h-[56px] items-center justify-center rounded-full px-11 py-4 font-body text-sm font-semibold tracking-[0.06em] uppercase focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent disabled:cursor-not-allowed disabled:opacity-40 disabled:grayscale sm:w-auto">
+              <span class="btn-shiny-label" id="submit-btn-label">Send request</span>
             </button>
             <p id="form-error" class="mt-4 hidden font-body text-sm text-accent" role="alert">
               Please provide your name, a valid email address and your billing address, and accept the Terms &amp; Conditions.
             </p>
-            <p class="mt-4 font-body text-xs leading-relaxed text-forest-950/50">
-              Clicking opens your email programme with the completed request to
-              info@bjorkfors-outdoor.se — no obligation, nothing is sent until you
-              hit “Send”.
+            <p id="form-success" class="mt-4 hidden font-body text-sm font-semibold text-forest-950" role="status">
+              Thank you! Your request has reached us — we'll get back to you personally as soon as possible.
+            </p>
+            <p id="form-hint" class="mt-4 font-body text-xs leading-relaxed text-forest-950/50">
+              Your request is sent directly and securely to us — no separate email programme needed.
             </p>
           </div>
 
@@ -489,6 +502,7 @@
         <div class="flex flex-wrap items-center gap-x-6 gap-y-2">
           <a href="hausregeln.html" class="transition-colors hover:text-cream">House rules</a>
           <a href="agb.html" class="transition-colors hover:text-cream">Terms</a>
+          <a href="datenschutz.html" class="transition-colors hover:text-cream">Privacy</a>
           <a href="impressum.html" class="transition-colors hover:text-cream">Legal notice</a>
         </div>
       </div>
@@ -514,7 +528,13 @@
       var agbCheckbox = document.getElementById('f-agb');
       var summary = document.getElementById('summary');
       var errorBox = document.getElementById('form-error');
-      var chips = form.querySelectorAll('input[type="checkbox"]');
+      var submitBtn = document.getElementById('submit-btn');
+      var submitBtnLabel = document.getElementById('submit-btn-label');
+      var successBox = document.getElementById('form-success');
+      var hintBox = document.getElementById('form-hint');
+      var personsField = document.getElementById('f-persons');
+      var summaryField = document.getElementById('f-summary-field');
+      var chips = form.querySelector('fieldset').querySelectorAll('input[type="checkbox"]');
 
       function formatDate(value) {
         if (!value) return null;
@@ -541,7 +561,27 @@
         if (interests.length) {
           parts.push('interested in: ' + interests.join(', '));
         }
-        summary.textContent = parts.join(', ') + '.';
+        if (agbCheckbox.checked) {
+          parts.push('accepted the House Rules and Terms & Conditions');
+        }
+        var summaryText = parts.join(', ') + '.';
+        summary.textContent = summaryText;
+        personsField.value = persons + (persons === 1 ? ' person' : ' people');
+        summaryField.value = summaryText;
+      }
+
+      function isFormValid() {
+        var email = emailInput.value.trim();
+        return Boolean(
+          nameInput.value.trim() &&
+          email && email.indexOf('@') > 0 &&
+          billingAddressInput.value.trim() &&
+          agbCheckbox.checked
+        );
+      }
+
+      function updateSubmitState() {
+        submitBtn.disabled = !isFormValid();
       }
 
       document.getElementById('persons-minus').addEventListener('click', function () {
@@ -556,50 +596,57 @@
       chips.forEach(function (chip) {
         chip.addEventListener('change', updateSummary);
       });
+      agbCheckbox.addEventListener('change', function () {
+        updateSummary();
+        updateSubmitState();
+      });
+      [nameInput, emailInput, billingAddressInput].forEach(function (el) {
+        el.addEventListener('input', updateSubmitState);
+      });
 
       form.addEventListener('submit', function (e) {
         e.preventDefault();
 
-        var name = nameInput.value.trim();
-        var email = emailInput.value.trim();
-        var billingAddress = billingAddressInput.value.trim();
-        if (!name || !email || email.indexOf('@') < 1 || !billingAddress || !agbCheckbox.checked) {
+        if (!isFormValid()) {
           errorBox.classList.remove('hidden');
+          successBox.classList.add('hidden');
+          var name = nameInput.value.trim();
+          var email = emailInput.value.trim();
+          var billingAddress = billingAddressInput.value.trim();
           var invalid = !name ? nameInput : (!email || email.indexOf('@') < 1) ? emailInput : (!billingAddress ? billingAddressInput : agbCheckbox);
           invalid.focus();
           return;
         }
         errorBox.classList.add('hidden');
 
-        var lines = [
-          'Hello Björkfors Outdoor,',
-          '',
-          'We would like to make a booking request:',
-          '',
-          'Name: ' + name,
-          'Email: ' + email,
-          'Billing address: ' + billingAddress,
-        ];
-        if (phoneInput.value.trim()) lines.push('Phone: ' + phoneInput.value.trim());
-        lines.push('Group size: ' + persons + (persons === 1 ? ' person' : ' people'));
-        var from = formatDate(arrivalInput.value);
-        var to = formatDate(departureInput.value);
-        if (from) lines.push('Arrival: ' + from);
-        if (to) lines.push('Departure: ' + to);
-        var interests = selectedInterests();
-        if (interests.length) lines.push('Interests: ' + interests.join(', '));
-        if (messageInput.value.trim()) {
-          lines.push('', 'Message:', messageInput.value.trim());
-        }
-        lines.push('', 'Best regards', name);
+        submitBtn.disabled = true;
+        submitBtnLabel.textContent = 'Sending …';
 
-        var subject = 'Booking request — ' + persons + (persons === 1 ? ' person' : ' people') + (from ? ' from ' + from : '');
-        window.location.href = 'mailto:info@bjorkfors-outdoor.se'
-          + '?subject=' + encodeURIComponent(subject)
-          + '&body=' + encodeURIComponent(lines.join('\n'));
+        fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        }).then(function (response) {
+          if (response.ok) {
+            form.reset();
+            persons = 4;
+            updateSummary();
+            hintBox.classList.add('hidden');
+            successBox.classList.remove('hidden');
+            submitBtnLabel.textContent = 'Request sent';
+          } else {
+            throw new Error('Formspree error');
+          }
+        }).catch(function () {
+          submitBtn.disabled = false;
+          submitBtnLabel.textContent = 'Send request';
+          errorBox.textContent = 'The request could not be sent. Please try again or email us directly at info@bjorkfors-outdoor.se.';
+          errorBox.classList.remove('hidden');
+        });
       });
 
       updateSummary();
+      updateSubmitState();
     })();
   </script>
 </body>
