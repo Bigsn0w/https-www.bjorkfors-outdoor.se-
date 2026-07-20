@@ -106,7 +106,8 @@
       inset: 0;
       height: 100%;
       width: 100%;
-      object-fit: contain;
+      object-fit: cover;
+      object-position: center 42%;
       opacity: 0;
       transition: opacity 1.2s ease;
     }
@@ -233,7 +234,7 @@
   <main id="main-content">
 
     <!-- ============ HERO ============ -->
-    <section class="group relative isolate flex min-h-[62vh] items-end overflow-hidden" aria-label="Sportfiske vid Björkfors" data-slideshow-root data-dot-label="Visa bild {n} av {total}">
+    <section class="group relative isolate flex min-h-[62vh] max-h-[680px] items-end overflow-hidden" aria-label="Sportfiske vid Björkfors" data-slideshow-root data-dot-label="Visa bild {n} av {total}">
       <!-- Hero-Slideshow: byter var 3:e sekund, styrbar med pilar/svep. TODO: Unsplash-platshållare (bilder 2–5) ersätts med kundfoton -->
       <div class="absolute inset-0 -z-10" data-slideshow aria-hidden="true">
         <img src="https://images.unsplash.com/photo-1596796571148-77b6e70dd6b6?q=80&w=1920&auto=format&fit=crop"

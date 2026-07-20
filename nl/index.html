@@ -120,7 +120,8 @@
       inset: 0;
       height: 100%;
       width: 100%;
-      object-fit: contain;
+      object-fit: cover;
+      object-position: center 42%;
       opacity: 0;
       transition: opacity 1.2s ease;
     }
@@ -244,7 +245,7 @@
   <main id="main-content">
 
     <!-- ============ HERO ============ -->
-    <section class="group relative isolate flex min-h-[94vh] items-end overflow-hidden" aria-label="Welkom bij Björkfors Outdoor" data-slideshow-root data-dot-label="Afbeelding {n} van {total} weergeven">
+    <section class="group relative isolate flex min-h-[94vh] max-h-[980px] items-end overflow-hidden" aria-label="Welkom bij Björkfors Outdoor" data-slideshow-root data-dot-label="Afbeelding {n} van {total} weergeven">
 
       <!-- Hero-slideshow: wisselt elke 3 s, handmatig te bedienen via pijlen/swipe. Klantfoto's (seizoensmix) -->
       <div class="absolute inset-0 -z-10" data-slideshow aria-hidden="true">
