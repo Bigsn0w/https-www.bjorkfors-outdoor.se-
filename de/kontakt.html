@@ -207,7 +207,6 @@
           <li><a href="sportfischen.html" class="inline-block whitespace-nowrap origin-left transition-all duration-200 hover:scale-105 hover:text-forest-950">Sportfischen</a></li>
           <li><a href="aktivitaeten.html" class="inline-block whitespace-nowrap origin-left transition-all duration-200 hover:scale-105 hover:text-forest-950">Aktivitäten<br>&amp; Umgebung</a></li>
           <li><a href="preisliste.html" class="inline-block whitespace-nowrap origin-left transition-all duration-200 hover:scale-105 hover:text-forest-950">Preise</a></li>
-          <li><a href="hausregeln.html" class="inline-block whitespace-nowrap origin-left transition-all duration-200 hover:scale-105 hover:text-forest-950">Hausregeln<br>&amp; AGB</a></li>
         </ul>
 
         <div class="flex items-center gap-3 sm:gap-5">
@@ -262,7 +261,6 @@
         <li><a href="sportfischen.html" class="flex min-h-[44px] items-center px-2 transition-colors duration-200 hover:text-forest-950">Sportfischen</a></li>
         <li><a href="aktivitaeten.html" class="flex min-h-[44px] items-center px-2 transition-colors duration-200 hover:text-forest-950">Aktivitäten &amp; Umgebung</a></li>
         <li><a href="preisliste.html" class="flex min-h-[44px] items-center px-2 transition-colors duration-200 hover:text-forest-950">Preise</a></li>
-        <li><a href="hausregeln.html" class="flex min-h-[44px] items-center px-2 transition-colors duration-200 hover:text-forest-950">Hausregeln &amp; AGB</a></li>
         <li class="pt-3 md:hidden">
           <a href="kontakt.html" class="btn-shiny flex min-h-[48px] items-center justify-center rounded-full px-6 font-body text-[0.82rem] font-semibold tracking-[0.06em] uppercase"><span class="btn-shiny-label">Buchungsanfrage</span></a>
         </li>
@@ -401,6 +399,23 @@
             <textarea id="f-message" name="message" rows="4" class="field-input resize-y font-body" placeholder="Was sollten wir noch wissen? Wünsche, Fragen, Besonderheiten …"></textarea>
           </div>
 
+          <!-- Rechnungsnummer -->
+          <div class="mt-12" data-animate>
+            <label for="f-invoice" class="field-label">Rechnungsnummer *</label>
+            <input type="text" id="f-invoice" name="invoice" class="field-input font-body" placeholder="z. B. von eurer Buchungsbestätigung" required>
+            <p class="mt-2 font-body text-xs leading-relaxed text-forest-950/50">
+              Wird für die Zahlungsabwicklung benötigt — z. B. falls die Reise zu spät storniert wird und wir euch eine Rechnung stellen müssen.
+            </p>
+          </div>
+
+          <!-- Hausregeln & AGB -->
+          <div class="mt-8 flex items-start gap-3" data-animate>
+            <input type="checkbox" id="f-agb" name="agb" class="mt-1 h-4 w-4 shrink-0 rounded border-forest-950/30 text-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-accent" required>
+            <label for="f-agb" class="font-body text-sm leading-relaxed text-forest-950/75">
+              Ich habe die <a href="hausregeln.html" target="_blank" rel="noopener" class="editorial-link font-semibold text-forest-950">Hausregeln &amp; AGB</a> gelesen und akzeptiere sie. *
+            </label>
+          </div>
+
           <!-- Live-Zusammenfassung -->
           <div class="mt-12 rounded-2xl bg-white p-6 ring-1 ring-forest-950/10" data-animate aria-live="polite">
             <p class="field-label">Eure Anfrage im Überblick</p>
@@ -416,7 +431,7 @@
               <span class="btn-shiny-label">Anfrage absenden</span>
             </button>
             <p id="form-error" class="mt-4 hidden font-body text-sm text-accent" role="alert">
-              Bitte gebt mindestens Name und eine gültige E-Mail-Adresse an.
+              Bitte gebt Name, eine gültige E-Mail-Adresse und eure Rechnungsnummer an und akzeptiert die Hausregeln &amp; AGB.
             </p>
             <p class="mt-4 font-body text-xs leading-relaxed text-forest-950/50">
               Der Klick öffnet euer E-Mail-Programm mit der fertigen Anfrage an
@@ -494,6 +509,8 @@
       var arrivalInput = document.getElementById('f-arrival');
       var departureInput = document.getElementById('f-departure');
       var messageInput = document.getElementById('f-message');
+      var invoiceInput = document.getElementById('f-invoice');
+      var agbCheckbox = document.getElementById('f-agb');
       var summary = document.getElementById('summary');
       var errorBox = document.getElementById('form-error');
       var chips = form.querySelectorAll('input[type="checkbox"]');
@@ -544,9 +561,11 @@
 
         var name = nameInput.value.trim();
         var email = emailInput.value.trim();
-        if (!name || !email || email.indexOf('@') < 1) {
+        var invoice = invoiceInput.value.trim();
+        if (!name || !email || email.indexOf('@') < 1 || !invoice || !agbCheckbox.checked) {
           errorBox.classList.remove('hidden');
-          (!name ? nameInput : emailInput).focus();
+          var invalid = !name ? nameInput : (!email || email.indexOf('@') < 1) ? emailInput : (!invoice ? invoiceInput : agbCheckbox);
+          invalid.focus();
           return;
         }
         errorBox.classList.add('hidden');
@@ -558,6 +577,7 @@
           '',
           'Name: ' + name,
           'E-Mail: ' + email,
+          'Rechnungsnummer: ' + invoice,
         ];
         if (phoneInput.value.trim()) lines.push('Telefon: ' + phoneInput.value.trim());
         lines.push('Gruppengröße: ' + persons + (persons === 1 ? ' Person' : ' Personen'));
