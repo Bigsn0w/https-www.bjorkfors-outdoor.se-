@@ -35,12 +35,16 @@
   transition: opacity 0.3s ease;
   z-index: 1;
 }
-.btn-shiny:hover {
-  transform: scale(1.03);
-  /* Rotes Aufleuchten */
-  box-shadow: 0 0 22px rgba(166, 42, 36, 0.55), 0 0 44px rgba(166, 42, 36, 0.28);
+/* Hover-Effekt nur für echte Zeigegeräte (Maus/Trackpad) — auf Touchscreens bleibt sonst
+   der Hover-Zustand nach dem Antippen "hängen" (Rotes Leuchten + weiße Auswahl-Box) */
+@media (hover: hover) and (pointer: fine) {
+  .btn-shiny:hover {
+    transform: scale(1.03);
+    /* Rotes Aufleuchten */
+    box-shadow: 0 0 22px rgba(166, 42, 36, 0.55), 0 0 44px rgba(166, 42, 36, 0.28);
+  }
+  .btn-shiny:hover::after { opacity: 1; }
 }
-.btn-shiny:hover::after { opacity: 1; }
 .btn-shiny:active { transform: scale(0.98); }
 
 .btn-shiny-label {
