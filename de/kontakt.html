@@ -124,6 +124,15 @@
       border-bottom-color: #801818;
       box-shadow: 0 1px 0 0 #801818;
     }
+    textarea.field-input {
+      border: 1px solid rgba(15, 36, 23, 0.25);
+      border-radius: 0.5rem;
+      padding: 0.65rem 0.85rem;
+    }
+    textarea.field-input:focus {
+      border-color: #801818;
+      box-shadow: 0 0 0 1px #801818;
+    }
     .field-label {
       display: block;
       font-size: 0.72rem;
@@ -412,7 +421,7 @@
           <div class="mt-8 flex items-start gap-3" data-animate>
             <input type="checkbox" id="f-agb" name="agb" class="mt-1 h-4 w-4 shrink-0 rounded border-forest-950/30 text-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-accent" required>
             <label for="f-agb" class="font-body text-sm leading-relaxed text-forest-950/75">
-              Ich habe die <a href="agb.html" target="_blank" rel="noopener" class="editorial-link font-semibold text-forest-950">AGB</a> gelesen und akzeptiere sie. *
+              Ich habe die <a href="hausregeln.html" target="_blank" rel="noopener" class="editorial-link font-semibold text-forest-950">Hausregeln</a> und <a href="agb.html" target="_blank" rel="noopener" class="editorial-link font-semibold text-forest-950">AGB</a> gelesen und akzeptiere sie. *
             </label>
           </div>
 
@@ -426,8 +435,8 @@
 
           <!-- Absenden -->
           <div class="mt-10" data-animate>
-            <button type="submit"
-                    class="btn-shiny inline-flex w-full min-h-[56px] items-center justify-center rounded-full px-11 py-4 font-body text-sm font-semibold tracking-[0.06em] uppercase focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent sm:w-auto">
+            <button type="submit" id="submit-btn" disabled
+                    class="btn-shiny inline-flex w-full min-h-[56px] items-center justify-center rounded-full px-11 py-4 font-body text-sm font-semibold tracking-[0.06em] uppercase focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent disabled:cursor-not-allowed disabled:opacity-40 disabled:grayscale sm:w-auto">
               <span class="btn-shiny-label">Anfrage absenden</span>
             </button>
             <p id="form-error" class="mt-4 hidden font-body text-sm text-accent" role="alert">
@@ -516,7 +525,8 @@
       var agbCheckbox = document.getElementById('f-agb');
       var summary = document.getElementById('summary');
       var errorBox = document.getElementById('form-error');
-      var chips = form.querySelectorAll('input[type="checkbox"]');
+      var submitBtn = document.getElementById('submit-btn');
+      var chips = form.querySelector('fieldset').querySelectorAll('input[type="checkbox"]');
 
       function formatDate(value) {
         if (!value) return null;
@@ -543,7 +553,24 @@
         if (interests.length) {
           parts.push('mit Interesse an: ' + interests.join(', '));
         }
+        if (agbCheckbox.checked) {
+          parts.push('akzeptiert die Hausregeln und AGB');
+        }
         summary.textContent = parts.join(', ') + '.';
+      }
+
+      function isFormValid() {
+        var email = emailInput.value.trim();
+        return Boolean(
+          nameInput.value.trim() &&
+          email && email.indexOf('@') > 0 &&
+          billingAddressInput.value.trim() &&
+          agbCheckbox.checked
+        );
+      }
+
+      function updateSubmitState() {
+        submitBtn.disabled = !isFormValid();
       }
 
       document.getElementById('persons-minus').addEventListener('click', function () {
@@ -557,6 +584,13 @@
       });
       chips.forEach(function (chip) {
         chip.addEventListener('change', updateSummary);
+      });
+      agbCheckbox.addEventListener('change', function () {
+        updateSummary();
+        updateSubmitState();
+      });
+      [nameInput, emailInput, billingAddressInput].forEach(function (el) {
+        el.addEventListener('input', updateSubmitState);
       });
 
       form.addEventListener('submit', function (e) {
@@ -602,6 +636,7 @@
       });
 
       updateSummary();
+      updateSubmitState();
     })();
   </script>
 </body>
