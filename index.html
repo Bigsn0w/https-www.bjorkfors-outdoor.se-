@@ -1,24 +1,24 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="sv">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Björkfors Outdoor — Sportvissen &amp; bootverhuur in Zweden</title>
-  <meta name="description" content="Privé vis- en natuurbelevenissen voor kleine groepen: bootverhuur met vaste prijzen, wildlifesafari's en stille meren in Östergötland, Zweden.">
+  <title>Björkfors Outdoor — Sportfiske & båtuthyrning i Sverige</title>
+  <meta name="description" content="Privata fiske- och naturupplevelser för små grupper: båtuthyrning med fasta priser, viltsafari och stilla sjöar i Östergötland.">
   <!-- SEO: Canonical, Sprachversionen, Social Cards -->
   <link rel="canonical" href="https://www.bjorkfors-outdoor.se/">
-  <link rel="alternate" hreflang="nl" href="https://www.bjorkfors-outdoor.se/">
+  <link rel="alternate" hreflang="nl" href="https://www.bjorkfors-outdoor.se/nl/">
   <link rel="alternate" hreflang="de" href="https://www.bjorkfors-outdoor.se/de/">
   <link rel="alternate" hreflang="en" href="https://www.bjorkfors-outdoor.se/en/">
-  <link rel="alternate" hreflang="sv" href="https://www.bjorkfors-outdoor.se/sv/">
+  <link rel="alternate" hreflang="sv" href="https://www.bjorkfors-outdoor.se/">
   <link rel="alternate" hreflang="x-default" href="https://www.bjorkfors-outdoor.se/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Björkfors Outdoor Adventures">
-  <meta property="og:title" content="Björkfors Outdoor — Sportvissen &amp; bootverhuur in Zweden">
-  <meta property="og:description" content="Privé vis- en natuurbelevenissen voor kleine groepen: bootverhuur met vaste prijzen, wildlifesafari's en stille meren in Östergötland, Zweden.">
+  <meta property="og:title" content="Björkfors Outdoor — Sportfiske & båtuthyrning i Sverige">
+  <meta property="og:description" content="Privata fiske- och naturupplevelser för små grupper: båtuthyrning med fasta priser, viltsafari och stilla sjöar i Östergötland.">
   <meta property="og:url" content="https://www.bjorkfors-outdoor.se/">
   <meta property="og:image" content="https://www.bjorkfors-outdoor.se/assets/images/og-allhus.jpg">
-  <meta property="og:locale" content="nl_NL">
+  <meta property="og:locale" content="sv_SE">
   <meta name="twitter:card" content="summary">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
   <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
@@ -91,7 +91,7 @@
     #site-header { transition: box-shadow 0.3s ease; }
     #site-header.is-scrolled { box-shadow: 0 6px 24px rgba(15, 36, 23, 0.08); }
 
-    /* Editorial link: fijne onderstreping, groeit bij hover */
+    /* Editorial link: feiner Unterstrich, wächst beim Hover */
     .editorial-link {
       position: relative;
       padding-bottom: 2px;
@@ -107,14 +107,14 @@
     }
     .editorial-link:hover::after { transform: scaleX(0.4); }
 
-    /* ---- Taalkeuzemenu (geport uit React-component language-selector-dropdown.tsx) ---- */
+    /* ---- Sprachwähler (portiert aus React-Komponente language-selector-dropdown.tsx) ---- */
     @keyframes langFadeIn {
       from { opacity: 0; transform: translateY(-2px); }
       to { opacity: 1; transform: translateY(0); }
     }
     #lang-menu:not(.hidden) { animation: langFadeIn 0.15s ease-out; }
 
-    /* ---- Slideshow: zachte overvloeiing elke 5 s (JS onderaan) ---- */
+    /* ---- Slideshow: sanfte Überblendung alle 5 s (JS unten) ---- */
     .fade-slide {
       position: absolute;
       inset: 0;
@@ -159,62 +159,62 @@
 <body class="font-body bg-cream text-forest-950 antialiased">
 
   <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:bg-accent focus:text-white focus:px-4 focus:py-2 focus:rounded">
-    Naar de inhoud springen
+    Hoppa till innehållet
   </a>
 
-  <!-- ============ HEADER — minimaal, editorial ============ -->
+  <!-- ============ HEADER — minimal, editorial ============ -->
   <header id="site-header" class="sticky top-0 z-40 bg-cream/95 backdrop-blur border-b border-forest-950/10">
-    <nav class="mx-auto max-w-7xl px-5 sm:px-8" aria-label="Hoofdnavigatie">
+    <nav class="mx-auto max-w-7xl px-5 sm:px-8" aria-label="Huvudnavigation">
       <div class="flex h-[5.5rem] items-center justify-between gap-6">
 
-        <a href="index.html" class="flex shrink-0 items-center transition-opacity duration-200 hover:opacity-75" aria-label="Björkfors Outdoor — startpagina">
+        <a href="index.html" class="flex shrink-0 items-center transition-opacity duration-200 hover:opacity-75" aria-label="Björkfors Outdoor — Startsida">
           <img src="assets/images/logo-bjorkfors.png" alt="Björkfors Outdoor-Adventures — Bed &amp; Breakfast" class="h-14 w-auto sm:h-16">
         </a>
 
         <ul class="hidden xl:flex items-center gap-7 font-body text-[0.82rem] font-medium tracking-[0.08em] uppercase text-forest-950/80">
           <li><a href="bed-and-breakfast.html" class="inline-block whitespace-nowrap origin-left transition-all duration-200 hover:scale-105 hover:text-forest-950">Bed &amp; breakfast</a></li>
-          <li><a href="kanu-kajak-sup.html" class="inline-block whitespace-nowrap origin-left transition-all duration-200 hover:scale-105 hover:text-forest-950">Kano&rsquo;s &amp; kajaks</a></li>
-          <li><a href="sportfischen.html" class="inline-block whitespace-nowrap origin-left transition-all duration-200 hover:scale-105 hover:text-forest-950">Sportvissen</a></li>
-          <li><a href="aktivitaeten.html" class="inline-block whitespace-nowrap origin-left transition-all duration-200 hover:scale-105 hover:text-forest-950">Activiteiten</a></li>
-          <li><a href="preisliste.html" class="inline-block whitespace-nowrap origin-left transition-all duration-200 hover:scale-105 hover:text-forest-950">Prijzen</a></li>
+          <li><a href="kanu-kajak-sup.html" class="inline-block whitespace-nowrap origin-left transition-all duration-200 hover:scale-105 hover:text-forest-950">Kanoter &amp; kajaker</a></li>
+          <li><a href="sportfischen.html" class="inline-block whitespace-nowrap origin-left transition-all duration-200 hover:scale-105 hover:text-forest-950">Sportfiske</a></li>
+          <li><a href="aktivitaeten.html" class="inline-block whitespace-nowrap origin-left transition-all duration-200 hover:scale-105 hover:text-forest-950">Aktiviteter</a></li>
+          <li><a href="preisliste.html" class="inline-block whitespace-nowrap origin-left transition-all duration-200 hover:scale-105 hover:text-forest-950">Priser</a></li>
         </ul>
 
         <div class="flex items-center gap-3 sm:gap-5">
 
-          <!-- Taalwisselaar -->
+          <!-- Language switcher -->
           <div class="relative">
             <button type="button" id="lang-button"
-                    class="flex min-h-[38px] items-center gap-2 rounded-full border border-forest-950/15 bg-white/60 px-3 py-1.5 font-body text-sm text-forest-950/85 shadow-sm backdrop-blur-md transition-all duration-200 hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                    class="flex min-h-[44px] min-w-[168px] items-center justify-center gap-2 rounded-full border border-forest-950/15 bg-white/60 px-3 py-1.5 font-body text-sm text-forest-950/85 shadow-sm backdrop-blur-md transition-all duration-200 hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
                     aria-controls="lang-menu" aria-expanded="false" aria-haspopup="true">
-              <span aria-hidden="true">🇳🇱</span>
-              <span class="hidden sm:inline">Nederlands</span>
+              <span aria-hidden="true">🇸🇪</span>
+              <span class="hidden sm:inline">Svenska</span>
               <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
               </svg>
             </button>
             <ul id="lang-menu"
                 class="hidden absolute right-0 mt-2 w-48 overflow-hidden rounded-xl border border-forest-950/10 bg-white/90 py-1 shadow-lg backdrop-blur-xl"
-                role="menu" aria-label="Taal kiezen">
+                role="menu" aria-label="Välj språk">
               <li role="none">
                 <a role="menuitem" href="index.html" aria-current="true" class="flex min-h-[44px] w-full items-center gap-2 px-3 text-sm font-semibold text-accent">
-                  <span aria-hidden="true">🇳🇱</span><span class="flex-1">Nederlands</span>
+                  <span aria-hidden="true">🇸🇪</span><span class="flex-1">Svenska</span>
                   <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
                 </a>
               </li>
               <li role="none"><a role="menuitem" href="de/index.html" class="flex min-h-[44px] w-full items-center gap-2 px-3 text-sm text-forest-950/80 transition-colors hover:bg-cream"><span aria-hidden="true">🇩🇪</span><span class="flex-1">Deutsch</span></a></li>
               <li role="none"><a role="menuitem" href="en/index.html" class="flex min-h-[44px] w-full items-center gap-2 px-3 text-sm text-forest-950/80 transition-colors hover:bg-cream"><span aria-hidden="true">🇬🇧</span><span class="flex-1">English</span></a></li>
-              <li role="none"><a role="menuitem" href="sv/index.html" class="flex min-h-[44px] w-full items-center gap-2 px-3 text-sm text-forest-950/80 transition-colors hover:bg-cream"><span aria-hidden="true">🇸🇪</span><span class="flex-1">Svenska</span></a></li>
+              <li role="none"><a role="menuitem" href="nl/index.html" class="flex min-h-[44px] w-full items-center gap-2 px-3 text-sm text-forest-950/80 transition-colors hover:bg-cream"><span aria-hidden="true">🇳🇱</span><span class="flex-1">Nederlands</span></a></li>
             </ul>
           </div>
 
           <a href="kontakt.html"
-             class="btn-shiny hidden md:inline-flex whitespace-nowrap items-center justify-center rounded-full px-6 py-2.5 min-h-[44px] font-body text-[0.82rem] font-semibold tracking-[0.06em] uppercase focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent">
-            <span class="btn-shiny-label">Boekingsaanvraag</span>
+             class="btn-shiny hidden md:inline-flex min-w-[168px] whitespace-nowrap items-center justify-center rounded-full px-6 py-2.5 min-h-[44px] font-body text-[0.82rem] font-semibold tracking-[0.06em] uppercase focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent">
+            <span class="btn-shiny-label">Bokningsförfrågan</span>
           </a>
 
           <button type="button" id="mobile-menu-button"
                   class="inline-flex xl:hidden items-center justify-center min-h-[44px] min-w-[44px] rounded-full text-forest-950 transition-colors hover:bg-forest-950/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
-                  aria-controls="mobile-menu" aria-expanded="false" aria-label="Hoofdmenu openen">
+                  aria-controls="mobile-menu" aria-expanded="false" aria-label="Öppna huvudmenyn">
             <svg id="icon-menu-open" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5" />
             </svg>
@@ -226,16 +226,16 @@
       </div>
     </nav>
 
-    <!-- Mobiel menupaneel -->
+    <!-- Mobile menu panel -->
     <div id="mobile-menu" class="hidden xl:hidden border-t border-forest-950/10 bg-cream">
       <ul class="space-y-1 px-5 py-6 font-body text-sm font-medium tracking-[0.08em] uppercase text-forest-950/80">
         <li><a href="bed-and-breakfast.html" class="flex min-h-[44px] items-center px-2 transition-colors duration-200 hover:text-forest-950">Bed &amp; breakfast</a></li>
-        <li><a href="kanu-kajak-sup.html" class="flex min-h-[44px] items-center px-2 transition-colors duration-200 hover:text-forest-950">Kano&rsquo;s &amp; kajaks</a></li>
-        <li><a href="sportfischen.html" class="flex min-h-[44px] items-center px-2 transition-colors duration-200 hover:text-forest-950">Sportvissen</a></li>
-        <li><a href="aktivitaeten.html" class="flex min-h-[44px] items-center px-2 transition-colors duration-200 hover:text-forest-950">Activiteiten</a></li>
-        <li><a href="preisliste.html" class="flex min-h-[44px] items-center px-2 transition-colors duration-200 hover:text-forest-950">Prijzen</a></li>
+        <li><a href="kanu-kajak-sup.html" class="flex min-h-[44px] items-center px-2 transition-colors duration-200 hover:text-forest-950">Kanoter &amp; kajaker</a></li>
+        <li><a href="sportfischen.html" class="flex min-h-[44px] items-center px-2 transition-colors duration-200 hover:text-forest-950">Sportfiske</a></li>
+        <li><a href="aktivitaeten.html" class="flex min-h-[44px] items-center px-2 transition-colors duration-200 hover:text-forest-950">Aktiviteter</a></li>
+        <li><a href="preisliste.html" class="flex min-h-[44px] items-center px-2 transition-colors duration-200 hover:text-forest-950">Priser</a></li>
         <li class="pt-3 md:hidden">
-          <a href="kontakt.html" class="btn-shiny flex min-h-[48px] items-center justify-center rounded-full px-6 font-body text-[0.82rem] font-semibold tracking-[0.06em] uppercase"><span class="btn-shiny-label">Boekingsaanvraag</span></a>
+          <a href="kontakt.html" class="btn-shiny flex min-h-[48px] items-center justify-center rounded-full px-6 font-body text-[0.82rem] font-semibold tracking-[0.06em] uppercase"><span class="btn-shiny-label">Bokningsförfrågan</span></a>
         </li>
       </ul>
     </div>
@@ -244,9 +244,9 @@
   <main id="main-content">
 
     <!-- ============ HERO ============ -->
-    <section class="group relative isolate flex min-h-[94vh] items-end overflow-hidden" aria-label="Welkom bij Björkfors Outdoor" data-slideshow-root data-dot-label="Afbeelding {n} van {total} weergeven">
+    <section class="group relative isolate flex aspect-[16/10] min-h-[520px] max-h-[880px] items-end overflow-hidden" aria-label="Välkommen till Björkfors Outdoor" data-slideshow-root data-dot-label="Visa bild {n} av {total}">
 
-      <!-- Hero-slideshow: wisselt elke 3 s, handmatig te bedienen via pijlen/swipe. Klantfoto's (seizoensmix) -->
+      <!-- Hero-Slideshow: byter var 3:e sekund, styrbar med pilar/svep. Kundfoton (årstidsmix) -->
       <div class="absolute inset-0 -z-10" data-slideshow aria-hidden="true">
         <picture><source srcset="assets/images/hero-gipfelblick.webp" type="image/webp"><img src="assets/images/hero-gipfelblick.jpg"
              alt=""
@@ -259,20 +259,20 @@
         <picture><source srcset="assets/images/hero-winterbank.webp" type="image/webp"><img src="assets/images/hero-winterbank.jpg" alt="" class="fade-slide" loading="lazy" onerror="this.remove()"></picture>
       </div>
 
-      <!-- Slideshow-besturing: pijlen (alleen zichtbaar bij hover/focus) + puntjes -->
+      <!-- Slideshow-styrning: pilar (syns bara vid hover/fokus) + punkter -->
       <div class="pointer-events-none absolute inset-0 z-10">
-        <button type="button" data-slide-prev aria-label="Vorige afbeelding"
+        <button type="button" data-slide-prev aria-label="Föregående bild"
                 class="pointer-events-auto absolute left-4 top-1/2 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-forest-950/30 text-cream opacity-0 backdrop-blur-sm transition-opacity duration-200 hover:bg-forest-950/50 focus:outline-none focus-visible:opacity-100 focus-visible:ring-2 focus-visible:ring-cream group-hover:opacity-100 sm:left-6 md:inline-flex">
           <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" /></svg>
         </button>
-        <button type="button" data-slide-next aria-label="Volgende afbeelding"
+        <button type="button" data-slide-next aria-label="Nästa bild"
                 class="pointer-events-auto absolute right-4 top-1/2 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-forest-950/30 text-cream opacity-0 backdrop-blur-sm transition-opacity duration-200 hover:bg-forest-950/50 focus:outline-none focus-visible:opacity-100 focus-visible:ring-2 focus-visible:ring-cream group-hover:opacity-100 sm:right-6 md:inline-flex">
           <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg>
         </button>
         <div data-slide-dots class="pointer-events-auto absolute bottom-6 left-1/2 flex -translate-x-1/2 items-center gap-2"></div>
       </div>
 
-      <!-- SVG-decor als vormgegeven fallback -->
+      <!-- SVG-Szenerie als gestalteter Fallback -->
       <div class="absolute inset-0 -z-20 bg-gradient-to-b from-forest-800 via-forest-900 to-forest-950" aria-hidden="true">
         <div class="absolute left-[14%] top-[16%] h-72 w-72 rounded-full bg-sage/25 blur-3xl"></div>
         <div class="absolute right-[6%] top-[34%] h-96 w-96 rounded-full bg-forest-700/40 blur-3xl"></div>
@@ -288,13 +288,13 @@
 
       <div class="relative mx-auto w-full max-w-7xl px-5 pb-24 pt-40 sm:px-8">
         <p class="animate-fade-in-up font-body text-xs font-medium uppercase tracking-[0.3em] text-cream/70 opacity-0 [animation-delay:0.05s] [animation-fill-mode:forwards]">
-          Östergötland, Zweden
+          Östergötland, Sverige
         </p>
         <h1 class="mt-6 max-w-4xl animate-fade-in-up font-display text-[clamp(2rem,1.4rem_+_3vw,5rem)] font-light leading-[1.05] text-cream opacity-0 [animation-delay:0.15s] [animation-fill-mode:forwards]">
-          Jouw <em class="font-normal italic text-cream">toevluchtsoord</em> in de Zweedse natuur.
+          Din <em class="font-normal italic text-cream">tillflyktsort</em> i den svenska naturen.
         </h1>
         <p class="mt-8 max-w-xl animate-fade-in-up font-body text-lg font-normal leading-relaxed text-cream/80 opacity-0 [animation-delay:0.3s] [animation-fill-mode:forwards]">
-          Privé vis- en natuurbelevenissen voor kleine groepen — met eigen boten op stille meren, ver weg van alles wat naar toerisme ruikt.
+          Privata fiske- och naturupplevelser för små grupper — med egna båtar på stilla sjöar, långt från allt som luktar turism.
         </p>
       </div>
     </section>
@@ -303,49 +303,49 @@
     <section class="overflow-hidden border-y border-forest-950/10 bg-cream py-5" aria-hidden="true">
       <div class="flex w-max animate-marquee gap-0">
         <div class="flex shrink-0 items-center gap-10 pr-10 font-body text-xs font-medium uppercase tracking-[0.3em] text-forest-950/50">
-          <span>Sportvissen</span><span class="text-accent">✦</span>
-          <span>Bootverhuur</span><span class="text-accent">✦</span>
-          <span>Wildlifesafari</span><span class="text-accent">✦</span>
-          <span>Kajak &amp; kano</span><span class="text-accent">✦</span>
-          <span>Paddenstoelen zoeken</span><span class="text-accent">✦</span>
-          <span>IJsvissen</span><span class="text-accent">✦</span>
-          <span>Sportvissen</span><span class="text-accent">✦</span>
-          <span>Bootverhuur</span><span class="text-accent">✦</span>
-          <span>Wildlifesafari</span><span class="text-accent">✦</span>
-          <span>Kajak &amp; kano</span><span class="text-accent">✦</span>
-          <span>Paddenstoelen zoeken</span><span class="text-accent">✦</span>
-          <span>IJsvissen</span><span class="text-accent">✦</span>
+          <span>Sportfiske</span><span class="text-accent">✦</span>
+          <span>Båtuthyrning</span><span class="text-accent">✦</span>
+          <span>Viltsafari</span><span class="text-accent">✦</span>
+          <span>Kajak &amp; kanot</span><span class="text-accent">✦</span>
+          <span>Svampplockning</span><span class="text-accent">✦</span>
+          <span>Isfiske</span><span class="text-accent">✦</span>
+          <span>Sportfiske</span><span class="text-accent">✦</span>
+          <span>Båtuthyrning</span><span class="text-accent">✦</span>
+          <span>Viltsafari</span><span class="text-accent">✦</span>
+          <span>Kajak &amp; kanot</span><span class="text-accent">✦</span>
+          <span>Svampplockning</span><span class="text-accent">✦</span>
+          <span>Isfiske</span><span class="text-accent">✦</span>
         </div>
         <div class="flex shrink-0 items-center gap-10 pr-10 font-body text-xs font-medium uppercase tracking-[0.3em] text-forest-950/50">
-          <span>Sportvissen</span><span class="text-accent">✦</span>
-          <span>Bootverhuur</span><span class="text-accent">✦</span>
-          <span>Wildlifesafari</span><span class="text-accent">✦</span>
-          <span>Kajak &amp; kano</span><span class="text-accent">✦</span>
-          <span>Paddenstoelen zoeken</span><span class="text-accent">✦</span>
-          <span>IJsvissen</span><span class="text-accent">✦</span>
-          <span>Sportvissen</span><span class="text-accent">✦</span>
-          <span>Bootverhuur</span><span class="text-accent">✦</span>
-          <span>Wildlifesafari</span><span class="text-accent">✦</span>
-          <span>Kajak &amp; kano</span><span class="text-accent">✦</span>
-          <span>Paddenstoelen zoeken</span><span class="text-accent">✦</span>
-          <span>IJsvissen</span><span class="text-accent">✦</span>
+          <span>Sportfiske</span><span class="text-accent">✦</span>
+          <span>Båtuthyrning</span><span class="text-accent">✦</span>
+          <span>Viltsafari</span><span class="text-accent">✦</span>
+          <span>Kajak &amp; kanot</span><span class="text-accent">✦</span>
+          <span>Svampplockning</span><span class="text-accent">✦</span>
+          <span>Isfiske</span><span class="text-accent">✦</span>
+          <span>Sportfiske</span><span class="text-accent">✦</span>
+          <span>Båtuthyrning</span><span class="text-accent">✦</span>
+          <span>Viltsafari</span><span class="text-accent">✦</span>
+          <span>Kajak &amp; kanot</span><span class="text-accent">✦</span>
+          <span>Svampplockning</span><span class="text-accent">✦</span>
+          <span>Isfiske</span><span class="text-accent">✦</span>
         </div>
       </div>
     </section>
 
-    <!-- ============ HOOFDPAGINA-TEASERS — editorial, alternerend, klikbaar ============ -->
-    <section class="bg-cream py-28 sm:py-36" aria-label="Ons aanbod">
+    <!-- ============ HAUPTSEITEN-TEASER — editorial, alternierend, klickbar ============ -->
+    <section class="bg-cream py-28 sm:py-36" aria-label="Våra erbjudanden">
       <div class="mx-auto max-w-7xl space-y-28 px-5 sm:px-8 sm:space-y-36">
 
         <!-- 01 — Bed &amp; breakfast -->
-        <a href="bed-and-breakfast.html" class="group grid grid-cols-1 items-center gap-12 rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-8 focus-visible:ring-offset-cream lg:grid-cols-12" aria-label="Bed &amp; breakfast — Naar het bed &amp; breakfast">
+        <a href="bed-and-breakfast.html" class="group grid grid-cols-1 items-center gap-12 rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-8 focus-visible:ring-offset-cream lg:grid-cols-12" aria-label="Bed &amp; breakfast — Till bed &amp; breakfast">
           <div class="relative overflow-hidden rounded-2xl lg:col-span-7 lg:order-1 order-1" data-animate>
             <div class="relative aspect-[16/11] overflow-hidden bg-gradient-to-b from-forest-700 to-forest-950">
               <svg class="absolute inset-x-0 bottom-0 h-1/2 w-full opacity-50" preserveAspectRatio="none" viewBox="0 0 400 200" aria-hidden="true">
                 <path fill="#0F2417" d="M0 200V120l20-14 16 22 20-36 18 28 14-18 22 32 20-46 20 34 16-22 22 38 18-30 20 42 22-52 20 38 16-24 22 34 20-42 18 30 16-20 22 40 18-34 20 44V200Z"/>
               </svg>
               <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop"
-                   alt="Lichte, gezellige slaapkamer in het bed &amp; breakfast"
+                   alt="Ljust och ombonat sovrum på bed &amp; breakfast"
                    class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
                    loading="lazy"
                    onerror="this.remove()">
@@ -354,109 +354,109 @@
           <div class="lg:col-span-5 lg:order-2 order-2" data-animate>
             <p class="font-body text-xs font-medium uppercase tracking-[0.3em] text-forest-950/50">01 — Bed &amp; breakfast</p>
             <h3 class="mt-5 font-display text-[clamp(1.5rem,1.1rem_+_2vw,2.25rem)] font-light leading-[1.15] text-forest-950 transition-colors duration-200 group-hover:text-accent">
-              Aankomen als <em class="font-normal italic">thuis</em>.
+              Anländ som <em class="font-normal italic">hemma</em>.
             </h3>
             <p class="mt-6 max-w-md font-body leading-relaxed text-forest-950/65">
-              Tien gezellige slaapkamers in het historische hoofdhuis, gastenkeuken, kantine en vuurplaats — jullie basiskamp, vijfhonderd meter van het water.
+              Tio ombonade sovrum i det historiska huvudhuset, gästkök, matsal och eldstad — ert basläger, femhundra meter från vattnet.
             </p>
             <span class="editorial-link mt-8 inline-block font-body text-sm font-semibold tracking-[0.06em] uppercase text-accent">
-              Naar het bed &amp; breakfast
+              Till bed &amp; breakfast
             </span>
           </div>
         </a>
 
-        <!-- 02 — Kano's, kajaks &amp; SUP's -->
-        <a href="kanu-kajak-sup.html" class="group grid grid-cols-1 items-center gap-12 rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-8 focus-visible:ring-offset-cream lg:grid-cols-12" aria-label="Kano's, kajaks &amp; SUP's — Ontdek de verhuur">
+        <!-- 02 — Kanoter, kajaker &amp; SUP -->
+        <a href="kanu-kajak-sup.html" class="group grid grid-cols-1 items-center gap-12 rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-8 focus-visible:ring-offset-cream lg:grid-cols-12" aria-label="Kanoter, kajaker &amp; SUP — Upptäck uthyrningen">
           <div class="relative overflow-hidden rounded-2xl lg:col-span-7 lg:order-2 order-1" data-animate>
             <div class="relative aspect-[16/11] overflow-hidden bg-gradient-to-b from-forest-700 to-forest-950">
               <svg class="absolute inset-x-0 bottom-0 h-1/2 w-full opacity-50" preserveAspectRatio="none" viewBox="0 0 400 200" aria-hidden="true">
                 <path fill="#0F2417" d="M0 200V120l20-14 16 22 20-36 18 28 14-18 22 32 20-46 20 34 16-22 22 38 18-30 20 42 22-52 20 38 16-24 22 34 20-42 18 30 16-20 22 40 18-34 20 44V200Z"/>
               </svg>
               <img src="assets/images/teaser-kayak.jpg"
-                   alt="Kajakker op spiegelglad water tussen beboste eilanden"
+                   alt="Kajakpaddlare på spegelblank sjö mellan skogklädda öar"
                    class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
                    loading="lazy"
                    onerror="this.remove()">
             </div>
           </div>
           <div class="lg:col-span-5 lg:order-1 order-2" data-animate>
-            <p class="font-body text-xs font-medium uppercase tracking-[0.3em] text-forest-950/50">02 — Kano's, kajaks &amp; SUP's</p>
+            <p class="font-body text-xs font-medium uppercase tracking-[0.3em] text-forest-950/50">02 — Kanoter, kajaker &amp; SUP</p>
             <h3 class="mt-5 font-display text-[clamp(1.5rem,1.1rem_+_2vw,2.25rem)] font-light leading-[1.15] text-forest-950 transition-colors duration-200 group-hover:text-accent">
-              Geruisloos over <em class="font-normal italic">stil</em> water.
+              Ljudlöst över <em class="font-normal italic">stilla</em> vatten.
             </h3>
             <p class="mt-6 max-w-md font-body leading-relaxed text-forest-950/65">
-              Kajaks, kano's en supboards met complete uitrusting — direct vanaf de steiger het meer Björkern op, voor avondrondjes en hele dagtochten.
+              Kajaker, kanoter och SUP-brädor med komplett utrustning — direkt från bryggan ut på Björkern, för kvällsturer och hela dagsturer.
             </p>
             <p class="mt-6 flex max-w-md items-start gap-3 rounded-xl border border-accent/30 bg-accent/5 p-4 font-body text-sm leading-relaxed text-forest-950/80">
               <svg class="mt-0.5 h-5 w-5 shrink-0 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />
               </svg>
-              <span><strong class="font-semibold">Bezorging bij andere meren mogelijk</strong> — wij brengen de kajaks daarheen waar jullie willen peddelen.</span>
+              <span><strong class="font-semibold">Leverans till andra sjöar möjlig</strong> — vi tar kajakerna dit ni vill paddla.</span>
             </p>
             <span class="editorial-link mt-8 inline-block font-body text-sm font-semibold tracking-[0.06em] uppercase text-accent">
-              Ontdek de verhuur
+              Upptäck uthyrningen
             </span>
           </div>
         </a>
 
-        <!-- 03 — Sportvissen -->
-        <a href="sportfischen.html" class="group grid grid-cols-1 items-center gap-12 rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-8 focus-visible:ring-offset-cream lg:grid-cols-12" aria-label="Sportvissen — Boten &amp; prijzen bekijken">
+        <!-- 03 — Sportfiske -->
+        <a href="sportfischen.html" class="group grid grid-cols-1 items-center gap-12 rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-8 focus-visible:ring-offset-cream lg:grid-cols-12" aria-label="Sportfiske — Se båtar &amp; priser">
           <div class="relative overflow-hidden rounded-2xl lg:col-span-7 lg:order-1 order-1" data-animate>
             <div class="relative aspect-[16/11] overflow-hidden bg-gradient-to-b from-forest-700 to-forest-950">
               <svg class="absolute inset-x-0 bottom-0 h-1/2 w-full opacity-50" preserveAspectRatio="none" viewBox="0 0 400 200" aria-hidden="true">
                 <path fill="#0F2417" d="M0 200V120l20-14 16 22 20-36 18 28 14-18 22 32 20-46 20 34 16-22 22 38 18-30 20 42 22-52 20 38 16-24 22 34 20-42 18 30 16-20 22 40 18-34 20 44V200Z"/>
               </svg>
               <img src="assets/images/teaser-fishing.jpg"
-                   alt="Visser in een boot bij zonsopgang op een Zweeds meer"
+                   alt="Fiskare i båt vid soluppgång på en svensk sjö"
                    class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
                    loading="lazy"
                    onerror="this.remove()">
             </div>
           </div>
           <div class="lg:col-span-5 lg:order-2 order-2" data-animate>
-            <p class="font-body text-xs font-medium uppercase tracking-[0.3em] text-forest-950/50">03 — Sportvissen</p>
+            <p class="font-body text-xs font-medium uppercase tracking-[0.3em] text-forest-950/50">03 — Sportfiske</p>
             <h3 class="mt-5 font-display text-[clamp(1.5rem,1.1rem_+_2vw,2.25rem)] font-light leading-[1.15] text-forest-950 transition-colors duration-200 group-hover:text-accent">
-              Jullie boot. Jullie <em class="font-normal italic">water</em>.
+              Er båt. Ert <em class="font-normal italic">vatten</em>.
             </h3>
             <p class="mt-6 max-w-md font-body leading-relaxed text-forest-950/65">
-              Volledig uitgeruste aluminium visboten met 20 pk-motor en Garmin-fishfinder — desgewenst met een ervaren visgids die de randen en gaten van de Björkern en de Åsunden kent.
+              Fullt utrustade fiskebåtar i aluminium med 20 hk motor och Garmin-ekolod — på begäran med erfaren fiskeguide som känner till kanterna och hålen i Björkern och Åsunden.
             </p>
             <p class="mt-6 flex max-w-md items-start gap-3 rounded-xl border border-accent/30 bg-accent/5 p-4 font-body text-sm leading-relaxed text-forest-950/80">
               <svg class="mt-0.5 h-5 w-5 shrink-0 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />
               </svg>
-              <span><strong class="font-semibold">Levering aan andere meren mogelijk</strong> — wij brengen de visboten waar jullie willen vissen.</span>
+              <span><strong class="font-semibold">Leverans till andra sjöar möjlig</strong> — vi tar med fiskebåtarna dit ni vill fiska.</span>
             </p>
             <span class="editorial-link mt-8 inline-block font-body text-sm font-semibold tracking-[0.06em] uppercase text-accent">
-              Boten &amp; prijzen bekijken
+              Se båtar &amp; priser
             </span>
           </div>
         </a>
 
-        <!-- 04 — Activiteiten &amp; omgeving -->
-        <a href="aktivitaeten.html" class="group grid grid-cols-1 items-center gap-12 rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-8 focus-visible:ring-offset-cream lg:grid-cols-12" aria-label="Activiteiten &amp; omgeving — Ontdek de activiteiten">
+        <!-- 04 — Aktiviteter &amp; omgivning -->
+        <a href="aktivitaeten.html" class="group grid grid-cols-1 items-center gap-12 rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-8 focus-visible:ring-offset-cream lg:grid-cols-12" aria-label="Aktiviteter &amp; omgivning — Upptäck aktiviteterna">
           <div class="relative overflow-hidden rounded-2xl lg:col-span-7 lg:order-2 order-1" data-animate>
             <div class="relative aspect-[16/11] overflow-hidden bg-gradient-to-b from-forest-700 to-forest-950">
               <svg class="absolute inset-x-0 bottom-0 h-1/2 w-full opacity-50" preserveAspectRatio="none" viewBox="0 0 400 200" aria-hidden="true">
                 <path fill="#0F2417" d="M0 200V120l20-14 16 22 20-36 18 28 14-18 22 32 20-46 20 34 16-22 22 38 18-30 20 42 22-52 20 38 16-24 22 34 20-42 18 30 16-20 22 40 18-34 20 44V200Z"/>
               </svg>
               <img src="assets/images/teaser-wildlife.jpg"
-                   alt="Eland aan de bosrand in de avondschemering in Östergötland"
+                   alt="Älg i skogsbrynet i skymningen i Östergötland"
                    class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
                    loading="lazy"
                    onerror="this.remove()">
             </div>
           </div>
           <div class="lg:col-span-5 lg:order-1 order-2" data-animate>
-            <p class="font-body text-xs font-medium uppercase tracking-[0.3em] text-forest-950/50">04 — Activiteiten &amp; omgeving</p>
+            <p class="font-body text-xs font-medium uppercase tracking-[0.3em] text-forest-950/50">04 — Aktiviteter &amp; omgivning</p>
             <h3 class="mt-5 font-display text-[clamp(1.5rem,1.1rem_+_2vw,2.25rem)] font-light leading-[1.15] text-forest-950 transition-colors duration-200 group-hover:text-accent">
-              Als het bos <em class="font-normal italic">ontwaakt</em>.
+              När skogen <em class="font-normal italic">vaknar</em>.
             </h3>
             <p class="mt-6 max-w-md font-body leading-relaxed text-forest-950/65">
-              Wildsafari in de schemering, winter op het natuurijs en de mooiste uitstapjes van Östergötland — van het eilandcafé tot de scherenkust.
+              Viltsafari i skymningen, vinter på naturisen och Östergötlands vackraste utflyktsmål — från öcaféet till skärgården.
             </p>
             <span class="editorial-link mt-8 inline-block font-body text-sm font-semibold tracking-[0.06em] uppercase text-accent">
-              Ontdek de activiteiten
+              Upptäck aktiviteterna
             </span>
           </div>
         </a>
@@ -465,58 +465,58 @@
     </section>
 
     <!-- ============ STATS ============ -->
-    <section class="border-y border-forest-950/10 bg-white/50" aria-label="Björkfors in cijfers">
+    <section class="border-y border-forest-950/10 bg-white/50" aria-label="Björkfors i siffror">
       <div class="mx-auto grid max-w-7xl grid-cols-2 divide-x divide-forest-950/10 px-5 sm:px-8 lg:grid-cols-4">
         <div class="px-6 py-14 text-center" data-animate>
           <p class="font-display text-5xl font-light text-forest-950 sm:text-6xl">500<span class="text-2xl align-top">m</span></p>
-          <p class="mt-3 font-body text-xs font-medium uppercase tracking-[0.2em] text-forest-950/50">van het huis naar het water</p>
+          <p class="mt-3 font-body text-xs font-medium uppercase tracking-[0.2em] text-forest-950/50">från huset till vattnet</p>
         </div>
         <div class="px-6 py-14 text-center" data-animate>
           <p class="font-display text-5xl font-light text-forest-950 sm:text-6xl">3</p>
-          <p class="mt-3 font-body text-xs font-medium uppercase tracking-[0.2em] text-forest-950/50">eigen visboten</p>
+          <p class="mt-3 font-body text-xs font-medium uppercase tracking-[0.2em] text-forest-950/50">egna fiskebåtar</p>
         </div>
         <div class="px-6 py-14 text-center" data-animate>
           <p class="font-display text-5xl font-light text-forest-950 sm:text-6xl">100<span class="text-2xl align-top">%</span></p>
-          <p class="mt-3 font-body text-xs font-medium uppercase tracking-[0.2em] text-forest-950/50">vaste prijzen</p>
+          <p class="mt-3 font-body text-xs font-medium uppercase tracking-[0.2em] text-forest-950/50">fasta priser</p>
         </div>
         <div class="px-6 py-14 text-center" data-animate>
           <p class="font-display text-5xl font-light text-forest-950 sm:text-6xl">60</p>
-          <p class="mt-3 font-body text-xs font-medium uppercase tracking-[0.2em] text-forest-950/50">plaatsen in het allhus voor groepen</p>
+          <p class="mt-3 font-body text-xs font-medium uppercase tracking-[0.2em] text-forest-950/50">platser i allhuset för grupper</p>
         </div>
       </div>
     </section>
 
-    <!-- ============ WIJ DOEN HET ANDERS ============ -->
-    <section id="ueber-uns" class="bg-cream py-28 sm:py-36" aria-label="Waarom Björkfors Outdoor — Over ons">
+    <!-- ============ WIR MACHEN ES ANDERS ============ -->
+    <section id="ueber-uns" class="bg-cream py-28 sm:py-36" aria-label="Därför Björkfors Outdoor — Om oss">
       <div class="mx-auto max-w-7xl px-5 sm:px-8">
         <div class="grid grid-cols-1 gap-16 lg:grid-cols-12">
 
           <div class="lg:col-span-5" data-animate>
-            <p class="font-body text-xs font-medium uppercase tracking-[0.3em] text-forest-950/50">Waarom Björkfors</p>
+            <p class="font-body text-xs font-medium uppercase tracking-[0.3em] text-forest-950/50">Därför Björkfors</p>
             <h2 class="mt-6 font-display text-[clamp(1.875rem,1.3rem_+_3vw,3rem)] font-light leading-[1.15] text-forest-950">
-              Wij doen het <em class="font-normal italic">anders</em>.
+              Vi gör det <em class="font-normal italic">annorlunda</em>.
             </h2>
             <p class="mt-8 max-w-md font-body text-lg leading-relaxed text-forest-950/65">
-              Geen massatoerisme, geen verborgen kosten — en volledige privacy op het water. Alleen jullie, het meer en gastheren die zelf vissen.
+              Ingen massturism, inga dolda kostnader — och full avskildhet på vattnet. Bara ni, sjön och värdar som fiskar själva.
             </p>
 
-            <!-- Over ons: foto van de gastheren + tekst (foto & definitieve tekst volgen van de klant) -->
+            <!-- Über uns: Betreiberfoto + Text (Foto & finaler Text folgen vom Kunden) -->
             <figure class="mt-12 max-w-md" data-animate>
               <div class="overflow-hidden rounded-2xl bg-forest-800">
-                <!-- TODO: plaatshouder vervangen door echte foto van de gastheren (bijv. assets/images/betreiber.jpg) -->
+                <!-- TODO: Platzhalter durch echtes Betreiberfoto ersetzen (z. B. assets/images/betreiber.jpg) -->
                 <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=800&auto=format&fit=crop"
-                     alt="De gastheren van Björkfors Outdoor Adventures"
+                     alt="Värdarna på Björkfors Outdoor Adventures"
                      class="aspect-[4/3] w-full object-cover" loading="lazy" onerror="this.remove()">
               </div>
               <figcaption class="mt-4 font-body text-xs font-medium uppercase tracking-[0.2em] text-forest-950/50">
-                Jullie gastheren in Björkfors
+                Era värdar i Björkfors
               </figcaption>
             </figure>
             <p class="mt-6 max-w-md font-body text-sm leading-relaxed text-forest-950/65">
-              <!-- TODO: definitieve over-ons-tekst volgt van de klant -->
-              Wij zijn gastheren uit passie — en vissers uit overtuiging. In Björkfors, tussen de meren
-              Björkern en Åsunden, runnen we een bed &amp; breakfast voor groepen volwassenen die echte natuur
-              zoeken in plaats van een programma van de plank. Persoonlijk, ongecompliceerd, met heldere vaste prijzen.
+              <!-- TODO: Finaler Über-uns-Text folgt vom Kunden -->
+              Vi är värdar av passion — och fiskare av övertygelse. I Björkfors, mellan sjöarna
+              Björkern och Åsunden, driver vi ett bed &amp; breakfast för vuxengrupper som söker äkta natur
+              i stället för färdigpaketerade program. Personligt, okomplicerat, med tydliga fasta priser.
             </p>
           </div>
 
@@ -525,27 +525,27 @@
               <li class="grid grid-cols-12 gap-6 py-10" data-animate>
                 <span class="col-span-2 font-display text-xl font-light text-forest-950/35 sm:text-2xl">01</span>
                 <div class="col-span-10">
-                  <h3 class="font-display text-2xl font-normal text-forest-950 sm:text-3xl">Volledige privacy aan boord</h3>
+                  <h3 class="font-display text-2xl font-normal text-forest-950 sm:text-3xl">Full avskildhet ombord</h3>
                   <p class="mt-3 max-w-lg font-body leading-relaxed text-forest-950/65">
-                    Elke boot is op jullie dag helemaal voor jullie gereserveerd — jullie genieten van het water in eigen kring en bepalen zelf wanneer het losgaat, waar er gevist wordt en hoe lang. En willen jullie tips over het viswater, dan delen we onze kennis graag — uit de eerste hand.
+                    Varje båt är reserverad enbart för er under er dag — ni njuter av vattnet i ert eget sällskap och bestämmer själva när ni lägger ut, var ni fiskar och hur länge. Och vill ni ha tips om vattnen delar vi gärna med oss av vår kunskap — från första parkett.
                   </p>
                 </div>
               </li>
               <li class="grid grid-cols-12 gap-6 py-10" data-animate>
                 <span class="col-span-2 font-display text-xl font-light text-forest-950/35 sm:text-2xl">02</span>
                 <div class="col-span-10">
-                  <h3 class="font-display text-2xl font-normal text-forest-950 sm:text-3xl">Eigen vloot, startklaar</h3>
+                  <h3 class="font-display text-2xl font-normal text-forest-950 sm:text-3xl">Egen flotta, startklar</h3>
                   <p class="mt-3 max-w-lg font-body leading-relaxed text-forest-950/65">
-                    Twee volledig uitgeruste aluminium visboten met 20 pk-motor en fishfinder, plus een Rana 14 — onderhouden, afgemeerd, vijf minuten van het huis.
+                    Två fullt utrustade fiskebåtar i aluminium med 20 hk motor och ekolod, plus en Rana 14 — servade, förtöjda, fem minuter från huset.
                   </p>
                 </div>
               </li>
               <li class="grid grid-cols-12 gap-6 py-10" data-animate>
                 <span class="col-span-2 font-display text-xl font-light text-forest-950/35 sm:text-2xl">03</span>
                 <div class="col-span-10">
-                  <h3 class="font-display text-2xl font-normal text-forest-950 sm:text-3xl">De prijs is de prijs</h3>
+                  <h3 class="font-display text-2xl font-normal text-forest-950 sm:text-3xl">Priset är priset</h3>
                   <p class="mt-3 max-w-lg font-body leading-relaxed text-forest-950/65">
-                    Elk aanbod heeft zijn vaste prijs, direct bij de boot, de tour, de kamer. Geen toeslagen, geen kleine lettertjes.
+                    Varje erbjudande har sitt fasta pris direkt vid båten, turen, rummet. Inga tillägg, inget finstilt.
                   </p>
                 </div>
               </li>
@@ -557,26 +557,26 @@
     </section>
 
     <!-- ============ TRIPADVISOR REVIEWS — editorial ============ -->
-    <section class="border-t border-forest-950/10 bg-cream py-28 sm:py-36" aria-label="Beoordelingen van onze gasten">
+    <section class="border-t border-forest-950/10 bg-cream py-28 sm:py-36" aria-label="Omdömen från våra gäster">
       <div class="mx-auto max-w-7xl px-5 sm:px-8">
         <div class="flex flex-wrap items-end justify-between gap-8" data-animate>
           <div>
-            <p class="font-body text-xs font-medium uppercase tracking-[0.3em] text-forest-950/50">Reviews op Google &amp; Tripadvisor</p>
+            <p class="font-body text-xs font-medium uppercase tracking-[0.3em] text-forest-950/50">Recensioner på Google &amp; Tripadvisor</p>
             <h2 class="mt-6 font-display text-[clamp(1.875rem,1.3rem_+_3vw,3rem)] font-light leading-[1.15] text-forest-950">
-              Wat gasten <em class="font-normal italic">vertellen</em>.
+              Vad gäster <em class="font-normal italic">berättar</em>.
             </h2>
           </div>
           <div class="flex gap-3">
             <button type="button" id="review-prev"
                     class="inline-flex h-12 w-12 items-center justify-center rounded-full border border-forest-950/20 text-forest-950 transition-colors duration-200 hover:border-forest-950 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
-                    aria-label="Vorige beoordeling">
+                    aria-label="Föregående omdöme">
               <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
               </svg>
             </button>
             <button type="button" id="review-next"
                     class="inline-flex h-12 w-12 items-center justify-center rounded-full border border-forest-950/20 text-forest-950 transition-colors duration-200 hover:border-forest-950 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
-                    aria-label="Volgende beoordeling">
+                    aria-label="Nästa omdöme">
               <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
               </svg>
@@ -584,11 +584,11 @@
           </div>
         </div>
 
-        <!-- Echte Tripadvisor-reviews (ingekort) -->
+        <!-- Äkta Tripadvisor-recensioner (översatta och förkortade) -->
         <div id="review-track" class="review-track mt-16 flex snap-x gap-10 overflow-x-auto pb-4" data-animate>
 
           <figure class="review-card w-[88%] shrink-0 border-l border-forest-950/15 pl-8 sm:w-[46%] lg:w-[30%]">
-            <div class="flex gap-1 text-accent" aria-label="5 van 5 sterren">
+            <div class="flex gap-1 text-accent" aria-label="5 av 5 stjärnor">
               <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.42 4.4a1 1 0 00.95.68h4.62c.97 0 1.37 1.24.59 1.81l-3.74 2.72a1 1 0 00-.36 1.12l1.43 4.4c.3.92-.76 1.68-1.54 1.11l-3.73-2.72a1 1 0 00-1.18 0l-3.74 2.72c-.78.57-1.83-.19-1.53-1.1l1.42-4.4a1 1 0 00-.36-1.13L1.46 9.82c-.78-.57-.38-1.81.6-1.81h4.61a1 1 0 00.95-.69l1.43-4.4z"/></svg>
               <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.42 4.4a1 1 0 00.95.68h4.62c.97 0 1.37 1.24.59 1.81l-3.74 2.72a1 1 0 00-.36 1.12l1.43 4.4c.3.92-.76 1.68-1.54 1.11l-3.73-2.72a1 1 0 00-1.18 0l-3.74 2.72c-.78.57-1.83-.19-1.53-1.1l1.42-4.4a1 1 0 00-.36-1.13L1.46 9.82c-.78-.57-.38-1.81.6-1.81h4.61a1 1 0 00.95-.69l1.43-4.4z"/></svg>
               <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.42 4.4a1 1 0 00.95.68h4.62c.97 0 1.37 1.24.59 1.81l-3.74 2.72a1 1 0 00-.36 1.12l1.43 4.4c.3.92-.76 1.68-1.54 1.11l-3.73-2.72a1 1 0 00-1.18 0l-3.74 2.72c-.78.57-1.83-.19-1.53-1.1l1.42-4.4a1 1 0 00-.36-1.13L1.46 9.82c-.78-.57-.38-1.81.6-1.81h4.61a1 1 0 00.95-.69l1.43-4.4z"/></svg>
@@ -596,13 +596,13 @@
               <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.42 4.4a1 1 0 00.95.68h4.62c.97 0 1.37 1.24.59 1.81l-3.74 2.72a1 1 0 00-.36 1.12l1.43 4.4c.3.92-.76 1.68-1.54 1.11l-3.73-2.72a1 1 0 00-1.18 0l-3.74 2.72c-.78.57-1.83-.19-1.53-1.1l1.42-4.4a1 1 0 00-.36-1.13L1.46 9.82c-.78-.57-.38-1.81.6-1.81h4.61a1 1 0 00.95-.69l1.43-4.4z"/></svg>
             </div>
             <blockquote class="mt-6 font-display text-xl font-light leading-relaxed text-forest-950/85">
-              <p>„Rustige en vredige omgeving. Fantastisch schoon, uitstekende voorzieningen en heerlijke bedden in onze familiekamer. Goed ontbijt met alles wat je je kunt wensen — en bovenal een ongelooflijk vriendelijk gastherenpaar. Ik kom heel graag terug!”</p>
+              <p>”Lugn och fridfull miljö. Fantastiskt rent, utmärkta faciliteter och underbara sängar i vårt familjerum. Bra frukost med allt man kan önska sig — och framför allt ett otroligt trevligt värdpar. Jag kommer gärna tillbaka!”</p>
             </blockquote>
             <figcaption class="mt-6 font-body text-xs font-medium uppercase tracking-[0.2em] text-forest-950/45">Pa B — juli 2025 · Tripadvisor</figcaption>
           </figure>
 
           <figure class="review-card w-[88%] shrink-0 border-l border-forest-950/15 pl-8 sm:w-[46%] lg:w-[30%]">
-            <div class="flex gap-1 text-accent" aria-label="4 van 5 sterren">
+            <div class="flex gap-1 text-accent" aria-label="4 av 5 stjärnor">
               <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.42 4.4a1 1 0 00.95.68h4.62c.97 0 1.37 1.24.59 1.81l-3.74 2.72a1 1 0 00-.36 1.12l1.43 4.4c.3.92-.76 1.68-1.54 1.11l-3.73-2.72a1 1 0 00-1.18 0l-3.74 2.72c-.78.57-1.83-.19-1.53-1.1l1.42-4.4a1 1 0 00-.36-1.13L1.46 9.82c-.78-.57-.38-1.81.6-1.81h4.61a1 1 0 00.95-.69l1.43-4.4z"/></svg>
               <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.42 4.4a1 1 0 00.95.68h4.62c.97 0 1.37 1.24.59 1.81l-3.74 2.72a1 1 0 00-.36 1.12l1.43 4.4c.3.92-.76 1.68-1.54 1.11l-3.73-2.72a1 1 0 00-1.18 0l-3.74 2.72c-.78.57-1.83-.19-1.53-1.1l1.42-4.4a1 1 0 00-.36-1.13L1.46 9.82c-.78-.57-.38-1.81.6-1.81h4.61a1 1 0 00.95-.69l1.43-4.4z"/></svg>
               <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.42 4.4a1 1 0 00.95.68h4.62c.97 0 1.37 1.24.59 1.81l-3.74 2.72a1 1 0 00-.36 1.12l1.43 4.4c.3.92-.76 1.68-1.54 1.11l-3.73-2.72a1 1 0 00-1.18 0l-3.74 2.72c-.78.57-1.83-.19-1.53-1.1l1.42-4.4a1 1 0 00-.36-1.13L1.46 9.82c-.78-.57-.38-1.81.6-1.81h4.61a1 1 0 00.95-.69l1.43-4.4z"/></svg>
@@ -610,13 +610,13 @@
               <svg class="h-4 w-4 fill-current opacity-25" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.42 4.4a1 1 0 00.95.68h4.62c.97 0 1.37 1.24.59 1.81l-3.74 2.72a1 1 0 00-.36 1.12l1.43 4.4c.3.92-.76 1.68-1.54 1.11l-3.73-2.72a1 1 0 00-1.18 0l-3.74 2.72c-.78.57-1.83-.19-1.53-1.1l1.42-4.4a1 1 0 00-.36-1.13L1.46 9.82c-.78-.57-.38-1.81.6-1.81h4.61a1 1 0 00.95-.69l1.43-4.4z"/></svg>
             </div>
             <blockquote class="mt-6 font-display text-xl font-light leading-relaxed text-forest-950/85">
-              <p>„Vriendelijke, meertalige gastheren in een prachtige omgeving. De grote keuken mochten we vrij gebruiken, en vlakbij liggen veel meren — om te zwemmen, te kanoën en meer.”</p>
+              <p>”Vänliga, flerspråkiga värdar i vacker omgivning. Vi fick fritt använda det stora köket, och alldeles i närheten ligger många sjöar — för bad, paddling och mer.”</p>
             </blockquote>
             <figcaption class="mt-6 font-body text-xs font-medium uppercase tracking-[0.2em] text-forest-950/45">Tjerk V — januari 2017 · Tripadvisor</figcaption>
           </figure>
 
           <figure class="review-card w-[88%] shrink-0 border-l border-forest-950/15 pl-8 sm:w-[46%] lg:w-[30%]">
-            <div class="flex gap-1 text-accent" aria-label="5 van 5 sterren">
+            <div class="flex gap-1 text-accent" aria-label="5 av 5 stjärnor">
               <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.42 4.4a1 1 0 00.95.68h4.62c.97 0 1.37 1.24.59 1.81l-3.74 2.72a1 1 0 00-.36 1.12l1.43 4.4c.3.92-.76 1.68-1.54 1.11l-3.73-2.72a1 1 0 00-1.18 0l-3.74 2.72c-.78.57-1.83-.19-1.53-1.1l1.42-4.4a1 1 0 00-.36-1.13L1.46 9.82c-.78-.57-.38-1.81.6-1.81h4.61a1 1 0 00.95-.69l1.43-4.4z"/></svg>
               <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.42 4.4a1 1 0 00.95.68h4.62c.97 0 1.37 1.24.59 1.81l-3.74 2.72a1 1 0 00-.36 1.12l1.43 4.4c.3.92-.76 1.68-1.54 1.11l-3.73-2.72a1 1 0 00-1.18 0l-3.74 2.72c-.78.57-1.83-.19-1.53-1.1l1.42-4.4a1 1 0 00-.36-1.13L1.46 9.82c-.78-.57-.38-1.81.6-1.81h4.61a1 1 0 00.95-.69l1.43-4.4z"/></svg>
               <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.42 4.4a1 1 0 00.95.68h4.62c.97 0 1.37 1.24.59 1.81l-3.74 2.72a1 1 0 00-.36 1.12l1.43 4.4c.3.92-.76 1.68-1.54 1.11l-3.73-2.72a1 1 0 00-1.18 0l-3.74 2.72c-.78.57-1.83-.19-1.53-1.1l1.42-4.4a1 1 0 00-.36-1.13L1.46 9.82c-.78-.57-.38-1.81.6-1.81h4.61a1 1 0 00.95-.69l1.43-4.4z"/></svg>
@@ -624,13 +624,13 @@
               <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.42 4.4a1 1 0 00.95.68h4.62c.97 0 1.37 1.24.59 1.81l-3.74 2.72a1 1 0 00-.36 1.12l1.43 4.4c.3.92-.76 1.68-1.54 1.11l-3.73-2.72a1 1 0 00-1.18 0l-3.74 2.72c-.78.57-1.83-.19-1.53-1.1l1.42-4.4a1 1 0 00-.36-1.13L1.46 9.82c-.78-.57-.38-1.81.6-1.81h4.61a1 1 0 00.95-.69l1.43-4.4z"/></svg>
             </div>
             <blockquote class="mt-6 font-display text-xl font-light leading-relaxed text-forest-950/85">
-              <p>„We huurden kano’s voor een meerdaagse tocht op de Åsunden. Het meer is werkelijk prachtig — we hadden een geweldige tijd met peddelen en kamperen op een van de vele eilanden.”</p>
+              <p>”Vi hyrde kanoter för en flerdagarstur på Åsunden. Sjön är verkligen vacker — vi hade en fantastisk tid med paddling och camping på en av de många öarna.”</p>
             </blockquote>
             <figcaption class="mt-6 font-body text-xs font-medium uppercase tracking-[0.2em] text-forest-950/45">Frank — juni 2016 · Tripadvisor</figcaption>
           </figure>
 
           <figure class="review-card w-[88%] shrink-0 border-l border-forest-950/15 pl-8 sm:w-[46%] lg:w-[30%]">
-            <div class="flex gap-1 text-accent" aria-label="5 van 5 sterren">
+            <div class="flex gap-1 text-accent" aria-label="5 av 5 stjärnor">
               <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.42 4.4a1 1 0 00.95.68h4.62c.97 0 1.37 1.24.59 1.81l-3.74 2.72a1 1 0 00-.36 1.12l1.43 4.4c.3.92-.76 1.68-1.54 1.11l-3.73-2.72a1 1 0 00-1.18 0l-3.74 2.72c-.78.57-1.83-.19-1.53-1.1l1.42-4.4a1 1 0 00-.36-1.13L1.46 9.82c-.78-.57-.38-1.81.6-1.81h4.61a1 1 0 00.95-.69l1.43-4.4z"/></svg>
               <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.42 4.4a1 1 0 00.95.68h4.62c.97 0 1.37 1.24.59 1.81l-3.74 2.72a1 1 0 00-.36 1.12l1.43 4.4c.3.92-.76 1.68-1.54 1.11l-3.73-2.72a1 1 0 00-1.18 0l-3.74 2.72c-.78.57-1.83-.19-1.53-1.1l1.42-4.4a1 1 0 00-.36-1.13L1.46 9.82c-.78-.57-.38-1.81.6-1.81h4.61a1 1 0 00.95-.69l1.43-4.4z"/></svg>
               <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.42 4.4a1 1 0 00.95.68h4.62c.97 0 1.37 1.24.59 1.81l-3.74 2.72a1 1 0 00-.36 1.12l1.43 4.4c.3.92-.76 1.68-1.54 1.11l-3.73-2.72a1 1 0 00-1.18 0l-3.74 2.72c-.78.57-1.83-.19-1.53-1.1l1.42-4.4a1 1 0 00-.36-1.13L1.46 9.82c-.78-.57-.38-1.81.6-1.81h4.61a1 1 0 00.95-.69l1.43-4.4z"/></svg>
@@ -638,7 +638,7 @@
               <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.42 4.4a1 1 0 00.95.68h4.62c.97 0 1.37 1.24.59 1.81l-3.74 2.72a1 1 0 00-.36 1.12l1.43 4.4c.3.92-.76 1.68-1.54 1.11l-3.73-2.72a1 1 0 00-1.18 0l-3.74 2.72c-.78.57-1.83-.19-1.53-1.1l1.42-4.4a1 1 0 00-.36-1.13L1.46 9.82c-.78-.57-.38-1.81.6-1.81h4.61a1 1 0 00.95-.69l1.43-4.4z"/></svg>
             </div>
             <blockquote class="mt-6 font-display text-xl font-light leading-relaxed text-forest-950/85">
-              <p>„Het verblijf ligt heerlijk en biedt alles wat je nodig hebt. De kajaks waren gloednieuw en onze tocht had niet beter kunnen zijn. Wie een mooi startpunt voor een kajaktocht zoekt: een absolute aanrader.”</p>
+              <p>”Boendet ligger underbart och har allt man behöver. Kajakerna var helt nya och vår tur kunde inte ha varit bättre. Letar du efter en perfekt startpunkt för en kajaktur: varmt rekommenderat.”</p>
             </blockquote>
             <figcaption class="mt-6 font-body text-xs font-medium uppercase tracking-[0.2em] text-forest-950/45">Saskia S — juli 2015 · Tripadvisor</figcaption>
           </figure>
@@ -648,7 +648,7 @@
     </section>
 
     <!-- ============ CTA ============ -->
-    <section class="relative isolate overflow-hidden bg-forest-950 py-32 sm:py-40" aria-label="Boekingsaanvraag doen">
+    <section class="relative isolate overflow-hidden bg-forest-950 py-32 sm:py-40" aria-label="Skicka bokningsförfrågan">
       <div class="absolute inset-0 -z-10" aria-hidden="true">
         <div class="absolute left-1/2 top-0 h-[500px] w-[900px] -translate-x-1/2 rounded-full bg-forest-800/40 blur-3xl"></div>
         <svg class="absolute bottom-0 left-0 h-[30%] w-full opacity-25" preserveAspectRatio="none" viewBox="0 0 1200 200" aria-hidden="true">
@@ -656,16 +656,16 @@
         </svg>
       </div>
       <div class="mx-auto max-w-4xl px-5 text-center sm:px-8" data-animate>
-        <p class="font-body text-xs font-medium uppercase tracking-[0.3em] text-cream/50">Jullie groep. Jullie boot. Jullie rust.</p>
+        <p class="font-body text-xs font-medium uppercase tracking-[0.3em] text-cream/50">Er grupp. Er båt. Er ro.</p>
         <h2 class="mt-8 font-display text-[clamp(1.875rem,1.2rem_+_3.5vw,3.75rem)] font-light leading-[1.15] text-cream">
-          Klaar voor jullie <em class="font-normal italic">water</em>?
+          Redo för ert <em class="font-normal italic">vatten</em>?
         </h2>
         <p class="mx-auto mt-8 max-w-xl font-body text-lg leading-relaxed text-cream/70">
-          Schrijf ons wanneer jullie willen komen en wat jullie van plan zijn — we reageren persoonlijk met een concreet voorstel.
+          Skriv till oss när ni vill komma och vad ni har planerat — vi hör av oss personligen med ett konkret förslag.
         </p>
         <a href="kontakt.html"
            class="btn-shiny mt-12 inline-flex min-h-[52px] items-center justify-center rounded-full px-11 py-4 font-body text-sm font-semibold tracking-[0.06em] uppercase focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-forest-950 focus-visible:ring-accent">
-          <span class="btn-shiny-label">Boekingsaanvraag doen</span>
+          <span class="btn-shiny-label">Skicka bokningsförfrågan</span>
         </a>
       </div>
     </section>
@@ -680,46 +680,46 @@
           <img src="assets/images/logo-bjorkfors.png" alt="Björkfors Outdoor-Adventures — Bed &amp; Breakfast" class="h-12 w-auto">
         </span>
         <p class="mt-6 max-w-xs font-body text-sm leading-relaxed">
-          Privé vis- en natuurbelevenissen voor kleine groepen — midden in de Zweedse natuur.
+          Privata fiske- och naturupplevelser för små grupper — mitt i den svenska naturen.
         </p>
       </div>
-      <nav aria-label="Footernavigatie">
-        <h2 class="font-body text-xs font-medium uppercase tracking-[0.25em] text-cream/45">Pagina's</h2>
+      <nav aria-label="Sidfotsnavigation">
+        <h2 class="font-body text-xs font-medium uppercase tracking-[0.25em] text-cream/45">Sidor</h2>
         <ul class="mt-6 space-y-3 font-body text-sm">
-          <li><a href="index.html" class="transition-colors hover:text-cream">Startpagina</a></li>
-          <li><a href="sportfischen.html" class="transition-colors hover:text-cream">Sportvissen</a></li>
-          <li><a href="aktivitaeten.html" class="transition-colors hover:text-cream">Activiteiten &amp; omgeving</a></li>
-          <li><a href="index.html#ueber-uns" class="transition-colors hover:text-cream">Over ons</a></li>
-          <li><a href="preisliste.html" class="transition-colors hover:text-cream">Prijzen</a></li>
+          <li><a href="index.html" class="transition-colors hover:text-cream">Startsida</a></li>
+          <li><a href="sportfischen.html" class="transition-colors hover:text-cream">Sportfiske</a></li>
+          <li><a href="aktivitaeten.html" class="transition-colors hover:text-cream">Aktiviteter &amp; omgivning</a></li>
+          <li><a href="index.html#ueber-uns" class="transition-colors hover:text-cream">Om oss</a></li>
+          <li><a href="preisliste.html" class="transition-colors hover:text-cream">Priser</a></li>
         </ul>
       </nav>
       <div>
-        <h2 class="font-body text-xs font-medium uppercase tracking-[0.25em] text-cream/45">Contact</h2>
+        <h2 class="font-body text-xs font-medium uppercase tracking-[0.25em] text-cream/45">Kontakt</h2>
         <ul class="mt-6 space-y-3 font-body text-sm">
-          <li>Gamla landsvägen 13<br>59046 Rimforsa (Björkfors), Zweden</li>
+          <li>Gamla landsvägen 13<br>59046 Rimforsa (Björkfors), Sverige</li>
           <li><a href="tel:+46732390993" class="transition-colors hover:text-cream">+46 (0) 73-239 09 93</a></li>
           <li><a href="tel:+46732391006" class="transition-colors hover:text-cream">+46 (0) 73-239 10 06</a></li>
           <li><a href="mailto:info@bjorkfors-outdoor.se" class="transition-colors hover:text-cream">info@bjorkfors-outdoor.se</a></li>
         </ul>
       </div>
       <div>
-        <h2 class="font-body text-xs font-medium uppercase tracking-[0.25em] text-cream/45">Talen</h2>
+        <h2 class="font-body text-xs font-medium uppercase tracking-[0.25em] text-cream/45">Språk</h2>
         <ul class="mt-6 space-y-3 font-body text-sm">
-          <li><a href="index.html" class="text-accent" aria-current="true">Nederlands</a></li>
+          <li><a href="index.html" class="text-accent" aria-current="true">Svenska</a></li>
           <li><a href="de/index.html" class="transition-colors hover:text-cream">Deutsch</a></li>
           <li><a href="en/index.html" class="transition-colors hover:text-cream">English</a></li>
-          <li><a href="sv/index.html" class="transition-colors hover:text-cream">Svenska</a></li>
+          <li><a href="nl/index.html" class="transition-colors hover:text-cream">Nederlands</a></li>
         </ul>
       </div>
     </div>
     <div class="border-t border-cream/10">
       <div class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-5 py-6 font-body text-xs text-cream/40 sm:px-8">
-        <p>© 2026 Björkfors Outdoor Adventures. Alle rechten voorbehouden.</p>
+        <p>© 2026 Björkfors Outdoor Adventures. Alla rättigheter förbehållna.</p>
         <div class="flex flex-wrap items-center gap-x-6 gap-y-2">
-          <a href="hausregeln.html" class="transition-colors hover:text-cream">Huisregels</a>
-          <a href="agb.html" class="transition-colors hover:text-cream">Voorwaarden</a>
-          <a href="datenschutz.html" class="transition-colors hover:text-cream">Privacy</a>
-          <a href="impressum.html" class="transition-colors hover:text-cream">Colofon</a>
+          <a href="hausregeln.html" class="transition-colors hover:text-cream">Husregler</a>
+          <a href="agb.html" class="transition-colors hover:text-cream">Villkor</a>
+          <a href="datenschutz.html" class="transition-colors hover:text-cream">Integritet</a>
+          <a href="impressum.html" class="transition-colors hover:text-cream">Juridisk information</a>
         </div>
       </div>
     </div>
