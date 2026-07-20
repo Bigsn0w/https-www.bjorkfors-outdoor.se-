@@ -8,6 +8,11 @@
   background: linear-gradient(to bottom, #B24A42, #801818 45%, #4A0D0D);
   box-shadow: 0 0 0 rgba(128, 24, 24, 0);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* Kein iOS-Textauswahl-Callout und kein Tap-Highlight beim (zu) langen Antippen */
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 .btn-shiny::before {
   content: '';
