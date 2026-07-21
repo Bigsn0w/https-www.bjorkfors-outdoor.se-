@@ -127,6 +127,11 @@
     }
     .fade-slide.is-active { opacity: 1; }
 
+    /* Kleinere/niedriger aufgelöste Bildschirme (z. B. kleine Laptops): Hero-Überschrift 20% kleiner */
+    @media (max-width: 1600px) {
+      .hero-title { font-size: clamp(1.6rem, 1.12rem + 2.4vw, 4rem); }
+    }
+
 
     .about-photo { transition: transform 0.3s ease; }
     .about-photo:hover { transform: scale(1.03); }
@@ -291,12 +296,9 @@
         <p class="animate-fade-in-up font-body text-xs font-medium uppercase tracking-[0.3em] text-cream/70 opacity-0 [animation-delay:0.05s] [animation-fill-mode:forwards]">
           Östergötland, Schweden
         </p>
-        <h1 class="mt-6 max-w-4xl animate-fade-in-up font-display text-[clamp(2rem,1.4rem_+_3vw,5rem)] font-light leading-[1.05] text-cream opacity-0 [animation-delay:0.15s] [animation-fill-mode:forwards]">
+        <h1 class="hero-title mt-6 max-w-4xl animate-fade-in-up font-display text-[clamp(2rem,1.4rem_+_3vw,5rem)] font-light leading-[1.05] text-cream opacity-0 [animation-delay:0.15s] [animation-fill-mode:forwards]">
           Dein <em class="font-normal italic text-cream">Rückzugsort</em> in der schwedischen Natur.
         </h1>
-        <p class="mt-8 max-w-xl animate-fade-in-up font-body text-lg font-normal leading-relaxed text-cream/80 opacity-0 [animation-delay:0.3s] [animation-fill-mode:forwards]">
-          Private Angel- und Naturerlebnisse für kleine Gruppen — mit eigenen Booten auf stillen Seen, fernab von allem, was nach Tourismus aussieht.
-        </p>
       </div>
     </section>
 
