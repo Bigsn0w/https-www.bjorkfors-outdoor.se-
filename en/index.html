@@ -127,8 +127,8 @@
     }
     .fade-slide.is-active { opacity: 1; }
 
-    /* Kleinere/niedriger aufgelöste Bildschirme (z. B. kleine Laptops): Header niedriger und Hero-Überschrift 30% kleiner, damit auf kurzen Viewports mehr vom Hero-Foto ohne Scrollen sichtbar bleibt */
-    @media (max-width: 1600px) {
+    /* Schmale ODER niedrige Viewports (z. B. kleine/kurze Laptop-Fenster, auch bei hoher logischer Breite durch macOS-Skalierung "Mehr Fläche"): Header niedriger und Hero-Überschrift 30% kleiner, damit mehr vom Hero-Foto ohne Scrollen sichtbar bleibt */
+    @media (max-width: 1600px), (max-height: 1150px) {
       .hero-title { font-size: clamp(1.4rem, 0.98rem + 2.1vw, 3.5rem); }
       .header-bar { height: 4.5rem; }
     }
