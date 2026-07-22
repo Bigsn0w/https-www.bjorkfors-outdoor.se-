@@ -88,6 +88,52 @@
     }
     .bounce-card:hover .bounce-panel { transform: translateY(1rem) rotate(2deg); }
   </style>
+  <!-- Strukturierte Daten: BedAndBreakfast + Breadcrumb -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BedAndBreakfast",
+        "name": "Björkfors Outdoor Adventures",
+        "url": "https://www.bjorkfors-outdoor.se/de/bed-and-breakfast.html",
+        "image": "https://www.bjorkfors-outdoor.se/assets/images/logo-bjorkfors.png",
+        "telephone": "+46732390993",
+        "email": "info@bjorkfors-outdoor.se",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Gamla landsvägen 13",
+          "postalCode": "59046",
+          "addressLocality": "Rimforsa",
+          "addressRegion": "Östergötland",
+          "addressCountry": "SE"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 58.020833,
+          "longitude": 15.898667
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Startseite",
+            "item": "https://www.bjorkfors-outdoor.se/de/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Bed & Breakfast",
+            "item": "https://www.bjorkfors-outdoor.se/de/bed-and-breakfast.html"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body class="font-body bg-cream text-forest-950 antialiased overflow-x-hidden">
 
@@ -182,9 +228,9 @@
             Ankommen wie <em class="font-normal italic">Zuhause</em>.
           </h1>
           <p class="mt-8 max-w-md font-body text-lg leading-relaxed text-forest-950/70">
-            Unser historisches B&amp;B an der Gamla landsvägen ist Basislager statt Hotel:
-            zehn gemütliche Schlafräume, eine voll ausgestattete Gästeküche und eine Feuerstelle
-            unterm Sternenhimmel — fünfhundert Meter vom Wasser.
+            Unser historisches Bed &amp; Breakfast ist euer Rückzugsort zum Entspannen, Erholen
+            und Durchatmen — zehn Schlafräume, eine voll ausgestattete Gästeküche, Frühstücksbuffet,
+            Kaminzimmer und ein Schwedengarten mit Obstbäumen und Feuerstelle laden zum Wohlfühlen ein.
           </p>
           <div class="mt-10 flex flex-col items-start gap-6 sm:flex-row sm:items-center">
             <a href="kontakt.html"
@@ -215,7 +261,7 @@
             </button>
             <div data-slide-dots class="absolute bottom-4 left-1/2 z-10 flex -translate-x-1/2 items-center gap-2"></div>
           </div>
-          <p class="mt-4 font-body text-xs font-medium uppercase tracking-[0.2em] text-forest-950/50">Einblicke — Zimmer, Kantine &amp; Gemeinschaftsräume</p>
+          <p class="mt-4 font-body text-xs font-medium uppercase tracking-[0.2em] text-forest-950/50">Einblicke — Zimmer, Gemeinschaftsküche &amp; Gemeinschaftsräume</p>
         </div>
       </div>
     </section>
@@ -228,26 +274,27 @@
           <h2 class="mt-3 font-display text-2xl font-normal">Die Zimmer</h2>
           <p class="mt-3 font-body text-sm leading-relaxed text-forest-950/65">
             Zehn Schlafräume im historischen Hauptgebäude — gemütlich, hell und aufs Wesentliche
-            reduziert. Dazu ein Holzofen im ersten Stock für kalte Abende und saubere,
-            frische Sanitäranlagen.
+            reduziert. Dazu ein Holzofen im ersten Stock für kalte Abende und saubere
+            Sanitäranlagen.
           </p>
         </div>
         <div class="py-6 sm:px-8">
           <p class="font-display text-xl font-light text-forest-950/35">02</p>
           <h2 class="mt-3 font-display text-2xl font-normal">Küche &amp; Frühstück</h2>
           <p class="mt-3 font-body text-sm leading-relaxed text-forest-950/65">
-            Ein Frühstück, das einen langen Tag auf dem Wasser trägt — auf Wunsch mit Lunchbox
-            fürs Boot. In der voll ausgestatteten Gästeküche kocht ihr selbst, oder unsere
-            Privatküche bereitet euch auf Anfrage köstliche Gerichte zu und serviert sie.
+            Ein Frühstücksbuffet, das euch für euren Tag in der Natur und eure nächsten Abenteuer
+            stärkt — auf Wunsch mit Lunchbox fürs Boot. Ihr entscheidet selbst, ob ihr in der voll
+            ausgestatteten Gästeküche selbst kochen möchtet oder von uns köstliche Mahlzeiten
+            serviert bekommen möchtet.
           </p>
         </div>
         <div class="py-6 sm:px-8 sm:last:pr-0">
           <p class="font-display text-xl font-light text-forest-950/35">03</p>
-          <h2 class="mt-3 font-display text-2xl font-normal">Kantine, Grill &amp; Feuerstelle</h2>
+          <h2 class="mt-3 font-display text-2xl font-normal">Euer Schwedentraum wartet auf euch.</h2>
           <p class="mt-3 font-body text-sm leading-relaxed text-forest-950/65">
-            Lange Tische für lange Abende: In der Gästekantine wird erzählt, gegessen und geplant.
-            Draußen warten Grillmöglichkeiten für den Fang des Tages — danach klingt der Abend
-            an der Feuerstelle aus.
+            Lange Tische für lange Abende: In der Gemeinschaftsküche wird erzählt, gegessen und
+            geplant. Draußen warten Grillmöglichkeiten für den Fang des Tages — danach klingt
+            der Abend an der Feuerstelle oder im Kaminzimmer aus.
           </p>
         </div>
       </div>

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Activities &amp; surroundings — Björkfors Outdoor, Sweden</title>
-  <meta name="description" content="Canoe, kayak and SUP in summer — ice skating, cross-country trails and ice fishing in winter. Plus wildlife safaris, moose parks, golf and classic cars: activities and surroundings around Björkfors in Östergötland.">
+  <meta name="description" content="Canoeing, kayaking and SUP in summer, ice fishing and cross-country skiing in winter: activities and excursions around Björkfors in Östergötland, Sweden.">
   <!-- SEO: Canonical, Sprachversionen, Social Cards -->
   <link rel="canonical" href="https://www.bjorkfors-outdoor.se/en/aktivitaeten.html">
   <link rel="alternate" hreflang="nl" href="https://www.bjorkfors-outdoor.se/nl/aktivitaeten.html">
@@ -15,7 +15,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Björkfors Outdoor Adventures">
   <meta property="og:title" content="Activities &amp; surroundings — Björkfors Outdoor, Sweden">
-  <meta property="og:description" content="Canoe, kayak and SUP in summer — ice skating, cross-country trails and ice fishing in winter. Plus wildlife safaris, moose parks, golf and classic cars: activities and surroundings around Björkfors in Östergötland.">
+  <meta property="og:description" content="Canoeing, kayaking and SUP in summer, ice fishing and cross-country skiing in winter: activities and excursions around Björkfors in Östergötland, Sweden.">
   <meta property="og:url" content="https://www.bjorkfors-outdoor.se/en/aktivitaeten.html">
   <meta property="og:image" content="https://www.bjorkfors-outdoor.se/assets/images/og-allhus.jpg">
   <meta property="og:locale" content="en_GB">
@@ -84,6 +84,52 @@
     .poi-dialog::backdrop { backdrop-filter: blur(3px); }
     .poi-dialog[open] { animation: langFadeIn 0.18s ease-out; }
   </style>
+  <!-- Strukturierte Daten: BedAndBreakfast + Breadcrumb -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BedAndBreakfast",
+        "name": "Björkfors Outdoor Adventures",
+        "url": "https://www.bjorkfors-outdoor.se/en/aktivitaeten.html",
+        "image": "https://www.bjorkfors-outdoor.se/assets/images/logo-bjorkfors.png",
+        "telephone": "+46732390993",
+        "email": "info@bjorkfors-outdoor.se",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Gamla landsvägen 13",
+          "postalCode": "59046",
+          "addressLocality": "Rimforsa",
+          "addressRegion": "Östergötland",
+          "addressCountry": "SE"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 58.020833,
+          "longitude": 15.898667
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.bjorkfors-outdoor.se/en/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Activities & surroundings",
+            "item": "https://www.bjorkfors-outdoor.se/en/aktivitaeten.html"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body class="font-body bg-cream text-forest-950 antialiased overflow-x-hidden">
 
@@ -172,7 +218,7 @@
     <!-- ============ INTRO ============ -->
     <section class="mx-auto max-w-7xl px-4 pt-12 pb-2 text-slate-800 sm:px-8" aria-label="Activities — introduction">
       <h1 class="mb-4 max-w-lg text-4xl font-bold md:text-5xl">
-        Outside is the<span class="text-slate-400"> programme</span>.
+        Being outdoors, unwinding and taking a breath are the<span class="text-slate-400"> programme</span>.
       </h1>
       <p class="max-w-2xl font-body text-base leading-relaxed text-forest-950/70">
         From the swimming jetty on the doorstep to the archipelago: our favourite places around Björkfors —
@@ -194,7 +240,7 @@
           </div>
           <div class="p-6">
             <h3 class="font-display text-2xl font-light leading-snug">Sport fishing</h3>
-            <p class="mt-2 font-body text-sm leading-relaxed text-forest-950/70">Fully equipped fishing boats, two home lakes and guides who fish themselves.</p>
+            <p class="mt-2 font-body text-sm leading-relaxed text-forest-950/70">Fully equipped fishing boats, endless lakes and bookable guides — a true angler's paradise.</p>
             <p class="mt-4 font-body text-xs font-semibold uppercase tracking-[0.15em] text-accent">Learn more &rarr;</p>
           </div>
         </article>

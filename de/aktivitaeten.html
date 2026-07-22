@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aktivitäten &amp; Umgebung — Björkfors Outdoor, Schweden</title>
-  <meta name="description" content="Kanu, Kajak und SUP im Sommer — Schlittschuhe, Loipen und Eisfischen im Winter. Dazu Wildtiersafari, Elchparks, Golf und Oldtimer: Aktivitäten und Umgebung rund um Björkfors in Östergötland.">
+  <meta name="description" content="Kanu, Kajak und SUP im Sommer, Eisangeln und Langlauf im Winter: Aktivitäten und Ausflugsziele rund um Björkfors in Östergötland, Schweden.">
   <!-- SEO: Canonical, Sprachversionen, Social Cards -->
   <link rel="canonical" href="https://www.bjorkfors-outdoor.se/de/aktivitaeten.html">
   <link rel="alternate" hreflang="nl" href="https://www.bjorkfors-outdoor.se/nl/aktivitaeten.html">
@@ -15,7 +15,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Björkfors Outdoor Adventures">
   <meta property="og:title" content="Aktivitäten &amp; Umgebung — Björkfors Outdoor, Schweden">
-  <meta property="og:description" content="Kanu, Kajak und SUP im Sommer — Schlittschuhe, Loipen und Eisfischen im Winter. Dazu Wildtiersafari, Elchparks, Golf und Oldtimer: Aktivitäten und Umgebung rund um Björkfors in Östergötland.">
+  <meta property="og:description" content="Kanu, Kajak und SUP im Sommer, Eisangeln und Langlauf im Winter: Aktivitäten und Ausflugsziele rund um Björkfors in Östergötland, Schweden.">
   <meta property="og:url" content="https://www.bjorkfors-outdoor.se/de/aktivitaeten.html">
   <meta property="og:image" content="https://www.bjorkfors-outdoor.se/assets/images/og-allhus.jpg">
   <meta property="og:locale" content="de_DE">
@@ -84,6 +84,52 @@
     .poi-dialog::backdrop { backdrop-filter: blur(3px); }
     .poi-dialog[open] { animation: langFadeIn 0.18s ease-out; }
   </style>
+  <!-- Strukturierte Daten: BedAndBreakfast + Breadcrumb -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BedAndBreakfast",
+        "name": "Björkfors Outdoor Adventures",
+        "url": "https://www.bjorkfors-outdoor.se/de/aktivitaeten.html",
+        "image": "https://www.bjorkfors-outdoor.se/assets/images/logo-bjorkfors.png",
+        "telephone": "+46732390993",
+        "email": "info@bjorkfors-outdoor.se",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Gamla landsvägen 13",
+          "postalCode": "59046",
+          "addressLocality": "Rimforsa",
+          "addressRegion": "Östergötland",
+          "addressCountry": "SE"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 58.020833,
+          "longitude": 15.898667
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Startseite",
+            "item": "https://www.bjorkfors-outdoor.se/de/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Aktivitäten & Umgebung",
+            "item": "https://www.bjorkfors-outdoor.se/de/aktivitaeten.html"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body class="font-body bg-cream text-forest-950 antialiased overflow-x-hidden">
 
@@ -172,7 +218,7 @@
     <!-- ============ KOPF ============ -->
     <section class="mx-auto max-w-7xl px-4 pt-12 pb-2 text-slate-800 sm:px-8" aria-label="Aktivitäten — Einführung">
       <h1 class="mb-4 max-w-lg text-4xl font-bold md:text-5xl">
-        Draußen ist das<span class="text-slate-400"> Programm</span>.
+        Draußen sein, Erholung und Durchatmen sind das<span class="text-slate-400"> Programm</span>.
       </h1>
       <p class="max-w-2xl font-body text-base leading-relaxed text-forest-950/70">
         Vom Badesteg vor der Tür bis zum Schärengarten: unsere Lieblingsorte rund um Björkfors —
@@ -194,7 +240,7 @@
           </div>
           <div class="p-6">
             <h3 class="font-display text-2xl font-light leading-snug">Sportfischen</h3>
-            <p class="mt-2 font-body text-sm leading-relaxed text-forest-950/70">Vollausgestattete Angelboote, zwei Hausseen und Guides, die selbst angeln.</p>
+            <p class="mt-2 font-body text-sm leading-relaxed text-forest-950/70">Vollausgestattete Angelboote, endlose Seen und Guides buchbar — ein wahres Angelparadies.</p>
             <p class="mt-4 font-body text-xs font-semibold uppercase tracking-[0.15em] text-accent">Mehr erfahren &rarr;</p>
           </div>
         </article>

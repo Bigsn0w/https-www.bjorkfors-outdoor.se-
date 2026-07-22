@@ -75,6 +75,52 @@
     }
     .bounce-card:hover .bounce-panel { transform: translateY(1rem) rotate(2deg); }
   </style>
+  <!-- Strukturierte Daten: BedAndBreakfast + Breadcrumb -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BedAndBreakfast",
+        "name": "Björkfors Outdoor Adventures",
+        "url": "https://www.bjorkfors-outdoor.se/nl/datenschutz.html",
+        "image": "https://www.bjorkfors-outdoor.se/assets/images/logo-bjorkfors.png",
+        "telephone": "+46732390993",
+        "email": "info@bjorkfors-outdoor.se",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Gamla landsvägen 13",
+          "postalCode": "59046",
+          "addressLocality": "Rimforsa",
+          "addressRegion": "Östergötland",
+          "addressCountry": "SE"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 58.020833,
+          "longitude": 15.898667
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Startpagina",
+            "item": "https://www.bjorkfors-outdoor.se/nl/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Privacyverklaring",
+            "item": "https://www.bjorkfors-outdoor.se/nl/datenschutz.html"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body class="font-body bg-cream text-forest-950 antialiased overflow-x-hidden">
 
