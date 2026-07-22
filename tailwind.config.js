@@ -31,14 +31,9 @@ module.exports = {
           '0%': { opacity: '0', transform: 'translateY(28px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
         },
-        marquee: {
-          '0%': { transform: 'translateX(0)' },
-          '100%': { transform: 'translateX(-50%)' },
-        },
       },
       animation: {
         'fade-in-up': 'fadeInUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards',
-        'marquee': 'marquee 36s linear infinite',
       },
     },
   },
