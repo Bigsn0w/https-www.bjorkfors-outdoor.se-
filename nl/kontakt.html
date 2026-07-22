@@ -104,6 +104,13 @@
     }
     #lang-menu:not(.hidden) { animation: langFadeIn 0.15s ease-out; }
 
+    /* ---- Erfolgs-Popup nach Formularversand ---- */
+    @keyframes modalPanelIn {
+      from { opacity: 0; transform: translateY(10px) scale(0.96); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    #success-modal.is-open .success-modal-panel { animation: modalPanelIn 0.25s ease-out; }
+
     /* ---- Formulier: editorial velden ---- */
     .field-input {
       width: 100%;
@@ -443,9 +450,6 @@
             <p id="form-error" class="mt-4 hidden font-body text-sm text-accent" role="alert">
               Vul jullie naam, een geldig e-mailadres en jullie factuuradres in, en accepteer de huisregels en algemene voorwaarden.
             </p>
-            <p id="form-success" class="mt-4 hidden font-body text-sm font-semibold text-forest-950" role="status">
-              Bedankt! Jullie aanvraag is bij ons binnengekomen — we nemen zo snel mogelijk persoonlijk contact op.
-            </p>
             <p id="form-hint" class="mt-4 font-body text-xs leading-relaxed text-forest-950/50">
               De aanvraag wordt direct en versleuteld naar ons verstuurd — geen apart e-mailprogramma nodig.
             </p>
@@ -509,6 +513,27 @@
     </div>
   </footer>
 
+  <!-- ============ ERFOLGS-POPUP ============ -->
+  <div id="success-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-forest-950/60 px-5 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="success-modal-title" aria-label="Bevestiging">
+    <div class="success-modal-panel w-full max-w-md rounded-3xl bg-cream p-8 text-center shadow-2xl sm:p-10">
+      <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-sage/20">
+        <svg class="h-8 w-8 text-forest-800" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+        </svg>
+      </div>
+      <h2 id="success-modal-title" class="mt-6 font-display text-2xl font-light text-forest-950 sm:text-3xl">
+        Bedankt voor jullie aanvraag!
+      </h2>
+      <p class="mt-3 font-body text-sm leading-relaxed text-forest-950/70">
+        Ze is bij ons binnengekomen — we nemen zo snel mogelijk persoonlijk contact op.
+      </p>
+      <button type="button" id="success-modal-close"
+              class="btn-shiny mt-8 inline-flex min-h-[48px] items-center justify-center rounded-full px-8 font-body text-sm font-semibold tracking-[0.06em] uppercase focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent">
+        <span class="btn-shiny-label">Begrepen</span>
+      </button>
+    </div>
+  </div>
+
   <script src="../assets/js/main.js"></script>
   <script>
     // ===== Boekingsformulier: stepper, live-samenvatting, e-mail opstellen =====
@@ -530,7 +555,27 @@
       var errorBox = document.getElementById('form-error');
       var submitBtn = document.getElementById('submit-btn');
       var submitBtnLabel = document.getElementById('submit-btn-label');
-      var successBox = document.getElementById('form-success');
+      var successModal = document.getElementById('success-modal');
+      var successModalClose = document.getElementById('success-modal-close');
+
+      function openSuccessModal() {
+        successModal.classList.remove('hidden');
+        successModal.classList.add('flex', 'is-open');
+        document.body.classList.add('overflow-hidden');
+        successModalClose.focus();
+      }
+      function closeSuccessModal() {
+        successModal.classList.add('hidden');
+        successModal.classList.remove('flex', 'is-open');
+        document.body.classList.remove('overflow-hidden');
+      }
+      successModalClose.addEventListener('click', closeSuccessModal);
+      successModal.addEventListener('click', function (e) {
+        if (e.target === successModal) closeSuccessModal();
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && successModal.classList.contains('is-open')) closeSuccessModal();
+      });
       var hintBox = document.getElementById('form-hint');
       var personsField = document.getElementById('f-persons');
       var summaryField = document.getElementById('f-summary-field');
@@ -609,7 +654,6 @@
 
         if (!isFormValid()) {
           errorBox.classList.remove('hidden');
-          successBox.classList.add('hidden');
           var name = nameInput.value.trim();
           var email = emailInput.value.trim();
           var billingAddress = billingAddressInput.value.trim();
@@ -632,7 +676,7 @@
             persons = 4;
             updateSummary();
             hintBox.classList.add('hidden');
-            successBox.classList.remove('hidden');
+            openSuccessModal();
             submitBtnLabel.textContent = 'Aanvraag verstuurd';
           } else {
             throw new Error('Formspree error');
