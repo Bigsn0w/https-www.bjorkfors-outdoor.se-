@@ -1,0 +1,14 @@
+{
+  "name": "bjorkfors-outdoor-website",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Statische Website Björkfors Outdoor Adventures — Tailwind-Build statt CDN.",
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/tailwind-input.css -o ./assets/css/tailwind.css --minify",
+    "watch:css": "tailwindcss -i ./src/tailwind-input.css -o ./assets/css/tailwind.css --watch"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "tailwindcss": "^4.3.3"
+  }
+}

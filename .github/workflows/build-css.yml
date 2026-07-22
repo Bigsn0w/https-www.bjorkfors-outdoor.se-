@@ -1,0 +1,45 @@
+name: Build Tailwind CSS
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "**/*.html"
+      - "tailwind.config.js"
+      - "src/tailwind-input.css"
+      - "package.json"
+      - ".github/workflows/build-css.yml"
+
+# Verhindert, dass der Bot-Commit dieses Workflows sich selbst erneut auslöst
+concurrency:
+  group: build-css
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-actions[bot]'
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - run: npm ci
+
+      - run: npm run build:css
+
+      - name: Gebautes CSS committen, falls geändert
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if ! git diff --quiet -- assets/css/tailwind.css; then
+            git add assets/css/tailwind.css
+            git commit -m "Tailwind-CSS automatisch neu gebaut [skip ci]"
+            git push
+          else
+            echo "Keine Änderung am gebauten CSS."
+          fi
